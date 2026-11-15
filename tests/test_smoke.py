@@ -13,9 +13,11 @@ def test_version_is_exposed() -> None:
     assert elevator_sim.__version__ == "0.1.0"
 
 
-def test_cli_runs_without_arguments(capsys: pytest.CaptureFixture[str]) -> None:
-    assert main([]) == 0
-    assert "usage: elevator_sim" in capsys.readouterr().out
+def test_cli_without_a_command_shows_usage(capsys: pytest.CaptureFixture[str]) -> None:
+    with pytest.raises(SystemExit) as exc:
+        main([])
+    assert exc.value.code == 2
+    assert "usage: elevator_sim" in capsys.readouterr().err
 
 
 def test_cli_version_flag(capsys: pytest.CaptureFixture[str]) -> None:
