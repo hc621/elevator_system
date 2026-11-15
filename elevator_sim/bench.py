@@ -34,7 +34,7 @@ from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
 from elevator_sim.feed import IteratorFeed
 from elevator_sim.model import BuildingConfig, Request
 from elevator_sim.motion import MOTION_POLICIES, make_motion
-from elevator_sim.report import PassengerRecord, Stats, aggregate
+from elevator_sim.report import PassengerRecord, RunReport, Stats, aggregate
 from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
@@ -176,6 +176,25 @@ def run_task(task: Task) -> Row:
         "distance": sum(c.distance for c in cars),
         "trips": sum(c.trips for c in cars),
         "load_cv": round(coefficient_of_variation([c.passengers for c in cars]), 4),
+        **diagnostic_metrics(report),
+    }
+
+
+def diagnostic_metrics(report: RunReport) -> dict[str, float]:
+    """Root-cause columns (over all served passengers, regardless of ``skip_first``)."""
+    d = report.diagnostics
+    away, idle = d.assignment["moving_away"], d.assignment["idle"]
+    return {
+        "detour_mean": round(d.detour.mean, 4),
+        "away_share": round(away.share, 4),
+        "away_wait": round(away.mean_wait, 4),
+        "idle_pick_share": round(idle.share, 4),
+        "chosen_distance": round(d.chosen_distance, 4),
+        "nearest_distance": round(d.nearest_distance, 4),
+        "busy_share": round(d.busy_share, 4),
+        "distance_per_passenger": round(d.distance_per_passenger, 4),
+        "riders_per_stop": round(d.riders_per_stop, 4),
+        "full_passby_share": round(d.full_passby_share, 4),
     }
 
 
@@ -345,7 +364,12 @@ def compare(
     )
 
 
-MEAN_COLUMNS = ("total_mean", "wait_mean", "wait_p95", "wait_max", "excess_mean", "jain_wait")
+MEAN_COLUMNS = (
+    "total_mean", "wait_mean", "wait_p95", "wait_max", "excess_mean", "jain_wait",
+    "detour_mean", "away_share", "away_wait", "idle_pick_share", "chosen_distance",
+    "nearest_distance", "busy_share", "distance_per_passenger", "riders_per_stop",
+    "full_passby_share", "load_cv",
+)  # fmt: skip
 
 
 def summarise(result: BenchResult, resamples: int = RESAMPLES) -> dict[str, Any]:
@@ -547,6 +571,26 @@ def format_markdown(summary: Mapping[str, object]) -> str:
                 f"| {c['dispatch']} | {c['motion']} | {c['total_mean']:.1f} | {c['wait_mean']:.1f} "
                 f"| {c['wait_p95']:.1f} | {c['wait_max']:.1f} | {c['excess_mean']:.1f} "
                 f"| {c['jain_wait']:.2f} |"
+            )
+        lines += [
+            "",
+            "**Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from "
+            "the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / "
+            "nearest car at assignment; busy = share of car time not idle)",
+            "",
+            "| dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / "
+            "nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |",
+            "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        ]
+        for c in e["combos"]:
+            lines.append(
+                f"| {c['dispatch']} | {c['motion']} | {c['wait_mean']:.1f} "
+                f"| {c['detour_mean']:.1f} | {c['away_share']:.0%} / {c['away_wait']:.0f} "
+                f"| {c['idle_pick_share']:.0%} "
+                f"| {c['chosen_distance']:.1f} / {c['nearest_distance']:.1f} "
+                f"| {c['busy_share']:.0%} | {c['distance_per_passenger']:.1f} "
+                f"| {c['riders_per_stop']:.2f} | {c['load_cv']:.2f} "
+                f"| {c['full_passby_share']:.1%} |"
             )
         lines.append("")
     return "\n".join(lines)

@@ -21,7 +21,7 @@ from elevator_sim.events import CarState
 from elevator_sim.feed import InvalidRequest
 from elevator_sim.journal import Journal
 from elevator_sim.model import Request
-from elevator_sim.report import CarStats, RunReport, Stats
+from elevator_sim.report import ASSIGNMENT_STATES, CarStats, Diagnostics, RunReport, Stats
 
 HEADER = ("time", "id", "source", "dest")
 PASSENGER_COLUMNS = (
@@ -104,12 +104,32 @@ def _car_dict(c: CarStats) -> dict[str, int]:
     }
 
 
+def diagnostics_to_dict(d: Diagnostics) -> dict[str, object]:
+    return {
+        "detour": _stats_dict(d.detour),
+        "assigned_car_state": {
+            name: {
+                "share": round(d.assignment[name].share, 4),
+                "mean_wait": round(d.assignment[name].mean_wait, 3),
+            }
+            for name in ASSIGNMENT_STATES
+        },
+        "chosen_car_distance": round(d.chosen_distance, 3),
+        "nearest_car_distance": round(d.nearest_distance, 3),
+        "busy_share": round(d.busy_share, 4),
+        "distance_per_passenger": round(d.distance_per_passenger, 3),
+        "riders_per_stop": round(d.riders_per_stop, 3),
+        "full_passby_share": round(d.full_passby_share, 4),
+    }
+
+
 def report_to_dict(report: RunReport) -> dict[str, object]:
     """The run's metrics as plain JSON-ready data. All times are in ticks.
 
     - ``wait`` / ``travel`` / ``total``: per-passenger distributions (mean, max, p90, p95, ...)
     - ``travels``: passenger journeys completed (one passenger from source to destination)
     - ``cars[i].trips``: moves of car i from starting to move until it reverses or goes idle
+    - ``diagnostics``: why the times are what they are (see ``report.Diagnostics``)
     """
     cfg = report.config
     return {
@@ -129,6 +149,7 @@ def report_to_dict(report: RunReport) -> dict[str, object]:
         "excess": _stats_dict(report.excess),
         "car_trips": sum(c.trips for c in report.per_car.values()),
         "cars": [_car_dict(c) for c in report.per_car.values()],
+        "diagnostics": diagnostics_to_dict(report.diagnostics),
         "observations": list(report.observations),
     }
 
@@ -149,6 +170,35 @@ def _row(name: str, s: Stats) -> str:
         f"{s.std:>8.1f}"
     )
     return f"  {name:<8}{cells}"
+
+
+_STATE_LABELS = {
+    "idle": "idle",
+    "on_the_way": "on the way",
+    "ahead_opposite": "ahead, going the other way",
+    "moving_away": "moving away",
+}
+
+
+def _diagnostic_lines(report: RunReport) -> list[str]:
+    d = report.diagnostics
+    lines = [
+        "Diagnostics",
+        f"  time per passenger : wait {report.wait.mean:.1f} + detour {d.detour.mean:.1f} "
+        f"(+ direct ride {report.total.mean - report.wait.mean - d.detour.mean:.1f})",
+        "  assigned car was   :   share  mean wait",
+    ]
+    for name in ASSIGNMENT_STATES:
+        a = d.assignment[name]
+        lines.append(f"    {_STATE_LABELS[name]:<26}{a.share:>6.0%}{a.mean_wait:>11.1f}")
+    lines += [
+        f"  car distance       : chosen {d.chosen_distance:.1f} floors, nearest "
+        f"{d.nearest_distance:.1f}",
+        f"  cars busy          : {d.busy_share:.0%}; {d.distance_per_passenger:.1f} floors "
+        f"travelled per passenger; {d.riders_per_stop:.2f} riders per stop",
+        f"  passed by full car : {d.full_passby_share:.1%} of passengers",
+    ]
+    return lines
 
 
 def format_summary(report: RunReport) -> str:
@@ -179,6 +229,7 @@ def format_summary(report: RunReport) -> str:
             f"{c.peak_load:>7}/{c.capacity}"
         )
     lines.append(f"  all{sum(c.trips for c in report.per_car.values()):>7}")
+    lines += ["", *_diagnostic_lines(report)]
     lines += ["", "Observations"]
     lines += [f"  - {note}" for note in report.observations]
     return "\n".join(lines) + "\n"

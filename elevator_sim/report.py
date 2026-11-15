@@ -6,6 +6,13 @@ Timestamps per passenger::
     |<-------------------- total -------------->|
     direct = |dest - source|, excess = total - direct
 
+detour = travel - direct (time spent on stops for other passengers on the way)
+
+Diagnostics explain *why* a policy is fast or slow: the chosen car's state when each passenger was
+assigned (idle / on the way / ahead but heading the other way / moving away), how far it was
+compared with the nearest car, how busy the cars were, how many floors they travelled per
+passenger, how many riders each stop served, and how often a full car passed someone.
+
 A car *trip* starts when the car begins to move and ends when it reverses or goes idle; stops
 along the way (doors opening while it keeps the same direction) do not end it.
 """
@@ -93,6 +100,14 @@ class PassengerRecord:
     def excess(self) -> int:
         return self.total - self.direct
 
+    @property
+    def detour(self) -> int:
+        return self.travel - self.direct
+
+    @property
+    def direction(self) -> Direction:
+        return Direction.UP if self.dest > self.source else Direction.DOWN
+
 
 @dataclass(frozen=True)
 class CarStats:
@@ -104,6 +119,31 @@ class CarStats:
     door_open_ticks: int  # ticks that ended with the doors open
     peak_load: int
     capacity: int
+
+
+# State of the chosen car when a passenger was assigned, relative to the passenger's floor.
+ASSIGNMENT_STATES = ("idle", "on_the_way", "ahead_opposite", "moving_away")
+
+
+@dataclass(frozen=True)
+class AssignmentState:
+    count: int
+    share: float  # of served passengers
+    mean_wait: float
+
+
+@dataclass(frozen=True)
+class Diagnostics:
+    """Root-cause metrics: where the time goes and why."""
+
+    detour: Stats  # travel - direct, per passenger
+    assignment: Mapping[str, AssignmentState]  # keyed by ASSIGNMENT_STATES
+    chosen_distance: float  # mean floors from the chosen car to the pickup, at assignment
+    nearest_distance: float  # mean floors from the closest car to the pickup, at assignment
+    busy_share: float  # car-ticks not idle with doors closed
+    distance_per_passenger: float  # floors travelled by all cars / passengers served
+    riders_per_stop: float  # (boardings + alightings) per door opening
+    full_passby_share: float  # passengers whose own car stood at their floor, their way, full
 
 
 @dataclass(frozen=True)
@@ -120,6 +160,7 @@ class RunReport:
     per_car: Mapping[CarId, CarStats]
     ticks: int  # rows in the positions log (t = 0 .. ticks - 1)
     makespan: Tick  # tick of the last drop-off
+    diagnostics: Diagnostics
     observations: tuple[str, ...]
 
 
@@ -154,6 +195,7 @@ def aggregate(journal: Journal, config: BuildingConfig | None = None) -> RunRepo
     excess = Stats.of([r.excess for r in records])
     ticks = len({e.tick for e in journal.events(CarState)})
     makespan = max(alighted.values(), default=0)
+    diagnostics = diagnose(journal, config, records, per_car)
 
     return RunReport(
         config=config,
@@ -168,7 +210,8 @@ def aggregate(journal: Journal, config: BuildingConfig | None = None) -> RunRepo
         per_car=per_car,
         ticks=ticks,
         makespan=makespan,
-        observations=_observe(records, wait, excess, per_car),
+        diagnostics=diagnostics,
+        observations=_observe(records, wait, excess, per_car, diagnostics),
     )
 
 
@@ -202,6 +245,76 @@ def _car_stats(
     return result
 
 
+def classify_assignment(
+    car_floor: Floor, car_direction: Direction, source: Floor, wants: Direction
+) -> str:
+    """Where the chosen car was, relative to the pickup, when the passenger was assigned.
+
+    ``car_direction`` is the car's direction just before the assignment (IDLE if it had no work).
+    """
+    if car_direction is Direction.IDLE:
+        return "idle"
+    if (source - car_floor) * car_direction.value >= 0:  # the pickup is here or ahead
+        return "on_the_way" if wants is car_direction else "ahead_opposite"
+    return "moving_away"
+
+
+def diagnose(
+    journal: Journal,
+    config: BuildingConfig,
+    records: Sequence[PassengerRecord],
+    per_car: Mapping[CarId, CarStats],
+) -> Diagnostics:
+    states: dict[CarId, dict[Tick, CarState]] = defaultdict(dict)
+    for e in journal.events(CarState):
+        states[e.car][e.tick] = e
+    by_state: dict[str, list[int]] = {name: [] for name in ASSIGNMENT_STATES}
+    chosen: list[int] = []
+    nearest: list[int] = []
+    full_passbys = 0
+    for r in records:
+        t = r.requested
+        before = states[r.car].get(t - 1)
+        floor = states[r.car][t].floor  # where the car is during the assignment tick
+        direction = before.direction if before else Direction.IDLE
+        by_state[classify_assignment(floor, direction, r.source, r.direction)].append(r.wait)
+        chosen.append(abs(floor - r.source))
+        nearest.append(min(abs(rows[t].floor - r.source) for rows in states.values()))
+        capacity = config.cars[r.car].capacity
+        for tick in range(t, r.boarded):
+            s = states[r.car].get(tick)
+            if s and s.floor == r.source and s.direction is r.direction and s.load >= capacity:
+                full_passbys += 1
+                break
+
+    n = len(records)
+    car_ticks = sum(len(rows) for rows in states.values())
+    idle = sum(
+        1
+        for rows in states.values()
+        for s in rows.values()
+        if s.direction is Direction.IDLE and s.doors is Doors.CLOSED
+    )
+    stops = sum(c.stops for c in per_car.values())
+    return Diagnostics(
+        detour=Stats.of([r.detour for r in records]),
+        assignment={
+            name: AssignmentState(
+                count=len(waits),
+                share=len(waits) / n if n else 0.0,
+                mean_wait=sum(waits) / len(waits) if waits else 0.0,
+            )
+            for name, waits in by_state.items()
+        },
+        chosen_distance=sum(chosen) / n if n else 0.0,
+        nearest_distance=sum(nearest) / n if n else 0.0,
+        busy_share=1 - idle / car_ticks if car_ticks else 0.0,
+        distance_per_passenger=sum(c.distance for c in per_car.values()) / n if n else 0.0,
+        riders_per_stop=2 * n / stops if stops else 0.0,
+        full_passby_share=full_passbys / n if n else 0.0,
+    )
+
+
 def count_trips(rows: Sequence[CarState]) -> int:
     """Trips in one car's tick-ordered states.
 
@@ -228,6 +341,7 @@ def _observe(
     wait: Stats,
     excess: Stats,
     per_car: Mapping[CarId, CarStats],
+    diagnostics: Diagnostics,
 ) -> tuple[str, ...]:
     """Short, number-driven notes on the distributions and system behaviour."""
     if not records:
@@ -269,11 +383,29 @@ def _observe(
             note += f" Cars {idle} carried nobody."
         notes.append(note)
 
-    full = [c.car for c in per_car.values() if c.peak_load >= c.capacity]
-    if full:
+    d = diagnostics
+    away = d.assignment["moving_away"]
+    if away.count:
         notes.append(
-            f"Cars {full} reached capacity at some point; capacity was a binding constraint."
+            f"{away.share:.0%} of passengers were assigned to a car moving away from them; "
+            f"they waited {away.mean_wait:.1f} ticks on average. The chosen car was "
+            f"{d.chosen_distance:.1f} floors away on average; the nearest car "
+            f"{d.nearest_distance:.1f}."
         )
+    notes.append(
+        f"Cars were busy {d.busy_share:.0%} of the time and travelled "
+        f"{d.distance_per_passenger:.1f} floors per passenger; ride time beyond the direct trip "
+        f"(detour) averaged {d.detour.mean:.1f} ticks against {wait.mean:.1f} of waiting."
+    )
+
+    full = [c.car for c in per_car.values() if c.peak_load >= c.capacity]
+    if full and d.full_passby_share:
+        notes.append(
+            f"Cars {full} reached capacity; {d.full_passby_share:.0%} of passengers saw their own "
+            "car pass their floor full, so capacity was a binding constraint."
+        )
+    elif full:
+        notes.append(f"Cars {full} reached capacity, but no passenger was passed by a full car.")
     else:
         peak = max(c.peak_load for c in per_car.values())
         notes.append(f"No car reached capacity (highest load {peak}).")
