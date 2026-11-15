@@ -10,7 +10,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []  # the core has no runtime dependencies
 
-[project.optional-dependencies]
+[dependency-groups]
+# `uv sync` installs this group by default; with pip >= 25.1: `pip install --group dev`.
 dev = [
     "pytest>=8",
     "pytest-cov>=5",
