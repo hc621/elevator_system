@@ -7,6 +7,7 @@ elevator-sim run requests.csv --elevators 3 --floors 60 --capacity 8
 elevator-sim requests.csv ...             # "run" is the default command
 elevator-sim summarize out/journal.jsonl  # rebuild the report from a saved journal
 elevator-sim generate morning_rush --floors 30 --count 200 -o rush.csv
+elevator-sim bench --suite standard --seeds 20 -o results/standard
 
 A run writes ``positions.jsonl``, ``passengers.json`` and ``report.json`` to ``--out`` and prints a
 text summary.
@@ -28,6 +29,7 @@ from elevator_sim.adapters import (
     write_report,
     write_requests,
 )
+from elevator_sim.bench import SUITES, Benchmark, SuiteOptions, build_suite, write_outputs
 from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
 from elevator_sim.dispatcher import NoEligibleCar
 from elevator_sim.feed import InvalidRequest, IteratorFeed, SimulationStalled
@@ -38,7 +40,7 @@ from elevator_sim.report import aggregate
 from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
-COMMANDS = ("run", "summarize", "generate")
+COMMANDS = ("run", "summarize", "generate", "bench")
 OUTPUTS = ("positions.jsonl", "passengers.json", "report.json")
 
 
@@ -51,6 +53,22 @@ def _placement(text: str) -> str | tuple[Floor, ...]:
         raise argparse.ArgumentTypeError(
             f"expected {' or '.join(PLACEMENTS)} or a comma-separated list of floors"
         ) from None
+
+
+def _csv_of(kind: type, choices: Sequence[str] | None = None):  # type: ignore[no-untyped-def]
+    def parse(text: str) -> tuple:
+        try:
+            values = tuple(kind(part.strip()) for part in text.split(",") if part.strip())
+        except ValueError:
+            raise argparse.ArgumentTypeError(f"expected a comma-separated list: {text!r}") from None
+        bad = [v for v in values if choices is not None and v not in choices]
+        if bad or not values:
+            raise argparse.ArgumentTypeError(
+                f"invalid value(s) {bad or text!r}; choose from {choices}"
+            )
+        return values
+
+    return parse
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -93,6 +111,24 @@ def _parser() -> argparse.ArgumentParser:
     gen.add_argument("-d", "--duration", type=int, default=300, help="arrival window in ticks")
     gen.add_argument("-s", "--seed", type=int, default=0)
     gen.add_argument("-o", "--output", type=Path, required=True)
+
+    bench = sub.add_parser("bench", help="compare policies over many seeds against baselines")
+    bench.add_argument("--suite", choices=sorted(SUITES), default="standard")
+    bench.add_argument("--seeds", type=int, default=20, help="seeds per experiment (default 20)")
+    bench.add_argument("--door-times", type=_csv_of(int), default=(1,), help="e.g. 0,1,2")
+    bench.add_argument(
+        "--placements", type=_csv_of(str, ("lobby", "spread")), default=("lobby",),
+        help="e.g. lobby,spread",
+    )  # fmt: skip
+    bench.add_argument("--rates", type=_csv_of(float), help="requests per tick, e.g. 0.1,0.2,0.4")
+    bench.add_argument("--scenarios", type=_csv_of(str, sorted(SCENARIOS)))
+    bench.add_argument("--dispatch", type=_csv_of(str, sorted(DISPATCH_POLICIES)))
+    bench.add_argument("--motion", type=_csv_of(str, sorted(MOTION_POLICIES)))
+    bench.add_argument(
+        "--skip-first", type=int, default=0, help="ignore passengers requested before this tick"
+    )
+    bench.add_argument("--workers", type=int, help="processes (default: all CPUs; 1 = in-process)")
+    bench.add_argument("-o", "--out", type=Path, default=Path("results/bench"))
     return parser
 
 
@@ -143,12 +179,31 @@ def _generate(args: argparse.Namespace) -> int:
     return 0
 
 
+def _bench(args: argparse.Namespace) -> int:
+    options = SuiteOptions(
+        seeds=args.seeds,
+        door_times=args.door_times,
+        placements=args.placements,
+        rates=args.rates,
+        scenarios=args.scenarios,
+        dispatch=args.dispatch,
+        motion=args.motion,
+        skip_first=args.skip_first,
+    )
+    experiments = build_suite(args.suite, options)
+    result = Benchmark(args.workers).run(experiments)
+    write_outputs(result, args.out)
+    print(f"{len(result.rows)} runs over {len(experiments)} experiments")
+    print(f"Wrote {args.out / 'raw.jsonl'}, {args.out / 'summary.json'}, {args.out / 'summary.md'}")
+    return 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args_list = list(sys.argv[1:] if argv is None else argv)
     if args_list and args_list[0] not in COMMANDS and not args_list[0].startswith("-"):
         args_list.insert(0, "run")
     args = _parser().parse_args(args_list)
-    handlers = {"run": _run, "summarize": _summarize, "generate": _generate}
+    handlers = {"run": _run, "summarize": _summarize, "generate": _generate, "bench": _bench}
     try:
         return handlers[args.command](args)
     except (InvalidRequest, NoEligibleCar, SimulationStalled, ValueError, OSError) as exc:

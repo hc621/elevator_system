@@ -1,0 +1,1959 @@
+{
+  "metric": "total_mean",
+  "claim_rule": "95% CI of the difference excludes 0 and >= 80% of seeds go the same way",
+  "resamples": 2000,
+  "experiments": [
+    {
+      "key": {
+        "scenario": "uniform",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "uniform · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 10.329,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 20.079,
+          "wait_mean": 8.006,
+          "wait_p95": 21.3675,
+          "wait_max": 33.5,
+          "excess_mean": 9.75,
+          "jain_wait": 0.5782
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 23.3218,
+          "wait_mean": 10.8398,
+          "wait_p95": 28.65,
+          "wait_max": 45.2,
+          "excess_mean": 12.9928,
+          "jain_wait": 0.5852
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 30.656,
+          "wait_mean": 18.2658,
+          "wait_p95": 55.2425,
+          "wait_max": 69.45,
+          "excess_mean": 20.327,
+          "jain_wait": 0.493
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 39.3323,
+          "wait_mean": 26.7443,
+          "wait_p95": 65.425,
+          "wait_max": 73.35,
+          "excess_mean": 29.0032,
+          "jain_wait": 0.5587
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 34.3943,
+          "wait_mean": 22.3507,
+          "wait_p95": 49.3875,
+          "wait_max": 61.45,
+          "excess_mean": 24.0653,
+          "jain_wait": 0.6939
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 43.2828,
+          "wait_mean": 30.9742,
+          "wait_p95": 60.6125,
+          "wait_max": 66.25,
+          "excess_mean": 32.9537,
+          "jain_wait": 0.7308
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 33.208,
+          "wait_mean": 20.5555,
+          "wait_p95": 54.54,
+          "wait_max": 71.9,
+          "excess_mean": 22.879,
+          "jain_wait": 0.5889
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 45.1247,
+          "wait_mean": 32.015,
+          "wait_p95": 63.8175,
+          "wait_max": 81.55,
+          "excess_mean": 34.7957,
+          "jain_wait": 0.7048
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 20.079,
+          "std": 0.6639,
+          "baseline_mean": 34.3943,
+          "delta": -14.3153,
+          "delta_pct": -0.4162,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -14.9413,
+            -13.7368
+          ],
+          "gap_closed": 0.5949,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 30.656,
+          "std": 1.9764,
+          "baseline_mean": 34.3943,
+          "delta": -3.7382,
+          "delta_pct": -0.1087,
+          "wins": "19/20",
+          "losses": "1/20",
+          "ci95": [
+            -4.6078,
+            -2.7268
+          ],
+          "gap_closed": 0.1553,
+          "verdict": "better"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.208,
+          "std": 2.2641,
+          "baseline_mean": 34.3943,
+          "delta": -1.1863,
+          "delta_pct": -0.0345,
+          "wins": "13/20",
+          "losses": "7/20",
+          "ci95": [
+            -2.0898,
+            -0.1825
+          ],
+          "gap_closed": 0.0493,
+          "verdict": "inconclusive"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 20.079,
+          "std": 0.6639,
+          "baseline_mean": 23.3218,
+          "delta": -3.2427,
+          "delta_pct": -0.139,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -3.716,
+            -2.7983
+          ],
+          "gap_closed": 0.2496,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 30.656,
+          "std": 1.9764,
+          "baseline_mean": 39.3323,
+          "delta": -8.6762,
+          "delta_pct": -0.2206,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.706,
+            -7.692
+          ],
+          "gap_closed": 0.2991,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 34.3943,
+          "std": 1.6031,
+          "baseline_mean": 43.2828,
+          "delta": -8.8885,
+          "delta_pct": -0.2054,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.679,
+            -8.1548
+          ],
+          "gap_closed": 0.2697,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.208,
+          "std": 2.2641,
+          "baseline_mean": 45.1247,
+          "delta": -11.9168,
+          "delta_pct": -0.2641,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -12.8298,
+            -11.0448
+          ],
+          "gap_closed": 0.3425,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "uniform",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "uniform · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 13.6223,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 22.204,
+          "wait_mean": 6.9615,
+          "wait_p95": 20.0175,
+          "wait_max": 37.1,
+          "excess_mean": 8.5817,
+          "jain_wait": 0.529
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 25.5185,
+          "wait_mean": 9.8475,
+          "wait_p95": 28.505,
+          "wait_max": 58.2,
+          "excess_mean": 11.8963,
+          "jain_wait": 0.5008
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 35.9992,
+          "wait_mean": 20.41,
+          "wait_p95": 69.7575,
+          "wait_max": 85.5,
+          "excess_mean": 22.377,
+          "jain_wait": 0.4282
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 48.437,
+          "wait_mean": 32.5885,
+          "wait_p95": 85.61,
+          "wait_max": 94.35,
+          "excess_mean": 34.8148,
+          "jain_wait": 0.5168
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 40.603,
+          "wait_mean": 25.4895,
+          "wait_p95": 57.3525,
+          "wait_max": 75.2,
+          "excess_mean": 26.9807,
+          "jain_wait": 0.6825
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 55.148,
+          "wait_mean": 39.7585,
+          "wait_p95": 77.2675,
+          "wait_max": 84.4,
+          "excess_mean": 41.5258,
+          "jain_wait": 0.7311
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 39.2147,
+          "wait_mean": 23.4812,
+          "wait_p95": 64.45,
+          "wait_max": 83.0,
+          "excess_mean": 25.5925,
+          "jain_wait": 0.5752
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 57.0493,
+          "wait_mean": 40.8428,
+          "wait_p95": 80.8725,
+          "wait_max": 93.9,
+          "excess_mean": 43.427,
+          "jain_wait": 0.7102
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 22.204,
+          "std": 0.8871,
+          "baseline_mean": 40.603,
+          "delta": -18.399,
+          "delta_pct": -0.4531,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -19.296,
+            -17.4982
+          ],
+          "gap_closed": 0.6819,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 35.9992,
+          "std": 2.2364,
+          "baseline_mean": 40.603,
+          "delta": -4.6038,
+          "delta_pct": -0.1134,
+          "wins": "18/20",
+          "losses": "2/20",
+          "ci95": [
+            -6.0387,
+            -3.1615
+          ],
+          "gap_closed": 0.1706,
+          "verdict": "better"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.2147,
+          "std": 1.9399,
+          "baseline_mean": 40.603,
+          "delta": -1.3882,
+          "delta_pct": -0.0342,
+          "wins": "12/20",
+          "losses": "8/20",
+          "ci95": [
+            -2.605,
+            -0.1507
+          ],
+          "gap_closed": 0.0515,
+          "verdict": "inconclusive"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 22.204,
+          "std": 0.8871,
+          "baseline_mean": 25.5185,
+          "delta": -3.3145,
+          "delta_pct": -0.1299,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -3.7033,
+            -2.9333
+          ],
+          "gap_closed": 0.2786,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 35.9992,
+          "std": 2.2364,
+          "baseline_mean": 48.437,
+          "delta": -12.4378,
+          "delta_pct": -0.2568,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.5535,
+            -11.3722
+          ],
+          "gap_closed": 0.3573,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 40.603,
+          "std": 2.5708,
+          "baseline_mean": 55.148,
+          "delta": -14.545,
+          "delta_pct": -0.2637,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.5463,
+            -13.5028
+          ],
+          "gap_closed": 0.3503,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.2147,
+          "std": 1.9399,
+          "baseline_mean": 57.0493,
+          "delta": -17.8345,
+          "delta_pct": -0.3126,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -18.7822,
+            -16.9808
+          ],
+          "gap_closed": 0.4107,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "mixed",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "mixed · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 13.996,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 23.0795,
+          "wait_mean": 7.4052,
+          "wait_p95": 20.9725,
+          "wait_max": 35.1,
+          "excess_mean": 9.0835,
+          "jain_wait": 0.5332
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 25.4162,
+          "wait_mean": 9.4742,
+          "wait_p95": 28.1375,
+          "wait_max": 48.9,
+          "excess_mean": 11.4203,
+          "jain_wait": 0.5082
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 33.9128,
+          "wait_mean": 18.0933,
+          "wait_p95": 56.3275,
+          "wait_max": 64.85,
+          "excess_mean": 19.9167,
+          "jain_wait": 0.4546
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 42.781,
+          "wait_mean": 26.73,
+          "wait_p95": 62.2575,
+          "wait_max": 67.4,
+          "excess_mean": 28.785,
+          "jain_wait": 0.5454
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 38.5245,
+          "wait_mean": 22.9055,
+          "wait_p95": 51.645,
+          "wait_max": 60.45,
+          "excess_mean": 24.5285,
+          "jain_wait": 0.6814
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 45.75,
+          "wait_mean": 29.9423,
+          "wait_p95": 58.315,
+          "wait_max": 63.1,
+          "excess_mean": 31.754,
+          "jain_wait": 0.7246
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 32.8915,
+          "wait_mean": 17.195,
+          "wait_p95": 48.16,
+          "wait_max": 62.75,
+          "excess_mean": 18.8955,
+          "jain_wait": 0.5484
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 45.3105,
+          "wait_mean": 29.3418,
+          "wait_p95": 58.265,
+          "wait_max": 64.45,
+          "excess_mean": 31.3145,
+          "jain_wait": 0.7022
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 23.0795,
+          "std": 0.8462,
+          "baseline_mean": 38.5245,
+          "delta": -15.445,
+          "delta_pct": -0.4009,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.8478,
+            -15.0368
+          ],
+          "gap_closed": 0.6297,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.9128,
+          "std": 1.7123,
+          "baseline_mean": 38.5245,
+          "delta": -4.6117,
+          "delta_pct": -0.1197,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -5.2388,
+            -3.9855
+          ],
+          "gap_closed": 0.188,
+          "verdict": "better"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.8915,
+          "std": 1.8781,
+          "baseline_mean": 38.5245,
+          "delta": -5.633,
+          "delta_pct": -0.1462,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -6.2742,
+            -4.9795
+          ],
+          "gap_closed": 0.2297,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 23.0795,
+          "std": 0.8462,
+          "baseline_mean": 25.4162,
+          "delta": -2.3367,
+          "delta_pct": -0.0919,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -2.8165,
+            -1.8865
+          ],
+          "gap_closed": 0.2046,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.9128,
+          "std": 1.7123,
+          "baseline_mean": 42.781,
+          "delta": -8.8682,
+          "delta_pct": -0.2073,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.9367,
+            -7.813
+          ],
+          "gap_closed": 0.3081,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 38.5245,
+          "std": 1.2886,
+          "baseline_mean": 45.75,
+          "delta": -7.2255,
+          "delta_pct": -0.1579,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.0587,
+            -6.4355
+          ],
+          "gap_closed": 0.2275,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.8915,
+          "std": 1.8781,
+          "baseline_mean": 45.3105,
+          "delta": -12.419,
+          "delta_pct": -0.2741,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.1975,
+            -11.7142
+          ],
+          "gap_closed": 0.3966,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "mixed",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "mixed · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.387,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.6662,
+          "wait_mean": 6.7103,
+          "wait_p95": 20.6375,
+          "wait_max": 36.5,
+          "excess_mean": 8.2793,
+          "jain_wait": 0.4717
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 29.1048,
+          "wait_mean": 8.8938,
+          "wait_p95": 28.1525,
+          "wait_max": 63.15,
+          "excess_mean": 10.7178,
+          "jain_wait": 0.4231
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 40.6917,
+          "wait_mean": 20.6095,
+          "wait_p95": 71.735,
+          "wait_max": 82.5,
+          "excess_mean": 22.3047,
+          "jain_wait": 0.3978
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 52.9263,
+          "wait_mean": 32.603,
+          "wait_p95": 81.765,
+          "wait_max": 87.0,
+          "excess_mean": 34.5393,
+          "jain_wait": 0.4939
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 48.4048,
+          "wait_mean": 28.54,
+          "wait_p95": 64.6475,
+          "wait_max": 76.95,
+          "excess_mean": 30.0177,
+          "jain_wait": 0.6718
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 59.2227,
+          "wait_mean": 39.1588,
+          "wait_p95": 76.2675,
+          "wait_max": 81.9,
+          "excess_mean": 40.8357,
+          "jain_wait": 0.7265
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 40.866,
+          "wait_mean": 20.946,
+          "wait_p95": 60.95,
+          "wait_max": 78.2,
+          "excess_mean": 22.479,
+          "jain_wait": 0.537
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 59.2533,
+          "wait_mean": 39.0053,
+          "wait_p95": 77.475,
+          "wait_max": 82.85,
+          "excess_mean": 40.8662,
+          "jain_wait": 0.698
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.6662,
+          "std": 1.3587,
+          "baseline_mean": 48.4048,
+          "delta": -21.7385,
+          "delta_pct": -0.4491,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -22.5532,
+            -20.9432
+          ],
+          "gap_closed": 0.7242,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 40.6917,
+          "std": 2.046,
+          "baseline_mean": 48.4048,
+          "delta": -7.713,
+          "delta_pct": -0.1593,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.648,
+            -6.6553
+          ],
+          "gap_closed": 0.2569,
+          "verdict": "better"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 40.866,
+          "std": 1.4462,
+          "baseline_mean": 48.4048,
+          "delta": -7.5387,
+          "delta_pct": -0.1557,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.5635,
+            -6.5918
+          ],
+          "gap_closed": 0.2511,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.6662,
+          "std": 1.3587,
+          "baseline_mean": 29.1048,
+          "delta": -2.4385,
+          "delta_pct": -0.0838,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -2.9133,
+            -1.9718
+          ],
+          "gap_closed": 0.2275,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 40.6917,
+          "std": 2.046,
+          "baseline_mean": 52.9263,
+          "delta": -12.2345,
+          "delta_pct": -0.2312,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.497,
+            -10.829
+          ],
+          "gap_closed": 0.3542,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 48.4048,
+          "std": 2.3838,
+          "baseline_mean": 59.2227,
+          "delta": -10.818,
+          "delta_pct": -0.1827,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -11.538,
+            -9.9985
+          ],
+          "gap_closed": 0.2649,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 40.866,
+          "std": 1.4462,
+          "baseline_mean": 59.2533,
+          "delta": -18.3873,
+          "delta_pct": -0.3103,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -19.1517,
+            -17.6408
+          ],
+          "gap_closed": 0.4499,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "morning_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2947,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.9915,
+          "wait_mean": 10.1528,
+          "wait_p95": 24.47,
+          "wait_max": 29.55,
+          "excess_mean": 12.6967,
+          "jain_wait": 0.6244
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 27.5545,
+          "wait_mean": 10.6183,
+          "wait_p95": 25.6575,
+          "wait_max": 41.2,
+          "excess_mean": 13.2598,
+          "jain_wait": 0.6116
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 39.7728,
+          "wait_mean": 22.8597,
+          "wait_p95": 60.27,
+          "wait_max": 84.15,
+          "excess_mean": 25.478,
+          "jain_wait": 0.5137
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 45.306,
+          "wait_mean": 28.3467,
+          "wait_p95": 63.275,
+          "wait_max": 84.75,
+          "excess_mean": 31.0113,
+          "jain_wait": 0.5429
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 39.2582,
+          "wait_mean": 23.1355,
+          "wait_p95": 50.4325,
+          "wait_max": 58.95,
+          "excess_mean": 24.9635,
+          "jain_wait": 0.6823
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 45.6893,
+          "wait_mean": 29.307,
+          "wait_p95": 58.0225,
+          "wait_max": 62.7,
+          "excess_mean": 31.3945,
+          "jain_wait": 0.7139
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 32.7368,
+          "wait_mean": 16.726,
+          "wait_p95": 46.415,
+          "wait_max": 61.75,
+          "excess_mean": 18.442,
+          "jain_wait": 0.5614
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 44.9608,
+          "wait_mean": 28.5982,
+          "wait_p95": 58.0625,
+          "wait_max": 65.2,
+          "excess_mean": 30.666,
+          "jain_wait": 0.6859
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.9915,
+          "std": 1.4494,
+          "baseline_mean": 39.2582,
+          "delta": -12.2668,
+          "delta_pct": -0.3125,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -12.9938,
+            -11.4258
+          ],
+          "gap_closed": 0.4914,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.7728,
+          "std": 3.6201,
+          "baseline_mean": 39.2582,
+          "delta": 0.5145,
+          "delta_pct": 0.0131,
+          "wins": "12/20",
+          "losses": "8/20",
+          "ci95": [
+            -1.1918,
+            2.4035
+          ],
+          "gap_closed": -0.0206,
+          "verdict": "inconclusive"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.7368,
+          "std": 1.7718,
+          "baseline_mean": 39.2582,
+          "delta": -6.5215,
+          "delta_pct": -0.1661,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -7.0657,
+            -5.8965
+          ],
+          "gap_closed": 0.2612,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.9915,
+          "std": 1.4494,
+          "baseline_mean": 27.5545,
+          "delta": -0.563,
+          "delta_pct": -0.0204,
+          "wins": "14/20",
+          "losses": "6/20",
+          "ci95": [
+            -0.9657,
+            -0.1117
+          ],
+          "gap_closed": 0.0425,
+          "verdict": "inconclusive"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.7728,
+          "std": 3.6201,
+          "baseline_mean": 45.306,
+          "delta": -5.5332,
+          "delta_pct": -0.1221,
+          "wins": "19/20",
+          "losses": "1/20",
+          "ci95": [
+            -6.8855,
+            -4.1365
+          ],
+          "gap_closed": 0.1784,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.2582,
+          "std": 2.0006,
+          "baseline_mean": 45.6893,
+          "delta": -6.431,
+          "delta_pct": -0.1408,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -7.4205,
+            -5.59
+          ],
+          "gap_closed": 0.2048,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.7368,
+          "std": 1.7718,
+          "baseline_mean": 44.9608,
+          "delta": -12.224,
+          "delta_pct": -0.2719,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -12.9395,
+            -11.578
+          ],
+          "gap_closed": 0.3986,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "morning_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 19.0035,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 34.705,
+          "wait_mean": 12.839,
+          "wait_p95": 31.5175,
+          "wait_max": 38.45,
+          "excess_mean": 15.7015,
+          "jain_wait": 0.6182
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 35.0428,
+          "wait_mean": 13.0833,
+          "wait_p95": 31.965,
+          "wait_max": 49.1,
+          "excess_mean": 16.0393,
+          "jain_wait": 0.607
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 51.0435,
+          "wait_mean": 29.39,
+          "wait_p95": 80.32,
+          "wait_max": 105.85,
+          "excess_mean": 32.04,
+          "jain_wait": 0.4832
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 59.462,
+          "wait_mean": 37.8212,
+          "wait_p95": 85.12,
+          "wait_max": 127.05,
+          "excess_mean": 40.4585,
+          "jain_wait": 0.5153
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 49.647,
+          "wait_mean": 29.007,
+          "wait_p95": 64.285,
+          "wait_max": 77.35,
+          "excess_mean": 30.6435,
+          "jain_wait": 0.6731
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 58.9293,
+          "wait_mean": 38.039,
+          "wait_p95": 76.0175,
+          "wait_max": 81.1,
+          "excess_mean": 39.9257,
+          "jain_wait": 0.709
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 41.3145,
+          "wait_mean": 20.7408,
+          "wait_p95": 58.3175,
+          "wait_max": 79.65,
+          "excess_mean": 22.311,
+          "jain_wait": 0.5447
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 57.13,
+          "wait_mean": 36.2398,
+          "wait_p95": 76.5175,
+          "wait_max": 90.2,
+          "excess_mean": 38.1265,
+          "jain_wait": 0.6594
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 34.705,
+          "std": 2.0134,
+          "baseline_mean": 49.647,
+          "delta": -14.942,
+          "delta_pct": -0.301,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.793,
+            -14.0725
+          ],
+          "gap_closed": 0.4876,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 51.0435,
+          "std": 6.0731,
+          "baseline_mean": 49.647,
+          "delta": 1.3965,
+          "delta_pct": 0.0281,
+          "wins": "11/20",
+          "losses": "9/20",
+          "ci95": [
+            -0.9673,
+            4.127
+          ],
+          "gap_closed": -0.0456,
+          "verdict": "inconclusive"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 41.3145,
+          "std": 2.6317,
+          "baseline_mean": 49.647,
+          "delta": -8.3325,
+          "delta_pct": -0.1678,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.2227,
+            -7.556
+          ],
+          "gap_closed": 0.2719,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 34.705,
+          "std": 2.0134,
+          "baseline_mean": 35.0428,
+          "delta": -0.3377,
+          "delta_pct": -0.0096,
+          "wins": "14/20",
+          "losses": "6/20",
+          "ci95": [
+            -0.6162,
+            -0.0637
+          ],
+          "gap_closed": 0.0211,
+          "verdict": "inconclusive"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 51.0435,
+          "std": 6.0731,
+          "baseline_mean": 59.462,
+          "delta": -8.4185,
+          "delta_pct": -0.1416,
+          "wins": "19/20",
+          "losses": "1/20",
+          "ci95": [
+            -10.4817,
+            -6.4365
+          ],
+          "gap_closed": 0.2081,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 49.647,
+          "std": 1.8982,
+          "baseline_mean": 58.9293,
+          "delta": -9.2823,
+          "delta_pct": -0.1575,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -10.2088,
+            -8.4045
+          ],
+          "gap_closed": 0.2325,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 41.3145,
+          "std": 2.6317,
+          "baseline_mean": 57.13,
+          "delta": -15.8155,
+          "delta_pct": -0.2768,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.1263,
+            -14.6972
+          ],
+          "gap_closed": 0.4148,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "evening_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2947,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.654,
+          "wait_mean": 10.5065,
+          "wait_p95": 27.77,
+          "wait_max": 42.4,
+          "excess_mean": 12.3592,
+          "jain_wait": 0.5728
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 34.8443,
+          "wait_mean": 17.5257,
+          "wait_p95": 42.5325,
+          "wait_max": 57.55,
+          "excess_mean": 20.5495,
+          "jain_wait": 0.6097
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 39.7403,
+          "wait_mean": 22.9288,
+          "wait_p95": 61.1975,
+          "wait_max": 125.65,
+          "excess_mean": 25.4455,
+          "jain_wait": 0.4855
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 46.5632,
+          "wait_mean": 29.7195,
+          "wait_p95": 62.515,
+          "wait_max": 109.2,
+          "excess_mean": 32.2685,
+          "jain_wait": 0.5791
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 39.371,
+          "wait_mean": 23.1477,
+          "wait_p95": 49.915,
+          "wait_max": 60.2,
+          "excess_mean": 25.0763,
+          "jain_wait": 0.7022
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 47.169,
+          "wait_mean": 30.715,
+          "wait_p95": 58.12,
+          "wait_max": 63.0,
+          "excess_mean": 32.8743,
+          "jain_wait": 0.7424
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 33.605,
+          "wait_mean": 17.5725,
+          "wait_p95": 47.24,
+          "wait_max": 65.6,
+          "excess_mean": 19.3102,
+          "jain_wait": 0.5802
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 48.086,
+          "wait_mean": 31.624,
+          "wait_p95": 58.7125,
+          "wait_max": 77.85,
+          "excess_mean": 33.7913,
+          "jain_wait": 0.7381
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.654,
+          "std": 1.6011,
+          "baseline_mean": 39.371,
+          "delta": -12.717,
+          "delta_pct": -0.323,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.2727,
+            -12.1717
+          ],
+          "gap_closed": 0.5071,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.7403,
+          "std": 2.6211,
+          "baseline_mean": 39.371,
+          "delta": 0.3693,
+          "delta_pct": 0.0094,
+          "wins": "8/20",
+          "losses": "12/20",
+          "ci95": [
+            -0.8148,
+            1.469
+          ],
+          "gap_closed": -0.0147,
+          "verdict": "inconclusive"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.605,
+          "std": 1.2874,
+          "baseline_mean": 39.371,
+          "delta": -5.766,
+          "delta_pct": -0.1465,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -6.354,
+            -5.2107
+          ],
+          "gap_closed": 0.2299,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.654,
+          "std": 1.6011,
+          "baseline_mean": 34.8443,
+          "delta": -8.1903,
+          "delta_pct": -0.2351,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.1347,
+            -7.2583
+          ],
+          "gap_closed": 0.3986,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.7403,
+          "std": 2.6211,
+          "baseline_mean": 46.5632,
+          "delta": -6.823,
+          "delta_pct": -0.1465,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.0197,
+            -5.728
+          ],
+          "gap_closed": 0.2114,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 39.371,
+          "std": 2.1016,
+          "baseline_mean": 47.169,
+          "delta": -7.798,
+          "delta_pct": -0.1653,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.6188,
+            -6.8425
+          ],
+          "gap_closed": 0.2372,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 33.605,
+          "std": 1.2874,
+          "baseline_mean": 48.086,
+          "delta": -14.481,
+          "delta_pct": -0.3011,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.0925,
+            -13.824
+          ],
+          "gap_closed": 0.4285,
+          "verdict": "better"
+        }
+      ]
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "count": 200,
+        "duration": 800,
+        "rate": 0.25,
+        "skip_first": 0
+      },
+      "title": "evening_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 19.0035,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 31.8097,
+          "wait_mean": 10.9622,
+          "wait_p95": 32.97,
+          "wait_max": 43.5,
+          "excess_mean": 12.8062,
+          "jain_wait": 0.5228
+        },
+        {
+          "dispatch": "cost",
+          "motion": "scan",
+          "total_mean": 45.802,
+          "wait_mean": 23.552,
+          "wait_p95": 57.8625,
+          "wait_max": 77.75,
+          "excess_mean": 26.7985,
+          "jain_wait": 0.5972
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "look",
+          "total_mean": 51.9897,
+          "wait_mean": 30.3213,
+          "wait_p95": 88.67,
+          "wait_max": 206.55,
+          "excess_mean": 32.9862,
+          "jain_wait": 0.4279
+        },
+        {
+          "dispatch": "nearest",
+          "motion": "scan",
+          "total_mean": 59.5532,
+          "wait_mean": 37.9822,
+          "wait_p95": 82.625,
+          "wait_max": 140.5,
+          "excess_mean": 40.5498,
+          "jain_wait": 0.558
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 49.0802,
+          "wait_mean": 28.3777,
+          "wait_p95": 62.935,
+          "wait_max": 77.75,
+          "excess_mean": 30.0767,
+          "jain_wait": 0.6933
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "scan",
+          "total_mean": 61.81,
+          "wait_mean": 40.8267,
+          "wait_p95": 76.4725,
+          "wait_max": 82.1,
+          "excess_mean": 42.8065,
+          "jain_wait": 0.7494
+        },
+        {
+          "dispatch": "zone",
+          "motion": "look",
+          "total_mean": 42.1808,
+          "wait_mean": 21.5465,
+          "wait_p95": 59.415,
+          "wait_max": 77.15,
+          "excess_mean": 23.1773,
+          "jain_wait": 0.5717
+        },
+        {
+          "dispatch": "zone",
+          "motion": "scan",
+          "total_mean": 62.3593,
+          "wait_mean": 41.3257,
+          "wait_p95": 77.0675,
+          "wait_max": 91.6,
+          "excess_mean": 43.3557,
+          "jain_wait": 0.7367
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.8097,
+          "std": 1.5013,
+          "baseline_mean": 49.0802,
+          "delta": -17.2705,
+          "delta_pct": -0.3519,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.98,
+            -16.4503
+          ],
+          "gap_closed": 0.5742,
+          "verdict": "better"
+        },
+        {
+          "policy": "nearest",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 51.9897,
+          "std": 3.7633,
+          "baseline_mean": 49.0802,
+          "delta": 2.9095,
+          "delta_pct": 0.0593,
+          "wins": "6/20",
+          "losses": "14/20",
+          "ci95": [
+            1.0543,
+            4.8438
+          ],
+          "gap_closed": -0.0967,
+          "verdict": "inconclusive"
+        },
+        {
+          "policy": "zone",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 42.1808,
+          "std": 2.0804,
+          "baseline_mean": 49.0802,
+          "delta": -6.8995,
+          "delta_pct": -0.1406,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -7.6605,
+            -6.108
+          ],
+          "gap_closed": 0.2294,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [
+        {
+          "dispatch": "cost",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.8097,
+          "std": 1.5013,
+          "baseline_mean": 45.802,
+          "delta": -13.9922,
+          "delta_pct": -0.3055,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.6132,
+            -12.5225
+          ],
+          "gap_closed": 0.5221,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "nearest",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 51.9897,
+          "std": 3.7633,
+          "baseline_mean": 59.5532,
+          "delta": -7.5635,
+          "delta_pct": -0.127,
+          "wins": "19/20",
+          "losses": "1/20",
+          "ci95": [
+            -9.16,
+            -5.9223
+          ],
+          "gap_closed": 0.1865,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "round_robin",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 49.0802,
+          "std": 2.055,
+          "baseline_mean": 61.81,
+          "delta": -12.7298,
+          "delta_pct": -0.2059,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.7553,
+            -11.8322
+          ],
+          "gap_closed": 0.2974,
+          "verdict": "better"
+        },
+        {
+          "dispatch": "zone",
+          "policy": "look",
+          "baseline": "scan",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 42.1808,
+          "std": 2.0804,
+          "baseline_mean": 62.3593,
+          "delta": -20.1785,
+          "delta_pct": -0.3236,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -20.8012,
+            -19.5198
+          ],
+          "gap_closed": 0.4654,
+          "verdict": "better"
+        }
+      ]
+    }
+  ]
+}

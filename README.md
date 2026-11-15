@@ -39,6 +39,60 @@ equivalent). Input is a CSV in the brief's format, `time,id,source,dest`.
 
 The same numbers are printed as a text summary at the end of each run.
 
+## How results are measured
+
+```bash
+uv run elevator-sim bench --suite standard --seeds 20 -o results/standard   # ~30 s on 10 cores
+```
+
+This one command regenerates every number below into `results/standard/`: `raw.jsonl` (one row
+per run), `summary.json`, and `summary.md` (all tables, per experiment).
+
+- **Paired runs.** For each (scenario, building, seed) the requests are generated once from the
+  seed; every dispatch × motion combination runs on exactly that list from the same start state,
+  so differences come from the policy, not the random draw. A test checks the request
+  fingerprints match.
+- **Baselines.** **B0** is the theoretical floor (picked up at once, ride direct: total = direct
+  ride time); `round_robin` is the dispatch baseline; SCAN is the motion baseline.
+- **Statistics.** Per policy: mean ± std over seeds, Δ vs the baseline, wins out of N seeds, a
+  paired 95% bootstrap CI of the difference (2,000 resamples, stdlib only), and *gap closed*:
+  the share of the baseline's excess time (total − direct) the policy removes (0% = no better
+  than round-robin, 100% = reaches B0).
+- **Verdict rule.** "better" needs the CI below 0 *and* wins in ≥ 80% of seeds; "worse" the
+  mirror image; anything else is inconclusive and is not claimed.
+- **Standard suite.** 4 scenarios (uniform, mixed, morning rush, evening rush) × 2 buildings
+  (30 floors × 4 cars, 40 floors × 6 cars), capacity 8, door_time 1, 200 requests over 800
+  ticks, 20 seeds, 4 dispatch × 2 motion policies: 1,280 runs.
+- Sweeps for the later studies: `--door-times 0,1,2`, `--placements lobby,spread`,
+  `--rates 0.1,0.2,0.4` (requests per tick), `--skip-first N` (drop start-up passengers).
+
+### Results: `cost` vs `round_robin` (LOOK motion, mean total time per passenger in ticks)
+
+| experiment | round_robin | cost | Δ | 95% CI | wins | gap closed | B0 floor |
+|---|---:|---:|---:|---|---:|---:|---:|
+| uniform · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 34.4 | 20.1 | -41.6% | [-14.9, -13.7] | 20/20 | 59% | 10.3 |
+| uniform · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 40.6 | 22.2 | -45.3% | [-19.3, -17.5] | 20/20 | 68% | 13.6 |
+| mixed · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 38.5 | 23.1 | -40.1% | [-15.8, -15.0] | 20/20 | 63% | 14.0 |
+| mixed · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 48.4 | 26.7 | -44.9% | [-22.6, -20.9] | 20/20 | 72% | 18.4 |
+| morning_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 39.3 | 27.0 | -31.2% | [-13.0, -11.4] | 20/20 | 49% | 14.3 |
+| morning_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 49.6 | 34.7 | -30.1% | [-15.8, -14.1] | 20/20 | 49% | 19.0 |
+| evening_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 39.4 | 26.7 | -32.3% | [-13.3, -12.2] | 20/20 | 51% | 14.3 |
+| evening_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 49.1 | 31.8 | -35.2% | [-18.0, -16.5] | 20/20 | 57% | 19.0 |
+
+Read from `results/standard/summary.md` (load balance = coefficient of variation of passengers
+per car, from `raw.jsonl`):
+- `cost` beats round-robin in every experiment and every seed (20/20), by 30-45%, closing
+  49-72% of the gap to the theoretical floor. It gains least in the rushes.
+- `nearest` is 11-16% better than round-robin on uniform and mixed traffic but inconclusive in
+  both rushes (-1% to +6%). There it piles passengers onto a few cars: load CV 0.33 vs 0.11-0.17
+  for `cost` (30-floor building).
+- `zone` is the reverse: 14-17% better on mixed traffic and in both rushes, inconclusive on
+  uniform traffic, where assigning by the higher floor of each trip overloads the top zone
+  (load CV 0.50).
+- LOOK beats SCAN for every dispatch policy in every experiment (8-32%), with one exception:
+  `cost` in the morning rush (-1% to -2%, inconclusive). A likely reason, not yet tested: nearly
+  every trip starts at the lobby, so the two motion rules end up making similar sweeps.
+
 ## Assumptions and trade-offs
 
 The brief fixes 1 tick = 1 floor, no peeking ahead, and immediate assignment of each passenger to
