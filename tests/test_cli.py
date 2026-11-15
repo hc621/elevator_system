@@ -1,12 +1,12 @@
-"""CLI and CSV adapters, end to end."""
+"""CLI and file adapters, end to end."""
 
-import csv
+import json
 from pathlib import Path
 
 import pytest
 
 from elevator_sim.__main__ import main
-from elevator_sim.adapters import read_requests
+from elevator_sim.adapters import read_positions, read_requests
 from elevator_sim.feed import InvalidRequest
 
 BRIEF = "time,id,source,dest\n0,passenger1,1,51\n0,passenger2,1,37\n10,passenger3,20,1\n"
@@ -19,7 +19,7 @@ def brief_csv(tmp_path: Path) -> Path:
     return path
 
 
-def test_run_writes_positions_passengers_and_summary(
+def test_run_writes_json_outputs_and_prints_the_summary(
     brief_csv: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
     out = tmp_path / "out"
@@ -30,33 +30,40 @@ def test_run_writes_positions_passengers_and_summary(
     printed = capsys.readouterr().out
     assert "Elevator simulation summary" in printed and "Observations" in printed
 
-    with open(out / "positions.csv") as f:
-        rows = list(csv.reader(f))
-    assert rows[0] == ["tick", "car_0"]
-    assert rows[1] == ["0", "1"] and rows[-1] == ["100", "1"]
-    assert len(rows) == 1 + 101
+    lines = (out / "positions.jsonl").read_text().splitlines()
+    assert json.loads(lines[0]) == {"t": 0, "floors": [1]}
+    assert json.loads(lines[-1]) == {"t": 100, "floors": [1]}
+    assert len(lines) == 101  # one row per tick, t = 0..100
+    assert read_positions(out / "positions.jsonl")[50] == [51]  # 50 floors up from t=0
 
-    with open(out / "passengers.csv") as f:
-        passengers = {r["id"]: r for r in csv.DictReader(f)}
-    assert passengers["passenger3"]["wait"] == "71"
-    assert (out / "summary.txt").read_text() in printed
+    passengers = {p["id"]: p for p in json.loads((out / "passengers.json").read_text())}
+    assert passengers["passenger3"]["wait"] == 71
+
+    report = json.loads((out / "report.json").read_text())
+    assert report["travels"] == {"completed": 3, "unserved": 0}
+    assert report["wait"]["max"] == 71 and report["wait"]["mean"] == pytest.approx(71 / 3, abs=1e-3)
+    assert set(report["wait"]) >= {"mean", "max", "p90", "p95"}
+    # Up to 51 (stopping at 37 on the way), then one sweep down through 20 to the lobby.
+    assert report["cars"][0]["trips"] == 2 and report["car_trips"] == 2
 
 
 def test_run_is_the_default_command(brief_csv: Path, tmp_path: Path) -> None:
     assert main([str(brief_csv), "-o", str(tmp_path / "o"), "-q", "--placement", "spread"]) == 0
-    assert (tmp_path / "o" / "positions.csv").exists()
+    assert (tmp_path / "o" / "positions.jsonl").exists()
 
 
-def test_saved_journal_reproduces_the_summary_without_re_simulating(
+def test_saved_journal_reproduces_the_outputs_without_re_simulating(
     brief_csv: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
     out, journal = tmp_path / "out", tmp_path / "run.jsonl"
-    main([str(brief_csv), "-e", "2", "-o", str(out), "--journal", str(journal), "-q"])
-    capsys.readouterr()
+    main([str(brief_csv), "-e", "2", "-o", str(out), "--journal", str(journal)])
+    printed = capsys.readouterr().out
     assert main(["summarize", str(journal)]) == 0
-    assert capsys.readouterr().out == (out / "summary.txt").read_text()
-    assert main(["summarize", str(journal), "-o", str(tmp_path / "again")]) == 0
-    assert (tmp_path / "again" / "positions.csv").read_text() == (out / "positions.csv").read_text()
+    assert printed.startswith(capsys.readouterr().out)
+    again = tmp_path / "again"
+    assert main(["summarize", str(journal), "-o", str(again)]) == 0
+    for name in ("positions.jsonl", "passengers.json", "report.json"):
+        assert (again / name).read_text() == (out / name).read_text()
 
 
 def test_generate_then_run(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:

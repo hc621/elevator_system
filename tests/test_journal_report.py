@@ -68,7 +68,7 @@ def test_hand_written_journal_gives_the_expected_report() -> None:
     a, b = report.passengers
     assert (a.wait, a.travel, a.total, a.excess) == (0, 3, 3, 1)
     assert (b.wait, b.travel, b.total, b.excess) == (1, 2, 3, 1)
-    assert report.wait == Stats(2, 0.5, 0.5, 0, 0.5, 0.95, 1)
+    assert report.wait == Stats(2, 0.5, 0.5, 0, 0.5, 0.9, 0.95, 1)
     assert report.total.mean == 3
     assert report.makespan == 4 and report.ticks == 6
     car = report.per_car[0]
@@ -79,6 +79,7 @@ def test_hand_written_journal_gives_the_expected_report() -> None:
         1,
         2,
     )
+    assert car.trips == 1  # straight up 1 -> 4, stopping on the way, then idle
     assert any("reached capacity" in note for note in report.observations)
 
 
@@ -105,7 +106,8 @@ def test_stats_and_percentiles() -> None:
     s = Stats.of([4, 1, 3, 2])
     assert (s.count, s.mean, s.min, s.max, s.p50) == (4, 2.5, 1, 4, 2.5)
     assert s.std == pytest.approx(1.1180, abs=1e-4)
-    assert Stats.of([]) == Stats(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+    assert Stats.of([]) == Stats(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+    assert Stats.of(list(range(11))).p90 == 9
 
 
 def test_unknown_event_kind_is_rejected() -> None:

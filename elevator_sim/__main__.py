@@ -1,9 +1,15 @@
 """Command-line entry point.
 
-python -m elevator_sim run requests.csv --elevators 3 --floors 60 --capacity 8
-python -m elevator_sim requests.csv ...            # "run" is the default command
-python -m elevator_sim summarize out/journal.jsonl # rebuild the summary from a saved journal
-python -m elevator_sim generate morning_rush --floors 30 --count 200 -o rush.csv
+Installed as the ``elevator-sim`` command (``[project.scripts]``); ``python -m elevator_sim`` is
+the same thing.
+
+elevator-sim run requests.csv --elevators 3 --floors 60 --capacity 8
+elevator-sim requests.csv ...             # "run" is the default command
+elevator-sim summarize out/journal.jsonl  # rebuild the report from a saved journal
+elevator-sim generate morning_rush --floors 30 --count 200 -o rush.csv
+
+A run writes ``positions.jsonl``, ``passengers.json`` and ``report.json`` to ``--out`` and prints a
+text summary.
 """
 
 from __future__ import annotations
@@ -19,6 +25,7 @@ from elevator_sim.adapters import (
     read_requests,
     write_passengers,
     write_positions,
+    write_report,
     write_requests,
 )
 from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
@@ -32,6 +39,7 @@ from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
 COMMANDS = ("run", "summarize", "generate")
+OUTPUTS = ("positions.jsonl", "passengers.json", "report.json")
 
 
 def _placement(text: str) -> str | tuple[Floor, ...]:
@@ -46,7 +54,7 @@ def _placement(text: str) -> str | tuple[Floor, ...]:
 
 
 def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="elevator_sim", description="Elevator system simulation.")
+    parser = argparse.ArgumentParser(prog="elevator-sim", description="Elevator system simulation.")
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -76,7 +84,7 @@ def _parser() -> argparse.ArgumentParser:
 
     summarize = sub.add_parser("summarize", help="rebuild the summary from a saved journal")
     summarize.add_argument("journal", type=Path)
-    summarize.add_argument("-o", "--out", type=Path, help="also write summary.txt etc. here")
+    summarize.add_argument("-o", "--out", type=Path, help="also write the JSON outputs here")
 
     gen = sub.add_parser("generate", help="write a seeded random request file")
     gen.add_argument("scenario", choices=sorted(SCENARIOS))
@@ -91,11 +99,10 @@ def _parser() -> argparse.ArgumentParser:
 def _write_outputs(journal: Journal, out: Path) -> str:
     report = aggregate(journal)
     out.mkdir(parents=True, exist_ok=True)
-    write_positions(journal, out / "positions.csv")
-    write_passengers(report, out / "passengers.csv")
-    summary = format_summary(report)
-    (out / "summary.txt").write_text(summary, encoding="utf-8")
-    return summary
+    write_positions(journal, out / OUTPUTS[0])
+    write_passengers(report, out / OUTPUTS[1])
+    write_report(report, out / OUTPUTS[2])
+    return format_summary(report)
 
 
 def _run(args: argparse.Namespace) -> int:
@@ -116,7 +123,7 @@ def _run(args: argparse.Namespace) -> int:
         journal.to_jsonl(args.journal)
     if not args.quiet:
         print(summary, end="")
-        print(f"\nWrote {args.out}/positions.csv, passengers.csv, summary.txt")
+        print(f"\nWrote {', '.join(str(args.out / name) for name in OUTPUTS)}")
     return 0
 
 

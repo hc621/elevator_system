@@ -17,7 +17,7 @@ def test_cli_without_a_command_shows_usage(capsys: pytest.CaptureFixture[str]) -
     with pytest.raises(SystemExit) as exc:
         main([])
     assert exc.value.code == 2
-    assert "usage: elevator_sim" in capsys.readouterr().err
+    assert "usage: elevator-sim" in capsys.readouterr().err
 
 
 def test_cli_version_flag(capsys: pytest.CaptureFixture[str]) -> None:

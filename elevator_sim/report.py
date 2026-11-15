@@ -5,6 +5,9 @@ Timestamps per passenger::
     requested --wait--> boarded --travel--> alighted
     |<-------------------- total -------------->|
     direct = |dest - source|, excess = total - direct
+
+A car *trip* starts when the car begins to move and ends when it reverses or goes idle; stops
+along the way (doors opening while it keeps the same direction) do not end it.
 """
 
 from __future__ import annotations
@@ -17,7 +20,7 @@ from itertools import pairwise
 
 from elevator_sim.events import Alighted, Assigned, Boarded, CarState, DoorsOpened, Requested
 from elevator_sim.journal import Journal
-from elevator_sim.model import BuildingConfig, CarId, Doors, Floor, PassengerId, Tick
+from elevator_sim.model import BuildingConfig, CarId, Direction, Doors, Floor, PassengerId, Tick
 
 
 def percentile(sorted_values: Sequence[float], q: float) -> float:
@@ -36,19 +39,27 @@ class Stats:
     std: float  # population standard deviation
     min: float
     p50: float
+    p90: float
     p95: float
     max: float
 
     @classmethod
     def of(cls, values: Sequence[float]) -> Stats:
         if not values:
-            return cls(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+            return cls(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
         ordered = sorted(values)
         n = len(ordered)
         mean = sum(ordered) / n
         std = math.sqrt(sum((v - mean) ** 2 for v in ordered) / n)
         return cls(
-            n, mean, std, ordered[0], percentile(ordered, 50), percentile(ordered, 95), ordered[-1]
+            count=n,
+            mean=mean,
+            std=std,
+            min=ordered[0],
+            p50=percentile(ordered, 50),
+            p90=percentile(ordered, 90),
+            p95=percentile(ordered, 95),
+            max=ordered[-1],
         )
 
 
@@ -87,6 +98,7 @@ class PassengerRecord:
 class CarStats:
     car: CarId
     passengers: int  # delivered
+    trips: int  # moves from start until reversing or going idle (see module docstring)
     distance: int  # floors travelled
     stops: int  # times the doors opened
     door_open_ticks: int  # ticks that ended with the doors open
@@ -180,6 +192,7 @@ def _car_stats(
         result[car_id] = CarStats(
             car=car_id,
             passengers=delivered[car_id],
+            trips=count_trips(rows),
             distance=distance,
             stops=stops[car_id],
             door_open_ticks=sum(1 for s in rows if s.doors is Doors.OPEN),
@@ -187,6 +200,27 @@ def _car_stats(
             capacity=spec.capacity,
         )
     return result
+
+
+def count_trips(rows: Sequence[CarState]) -> int:
+    """Trips in one car's tick-ordered states.
+
+    A trip starts on the first move after the car was idle or moving the other way. Ticks spent at
+    a floor with the doors open keep the trip going as long as the car stays committed to the same
+    direction; a state with direction IDLE ends it.
+    """
+    trips = 0
+    heading = 0  # +1 / -1 while on a trip, 0 between trips
+    for prev, cur in pairwise(rows):
+        step = cur.floor - prev.floor
+        if step:
+            direction = 1 if step > 0 else -1
+            if direction != heading:  # starting from idle, or reversing
+                trips += 1
+                heading = direction
+        if cur.direction is Direction.IDLE:
+            heading = 0
+    return trips
 
 
 def _observe(
@@ -215,16 +249,16 @@ def _observe(
 
     stretch = sum(r.total / r.direct for r in records) / len(records)
     notes.append(
-        f"The system adds {excess.mean:.1f} ticks per trip on average beyond the direct ride time; "
-        f"a trip takes {stretch:.2f}x its direct time on average."
+        f"The system adds {excess.mean:.1f} ticks per passenger on average beyond the direct "
+        f"ride time; a journey takes {stretch:.2f}x its direct time on average."
     )
 
     ups = [r.wait for r in records if r.dest > r.source]
     downs = [r.wait for r in records if r.dest < r.source]
     if ups and downs:
         notes.append(
-            f"Mean wait going up is {sum(ups) / len(ups):.1f} ticks ({_trips(len(ups))}); "
-            f"going down {sum(downs) / len(downs):.1f} ticks ({_trips(len(downs))})."
+            f"Mean wait going up is {sum(ups) / len(ups):.1f} ticks ({_people(len(ups))}); "
+            f"going down {sum(downs) / len(downs):.1f} ticks ({_people(len(downs))})."
         )
 
     if len(per_car) > 1:
@@ -246,5 +280,5 @@ def _observe(
     return tuple(notes)
 
 
-def _trips(n: int) -> str:
-    return f"{n} trip" if n == 1 else f"{n} trips"
+def _people(n: int) -> str:
+    return f"{n} passenger" if n == 1 else f"{n} passengers"
