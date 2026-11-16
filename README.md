@@ -420,13 +420,16 @@ Where the AI was wrong, and what caught it:
 
 ## Time spent
 
-About **5.5 hours** in total:
+About **7 hours** of development in total:
 
 | When | Time | What |
 |---|---|---|
 | Sat 14 Nov | 1 h | reading the brief and writing the implementation plan |
 | Sat 14 Nov | 30 min | Phase 0: repo, tooling and CI |
 | Sun 15 Nov | 4 h (about 3.5 h at the keyboard, plus thinking time away from it) | the simulation core, outputs and metrics, the benchmark, root-cause diagnostics, sensitivity, fairness, the HTML report, Poisson scenarios, the building sweep, this README |
+| Sun 15 Nov, evening | 1.5 h | parking idle cars, property-based tests and the 5× faster projections, the README review fixes (brief table, `run_requests()`, `positions.csv`, studies moved to `docs/`) |
+
+Interview preparation and any later improvements are recorded separately as they happen.
 
 ## Development
 
