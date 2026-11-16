@@ -64,9 +64,9 @@ def test_reaching_capacity_without_a_pass_by_is_not_called_binding() -> None:
 
 
 def test_cost_dispatch_avoids_cars_moving_away_compared_with_round_robin() -> None:
-    from elevator_sim.scenarios import generate
+    from elevator_sim.scenarios import random_requests
 
-    requests = generate("uniform", floors=20, count=120, duration=400, seed=4)
+    requests = random_requests(floors=20, count=120, duration=400, seed=4)
     config = building(floors=20, cars=4)
     _, rr = run(requests, config, dispatch="round_robin")
     _, cost = run(requests, config, dispatch="cost")
@@ -75,3 +75,17 @@ def test_cost_dispatch_avoids_cars_moving_away_compared_with_round_robin() -> No
         < rr.diagnostics.assignment["moving_away"].share
     )
     assert cost.diagnostics.chosen_distance < rr.diagnostics.chosen_distance
+
+
+def test_trip_kinds_and_breakdown() -> None:
+    from elevator_sim.report import trip_kind
+
+    assert (trip_kind(1, 9), trip_kind(9, 1), trip_kind(4, 9)) == (
+        "inbound", "outbound", "inter_floor",
+    )  # fmt: skip
+    requests = reqs((0, "a", 1, 9), (0, "b", 1, 5), (2, "c", 8, 1), (3, "d", 4, 7))
+    _, report = run(requests, building(floors=10, cars=2))
+    t = report.by_trip
+    assert (t["inbound"].count, t["outbound"].count, t["inter_floor"].count) == (2, 1, 1)
+    assert sum(x.count for x in t.values()) == len(report.passengers)
+    assert t["outbound"].wait.max == records(report)["c"].wait

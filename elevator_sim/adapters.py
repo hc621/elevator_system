@@ -21,7 +21,14 @@ from elevator_sim.events import CarState
 from elevator_sim.feed import InvalidRequest
 from elevator_sim.journal import Journal
 from elevator_sim.model import Request
-from elevator_sim.report import ASSIGNMENT_STATES, CarStats, Diagnostics, RunReport, Stats
+from elevator_sim.report import (
+    ASSIGNMENT_STATES,
+    TRIP_KINDS,
+    CarStats,
+    Diagnostics,
+    RunReport,
+    Stats,
+)
 
 HEADER = ("time", "id", "source", "dest")
 PASSENGER_COLUMNS = (
@@ -129,6 +136,8 @@ def report_to_dict(report: RunReport) -> dict[str, object]:
     - ``wait`` / ``travel`` / ``total``: per-passenger distributions (mean, max, p90, p95, ...)
     - ``travels``: passenger journeys completed (one passenger from source to destination)
     - ``cars[i].trips``: moves of car i from starting to move until it reverses or goes idle
+    - ``by_trip``: the same per trip type: inbound (from the lobby), outbound (to the lobby),
+      inter_floor
     - ``diagnostics``: why the times are what they are (see ``report.Diagnostics``)
     """
     cfg = report.config
@@ -149,6 +158,14 @@ def report_to_dict(report: RunReport) -> dict[str, object]:
         "excess": _stats_dict(report.excess),
         "car_trips": sum(c.trips for c in report.per_car.values()),
         "cars": [_car_dict(c) for c in report.per_car.values()],
+        "by_trip": {
+            kind: {
+                "count": report.by_trip[kind].count,
+                "wait": _stats_dict(report.by_trip[kind].wait),
+                "total": _stats_dict(report.by_trip[kind].total),
+            }
+            for kind in TRIP_KINDS
+        },
         "diagnostics": diagnostics_to_dict(report.diagnostics),
         "observations": list(report.observations),
     }
@@ -178,6 +195,22 @@ _STATE_LABELS = {
     "ahead_opposite": "ahead, going the other way",
     "moving_away": "moving away",
 }
+
+
+TRIP_LABELS = {"inbound": "inbound", "outbound": "outbound", "inter_floor": "inter-floor"}
+
+
+def _trip_lines(report: RunReport) -> list[str]:
+    lines = ["  by trip type   passengers  wait mean   p95   max  total mean"]
+    for kind in TRIP_KINDS:
+        t = report.by_trip[kind]
+        if not t.count:
+            continue
+        lines.append(
+            f"    {TRIP_LABELS[kind]:<12}{t.count:>12}{t.wait.mean:>11.1f}{t.wait.p95:>6.0f}"
+            f"{t.wait.max:>6.0f}{t.total.mean:>12.1f}"
+        )
+    return lines
 
 
 def _diagnostic_lines(report: RunReport) -> list[str]:
@@ -229,7 +262,7 @@ def format_summary(report: RunReport) -> str:
             f"{c.peak_load:>7}/{c.capacity}"
         )
     lines.append(f"  all{sum(c.trips for c in report.per_car.values()):>7}")
-    lines += ["", *_diagnostic_lines(report)]
+    lines += ["", *_trip_lines(report), "", *_diagnostic_lines(report)]
     lines += ["", "Observations"]
     lines += [f"  - {note}" for note in report.observations]
     return "\n".join(lines) + "\n"

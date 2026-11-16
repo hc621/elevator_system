@@ -29,3 +29,4 @@ out/
 # Large raw benchmark rows (regenerate with the bench command in the README)
 results/sensitivity/raw.jsonl
 results/fairness/raw.jsonl
+results/buildings/raw.jsonl

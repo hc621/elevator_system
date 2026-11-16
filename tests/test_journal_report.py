@@ -19,11 +19,13 @@ from elevator_sim.events import (
 from elevator_sim.journal import Journal
 from elevator_sim.model import Direction, Doors
 from elevator_sim.report import Stats, aggregate, percentile
-from elevator_sim.scenarios import generate
+from elevator_sim.scenarios import random_requests
 
 
 def test_jsonl_round_trip_rebuilds_an_identical_report(tmp_path: Path) -> None:
-    requests = generate("mixed", floors=20, count=30, duration=60, seed=3)
+    requests = random_requests(
+        floors=20, count=30, duration=60, seed=3, lobby_up=0.4, lobby_down=0.4
+    )
     journal, report = run(
         requests, building(floors=20, cars=2, capacity=4, door_time=1), journal_routes=True
     )

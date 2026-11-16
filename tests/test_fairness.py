@@ -14,14 +14,14 @@ from elevator_sim.feed import IteratorFeed
 from elevator_sim.model import BuildingConfig
 from elevator_sim.motion import make_motion
 from elevator_sim.report import aggregate
-from elevator_sim.scenarios import generate
+from elevator_sim.scenarios import random_requests
 from elevator_sim.simulator import simulate
 
 STARVATION_PRONE = BuildingConfig.uniform(20, 3, 8, "lobby", 1)  # 120 requests in 200 ticks
 
 
 def max_wait(alpha: float, seed: int) -> tuple[int, float]:
-    requests = generate("uniform", 20, 120, 200, seed)
+    requests = random_requests(20, 120, 200, seed)
     report = aggregate(
         simulate(STARVATION_PRONE, IteratorFeed(requests), CostDispatch(alpha), make_motion("look"))
     )
@@ -47,7 +47,7 @@ def test_wait_penalty_is_the_sum_of_squared_projected_waits() -> None:
 
 
 def test_alpha_zero_is_exactly_the_plain_cost_policy() -> None:
-    requests = generate("mixed", 20, 60, 150, 3)
+    requests = random_requests(20, 60, 150, 3, lobby_up=0.4, lobby_down=0.4)
     plain, _ = run(requests, building(floors=20, cars=3, door_time=1), dispatch="cost")
     zero, _ = run(requests, building(floors=20, cars=3, door_time=1), dispatch="cost:0")
     assert plain.events() == zero.events()
@@ -83,14 +83,14 @@ def test_a_long_wait_makes_further_delay_expensive() -> None:
 def test_suite_adds_fairness_variants_and_the_summary_has_a_frontier(tmp_path: Path) -> None:
     options = SuiteOptions(
         seeds=2,
-        scenarios=("uniform",),
+        scenarios=("quiet",),
         dispatch=("round_robin",),
         fairness=(0, 1),
         motion=("look",),
     )
     experiments = build_suite("quick", options)
     assert experiments[0].dispatch_policies == ("round_robin", "cost", "cost:1")
-    small = [type(e)(**{**e.__dict__, "count": 30, "duration": 80}) for e in experiments]
+    small = [type(e)(**{**e.__dict__, "duration": 80}) for e in experiments]
     summary = write_outputs(Benchmark(workers=1).run(small), tmp_path, resamples=50)
     frontier = summary["experiments"][0]["fairness"]
     assert [f["policy"] for f in frontier] == ["cost", "cost:1"]
@@ -115,7 +115,7 @@ def test_cli_fairness(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> Non
     assert main([str(brief), "-f", "10", "--algorithm", "nearest", "--fairness", "1"]) == 2
     assert main([str(brief), "-f", "10", "--fairness", "-1"]) == 2
     out = tmp_path / "bench"
-    args = ["bench", "--suite", "quick", "--seeds", "2", "--scenarios", "uniform", "--rates", "0.1"]
+    args = ["bench", "--suite", "quick", "--seeds", "2", "--scenarios", "quiet"]
     assert main([*args, "--dispatch", "round_robin", "--fairness", "0,1", "--motion", "look",
                  "--workers", "1", "-o", str(out)]) == 0  # fmt: skip
     assert "**Fairness frontier**" in (out / "summary.md").read_text()

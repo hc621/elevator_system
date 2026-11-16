@@ -8,7 +8,7 @@ from elevator_sim.events import CarState
 from elevator_sim.feed import IteratorFeed, SimulationStalled
 from elevator_sim.journal import Journal
 from elevator_sim.motion import CarSnapshot, Idle, LookMotion
-from elevator_sim.scenarios import generate
+from elevator_sim.scenarios import random_requests
 from elevator_sim.simulator import Simulator, simulate
 
 BRIEF = reqs((0, "passenger1", 1, 51), (0, "passenger2", 1, 37), (10, "passenger3", 20, 1))
@@ -63,7 +63,9 @@ def test_no_requests_still_logs_tick_zero() -> None:
 
 
 def test_same_inputs_give_an_identical_journal() -> None:
-    requests = generate("morning_rush", floors=30, count=80, duration=120, seed=11)
+    requests = random_requests(
+        floors=30, count=80, duration=120, seed=11, lobby_up=0.8, lobby_down=0.1
+    )
     config = building(floors=30, cars=4, capacity=6, door_time=1)
     first, _ = run(requests, config)
     second, _ = run(requests, config)

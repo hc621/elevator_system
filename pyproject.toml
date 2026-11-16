@@ -57,3 +57,8 @@ select = [
     "SIM",     # simplify
     "RUF",     # ruff-specific
 ]
+
+[tool.ruff.lint.per-file-ignores]
+# The HTML report prints display characters on purpose (×, α, Δ, →)
+"elevator_sim/html_report.py" = ["RUF001", "RUF003"]
+"scripts/readme_tables.py" = ["RUF001"]

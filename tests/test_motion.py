@@ -15,7 +15,7 @@ from elevator_sim.motion import (
     ScanMotion,
     make_motion,
 )
-from elevator_sim.scenarios import generate
+from elevator_sim.scenarios import random_requests
 
 UP, DOWN, IDLE = Direction.UP, Direction.DOWN, Direction.IDLE
 
@@ -123,7 +123,7 @@ def distance(report: object) -> int:
 
 @pytest.mark.parametrize("seed", range(3))
 def test_look_and_scan_serve_the_same_passengers(seed: int) -> None:
-    requests = generate("uniform", floors=20, count=40, duration=100, seed=seed)
+    requests = random_requests(floors=20, count=40, duration=100, seed=seed)
     config = building(floors=20, cars=2, capacity=4, door_time=1)
     look_journal, look = run(requests, config, dispatch="round_robin", motion="look")
     scan_journal, scan = run(requests, config, dispatch="round_robin", motion="scan")
@@ -134,7 +134,7 @@ def test_look_and_scan_serve_the_same_passengers(seed: int) -> None:
 
 @pytest.mark.parametrize("seed", range(5))
 def test_look_never_travels_further_than_scan_when_all_requests_are_known(seed: int) -> None:
-    requests = [replace(r, time=0) for r in generate("uniform", 20, 40, 100, seed)]
+    requests = [replace(r, time=0) for r in random_requests(20, 40, 100, seed)]
     config = building(floors=20, cars=2, capacity=40, door_time=1)
     _, look = run(requests, config, dispatch="round_robin", motion="look")
     _, scan = run(requests, config, dispatch="round_robin", motion="scan")
@@ -144,7 +144,7 @@ def test_look_never_travels_further_than_scan_when_all_requests_are_known(seed: 
 def test_look_can_travel_further_than_scan_when_requests_arrive_over_time() -> None:
     # LOOK turns back early; a later request beyond its turning point sends it back again,
     # where SCAN would already have been. Seed 2 is one such case (about 1 seed in 4).
-    requests = generate("uniform", floors=20, count=40, duration=100, seed=2)
+    requests = random_requests(floors=20, count=40, duration=100, seed=2)
     config = building(floors=20, cars=2, capacity=4, door_time=1)
     _, look = run(requests, config, dispatch="round_robin", motion="look")
     _, scan = run(requests, config, dispatch="round_robin", motion="scan")

@@ -68,8 +68,9 @@ def test_saved_journal_reproduces_the_outputs_without_re_simulating(
 
 def test_generate_then_run(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     requests = tmp_path / "rush.csv"
-    assert main(["generate", "morning_rush", "-f", "20", "-n", "50", "-o", str(requests)]) == 0
-    assert "Wrote 50 requests" in capsys.readouterr().out
+    assert main(["generate", "morning_rush", "-f", "20", "-d", "100", "-o", str(requests)]) == 0
+    printed = capsys.readouterr().out
+    assert "Wrote" in printed and "inbound" in printed and "inter-floor" in printed
     args = [str(requests), "-f", "20", "-e", "3", "--algorithm", "zone", "--motion", "scan"]
     assert main([*args, "--placement", "1,5,10", "-o", str(tmp_path / "out"), "-q"]) == 0
 

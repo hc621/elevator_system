@@ -121,6 +121,28 @@ class CarStats:
     capacity: int
 
 
+# Trip types, the categories of the business-building traffic model (scenarios.py).
+TRIP_KINDS = ("inbound", "outbound", "inter_floor")
+
+
+def trip_kind(source: Floor, dest: Floor) -> str:
+    """inbound = from the lobby (floor 1), outbound = to the lobby, else inter_floor."""
+    if source == 1:
+        return "inbound"
+    if dest == 1:
+        return "outbound"
+    return "inter_floor"
+
+
+@dataclass(frozen=True)
+class TripStats:
+    """The passengers of one trip type."""
+
+    count: int
+    wait: Stats
+    total: Stats
+
+
 # State of the chosen car when a passenger was assigned, relative to the passenger's floor.
 ASSIGNMENT_STATES = ("idle", "on_the_way", "ahead_opposite", "moving_away")
 
@@ -161,6 +183,7 @@ class RunReport:
     ticks: int  # rows in the positions log (t = 0 .. ticks - 1)
     makespan: Tick  # tick of the last drop-off
     diagnostics: Diagnostics
+    by_trip: Mapping[str, TripStats]  # keyed by TRIP_KINDS
     observations: tuple[str, ...]
 
 
@@ -211,6 +234,7 @@ def aggregate(journal: Journal, config: BuildingConfig | None = None) -> RunRepo
         ticks=ticks,
         makespan=makespan,
         diagnostics=diagnostics,
+        by_trip=trip_breakdown(records),
         observations=_observe(records, wait, excess, per_car, diagnostics),
     )
 
@@ -243,6 +267,20 @@ def _car_stats(
             capacity=spec.capacity,
         )
     return result
+
+
+def trip_breakdown(records: Sequence[PassengerRecord]) -> dict[str, TripStats]:
+    groups: dict[str, list[PassengerRecord]] = {kind: [] for kind in TRIP_KINDS}
+    for r in records:
+        groups[trip_kind(r.source, r.dest)].append(r)
+    return {
+        kind: TripStats(
+            count=len(rs),
+            wait=Stats.of([r.wait for r in rs]),
+            total=Stats.of([r.total for r in rs]),
+        )
+        for kind, rs in groups.items()
+    }
 
 
 def classify_assignment(

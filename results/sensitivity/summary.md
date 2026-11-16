@@ -6,54 +6,54 @@ Metric: mean total time per passenger (ticks), lower is better. Claim rule: 95% 
 
 | experiment | round_robin | cost | Δ | 95% CI | wins | gap closed | B0 floor |
 |---|---:|---:|---:|---|---:|---:|---:|
-| uniform · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks | 28.7 | 16.7 | -41.7% | [-12.4, -11.5] | 20/20 | 65% | 10.3 |
-| uniform · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks | 28.5 | 16.5 | -42.2% | [-12.7, -11.5] | 20/20 | 66% | 10.3 |
-| uniform · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 34.4 | 20.1 | -41.6% | [-14.9, -13.7] | 20/20 | 59% | 10.3 |
-| uniform · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks | 34.2 | 19.9 | -41.8% | [-15.0, -13.5] | 20/20 | 60% | 10.3 |
-| uniform · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks | 41.0 | 24.8 | -39.4% | [-16.9, -15.2] | 20/20 | 53% | 10.3 |
-| uniform · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks | 40.5 | 24.7 | -39.0% | [-16.5, -15.1] | 20/20 | 52% | 10.3 |
-| uniform · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks | 36.7 | 19.7 | -46.3% | [-17.8, -16.2] | 20/20 | 74% | 13.6 |
-| uniform · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks | 36.7 | 19.0 | -48.0% | [-18.4, -16.8] | 20/20 | 76% | 13.6 |
-| uniform · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 40.6 | 22.2 | -45.3% | [-19.3, -17.5] | 20/20 | 68% | 13.6 |
-| uniform · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks | 40.3 | 21.6 | -46.4% | [-19.6, -17.8] | 20/20 | 70% | 13.6 |
-| uniform · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks | 45.9 | 25.1 | -45.3% | [-21.6, -19.9] | 20/20 | 64% | 13.6 |
-| uniform · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks | 45.3 | 24.6 | -45.8% | [-21.7, -19.8] | 20/20 | 66% | 13.6 |
-| mixed · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks | 34.9 | 20.2 | -42.2% | [-15.3, -14.2] | 20/20 | 70% | 14.0 |
-| mixed · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks | 35.0 | 20.2 | -42.3% | [-15.3, -14.3] | 20/20 | 70% | 14.0 |
-| mixed · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 38.5 | 23.1 | -40.1% | [-15.8, -15.0] | 20/20 | 63% | 14.0 |
-| mixed · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks | 38.7 | 22.9 | -40.8% | [-16.3, -15.4] | 20/20 | 64% | 14.0 |
-| mixed · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks | 43.6 | 26.6 | -39.0% | [-17.6, -16.4] | 20/20 | 57% | 14.0 |
-| mixed · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks | 43.4 | 26.5 | -39.0% | [-17.6, -16.1] | 20/20 | 58% | 14.0 |
-| mixed · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks | 44.9 | 24.3 | -45.8% | [-21.1, -20.0] | 20/20 | 78% | 18.4 |
-| mixed · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks | 44.8 | 24.1 | -46.1% | [-21.3, -20.0] | 20/20 | 78% | 18.4 |
-| mixed · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 48.4 | 26.7 | -44.9% | [-22.6, -20.9] | 20/20 | 72% | 18.4 |
-| mixed · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks | 48.6 | 26.2 | -46.1% | [-23.2, -21.6] | 20/20 | 74% | 18.4 |
-| mixed · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks | 52.1 | 28.6 | -45.0% | [-24.1, -22.8] | 20/20 | 70% | 18.4 |
-| mixed · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks | 52.0 | 28.3 | -45.6% | [-24.5, -23.0] | 20/20 | 70% | 18.4 |
-| morning_rush · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks | 35.4 | 24.2 | -31.6% | [-11.7, -10.7] | 20/20 | 53% | 14.3 |
-| morning_rush · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks | 35.6 | 24.3 | -31.7% | [-12.0, -10.6] | 20/20 | 53% | 14.3 |
-| morning_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 39.3 | 27.0 | -31.2% | [-13.0, -11.4] | 20/20 | 49% | 14.3 |
-| morning_rush · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks | 39.5 | 27.1 | -31.4% | [-13.3, -11.5] | 20/20 | 49% | 14.3 |
-| morning_rush · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks | 43.3 | 29.9 | -30.9% | [-14.2, -12.4] | 20/20 | 46% | 14.3 |
-| morning_rush · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks | 43.5 | 29.8 | -31.5% | [-14.5, -13.0] | 20/20 | 47% | 14.3 |
-| morning_rush · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks | 46.6 | 32.3 | -30.7% | [-15.1, -13.5] | 20/20 | 52% | 19.0 |
-| morning_rush · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks | 47.1 | 32.5 | -31.0% | [-15.4, -13.8] | 20/20 | 52% | 19.0 |
-| morning_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 49.6 | 34.7 | -30.1% | [-15.8, -14.1] | 20/20 | 49% | 19.0 |
-| morning_rush · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks | 50.0 | 35.0 | -30.0% | [-15.9, -14.0] | 20/20 | 48% | 19.0 |
-| morning_rush · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks | 52.8 | 36.7 | -30.5% | [-17.0, -15.1] | 20/20 | 48% | 19.0 |
-| morning_rush · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks | 52.9 | 36.9 | -30.3% | [-17.0, -15.0] | 20/20 | 47% | 19.0 |
-| evening_rush · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks | 34.9 | 23.7 | -32.2% | [-11.9, -10.7] | 20/20 | 55% | 14.3 |
-| evening_rush · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks | 34.9 | 23.5 | -32.8% | [-12.0, -10.9] | 20/20 | 56% | 14.3 |
-| evening_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks | 39.4 | 26.7 | -32.3% | [-13.3, -12.2] | 20/20 | 51% | 14.3 |
-| evening_rush · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks | 39.2 | 26.4 | -32.7% | [-13.5, -12.1] | 20/20 | 51% | 14.3 |
-| evening_rush · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks | 43.7 | 29.8 | -31.8% | [-14.7, -13.1] | 20/20 | 47% | 14.3 |
-| evening_rush · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks | 43.6 | 29.6 | -32.2% | [-14.8, -13.3] | 20/20 | 48% | 14.3 |
-| evening_rush · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks | 45.3 | 29.6 | -34.7% | [-16.5, -14.9] | 20/20 | 60% | 19.0 |
-| evening_rush · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks | 45.4 | 29.2 | -35.7% | [-17.0, -15.4] | 20/20 | 61% | 19.0 |
-| evening_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks | 49.1 | 31.8 | -35.2% | [-18.0, -16.5] | 20/20 | 57% | 19.0 |
-| evening_rush · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks | 48.9 | 31.4 | -35.9% | [-18.3, -16.7] | 20/20 | 59% | 19.0 |
-| evening_rush · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks | 52.9 | 34.4 | -34.9% | [-19.2, -17.6] | 20/20 | 54% | 19.0 |
-| evening_rush · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks | 52.7 | 33.9 | -35.7% | [-19.6, -17.9] | 20/20 | 56% | 19.0 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 26.2 | 17.9 | -31.9% | [-9.1, -7.7] | 20/20 | 60% | 12.4 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.12 requests/tick) · 800 ticks | 26.2 | 17.6 | -32.6% | [-9.3, -7.8] | 20/20 | 62% | 12.4 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 28.5 | 19.6 | -31.1% | [-9.7, -8.0] | 20/20 | 55% | 12.4 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.12 requests/tick) · 800 ticks | 28.4 | 19.3 | -32.2% | [-9.9, -8.4] | 20/20 | 57% | 12.4 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 30.7 | 21.2 | -31.0% | [-10.4, -8.7] | 20/20 | 52% | 12.4 |
+| quiet · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.12 requests/tick) · 800 ticks | 30.6 | 20.9 | -31.7% | [-10.5, -8.9] | 20/20 | 53% | 12.4 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 34.0 | 22.0 | -35.3% | [-12.9, -11.1] | 20/20 | 69% | 16.6 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.12 requests/tick) · 800 ticks | 34.1 | 21.6 | -36.7% | [-13.4, -11.7] | 20/20 | 71% | 16.6 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 35.7 | 23.2 | -34.8% | [-13.3, -11.5] | 20/20 | 65% | 16.6 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.12 requests/tick) · 800 ticks | 35.8 | 23.0 | -35.8% | [-13.8, -11.8] | 20/20 | 67% | 16.6 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.12 requests/tick) · 800 ticks | 37.4 | 24.9 | -33.3% | [-13.6, -11.3] | 20/20 | 60% | 16.6 |
+| quiet · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.12 requests/tick) · 800 ticks | 37.5 | 24.6 | -34.5% | [-14.0, -11.8] | 20/20 | 62% | 16.6 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 38.1 | 24.6 | -35.3% | [-14.0, -12.9] | 20/20 | 56% | 14.1 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks | 38.2 | 24.7 | -35.2% | [-14.0, -12.8] | 20/20 | 56% | 14.1 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 43.6 | 28.3 | -35.1% | [-15.8, -14.7] | 20/20 | 52% | 14.1 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks | 43.6 | 28.2 | -35.3% | [-16.1, -14.7] | 20/20 | 52% | 14.1 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 50.7 | 33.3 | -34.3% | [-18.3, -16.6] | 20/20 | 48% | 14.1 |
+| morning_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks | 50.8 | 32.7 | -35.6% | [-18.9, -17.3] | 20/20 | 49% | 14.1 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 50.9 | 33.7 | -33.8% | [-18.1, -16.3] | 20/20 | 54% | 18.9 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks | 50.9 | 33.6 | -34.0% | [-18.1, -16.4] | 20/20 | 54% | 18.9 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 55.9 | 36.8 | -34.2% | [-20.0, -18.1] | 20/20 | 52% | 18.9 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks | 56.0 | 36.5 | -34.8% | [-20.5, -18.4] | 20/20 | 53% | 18.9 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 61.7 | 39.4 | -36.2% | [-23.2, -21.6] | 20/20 | 52% | 18.9 |
+| morning_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks | 61.8 | 39.6 | -36.0% | [-23.2, -21.3] | 20/20 | 52% | 18.9 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 37.2 | 21.1 | -43.3% | [-16.6, -15.5] | 20/20 | 70% | 14.1 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.36 requests/tick) · 800 ticks | 36.9 | 20.9 | -43.2% | [-16.6, -15.3] | 20/20 | 70% | 14.1 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 42.4 | 25.3 | -40.4% | [-17.7, -16.6] | 20/20 | 60% | 14.1 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.36 requests/tick) · 800 ticks | 42.5 | 25.0 | -41.1% | [-18.0, -16.9] | 20/20 | 61% | 14.1 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 48.4 | 30.3 | -37.4% | [-18.8, -17.4] | 20/20 | 53% | 14.1 |
+| lunch · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.36 requests/tick) · 800 ticks | 48.4 | 29.6 | -38.7% | [-19.6, -17.7] | 20/20 | 55% | 14.1 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 49.3 | 25.2 | -48.9% | [-24.7, -23.4] | 20/20 | 79% | 18.7 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.36 requests/tick) · 800 ticks | 49.3 | 25.0 | -49.3% | [-25.0, -23.6] | 20/20 | 79% | 18.7 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 53.6 | 28.2 | -47.4% | [-26.0, -24.8] | 20/20 | 73% | 18.7 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.36 requests/tick) · 800 ticks | 54.0 | 28.0 | -48.1% | [-26.5, -25.4] | 20/20 | 74% | 18.7 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.36 requests/tick) · 800 ticks | 59.6 | 32.0 | -46.4% | [-28.5, -26.8] | 20/20 | 68% | 18.7 |
+| lunch · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.36 requests/tick) · 800 ticks | 59.5 | 31.4 | -47.3% | [-29.0, -27.4] | 20/20 | 69% | 18.7 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 38.4 | 23.8 | -38.0% | [-15.1, -14.1] | 20/20 | 60% | 14.3 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks | 38.3 | 23.6 | -38.2% | [-15.1, -14.1] | 20/20 | 61% | 14.3 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 44.7 | 28.5 | -36.2% | [-16.8, -15.6] | 20/20 | 53% | 14.3 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks | 44.6 | 28.3 | -36.7% | [-16.8, -15.9] | 20/20 | 54% | 14.3 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 52.0 | 34.4 | -33.9% | [-18.5, -16.7] | 20/20 | 47% | 14.3 |
+| evening_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks | 52.0 | 33.8 | -35.0% | [-18.9, -17.5] | 20/20 | 48% | 14.3 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 49.9 | 29.1 | -41.7% | [-21.4, -20.2] | 20/20 | 67% | 18.9 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks | 49.5 | 28.8 | -41.9% | [-21.2, -20.2] | 20/20 | 68% | 18.9 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 55.3 | 32.5 | -41.2% | [-23.5, -22.0] | 20/20 | 63% | 18.9 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks | 55.2 | 32.1 | -41.9% | [-23.8, -22.3] | 20/20 | 64% | 18.9 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks | 61.6 | 36.7 | -40.5% | [-25.7, -24.2] | 20/20 | 58% | 18.9 |
+| evening_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks | 61.5 | 36.2 | -41.0% | [-26.1, -24.4] | 20/20 | 59% | 18.9 |
 
 ## Sensitivity: which conclusions survive
 
@@ -63,2358 +63,2982 @@ Varying: door_time, placement. Cells: Δ mean total time vs the baseline; ✓ be
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -42% ✓ | -42% ✓ | -42% ✓ | -42% ✓ | -39% ✓ | -39% ✓ |
-| uniform | 40 x 6 | -46% ✓ | -48% ✓ | -45% ✓ | -46% ✓ | -45% ✓ | -46% ✓ |
-| mixed | 30 x 4 | -42% ✓ | -42% ✓ | -40% ✓ | -41% ✓ | -39% ✓ | -39% ✓ |
-| mixed | 40 x 6 | -46% ✓ | -46% ✓ | -45% ✓ | -46% ✓ | -45% ✓ | -46% ✓ |
-| morning_rush | 30 x 4 | -32% ✓ | -32% ✓ | -31% ✓ | -31% ✓ | -31% ✓ | -32% ✓ |
-| morning_rush | 40 x 6 | -31% ✓ | -31% ✓ | -30% ✓ | -30% ✓ | -30% ✓ | -30% ✓ |
-| evening_rush | 30 x 4 | -32% ✓ | -33% ✓ | -32% ✓ | -33% ✓ | -32% ✓ | -32% ✓ |
-| evening_rush | 40 x 6 | -35% ✓ | -36% ✓ | -35% ✓ | -36% ✓ | -35% ✓ | -36% ✓ |
+| quiet | 30 x 4 | -32% ✓ | -33% ✓ | -31% ✓ | -32% ✓ | -31% ✓ | -32% ✓ |
+| quiet | 40 x 6 | -35% ✓ | -37% ✓ | -35% ✓ | -36% ✓ | -33% ✓ | -35% ✓ |
+| morning_rush | 30 x 4 | -35% ✓ | -35% ✓ | -35% ✓ | -35% ✓ | -34% ✓ | -36% ✓ |
+| morning_rush | 40 x 6 | -34% ✓ | -34% ✓ | -34% ✓ | -35% ✓ | -36% ✓ | -36% ✓ |
+| lunch | 30 x 4 | -43% ✓ | -43% ✓ | -40% ✓ | -41% ✓ | -37% ✓ | -39% ✓ |
+| lunch | 40 x 6 | -49% ✓ | -49% ✓ | -47% ✓ | -48% ✓ | -46% ✓ | -47% ✓ |
+| evening_rush | 30 x 4 | -38% ✓ | -38% ✓ | -36% ✓ | -37% ✓ | -34% ✓ | -35% ✓ |
+| evening_rush | 40 x 6 | -42% ✓ | -42% ✓ | -41% ✓ | -42% ✓ | -40% ✓ | -41% ✓ |
 
 ### `nearest` vs `round_robin` (LOOK)
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -14% ✓ | -17% ✓ | -11% ✓ | -12% ✓ | -9% ✓ | -8% ✓ |
-| uniform | 40 x 6 | -17% ✓ | -20% ✓ | -11% ✓ | -16% ✓ | -6% ? | -14% ✓ |
-| mixed | 30 x 4 | -15% ✓ | -15% ✓ | -12% ✓ | -13% ✓ | -11% ✓ | -11% ✓ |
-| mixed | 40 x 6 | -19% ✓ | -18% ✓ | -16% ✓ | -16% ✓ | -15% ✓ | -15% ✓ |
-| morning_rush | 30 x 4 | -3% ? | -3% ? | +1% ? | -0% ? | +10% ? | +8% ✗ |
-| morning_rush | 40 x 6 | +1% ? | -1% ? | +3% ? | +2% ? | +12% ? | +10% ✗ |
-| evening_rush | 30 x 4 | -4% ? | -3% ? | +1% ? | -1% ? | +5% ✗ | +3% ? |
-| evening_rush | 40 x 6 | +2% ? | -2% ? | +6% ? | +2% ? | +12% ✗ | +6% ? |
+| quiet | 30 x 4 | -13% ✓ | -14% ✓ | -11% ✓ | -14% ✓ | -8% ✓ | -11% ✓ |
+| quiet | 40 x 6 | -18% ✓ | -19% ✓ | -14% ✓ | -15% ✓ | -11% ✓ | -11% ✓ |
+| morning_rush | 30 x 4 | -1% ? | +0% ? | +9% ✗ | +17% ✗ | +26% ✗ | +27% ✗ |
+| morning_rush | 40 x 6 | +8% ? | +6% ? | +15% ✗ | +25% ✗ | +29% ✗ | +29% ✗ |
+| lunch | 30 x 4 | -12% ✓ | -11% ✓ | -10% ✓ | -11% ✓ | -7% ✓ | -9% ✓ |
+| lunch | 40 x 6 | -15% ✓ | -15% ✓ | -14% ✓ | -14% ✓ | -13% ✓ | -13% ✓ |
+| evening_rush | 30 x 4 | +2% ? | -2% ? | +10% ? | +1% ? | +16% ✗ | +5% ? |
+| evening_rush | 40 x 6 | +4% ? | -4% ? | +7% ? | +2% ? | +11% ✗ | +0% ? |
 
 ### `zone` vs `round_robin` (LOOK)
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -6% ✓ | -6% ✓ | -3% ? | -5% ? | +1% ? | +1% ? |
-| uniform | 40 x 6 | -8% ✓ | -9% ✓ | -3% ? | -4% ? | -1% ? | -0% ? |
-| mixed | 30 x 4 | -14% ✓ | -15% ✓ | -15% ✓ | -15% ✓ | -16% ✓ | -15% ✓ |
-| mixed | 40 x 6 | -15% ✓ | -15% ✓ | -16% ✓ | -16% ✓ | -14% ✓ | -15% ✓ |
-| morning_rush | 30 x 4 | -15% ✓ | -15% ✓ | -17% ✓ | -17% ✓ | -17% ✓ | -18% ✓ |
-| morning_rush | 40 x 6 | -17% ✓ | -18% ✓ | -17% ✓ | -17% ✓ | -17% ✓ | -17% ✓ |
-| evening_rush | 30 x 4 | -13% ✓ | -14% ✓ | -15% ✓ | -14% ✓ | -16% ✓ | -15% ✓ |
-| evening_rush | 40 x 6 | -13% ✓ | -14% ✓ | -14% ✓ | -15% ✓ | -15% ✓ | -16% ✓ |
+| quiet | 30 x 4 | -2% ? | -2% ? | -0% ? | -0% ? | +2% ? | +1% ? |
+| quiet | 40 x 6 | +0% ? | -1% ? | +2% ? | +1% ? | +4% ✗ | +2% ? |
+| morning_rush | 30 x 4 | -19% ✓ | -19% ✓ | -20% ✓ | -20% ✓ | -21% ✓ | -21% ✓ |
+| morning_rush | 40 x 6 | -20% ✓ | -20% ✓ | -20% ✓ | -21% ✓ | -21% ✓ | -22% ✓ |
+| lunch | 30 x 4 | -19% ✓ | -18% ✓ | -19% ✓ | -20% ✓ | -20% ✓ | -20% ✓ |
+| lunch | 40 x 6 | -20% ✓ | -21% ✓ | -20% ✓ | -21% ✓ | -22% ✓ | -22% ✓ |
+| evening_rush | 30 x 4 | -18% ✓ | -18% ✓ | -20% ✓ | -20% ✓ | -20% ✓ | -20% ✓ |
+| evening_rush | 40 x 6 | -19% ✓ | -19% ✓ | -20% ✓ | -20% ✓ | -22% ✓ | -22% ✓ |
 
 ### LOOK vs SCAN with `cost`
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -11% ✓ | -11% ✓ | -14% ✓ | -13% ✓ | -18% ✓ | -16% ✓ |
-| uniform | 40 x 6 | -11% ✓ | -10% ✓ | -13% ✓ | -11% ✓ | -14% ✓ | -13% ✓ |
-| mixed | 30 x 4 | -9% ✓ | -7% ✓ | -9% ✓ | -8% ✓ | -11% ✓ | -9% ✓ |
-| mixed | 40 x 6 | -7% ✓ | -5% ✓ | -8% ✓ | -7% ✓ | -11% ✓ | -8% ✓ |
-| morning_rush | 30 x 4 | -2% ? | -1% ? | -2% ? | -1% ? | -2% ✓ | -2% ? |
-| morning_rush | 40 x 6 | +0% ? | +0% ? | -1% ? | +0% ? | -2% ✓ | -1% ? |
-| evening_rush | 30 x 4 | -23% ✓ | -22% ✓ | -24% ✓ | -22% ✓ | -22% ✓ | -20% ✓ |
-| evening_rush | 40 x 6 | -30% ✓ | -27% ✓ | -31% ✓ | -29% ✓ | -29% ✓ | -27% ✓ |
+| quiet | 30 x 4 | -13% ✓ | -11% ✓ | -13% ✓ | -12% ✓ | -15% ✓ | -13% ✓ |
+| quiet | 40 x 6 | -11% ✓ | -9% ✓ | -13% ✓ | -11% ✓ | -12% ✓ | -11% ✓ |
+| morning_rush | 30 x 4 | -1% ? | +0% ? | -4% ✓ | -3% ? | -18% ✓ | -5% ? |
+| morning_rush | 40 x 6 | -2% ? | -0% ? | -2% ? | -2% ? | -5% ✓ | -1% ? |
+| lunch | 30 x 4 | -7% ✓ | -6% ✓ | -11% ✓ | -8% ✓ | -22% ✓ | -16% ✓ |
+| lunch | 40 x 6 | -6% ✓ | -4% ✓ | -8% ✓ | -4% ✓ | -12% ✓ | -6% ✓ |
+| evening_rush | 30 x 4 | -26% ✓ | -24% ✓ | -22% ✓ | -21% ✓ | -19% ✓ | -17% ✓ |
+| evening_rush | 40 x 6 | -33% ✓ | -31% ✓ | -29% ✓ | -28% ✓ | -25% ✓ | -23% ✓ |
 
 ### LOOK vs SCAN with `nearest`
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -26% ✓ | -28% ✓ | -22% ✓ | -22% ✓ | -20% ✓ | -19% ✓ |
-| uniform | 40 x 6 | -29% ✓ | -30% ✓ | -26% ✓ | -28% ✓ | -21% ✓ | -27% ✓ |
-| mixed | 30 x 4 | -23% ✓ | -23% ✓ | -21% ✓ | -20% ✓ | -18% ✓ | -19% ✓ |
-| mixed | 40 x 6 | -26% ✓ | -26% ✓ | -23% ✓ | -22% ✓ | -23% ✓ | -22% ✓ |
-| morning_rush | 30 x 4 | -16% ✓ | -17% ✓ | -12% ✓ | -15% ✓ | -13% ✓ | -13% ✓ |
-| morning_rush | 40 x 6 | -14% ✓ | -15% ✓ | -14% ✓ | -17% ✓ | -14% ✓ | -13% ✓ |
-| evening_rush | 30 x 4 | -19% ✓ | -17% ✓ | -15% ✓ | -16% ✓ | -13% ✓ | -13% ✓ |
-| evening_rush | 40 x 6 | -17% ✓ | -17% ✓ | -13% ✓ | -14% ✓ | -8% ✓ | -12% ✓ |
+| quiet | 30 x 4 | -28% ✓ | -29% ✓ | -28% ✓ | -30% ✓ | -25% ✓ | -27% ✓ |
+| quiet | 40 x 6 | -31% ✓ | -31% ✓ | -29% ✓ | -30% ✓ | -29% ✓ | -29% ✓ |
+| morning_rush | 30 x 4 | -13% ✓ | -16% ✓ | -18% ✓ | -8% ✓ | -19% ✓ | -19% ✓ |
+| morning_rush | 40 x 6 | -9% ? | -12% ✓ | -20% ✓ | -10% ? | -17% ✓ | -11% ? |
+| lunch | 30 x 4 | -17% ✓ | -17% ✓ | -15% ✓ | -17% ✓ | -14% ✓ | -14% ✓ |
+| lunch | 40 x 6 | -19% ✓ | -19% ✓ | -18% ✓ | -18% ✓ | -18% ✓ | -17% ✓ |
+| evening_rush | 30 x 4 | -9% ✓ | -11% ✓ | -9% ✓ | -14% ✓ | -9% ? | -16% ✓ |
+| evening_rush | 40 x 6 | -8% ✓ | -12% ✓ | -8% ✓ | -9% ✓ | -8% ✓ | -11% ✓ |
 
 ### LOOK vs SCAN with `round_robin`
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -25% ✓ | -25% ✓ | -21% ✓ | -21% ✓ | -18% ✓ | -19% ✓ |
-| uniform | 40 x 6 | -28% ✓ | -27% ✓ | -26% ✓ | -28% ✓ | -25% ✓ | -25% ✓ |
-| mixed | 30 x 4 | -17% ✓ | -16% ✓ | -16% ✓ | -15% ✓ | -12% ✓ | -12% ✓ |
-| mixed | 40 x 6 | -19% ✓ | -20% ✓ | -18% ✓ | -17% ✓ | -18% ✓ | -18% ✓ |
-| morning_rush | 30 x 4 | -16% ✓ | -15% ✓ | -14% ✓ | -14% ✓ | -13% ✓ | -13% ✓ |
-| morning_rush | 40 x 6 | -16% ✓ | -15% ✓ | -16% ✓ | -16% ✓ | -16% ✓ | -17% ✓ |
-| evening_rush | 30 x 4 | -19% ✓ | -19% ✓ | -17% ✓ | -16% ✓ | -16% ✓ | -16% ✓ |
-| evening_rush | 40 x 6 | -21% ✓ | -20% ✓ | -21% ✓ | -19% ✓ | -20% ✓ | -19% ✓ |
+| quiet | 30 x 4 | -29% ✓ | -28% ✓ | -28% ✓ | -27% ✓ | -27% ✓ | -27% ✓ |
+| quiet | 40 x 6 | -27% ✓ | -27% ✓ | -27% ✓ | -27% ✓ | -27% ✓ | -27% ✓ |
+| morning_rush | 30 x 4 | -10% ✓ | -11% ✓ | -10% ✓ | -9% ✓ | -9% ✓ | -9% ✓ |
+| morning_rush | 40 x 6 | -10% ✓ | -10% ✓ | -10% ✓ | -10% ✓ | -9% ✓ | -10% ✓ |
+| lunch | 30 x 4 | -12% ✓ | -13% ✓ | -11% ✓ | -10% ✓ | -10% ✓ | -9% ✓ |
+| lunch | 40 x 6 | -14% ✓ | -14% ✓ | -14% ✓ | -12% ✓ | -11% ✓ | -10% ✓ |
+| evening_rush | 30 x 4 | -11% ✓ | -10% ✓ | -9% ✓ | -9% ✓ | -9% ✓ | -9% ✓ |
+| evening_rush | 40 x 6 | -13% ✓ | -14% ✓ | -13% ✓ | -12% ✓ | -11% ✓ | -10% ✓ |
 
 ### LOOK vs SCAN with `zone`
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | -29% ✓ | -29% ✓ | -26% ✓ | -28% ✓ | -24% ✓ | -24% ✓ |
-| uniform | 40 x 6 | -34% ✓ | -34% ✓ | -31% ✓ | -32% ✓ | -30% ✓ | -29% ✓ |
-| mixed | 30 x 4 | -27% ✓ | -28% ✓ | -27% ✓ | -27% ✓ | -27% ✓ | -27% ✓ |
-| mixed | 40 x 6 | -31% ✓ | -31% ✓ | -31% ✓ | -30% ✓ | -29% ✓ | -30% ✓ |
-| morning_rush | 30 x 4 | -26% ✓ | -25% ✓ | -27% ✓ | -26% ✓ | -27% ✓ | -27% ✓ |
-| morning_rush | 40 x 6 | -26% ✓ | -27% ✓ | -28% ✓ | -28% ✓ | -28% ✓ | -28% ✓ |
-| evening_rush | 30 x 4 | -32% ✓ | -32% ✓ | -30% ✓ | -30% ✓ | -29% ✓ | -29% ✓ |
-| evening_rush | 40 x 6 | -34% ✓ | -34% ✓ | -32% ✓ | -32% ✓ | -32% ✓ | -33% ✓ |
+| quiet | 30 x 4 | -32% ✓ | -32% ✓ | -30% ✓ | -31% ✓ | -29% ✓ | -30% ✓ |
+| quiet | 40 x 6 | -31% ✓ | -32% ✓ | -30% ✓ | -31% ✓ | -30% ✓ | -31% ✓ |
+| morning_rush | 30 x 4 | -28% ✓ | -28% ✓ | -30% ✓ | -29% ✓ | -29% ✓ | -29% ✓ |
+| morning_rush | 40 x 6 | -27% ✓ | -27% ✓ | -28% ✓ | -28% ✓ | -29% ✓ | -29% ✓ |
+| lunch | 30 x 4 | -29% ✓ | -28% ✓ | -27% ✓ | -28% ✓ | -27% ✓ | -27% ✓ |
+| lunch | 40 x 6 | -30% ✓ | -30% ✓ | -30% ✓ | -29% ✓ | -30% ✓ | -30% ✓ |
+| evening_rush | 30 x 4 | -30% ✓ | -29% ✓ | -30% ✓ | -29% ✓ | -30% ✓ | -30% ✓ |
+| evening_rush | 40 x 6 | -31% ✓ | -32% ✓ | -31% ✓ | -30% ✓ | -31% ✓ | -31% ✓ |
 
 ### Ranking by mean total time (LOOK, best first)
 
 | scenario | building | door 0 · lobby | door 0 · spread | door 1 · lobby | door 1 · spread | door 2 · lobby | door 2 · spread |
 |---|---|---:|---:|---:|---:|---:|---:|
-| uniform | 30 x 4 | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > round_robin > zone | cost > nearest > round_robin > zone |
-| uniform | 40 x 6 | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin |
-| mixed | 30 x 4 | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin |
-| mixed | 40 x 6 | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > zone > nearest > round_robin | cost > nearest > zone > round_robin | cost > zone > nearest > round_robin |
-| morning_rush | 30 x 4 | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
-| morning_rush | 40 x 6 | cost > zone > round_robin > nearest | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
-| evening_rush | 30 x 4 | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
+| quiet | 30 x 4 | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > zone > round_robin | cost > nearest > round_robin > zone | cost > nearest > round_robin > zone |
+| quiet | 40 x 6 | cost > nearest > round_robin > zone | cost > nearest > zone > round_robin | cost > nearest > round_robin > zone | cost > nearest > round_robin > zone | cost > nearest > round_robin > zone | cost > nearest > round_robin > zone |
+| morning_rush | 30 x 4 | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
+| morning_rush | 40 x 6 | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
+| lunch | 30 x 4 | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin |
+| lunch | 40 x 6 | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin | cost > zone > nearest > round_robin |
+| evening_rush | 30 x 4 | cost > zone > round_robin > nearest | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
 | evening_rush | 40 x 6 | cost > zone > round_robin > nearest | cost > zone > nearest > round_robin | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest | cost > zone > round_robin > nearest |
 
-## uniform · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 28.7; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 26.2; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 16.7 ± 0.6 | -41.7% | [-12.44, -11.45] | 20/20 | 65% | better ✓ |
-| nearest | 24.5 ± 2.0 | -14.4% | [-4.95, -3.33] | 20/20 | 23% | better ✓ |
-| zone | 27.0 ± 1.5 | -5.7% | [-2.39, -0.81] | 17/20 | 9% | better ✓ |
+| cost | 17.9 ± 1.3 | -31.9% | [-9.08, -7.71] | 20/20 | 60% | better ✓ |
+| nearest | 22.9 ± 2.2 | -12.7% | [-4.23, -2.35] | 18/20 | 24% | better ✓ |
+| zone | 25.7 ± 2.3 | -2.0% | [-1.32, +0.27] | 11/20 | 4% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 16.7 | -10.8% | [-2.33, -1.73] | 20/20 | better ✓ |
-| nearest | look | 24.5 | -26.3% | [-9.74, -7.70] | 20/20 | better ✓ |
-| round_robin | look | 28.7 | -24.9% | [-10.28, -8.79] | 20/20 | better ✓ |
-| zone | look | 27.0 | -28.8% | [-11.63, -10.23] | 20/20 | better ✓ |
+| cost | look | 17.9 | -13.0% | [-3.07, -2.25] | 20/20 | better ✓ |
+| nearest | look | 22.9 | -28.1% | [-10.14, -7.66] | 20/20 | better ✓ |
+| round_robin | look | 26.2 | -29.2% | [-11.72, -9.94] | 20/20 | better ✓ |
+| zone | look | 25.7 | -31.8% | [-12.82, -11.13] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 16.7 | 6.4 | 17.6 | 28.4 | 6.4 | 0.56 |
-| cost | scan | 18.7 | 8.4 | 22.4 | 38.2 | 8.4 | 0.57 |
-| nearest | look | 24.5 | 14.2 | 44.9 | 54.7 | 14.2 | 0.47 |
-| nearest | scan | 33.3 | 22.9 | 56.3 | 57.0 | 22.9 | 0.54 |
-| round_robin | look | 28.7 | 18.3 | 42.3 | 53.0 | 18.3 | 0.68 |
-| round_robin | scan | 38.2 | 27.9 | 53.6 | 57.0 | 27.9 | 0.74 |
-| zone | look | 27.0 | 16.7 | 43.7 | 55.7 | 16.7 | 0.60 |
-| zone | scan | 37.9 | 27.6 | 54.1 | 58.5 | 27.6 | 0.72 |
+| cost | look | 17.9 | 5.5 | 16.7 | 25.4 | 5.5 | 0.49 |
+| cost | scan | 20.5 | 8.2 | 24.6 | 41.9 | 8.2 | 0.46 |
+| nearest | look | 22.9 | 10.5 | 40.4 | 53.3 | 10.5 | 0.39 |
+| nearest | scan | 31.9 | 19.5 | 55.1 | 56.9 | 19.5 | 0.48 |
+| round_robin | look | 26.2 | 13.9 | 33.0 | 45.8 | 13.9 | 0.63 |
+| round_robin | scan | 37.1 | 24.7 | 52.2 | 56.6 | 24.7 | 0.69 |
+| zone | look | 25.7 | 13.4 | 38.4 | 50.2 | 13.4 | 0.54 |
+| zone | scan | 37.7 | 25.3 | 53.7 | 56.4 | 25.3 | 0.66 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.4 | 0.0 | 13% / 10 | 40% | 5.1 / 3.2 | 67% | 11.0 | 1.06 | 0.12 | 0.0% |
-| cost | scan | 8.4 | 0.0 | 11% / 13 | 39% | 5.6 / 3.2 | 63% | 10.4 | 1.07 | 0.12 | 0.0% |
-| nearest | look | 14.2 | 0.0 | 33% / 28 | 26% | 3.6 / 3.6 | 67% | 11.2 | 1.06 | 0.19 | 0.0% |
-| nearest | scan | 22.9 | 0.0 | 37% / 41 | 15% | 3.2 / 3.2 | 79% | 13.3 | 1.07 | 0.19 | 0.0% |
-| round_robin | look | 18.3 | 0.0 | 40% / 27 | 19% | 9.4 / 3.6 | 89% | 14.8 | 1.05 | 0.00 | 0.0% |
-| round_robin | scan | 27.9 | 0.0 | 48% / 38 | 8% | 10.1 / 4.3 | 94% | 15.9 | 1.06 | 0.00 | 0.0% |
-| zone | look | 16.7 | 0.0 | 39% / 27 | 24% | 7.6 / 4.0 | 59% | 9.8 | 1.11 | 0.50 | 0.1% |
-| zone | scan | 27.6 | 0.0 | 44% / 39 | 13% | 9.3 / 3.8 | 74% | 12.5 | 1.14 | 0.50 | 0.0% |
+| cost | look | 5.5 | 0.0 | 6% / 10 | 68% | 4.9 / 3.6 | 42% | 14.5 | 1.07 | 0.19 | 0.0% |
+| cost | scan | 8.2 | 0.0 | 7% / 18 | 63% | 5.6 / 3.6 | 41% | 14.5 | 1.09 | 0.19 | 0.0% |
+| nearest | look | 10.5 | 0.0 | 22% / 26 | 50% | 3.9 / 3.9 | 42% | 14.7 | 1.07 | 0.26 | 0.0% |
+| nearest | scan | 19.5 | 0.0 | 26% / 42 | 40% | 3.9 / 3.9 | 53% | 19.0 | 1.10 | 0.25 | 0.0% |
+| round_robin | look | 13.9 | 0.0 | 18% / 26 | 65% | 10.5 / 3.9 | 61% | 21.5 | 1.04 | 0.02 | 0.0% |
+| round_robin | scan | 24.7 | 0.0 | 29% / 40 | 44% | 10.9 / 4.2 | 75% | 26.9 | 1.06 | 0.02 | 0.0% |
+| zone | look | 13.4 | 0.0 | 24% / 27 | 50% | 7.9 / 3.5 | 45% | 16.0 | 1.09 | 0.25 | 0.0% |
+| zone | scan | 25.3 | 0.0 | 32% / 40 | 38% | 9.2 / 3.7 | 59% | 21.3 | 1.13 | 0.25 | 0.0% |
 
-## uniform · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 3.7 / 14 | 24, 6.2 / 17 | 46, 5.9 / 16 |
+| cost | scan | 23, 3.9 / 14 | 24, 11.3 / 31 | 46, 8.3 / 23 |
+| nearest | look | 23, 6.8 / 27 | 24, 12.2 / 37 | 46, 11.2 / 41 |
+| nearest | scan | 23, 13.3 / 47 | 24, 24.8 / 55 | 46, 19.2 / 54 |
+| round_robin | look | 23, 13.0 / 31 | 24, 14.0 / 32 | 46, 14.1 / 33 |
+| round_robin | scan | 23, 19.9 / 47 | 24, 28.2 / 53 | 46, 25.1 / 50 |
+| zone | look | 23, 11.8 / 33 | 24, 11.4 / 32 | 46, 14.9 / 39 |
+| zone | scan | 23, 19.7 / 48 | 24, 29.4 / 54 | 46, 25.9 / 52 |
+
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 28.5; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 26.2; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 16.5 ± 0.6 | -42.2% | [-12.65, -11.48] | 20/20 | 66% | better ✓ |
-| nearest | 23.7 ± 1.5 | -16.9% | [-5.70, -3.95] | 20/20 | 26% | better ✓ |
-| zone | 26.8 ± 1.6 | -5.8% | [-2.46, -0.82] | 18/20 | 9% | better ✓ |
+| cost | 17.6 ± 1.3 | -32.6% | [-9.28, -7.83] | 20/20 | 62% | better ✓ |
+| nearest | 22.4 ± 2.0 | -14.5% | [-4.87, -2.74] | 18/20 | 27% | better ✓ |
+| zone | 25.7 ± 2.4 | -1.8% | [-1.33, +0.39] | 11/20 | 3% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 16.5 | -10.5% | [-2.22, -1.62] | 20/20 | better ✓ |
-| nearest | look | 23.7 | -28.1% | [-9.95, -8.48] | 20/20 | better ✓ |
-| round_robin | look | 28.5 | -25.0% | [-10.21, -8.70] | 20/20 | better ✓ |
-| zone | look | 26.8 | -28.8% | [-11.67, -10.03] | 20/20 | better ✓ |
+| cost | look | 17.6 | -10.8% | [-2.55, -1.73] | 20/20 | better ✓ |
+| nearest | look | 22.4 | -28.9% | [-10.36, -7.93] | 20/20 | better ✓ |
+| round_robin | look | 26.2 | -28.4% | [-11.19, -9.57] | 20/20 | better ✓ |
+| zone | look | 25.7 | -31.8% | [-12.81, -11.20] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 16.5 | 6.1 | 16.9 | 27.6 | 6.1 | 0.56 |
-| cost | scan | 18.4 | 8.1 | 21.8 | 31.9 | 8.1 | 0.57 |
-| nearest | look | 23.7 | 13.4 | 44.2 | 54.1 | 13.4 | 0.46 |
-| nearest | scan | 32.9 | 22.6 | 56.5 | 57.0 | 22.6 | 0.54 |
-| round_robin | look | 28.5 | 18.2 | 42.4 | 52.5 | 18.2 | 0.67 |
-| round_robin | scan | 38.0 | 27.6 | 53.6 | 57.0 | 27.6 | 0.74 |
-| zone | look | 26.8 | 16.5 | 43.6 | 55.9 | 16.5 | 0.59 |
-| zone | scan | 37.7 | 27.4 | 54.3 | 61.6 | 27.4 | 0.71 |
+| cost | look | 17.6 | 5.3 | 15.6 | 23.4 | 5.3 | 0.51 |
+| cost | scan | 19.8 | 7.4 | 21.7 | 32.1 | 7.4 | 0.50 |
+| nearest | look | 22.4 | 10.0 | 39.7 | 51.7 | 10.0 | 0.37 |
+| nearest | scan | 31.5 | 19.2 | 55.1 | 56.7 | 19.2 | 0.47 |
+| round_robin | look | 26.2 | 13.8 | 32.7 | 46.2 | 13.8 | 0.63 |
+| round_robin | scan | 36.6 | 24.3 | 52.0 | 56.5 | 24.3 | 0.68 |
+| zone | look | 25.7 | 13.4 | 38.8 | 50.5 | 13.4 | 0.53 |
+| zone | scan | 37.7 | 25.4 | 53.7 | 56.5 | 25.4 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.1 | 0.0 | 14% / 9 | 41% | 4.9 / 3.0 | 67% | 10.9 | 1.06 | 0.11 | 0.0% |
-| cost | scan | 8.1 | 0.0 | 12% / 13 | 40% | 5.3 / 3.0 | 63% | 10.4 | 1.07 | 0.12 | 0.0% |
-| nearest | look | 13.4 | 0.0 | 33% / 27 | 27% | 3.4 / 3.4 | 68% | 11.2 | 1.06 | 0.14 | 0.0% |
-| nearest | scan | 22.6 | 0.0 | 37% / 40 | 16% | 3.2 / 3.2 | 79% | 13.4 | 1.07 | 0.17 | 0.0% |
-| round_robin | look | 18.2 | 0.0 | 40% / 27 | 19% | 9.3 / 3.5 | 88% | 14.7 | 1.04 | 0.00 | 0.0% |
-| round_robin | scan | 27.6 | 0.0 | 46% / 38 | 8% | 10.1 / 3.3 | 94% | 15.9 | 1.05 | 0.00 | 0.0% |
-| zone | look | 16.5 | 0.0 | 40% / 27 | 25% | 7.6 / 3.8 | 59% | 9.8 | 1.11 | 0.50 | 0.0% |
-| zone | scan | 27.4 | 0.0 | 44% / 39 | 13% | 8.9 / 3.4 | 74% | 12.5 | 1.14 | 0.50 | 0.1% |
+| cost | look | 5.3 | 0.0 | 6% / 9 | 69% | 4.8 / 3.4 | 42% | 14.5 | 1.07 | 0.18 | 0.0% |
+| cost | scan | 7.4 | 0.0 | 6% / 15 | 65% | 5.4 / 3.5 | 41% | 14.4 | 1.08 | 0.19 | 0.0% |
+| nearest | look | 10.0 | 0.0 | 21% / 27 | 52% | 3.7 / 3.7 | 42% | 14.6 | 1.08 | 0.27 | 0.0% |
+| nearest | scan | 19.2 | 0.0 | 26% / 43 | 42% | 3.7 / 3.7 | 54% | 19.0 | 1.10 | 0.22 | 0.0% |
+| round_robin | look | 13.8 | 0.0 | 18% / 26 | 65% | 10.5 / 3.7 | 61% | 21.5 | 1.04 | 0.02 | 0.0% |
+| round_robin | scan | 24.3 | 0.0 | 29% / 39 | 44% | 10.8 / 3.9 | 74% | 26.7 | 1.06 | 0.02 | 0.0% |
+| zone | look | 13.4 | 0.0 | 24% / 27 | 50% | 7.9 / 3.4 | 45% | 15.9 | 1.09 | 0.25 | 0.0% |
+| zone | scan | 25.4 | 0.0 | 32% / 40 | 38% | 9.1 / 3.5 | 59% | 21.2 | 1.13 | 0.25 | 0.0% |
 
-## uniform · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 4.0 / 14 | 24, 5.8 / 15 | 46, 5.5 / 15 |
+| cost | scan | 23, 4.3 / 15 | 24, 9.1 / 23 | 46, 7.9 / 21 |
+| nearest | look | 23, 8.0 / 33 | 24, 11.1 / 34 | 46, 10.3 / 40 |
+| nearest | scan | 23, 13.8 / 50 | 24, 23.4 / 55 | 46, 19.4 / 54 |
+| round_robin | look | 23, 13.2 / 31 | 24, 13.8 / 32 | 46, 14.0 / 32 |
+| round_robin | scan | 23, 20.1 / 47 | 24, 26.3 / 53 | 46, 25.1 / 50 |
+| zone | look | 23, 12.4 / 34 | 24, 11.5 / 32 | 46, 14.6 / 39 |
+| zone | scan | 23, 20.2 / 49 | 24, 29.7 / 54 | 46, 25.5 / 52 |
+
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.4; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 28.5; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 20.1 ± 0.7 | -41.6% | [-14.94, -13.74] | 20/20 | 59% | better ✓ |
-| nearest | 30.7 ± 2.0 | -10.9% | [-4.61, -2.73] | 19/20 | 16% | better ✓ |
-| zone | 33.2 ± 2.3 | -3.5% | [-2.09, -0.18] | 13/20 | 5% | - |
+| cost | 19.6 ± 1.4 | -31.1% | [-9.71, -8.04] | 20/20 | 55% | better ✓ |
+| nearest | 25.4 ± 1.6 | -10.7% | [-3.92, -2.16] | 20/20 | 19% | better ✓ |
+| zone | 28.5 ± 2.5 | -0.1% | [-1.00, +0.81] | 7/20 | 0% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 20.1 | -13.9% | [-3.72, -2.80] | 20/20 | better ✓ |
-| nearest | look | 30.7 | -22.1% | [-9.71, -7.69] | 20/20 | better ✓ |
-| round_robin | look | 34.4 | -20.5% | [-9.68, -8.15] | 20/20 | better ✓ |
-| zone | look | 33.2 | -26.4% | [-12.83, -11.04] | 20/20 | better ✓ |
+| cost | look | 19.6 | -12.8% | [-3.40, -2.34] | 20/20 | better ✓ |
+| nearest | look | 25.4 | -27.7% | [-11.05, -8.53] | 20/20 | better ✓ |
+| round_robin | look | 28.5 | -27.5% | [-11.89, -9.84] | 20/20 | better ✓ |
+| zone | look | 28.5 | -30.3% | [-13.42, -11.45] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 20.1 | 8.0 | 21.4 | 33.5 | 9.8 | 0.58 |
-| cost | scan | 23.3 | 10.8 | 28.6 | 45.2 | 13.0 | 0.59 |
-| nearest | look | 30.7 | 18.3 | 55.2 | 69.5 | 20.3 | 0.49 |
-| nearest | scan | 39.3 | 26.7 | 65.4 | 73.3 | 29.0 | 0.56 |
-| round_robin | look | 34.4 | 22.4 | 49.4 | 61.5 | 24.1 | 0.69 |
-| round_robin | scan | 43.3 | 31.0 | 60.6 | 66.2 | 33.0 | 0.73 |
-| zone | look | 33.2 | 20.6 | 54.5 | 71.9 | 22.9 | 0.59 |
-| zone | scan | 45.1 | 32.0 | 63.8 | 81.5 | 34.8 | 0.70 |
+| cost | look | 19.6 | 6.0 | 18.3 | 26.4 | 7.3 | 0.49 |
+| cost | scan | 22.5 | 8.6 | 25.6 | 44.9 | 10.1 | 0.47 |
+| nearest | look | 25.4 | 11.7 | 46.0 | 57.3 | 13.1 | 0.38 |
+| nearest | scan | 35.2 | 21.3 | 59.0 | 63.0 | 22.8 | 0.48 |
+| round_robin | look | 28.5 | 15.0 | 36.2 | 47.8 | 16.1 | 0.63 |
+| round_robin | scan | 39.3 | 25.7 | 54.4 | 59.4 | 26.9 | 0.69 |
+| zone | look | 28.5 | 14.7 | 43.0 | 55.9 | 16.1 | 0.53 |
+| zone | scan | 40.9 | 26.9 | 56.7 | 61.2 | 28.5 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 8.0 | 1.7 | 16% / 13 | 33% | 5.6 / 3.4 | 78% | 10.9 | 1.08 | 0.08 | 0.0% |
-| cost | scan | 10.8 | 2.2 | 15% / 17 | 30% | 6.2 / 3.3 | 75% | 10.6 | 1.09 | 0.12 | 0.0% |
-| nearest | look | 18.3 | 2.1 | 36% / 34 | 20% | 3.7 / 3.7 | 74% | 10.6 | 1.08 | 0.18 | 0.0% |
-| nearest | scan | 26.7 | 2.3 | 39% / 46 | 12% | 3.5 / 3.5 | 82% | 12.2 | 1.09 | 0.19 | 0.0% |
-| round_robin | look | 22.4 | 1.7 | 44% / 32 | 12% | 9.4 / 3.6 | 93% | 13.7 | 1.05 | 0.00 | 0.0% |
-| round_robin | scan | 31.0 | 2.0 | 47% / 43 | 5% | 9.8 / 4.7 | 95% | 14.4 | 1.06 | 0.00 | 0.0% |
-| zone | look | 20.6 | 2.3 | 39% / 33 | 21% | 7.6 / 3.9 | 63% | 8.9 | 1.13 | 0.50 | 0.1% |
-| zone | scan | 32.0 | 2.8 | 44% / 46 | 11% | 8.9 / 3.6 | 77% | 11.4 | 1.16 | 0.50 | 0.3% |
+| cost | look | 6.0 | 1.3 | 6% / 11 | 67% | 5.2 / 3.6 | 47% | 14.7 | 1.08 | 0.17 | 0.0% |
+| cost | scan | 8.6 | 1.5 | 7% / 20 | 60% | 5.7 / 3.5 | 47% | 14.7 | 1.09 | 0.21 | 0.0% |
+| nearest | look | 11.7 | 1.4 | 23% / 29 | 48% | 3.7 / 3.7 | 46% | 14.5 | 1.09 | 0.28 | 0.0% |
+| nearest | scan | 21.3 | 1.5 | 29% / 44 | 36% | 3.8 / 3.8 | 58% | 19.2 | 1.10 | 0.23 | 0.0% |
+| round_robin | look | 15.0 | 1.1 | 21% / 27 | 60% | 10.6 / 3.9 | 66% | 21.4 | 1.04 | 0.02 | 0.0% |
+| round_robin | scan | 25.7 | 1.3 | 30% / 41 | 40% | 10.8 / 4.1 | 78% | 26.2 | 1.07 | 0.02 | 0.0% |
+| zone | look | 14.7 | 1.4 | 25% / 31 | 47% | 8.0 / 3.6 | 49% | 15.6 | 1.09 | 0.25 | 0.0% |
+| zone | scan | 26.9 | 1.6 | 33% / 43 | 34% | 9.2 / 3.6 | 62% | 20.7 | 1.14 | 0.25 | 0.0% |
 
-## uniform · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 4.4 / 16 | 24, 6.4 / 18 | 46, 6.4 / 17 |
+| cost | scan | 23, 4.1 / 15 | 24, 11.8 / 32 | 46, 9.0 / 24 |
+| nearest | look | 23, 7.6 / 34 | 24, 13.1 / 41 | 46, 12.6 / 45 |
+| nearest | scan | 23, 14.5 / 54 | 24, 25.7 / 58 | 46, 21.9 / 59 |
+| round_robin | look | 23, 14.0 / 33 | 24, 15.2 / 34 | 46, 15.3 / 36 |
+| round_robin | scan | 23, 20.9 / 50 | 24, 29.3 / 55 | 46, 25.9 / 52 |
+| zone | look | 23, 12.2 / 34 | 24, 12.7 / 37 | 46, 16.8 / 45 |
+| zone | scan | 23, 21.8 / 53 | 24, 30.2 / 57 | 46, 27.6 / 56 |
+
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.2; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 28.4; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 19.9 ± 0.7 | -41.8% | [-15.04, -13.51] | 20/20 | 60% | better ✓ |
-| nearest | 30.0 ± 1.9 | -12.2% | [-4.92, -3.51] | 20/20 | 18% | better ✓ |
-| zone | 32.5 ± 2.2 | -4.8% | [-2.54, -0.72] | 14/20 | 7% | - |
+| cost | 19.3 ± 1.4 | -32.2% | [-9.92, -8.36] | 20/20 | 57% | better ✓ |
+| nearest | 24.5 ± 2.2 | -13.7% | [-4.74, -2.99] | 20/20 | 24% | better ✓ |
+| zone | 28.3 ± 2.7 | -0.2% | [-1.05, +0.83] | 8/20 | 0% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 19.9 | -13.0% | [-3.44, -2.51] | 20/20 | better ✓ |
-| nearest | look | 30.0 | -21.7% | [-9.10, -7.49] | 20/20 | better ✓ |
-| round_robin | look | 34.2 | -21.4% | [-10.08, -8.48] | 20/20 | better ✓ |
-| zone | look | 32.5 | -27.8% | [-13.45, -11.49] | 20/20 | better ✓ |
+| cost | look | 19.3 | -11.6% | [-2.90, -2.11] | 20/20 | better ✓ |
+| nearest | look | 24.5 | -30.2% | [-11.54, -9.70] | 20/20 | better ✓ |
+| round_robin | look | 28.4 | -27.1% | [-11.44, -9.64] | 20/20 | better ✓ |
+| zone | look | 28.3 | -30.7% | [-13.48, -11.57] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 19.9 | 7.8 | 20.2 | 32.6 | 9.5 | 0.58 |
-| cost | scan | 22.9 | 10.4 | 27.1 | 41.3 | 12.5 | 0.59 |
-| nearest | look | 30.0 | 17.7 | 55.0 | 69.3 | 19.6 | 0.47 |
-| nearest | scan | 38.3 | 25.7 | 65.2 | 72.5 | 27.9 | 0.54 |
-| round_robin | look | 34.2 | 22.1 | 48.8 | 61.1 | 23.8 | 0.69 |
-| round_robin | scan | 43.5 | 31.2 | 60.1 | 66.2 | 33.2 | 0.74 |
-| zone | look | 32.5 | 19.9 | 53.0 | 74.8 | 22.2 | 0.58 |
-| zone | scan | 45.0 | 31.9 | 63.3 | 82.2 | 34.7 | 0.71 |
+| cost | look | 19.3 | 5.6 | 16.7 | 24.6 | 6.9 | 0.50 |
+| cost | scan | 21.8 | 7.9 | 22.8 | 36.6 | 9.4 | 0.50 |
+| nearest | look | 24.5 | 10.7 | 43.6 | 55.9 | 12.1 | 0.37 |
+| nearest | scan | 35.1 | 21.3 | 59.5 | 63.1 | 22.7 | 0.48 |
+| round_robin | look | 28.4 | 14.9 | 35.6 | 48.5 | 16.0 | 0.63 |
+| round_robin | scan | 38.9 | 25.3 | 53.9 | 59.4 | 26.6 | 0.69 |
+| zone | look | 28.3 | 14.6 | 42.9 | 56.4 | 16.0 | 0.53 |
+| zone | scan | 40.8 | 26.9 | 56.9 | 61.2 | 28.5 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.8 | 1.7 | 16% / 13 | 33% | 5.5 / 3.2 | 78% | 10.9 | 1.08 | 0.09 | 0.0% |
-| cost | scan | 10.4 | 2.1 | 15% / 17 | 32% | 6.1 / 3.2 | 74% | 10.4 | 1.09 | 0.10 | 0.0% |
-| nearest | look | 17.7 | 1.9 | 35% / 34 | 22% | 3.3 / 3.3 | 75% | 10.7 | 1.08 | 0.17 | 0.1% |
-| nearest | scan | 25.7 | 2.2 | 38% / 46 | 12% | 3.1 / 3.1 | 84% | 12.5 | 1.08 | 0.17 | 0.0% |
-| round_robin | look | 22.1 | 1.7 | 44% / 32 | 12% | 9.4 / 3.5 | 93% | 13.7 | 1.05 | 0.00 | 0.0% |
-| round_robin | scan | 31.2 | 2.0 | 47% / 43 | 5% | 10.1 / 3.4 | 96% | 14.5 | 1.06 | 0.00 | 0.0% |
-| zone | look | 19.9 | 2.3 | 38% / 33 | 21% | 7.5 / 3.8 | 63% | 8.9 | 1.13 | 0.50 | 0.2% |
-| zone | scan | 31.9 | 2.8 | 45% / 45 | 11% | 8.8 / 3.5 | 77% | 11.4 | 1.16 | 0.50 | 0.2% |
+| cost | look | 5.6 | 1.3 | 6% / 11 | 67% | 5.0 / 3.4 | 47% | 14.6 | 1.09 | 0.15 | 0.0% |
+| cost | scan | 7.9 | 1.5 | 6% / 17 | 61% | 5.6 / 3.3 | 47% | 14.8 | 1.09 | 0.14 | 0.0% |
+| nearest | look | 10.7 | 1.4 | 21% / 29 | 50% | 3.6 / 3.6 | 46% | 14.4 | 1.09 | 0.25 | 0.0% |
+| nearest | scan | 21.3 | 1.5 | 28% / 46 | 37% | 3.5 / 3.5 | 59% | 19.4 | 1.10 | 0.21 | 0.0% |
+| round_robin | look | 14.9 | 1.1 | 21% / 27 | 61% | 10.6 / 3.7 | 66% | 21.4 | 1.04 | 0.02 | 0.0% |
+| round_robin | scan | 25.3 | 1.3 | 30% / 41 | 40% | 10.9 / 3.8 | 78% | 26.2 | 1.06 | 0.02 | 0.0% |
+| zone | look | 14.6 | 1.4 | 25% / 30 | 47% | 7.9 / 3.4 | 49% | 15.4 | 1.10 | 0.25 | 0.0% |
+| zone | scan | 26.9 | 1.6 | 32% / 42 | 34% | 9.2 / 3.5 | 62% | 20.7 | 1.14 | 0.25 | 0.0% |
 
-## uniform · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 4.5 / 15 | 24, 6.0 / 16 | 46, 5.9 / 16 |
+| cost | scan | 23, 4.5 / 16 | 24, 9.7 / 25 | 46, 8.6 / 22 |
+| nearest | look | 23, 8.3 / 36 | 24, 12.0 / 39 | 46, 11.1 / 40 |
+| nearest | scan | 23, 16.6 / 57 | 24, 24.7 / 58 | 46, 21.6 / 59 |
+| round_robin | look | 23, 14.3 / 33 | 24, 14.9 / 34 | 46, 15.1 / 36 |
+| round_robin | scan | 23, 20.8 / 50 | 24, 27.9 / 55 | 46, 25.9 / 52 |
+| zone | look | 23, 12.7 / 34 | 24, 12.6 / 37 | 46, 16.3 / 45 |
+| zone | scan | 23, 22.3 / 52 | 24, 30.6 / 57 | 46, 27.1 / 56 |
+
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 41.0; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 30.7; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.8 ± 1.3 | -39.4% | [-16.94, -15.24] | 20/20 | 53% | better ✓ |
-| nearest | 37.2 ± 2.6 | -9.1% | [-4.92, -2.34] | 18/20 | 12% | better ✓ |
-| zone | 41.2 ± 2.6 | +0.6% | [-0.77, +1.28] | 8/20 | -1% | - |
+| cost | 21.2 ± 1.4 | -31.0% | [-10.36, -8.71] | 20/20 | 52% | better ✓ |
+| nearest | 28.4 ± 2.6 | -7.7% | [-3.43, -1.35] | 17/20 | 13% | better ✓ |
+| zone | 31.2 ± 2.7 | +1.5% | [-0.68, +1.47] | 8/20 | -3% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.8 | -17.9% | [-7.37, -3.78] | 20/20 | better ✓ |
-| nearest | look | 37.2 | -19.8% | [-10.61, -7.64] | 20/20 | better ✓ |
-| round_robin | look | 41.0 | -18.3% | [-9.99, -8.29] | 20/20 | better ✓ |
-| zone | look | 41.2 | -24.3% | [-14.30, -12.29] | 20/20 | better ✓ |
+| cost | look | 21.2 | -15.5% | [-4.45, -3.33] | 20/20 | better ✓ |
+| nearest | look | 28.4 | -25.1% | [-10.93, -8.16] | 20/20 | better ✓ |
+| round_robin | look | 30.7 | -27.3% | [-12.57, -10.47] | 20/20 | better ✓ |
+| zone | look | 31.2 | -29.3% | [-14.13, -11.66] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.8 | 11.0 | 27.9 | 45.1 | 14.5 | 0.60 |
-| cost | scan | 30.3 | 15.8 | 41.2 | 54.5 | 20.0 | 0.60 |
-| nearest | look | 37.2 | 22.4 | 68.2 | 92.1 | 26.9 | 0.49 |
-| nearest | scan | 46.4 | 31.3 | 78.2 | 94.5 | 36.1 | 0.56 |
-| round_robin | look | 41.0 | 26.8 | 58.4 | 73.1 | 30.6 | 0.70 |
-| round_robin | scan | 50.1 | 35.5 | 69.0 | 79.5 | 39.8 | 0.74 |
-| zone | look | 41.2 | 25.6 | 68.8 | 108.3 | 30.9 | 0.57 |
-| zone | scan | 54.5 | 38.1 | 77.2 | 117.9 | 44.1 | 0.70 |
+| cost | look | 21.2 | 6.4 | 18.5 | 27.2 | 8.9 | 0.51 |
+| cost | scan | 25.1 | 9.8 | 29.4 | 47.9 | 12.7 | 0.48 |
+| nearest | look | 28.4 | 13.1 | 50.3 | 63.9 | 16.0 | 0.38 |
+| nearest | scan | 37.9 | 22.4 | 63.1 | 71.2 | 25.5 | 0.48 |
+| round_robin | look | 30.7 | 16.1 | 39.7 | 52.6 | 18.4 | 0.62 |
+| round_robin | scan | 42.3 | 27.3 | 57.5 | 63.6 | 29.9 | 0.69 |
+| zone | look | 31.2 | 16.0 | 48.6 | 61.4 | 18.8 | 0.53 |
+| zone | scan | 44.1 | 28.5 | 60.5 | 67.6 | 31.7 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 11.0 | 3.5 | 20% / 18 | 24% | 6.4 / 3.5 | 88% | 10.9 | 1.11 | 0.07 | 0.0% |
-| cost | scan | 15.8 | 4.2 | 19% / 25 | 19% | 7.2 / 3.9 | 86% | 10.7 | 1.13 | 0.09 | 0.0% |
-| nearest | look | 22.4 | 4.5 | 35% / 42 | 16% | 3.5 / 3.5 | 79% | 9.7 | 1.10 | 0.19 | 0.1% |
-| nearest | scan | 31.3 | 4.9 | 39% / 53 | 9% | 3.4 / 3.4 | 87% | 11.4 | 1.10 | 0.17 | 0.1% |
-| round_robin | look | 26.8 | 3.8 | 44% / 38 | 7% | 9.6 / 3.8 | 95% | 12.3 | 1.07 | 0.00 | 0.0% |
-| round_robin | scan | 35.5 | 4.3 | 47% / 48 | 4% | 10.1 / 5.1 | 97% | 12.8 | 1.07 | 0.00 | 0.0% |
-| zone | look | 25.6 | 5.2 | 39% / 41 | 18% | 7.6 / 3.9 | 67% | 8.0 | 1.16 | 0.50 | 0.4% |
-| zone | scan | 38.1 | 6.0 | 44% / 53 | 9% | 9.1 / 3.8 | 79% | 10.4 | 1.19 | 0.50 | 0.5% |
+| cost | look | 6.4 | 2.4 | 6% / 12 | 66% | 5.4 / 3.7 | 53% | 15.0 | 1.09 | 0.15 | 0.0% |
+| cost | scan | 9.8 | 2.9 | 9% / 22 | 55% | 6.1 / 3.6 | 54% | 15.2 | 1.11 | 0.17 | 0.0% |
+| nearest | look | 13.1 | 2.9 | 23% / 33 | 46% | 3.7 / 3.7 | 50% | 14.2 | 1.10 | 0.25 | 0.0% |
+| nearest | scan | 22.4 | 3.1 | 27% / 48 | 33% | 3.6 / 3.6 | 61% | 18.2 | 1.12 | 0.24 | 0.0% |
+| round_robin | look | 16.1 | 2.3 | 23% / 29 | 56% | 10.5 / 3.9 | 70% | 21.1 | 1.05 | 0.02 | 0.0% |
+| round_robin | scan | 27.3 | 2.6 | 33% / 43 | 34% | 10.9 / 4.0 | 81% | 25.8 | 1.08 | 0.02 | 0.0% |
+| zone | look | 16.0 | 2.8 | 25% / 33 | 44% | 8.0 / 3.6 | 52% | 15.0 | 1.10 | 0.25 | 0.0% |
+| zone | scan | 28.5 | 3.2 | 34% / 45 | 31% | 9.2 / 3.7 | 65% | 20.2 | 1.15 | 0.25 | 0.0% |
 
-## uniform · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 4.6 / 16 | 24, 6.8 / 17 | 46, 7.0 / 19 |
+| cost | scan | 23, 5.0 / 17 | 24, 12.9 / 35 | 46, 10.3 / 28 |
+| nearest | look | 23, 7.7 / 34 | 24, 16.0 / 49 | 46, 14.0 / 49 |
+| nearest | scan | 23, 16.2 / 58 | 24, 26.6 / 62 | 46, 23.0 / 63 |
+| round_robin | look | 23, 14.6 / 35 | 24, 16.7 / 38 | 46, 16.4 / 40 |
+| round_robin | scan | 23, 22.6 / 54 | 24, 30.3 / 58 | 46, 27.9 / 56 |
+| zone | look | 23, 13.1 / 39 | 24, 14.3 / 41 | 46, 18.2 / 49 |
+| zone | scan | 23, 22.4 / 54 | 24, 31.2 / 58 | 46, 29.9 / 61 |
+
+## quiet · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 40.5; B0 floor = 10.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 30.6; B0 floor = 12.4)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.7 ± 1.1 | -39.0% | [-16.52, -15.14] | 20/20 | 52% | better ✓ |
-| nearest | 37.1 ± 2.2 | -8.4% | [-4.44, -2.21] | 18/20 | 11% | better ✓ |
-| zone | 41.1 ± 2.6 | +1.5% | [-0.31, +1.52] | 6/20 | -2% | - |
+| cost | 20.9 ± 1.3 | -31.7% | [-10.48, -8.94] | 20/20 | 53% | better ✓ |
+| nearest | 27.2 ± 2.4 | -11.1% | [-4.33, -2.57] | 20/20 | 19% | better ✓ |
+| zone | 30.9 ± 2.7 | +1.1% | [-0.79, +1.42] | 7/20 | -2% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.7 | -15.8% | [-6.96, -2.78] | 20/20 | better ✓ |
-| nearest | look | 37.1 | -19.4% | [-10.34, -7.54] | 20/20 | better ✓ |
-| round_robin | look | 40.5 | -18.7% | [-10.33, -8.28] | 20/20 | better ✓ |
-| zone | look | 41.1 | -24.1% | [-14.24, -11.95] | 20/20 | better ✓ |
+| cost | look | 20.9 | -12.9% | [-3.47, -2.72] | 20/20 | better ✓ |
+| nearest | look | 27.2 | -27.2% | [-11.44, -8.90] | 20/20 | better ✓ |
+| round_robin | look | 30.6 | -26.7% | [-12.16, -10.07] | 20/20 | better ✓ |
+| zone | look | 30.9 | -30.3% | [-14.72, -12.28] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.7 | 10.9 | 28.0 | 45.1 | 14.4 | 0.59 |
-| cost | scan | 29.3 | 14.8 | 39.2 | 53.8 | 19.0 | 0.59 |
-| nearest | look | 37.1 | 22.4 | 69.4 | 96.8 | 26.8 | 0.48 |
-| nearest | scan | 46.1 | 30.9 | 78.4 | 94.3 | 35.7 | 0.55 |
-| round_robin | look | 40.5 | 26.4 | 57.9 | 72.7 | 30.2 | 0.69 |
-| round_robin | scan | 49.8 | 35.2 | 69.2 | 78.6 | 39.5 | 0.73 |
-| zone | look | 41.1 | 25.5 | 69.3 | 114.5 | 30.8 | 0.56 |
-| zone | scan | 54.2 | 37.8 | 76.8 | 119.3 | 43.8 | 0.69 |
+| cost | look | 20.9 | 6.1 | 18.0 | 25.4 | 8.6 | 0.52 |
+| cost | scan | 24.0 | 8.8 | 25.7 | 37.4 | 11.7 | 0.51 |
+| nearest | look | 27.2 | 12.1 | 48.4 | 63.0 | 14.9 | 0.36 |
+| nearest | scan | 37.4 | 21.9 | 63.2 | 71.8 | 25.0 | 0.47 |
+| round_robin | look | 30.6 | 16.0 | 39.6 | 53.5 | 18.3 | 0.62 |
+| round_robin | scan | 41.8 | 26.8 | 57.0 | 63.5 | 29.4 | 0.69 |
+| zone | look | 30.9 | 15.7 | 47.1 | 61.5 | 18.6 | 0.53 |
+| zone | scan | 44.4 | 28.8 | 60.1 | 67.8 | 32.1 | 0.68 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.9 | 3.5 | 21% / 18 | 23% | 6.2 / 3.4 | 88% | 10.8 | 1.11 | 0.07 | 0.0% |
-| cost | scan | 14.8 | 4.2 | 19% / 24 | 20% | 6.7 / 3.6 | 84% | 10.5 | 1.12 | 0.08 | 0.0% |
-| nearest | look | 22.4 | 4.3 | 38% / 41 | 17% | 3.4 / 3.4 | 80% | 9.9 | 1.10 | 0.15 | 0.1% |
-| nearest | scan | 30.9 | 4.9 | 39% / 53 | 10% | 3.3 / 3.3 | 86% | 11.3 | 1.10 | 0.14 | 0.0% |
-| round_robin | look | 26.4 | 3.8 | 43% / 38 | 7% | 9.4 / 3.5 | 95% | 12.3 | 1.06 | 0.00 | 0.0% |
-| round_robin | scan | 35.2 | 4.3 | 47% / 49 | 3% | 10.0 / 3.1 | 97% | 12.8 | 1.07 | 0.00 | 0.0% |
-| zone | look | 25.5 | 5.2 | 38% / 42 | 19% | 7.5 / 3.7 | 67% | 7.9 | 1.16 | 0.50 | 0.5% |
-| zone | scan | 37.8 | 6.0 | 44% / 53 | 9% | 8.8 / 3.4 | 80% | 10.4 | 1.19 | 0.50 | 0.5% |
+| cost | look | 6.1 | 2.4 | 6% / 12 | 66% | 5.2 / 3.5 | 53% | 14.8 | 1.10 | 0.13 | 0.0% |
+| cost | scan | 8.8 | 2.9 | 7% / 18 | 58% | 5.9 / 3.3 | 53% | 15.0 | 1.11 | 0.15 | 0.0% |
+| nearest | look | 12.1 | 2.8 | 23% / 33 | 48% | 3.4 / 3.4 | 51% | 14.4 | 1.09 | 0.22 | 0.0% |
+| nearest | scan | 21.9 | 3.2 | 28% / 49 | 34% | 3.5 / 3.5 | 61% | 18.3 | 1.12 | 0.24 | 0.0% |
+| round_robin | look | 16.0 | 2.3 | 23% / 29 | 57% | 10.5 / 3.7 | 70% | 21.1 | 1.05 | 0.02 | 0.0% |
+| round_robin | scan | 26.8 | 2.6 | 32% / 43 | 34% | 10.9 / 3.7 | 81% | 25.7 | 1.07 | 0.02 | 0.0% |
+| zone | look | 15.7 | 2.9 | 25% / 33 | 45% | 8.0 / 3.4 | 52% | 14.9 | 1.11 | 0.25 | 0.0% |
+| zone | scan | 28.8 | 3.2 | 34% / 45 | 31% | 9.2 / 3.5 | 66% | 20.3 | 1.15 | 0.25 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 4.5 / 16 | 24, 6.4 / 16 | 46, 6.6 / 17 |
+| cost | scan | 23, 5.0 / 17 | 24, 10.7 / 27 | 46, 9.4 / 25 |
+| nearest | look | 23, 7.9 / 32 | 24, 13.6 / 46 | 46, 12.9 / 47 |
+| nearest | scan | 23, 17.6 / 59 | 24, 25.9 / 62 | 46, 21.3 / 62 |
+| round_robin | look | 23, 14.8 / 35 | 24, 16.4 / 38 | 46, 16.3 / 40 |
+| round_robin | scan | 23, 22.1 / 53 | 24, 29.2 / 56 | 46, 27.7 / 55 |
+| zone | look | 23, 13.3 / 37 | 24, 14.3 / 42 | 46, 17.5 / 48 |
+| zone | scan | 23, 23.6 / 56 | 24, 31.7 / 58 | 46, 29.8 / 60 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 36.7; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.0; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 19.7 ± 0.7 | -46.3% | [-17.75, -16.19] | 20/20 | 74% | better ✓ |
-| nearest | 30.4 ± 2.4 | -17.1% | [-7.51, -4.97] | 20/20 | 27% | better ✓ |
-| zone | 33.9 ± 2.1 | -7.6% | [-3.57, -1.98] | 18/20 | 12% | better ✓ |
+| cost | 22.0 ± 1.3 | -35.3% | [-12.87, -11.12] | 20/20 | 69% | better ✓ |
+| nearest | 27.8 ± 2.6 | -18.0% | [-7.12, -5.09] | 20/20 | 35% | better ✓ |
+| zone | 34.0 ± 3.3 | +0.0% | [-0.99, +0.93] | 9/20 | -0% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 19.7 | -10.8% | [-2.66, -2.05] | 20/20 | better ✓ |
-| nearest | look | 30.4 | -28.9% | [-13.36, -11.50] | 20/20 | better ✓ |
-| round_robin | look | 36.7 | -28.2% | [-15.39, -13.41] | 20/20 | better ✓ |
-| zone | look | 33.9 | -33.6% | [-18.27, -16.10] | 20/20 | better ✓ |
+| cost | look | 22.0 | -10.9% | [-3.23, -2.16] | 19/20 | better ✓ |
+| nearest | look | 27.8 | -31.3% | [-14.22, -11.12] | 20/20 | better ✓ |
+| round_robin | look | 34.0 | -27.2% | [-13.30, -12.06] | 20/20 | better ✓ |
+| zone | look | 34.0 | -30.8% | [-16.24, -13.91] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 19.7 | 6.1 | 17.8 | 34.2 | 6.1 | 0.51 |
-| cost | scan | 22.1 | 8.4 | 24.1 | 51.2 | 8.4 | 0.50 |
-| nearest | look | 30.4 | 16.8 | 58.6 | 72.0 | 16.8 | 0.43 |
-| nearest | scan | 42.8 | 29.2 | 76.6 | 77.0 | 29.2 | 0.51 |
-| round_robin | look | 36.7 | 23.0 | 53.9 | 69.0 | 23.0 | 0.68 |
-| round_robin | scan | 51.1 | 37.4 | 72.5 | 76.9 | 37.4 | 0.74 |
-| zone | look | 33.9 | 20.2 | 54.7 | 73.9 | 20.2 | 0.57 |
-| zone | scan | 51.0 | 37.4 | 73.4 | 76.9 | 37.4 | 0.72 |
+| cost | look | 22.0 | 5.4 | 17.5 | 30.1 | 5.4 | 0.43 |
+| cost | scan | 24.7 | 8.1 | 26.6 | 51.0 | 8.1 | 0.43 |
+| nearest | look | 27.8 | 11.3 | 50.7 | 69.0 | 11.3 | 0.31 |
+| nearest | scan | 40.5 | 24.0 | 75.2 | 77.0 | 24.0 | 0.43 |
+| round_robin | look | 34.0 | 17.4 | 40.9 | 59.6 | 17.4 | 0.63 |
+| round_robin | scan | 46.7 | 30.1 | 69.3 | 75.9 | 30.1 | 0.65 |
+| zone | look | 34.0 | 17.4 | 49.9 | 66.5 | 17.4 | 0.53 |
+| zone | scan | 49.1 | 32.5 | 71.9 | 76.3 | 32.5 | 0.64 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.1 | 0.0 | 9% / 9 | 49% | 5.1 / 3.3 | 56% | 13.9 | 1.05 | 0.18 | 0.0% |
-| cost | scan | 8.4 | 0.0 | 9% / 16 | 46% | 5.8 / 3.3 | 54% | 13.3 | 1.06 | 0.21 | 0.0% |
-| nearest | look | 16.8 | 0.0 | 30% / 35 | 29% | 3.7 / 3.7 | 58% | 14.6 | 1.05 | 0.26 | 0.0% |
-| nearest | scan | 29.2 | 0.0 | 36% / 54 | 18% | 3.4 / 3.4 | 68% | 17.9 | 1.05 | 0.33 | 0.0% |
-| round_robin | look | 23.0 | 0.0 | 38% / 35 | 25% | 12.4 / 3.7 | 86% | 21.7 | 1.03 | 0.01 | 0.0% |
-| round_robin | scan | 37.4 | 0.0 | 45% / 52 | 11% | 13.5 / 4.1 | 92% | 23.9 | 1.03 | 0.01 | 0.0% |
-| zone | look | 20.2 | 0.0 | 36% / 35 | 28% | 9.9 / 4.2 | 53% | 13.7 | 1.09 | 0.55 | 0.1% |
-| zone | scan | 37.4 | 0.0 | 44% / 52 | 15% | 12.0 / 3.7 | 69% | 18.0 | 1.12 | 0.55 | 0.0% |
+| cost | look | 5.4 | 0.0 | 5% / 9 | 70% | 5.0 / 3.5 | 35% | 18.3 | 1.06 | 0.34 | 0.0% |
+| cost | scan | 8.1 | 0.0 | 5% / 19 | 66% | 5.9 / 3.6 | 35% | 18.5 | 1.08 | 0.30 | 0.0% |
+| nearest | look | 11.3 | 0.0 | 18% / 35 | 56% | 3.6 / 3.6 | 36% | 19.1 | 1.06 | 0.34 | 0.0% |
+| nearest | scan | 24.0 | 0.0 | 24% / 60 | 47% | 3.8 / 3.8 | 47% | 25.8 | 1.08 | 0.32 | 0.0% |
+| round_robin | look | 17.4 | 0.0 | 15% / 33 | 74% | 14.3 / 3.7 | 56% | 30.1 | 1.02 | 0.03 | 0.0% |
+| round_robin | scan | 30.1 | 0.0 | 22% / 53 | 57% | 14.3 / 3.6 | 68% | 37.3 | 1.04 | 0.03 | 0.0% |
+| zone | look | 17.4 | 0.0 | 25% / 36 | 53% | 10.7 / 3.5 | 39% | 21.2 | 1.07 | 0.36 | 0.0% |
+| zone | scan | 32.5 | 0.0 | 28% / 55 | 42% | 11.9 / 3.3 | 53% | 29.3 | 1.10 | 0.36 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 4.0 / 15 | 22, 5.8 / 16 | 48, 5.9 / 17 |
+| cost | scan | 25, 4.2 / 16 | 22, 10.8 / 29 | 48, 8.8 / 26 |
+| nearest | look | 25, 6.9 / 34 | 22, 13.2 / 47 | 48, 12.4 / 49 |
+| nearest | scan | 25, 16.2 / 67 | 22, 30.1 / 70 | 48, 24.6 / 75 |
+| round_robin | look | 25, 16.6 / 40 | 22, 17.0 / 38 | 48, 17.9 / 40 |
+| round_robin | scan | 25, 23.7 / 63 | 22, 33.9 / 69 | 48, 31.5 / 67 |
+| zone | look | 25, 15.8 / 45 | 22, 13.7 / 40 | 48, 19.9 / 51 |
+| zone | scan | 25, 23.3 / 67 | 22, 40.5 / 72 | 48, 33.7 / 69 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 36.7; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.1; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 19.0 ± 0.7 | -48.0% | [-18.36, -16.85] | 20/20 | 76% | better ✓ |
-| nearest | 29.3 ± 2.0 | -19.9% | [-8.28, -6.38] | 20/20 | 32% | better ✓ |
-| zone | 33.4 ± 2.1 | -8.9% | [-4.17, -2.36] | 18/20 | 14% | better ✓ |
+| cost | 21.6 ± 1.4 | -36.7% | [-13.37, -11.66] | 20/20 | 71% | better ✓ |
+| nearest | 27.8 ± 2.9 | -18.5% | [-7.42, -5.18] | 19/20 | 36% | better ✓ |
+| zone | 33.7 ± 3.1 | -1.2% | [-1.38, +0.57] | 10/20 | 2% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 19.0 | -9.5% | [-2.26, -1.70] | 20/20 | better ✓ |
-| nearest | look | 29.3 | -30.4% | [-14.28, -11.29] | 20/20 | better ✓ |
-| round_robin | look | 36.7 | -27.5% | [-14.78, -12.92] | 20/20 | better ✓ |
-| zone | look | 33.4 | -34.4% | [-18.68, -16.32] | 20/20 | better ✓ |
+| cost | look | 21.6 | -9.4% | [-2.74, -1.77] | 19/20 | better ✓ |
+| nearest | look | 27.8 | -31.2% | [-13.99, -11.24] | 20/20 | better ✓ |
+| round_robin | look | 34.1 | -27.3% | [-13.61, -12.03] | 20/20 | better ✓ |
+| zone | look | 33.7 | -31.6% | [-16.56, -14.55] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 19.0 | 5.4 | 15.9 | 27.4 | 5.4 | 0.52 |
-| cost | scan | 21.0 | 7.4 | 21.2 | 32.5 | 7.4 | 0.54 |
-| nearest | look | 29.3 | 15.7 | 60.3 | 72.7 | 15.7 | 0.39 |
-| nearest | scan | 42.1 | 28.5 | 76.4 | 77.0 | 28.5 | 0.50 |
-| round_robin | look | 36.7 | 23.0 | 53.7 | 69.3 | 23.0 | 0.68 |
-| round_robin | scan | 50.5 | 36.9 | 72.0 | 76.8 | 36.9 | 0.74 |
-| zone | look | 33.4 | 19.8 | 55.2 | 71.5 | 19.8 | 0.56 |
-| zone | scan | 50.9 | 37.3 | 73.0 | 77.2 | 37.3 | 0.72 |
+| cost | look | 21.6 | 5.0 | 16.0 | 25.6 | 5.0 | 0.46 |
+| cost | scan | 23.8 | 7.3 | 22.0 | 33.2 | 7.3 | 0.49 |
+| nearest | look | 27.8 | 11.3 | 49.7 | 68.8 | 11.3 | 0.31 |
+| nearest | scan | 40.5 | 23.9 | 75.3 | 76.8 | 23.9 | 0.43 |
+| round_robin | look | 34.1 | 17.6 | 40.7 | 60.5 | 17.6 | 0.64 |
+| round_robin | scan | 47.0 | 30.4 | 69.0 | 76.0 | 30.4 | 0.67 |
+| zone | look | 33.7 | 17.2 | 50.2 | 67.7 | 17.2 | 0.52 |
+| zone | scan | 49.3 | 32.8 | 72.1 | 76.2 | 32.8 | 0.65 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 5.4 | 0.0 | 8% / 9 | 53% | 4.6 / 2.9 | 57% | 14.1 | 1.05 | 0.14 | 0.0% |
-| cost | scan | 7.4 | 0.0 | 8% / 14 | 49% | 5.2 / 2.8 | 55% | 13.6 | 1.05 | 0.16 | 0.0% |
-| nearest | look | 15.7 | 0.0 | 29% / 36 | 33% | 3.3 / 3.3 | 60% | 15.1 | 1.05 | 0.21 | 0.0% |
-| nearest | scan | 28.5 | 0.0 | 35% / 55 | 21% | 2.9 / 2.9 | 72% | 18.8 | 1.05 | 0.20 | 0.0% |
-| round_robin | look | 23.0 | 0.0 | 39% / 35 | 25% | 12.3 / 3.3 | 86% | 21.7 | 1.03 | 0.01 | 0.0% |
-| round_robin | scan | 36.9 | 0.0 | 44% / 51 | 11% | 13.4 / 3.1 | 92% | 23.9 | 1.03 | 0.01 | 0.0% |
-| zone | look | 19.8 | 0.0 | 36% / 35 | 28% | 9.5 / 3.7 | 53% | 13.6 | 1.09 | 0.55 | 0.0% |
-| zone | scan | 37.3 | 0.0 | 44% / 52 | 16% | 11.9 / 3.5 | 69% | 18.0 | 1.12 | 0.55 | 0.0% |
+| cost | look | 5.0 | 0.0 | 5% / 8 | 71% | 4.7 / 3.3 | 34% | 18.0 | 1.07 | 0.27 | 0.0% |
+| cost | scan | 7.3 | 0.0 | 4% / 15 | 67% | 5.7 / 3.4 | 35% | 18.4 | 1.08 | 0.25 | 0.0% |
+| nearest | look | 11.3 | 0.0 | 20% / 34 | 55% | 3.5 / 3.5 | 36% | 19.1 | 1.07 | 0.34 | 0.0% |
+| nearest | scan | 23.9 | 0.0 | 23% / 60 | 45% | 3.6 / 3.6 | 48% | 26.2 | 1.08 | 0.27 | 0.0% |
+| round_robin | look | 17.6 | 0.0 | 15% / 34 | 74% | 14.4 / 3.4 | 56% | 30.2 | 1.02 | 0.03 | 0.0% |
+| round_robin | scan | 30.4 | 0.0 | 23% / 54 | 56% | 14.5 / 3.4 | 68% | 37.7 | 1.04 | 0.03 | 0.0% |
+| zone | look | 17.2 | 0.0 | 25% / 36 | 53% | 10.4 / 3.0 | 39% | 21.0 | 1.07 | 0.36 | 0.0% |
+| zone | scan | 32.8 | 0.0 | 29% / 55 | 41% | 11.7 / 3.0 | 53% | 29.4 | 1.10 | 0.36 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 5.4 / 18 | 22, 4.8 / 13 | 48, 4.9 / 14 |
+| cost | scan | 25, 5.3 / 17 | 22, 7.8 / 20 | 48, 8.0 / 22 |
+| nearest | look | 25, 11.6 / 46 | 22, 11.9 / 43 | 48, 10.8 / 47 |
+| nearest | scan | 25, 19.2 / 73 | 22, 28.7 / 73 | 48, 23.8 / 74 |
+| round_robin | look | 25, 18.2 / 40 | 22, 16.7 / 37 | 48, 17.7 / 39 |
+| round_robin | scan | 25, 25.2 / 63 | 22, 33.0 / 68 | 48, 31.8 / 67 |
+| zone | look | 25, 16.3 / 43 | 22, 13.0 / 40 | 48, 19.5 / 53 |
+| zone | scan | 25, 23.8 / 66 | 22, 39.7 / 72 | 48, 34.2 / 70 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 40.6; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 35.7; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 22.2 ± 0.9 | -45.3% | [-19.30, -17.50] | 20/20 | 68% | better ✓ |
-| nearest | 36.0 ± 2.2 | -11.3% | [-6.04, -3.16] | 18/20 | 17% | better ✓ |
-| zone | 39.2 ± 1.9 | -3.4% | [-2.60, -0.15] | 12/20 | 5% | - |
+| cost | 23.2 ± 1.3 | -34.8% | [-13.31, -11.53] | 20/20 | 65% | better ✓ |
+| nearest | 30.8 ± 2.5 | -13.5% | [-5.81, -3.81] | 20/20 | 25% | better ✓ |
+| zone | 36.5 ± 3.6 | +2.4% | [-0.07, +1.76] | 6/20 | -4% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 22.2 | -13.0% | [-3.70, -2.93] | 20/20 | better ✓ |
-| nearest | look | 36.0 | -25.7% | [-13.55, -11.37] | 20/20 | better ✓ |
-| round_robin | look | 40.6 | -26.4% | [-15.55, -13.50] | 20/20 | better ✓ |
-| zone | look | 39.2 | -31.3% | [-18.78, -16.98] | 20/20 | better ✓ |
+| cost | look | 23.2 | -12.6% | [-3.90, -2.77] | 20/20 | better ✓ |
+| nearest | look | 30.8 | -28.8% | [-14.01, -11.11] | 20/20 | better ✓ |
+| round_robin | look | 35.7 | -27.0% | [-14.00, -12.31] | 20/20 | better ✓ |
+| zone | look | 36.5 | -30.2% | [-16.99, -14.47] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 22.2 | 7.0 | 20.0 | 37.1 | 8.6 | 0.53 |
-| cost | scan | 25.5 | 9.8 | 28.5 | 58.2 | 11.9 | 0.50 |
-| nearest | look | 36.0 | 20.4 | 69.8 | 85.5 | 22.4 | 0.43 |
-| nearest | scan | 48.4 | 32.6 | 85.6 | 94.3 | 34.8 | 0.52 |
-| round_robin | look | 40.6 | 25.5 | 57.4 | 75.2 | 27.0 | 0.68 |
-| round_robin | scan | 55.1 | 39.8 | 77.3 | 84.4 | 41.5 | 0.73 |
-| zone | look | 39.2 | 23.5 | 64.5 | 83.0 | 25.6 | 0.58 |
-| zone | scan | 57.0 | 40.8 | 80.9 | 93.9 | 43.4 | 0.71 |
+| cost | look | 23.2 | 5.4 | 17.7 | 29.9 | 6.7 | 0.44 |
+| cost | scan | 26.6 | 8.6 | 27.6 | 53.3 | 10.0 | 0.43 |
+| nearest | look | 30.8 | 12.9 | 56.2 | 75.0 | 14.3 | 0.33 |
+| nearest | scan | 43.3 | 25.3 | 78.4 | 82.7 | 26.8 | 0.43 |
+| round_robin | look | 35.7 | 18.0 | 43.2 | 62.1 | 19.1 | 0.63 |
+| round_robin | scan | 48.8 | 31.1 | 71.2 | 78.5 | 32.3 | 0.65 |
+| zone | look | 36.5 | 18.6 | 55.0 | 70.3 | 20.0 | 0.52 |
+| zone | scan | 52.3 | 34.2 | 74.2 | 80.5 | 35.7 | 0.64 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.0 | 1.6 | 10% / 11 | 47% | 5.5 / 3.2 | 66% | 14.4 | 1.06 | 0.15 | 0.0% |
-| cost | scan | 9.8 | 2.0 | 11% / 18 | 41% | 6.1 / 3.3 | 62% | 13.6 | 1.06 | 0.15 | 0.0% |
-| nearest | look | 20.4 | 2.0 | 32% / 43 | 26% | 3.7 / 3.7 | 62% | 13.9 | 1.07 | 0.28 | 0.0% |
-| nearest | scan | 32.6 | 2.2 | 36% / 60 | 15% | 3.4 / 3.4 | 72% | 17.2 | 1.06 | 0.30 | 0.0% |
-| round_robin | look | 25.5 | 1.5 | 39% / 38 | 20% | 12.4 / 3.8 | 89% | 20.8 | 1.03 | 0.01 | 0.0% |
-| round_robin | scan | 39.8 | 1.8 | 45% / 55 | 8% | 13.2 / 4.8 | 93% | 22.4 | 1.04 | 0.01 | 0.0% |
-| zone | look | 23.5 | 2.1 | 35% / 40 | 25% | 9.9 / 4.1 | 57% | 12.7 | 1.10 | 0.55 | 0.0% |
-| zone | scan | 40.8 | 2.6 | 44% / 58 | 13% | 11.9 / 3.9 | 71% | 16.8 | 1.13 | 0.55 | 0.1% |
+| cost | look | 5.4 | 1.3 | 5% / 11 | 71% | 4.9 / 3.3 | 39% | 18.5 | 1.07 | 0.26 | 0.0% |
+| cost | scan | 8.6 | 1.4 | 5% / 20 | 65% | 6.1 / 3.6 | 39% | 18.9 | 1.09 | 0.24 | 0.0% |
+| nearest | look | 12.9 | 1.4 | 20% / 37 | 52% | 3.8 / 3.8 | 39% | 19.0 | 1.07 | 0.37 | 0.0% |
+| nearest | scan | 25.3 | 1.5 | 24% / 62 | 43% | 3.8 / 3.8 | 50% | 25.3 | 1.09 | 0.29 | 0.0% |
+| round_robin | look | 18.0 | 1.1 | 16% / 34 | 71% | 14.2 / 3.6 | 60% | 30.0 | 1.02 | 0.03 | 0.0% |
+| round_robin | scan | 31.1 | 1.2 | 24% / 55 | 53% | 14.2 / 3.6 | 71% | 37.0 | 1.05 | 0.03 | 0.0% |
+| zone | look | 18.6 | 1.4 | 25% / 39 | 51% | 10.7 / 3.4 | 42% | 20.8 | 1.08 | 0.36 | 0.0% |
+| zone | scan | 34.2 | 1.5 | 29% / 58 | 39% | 11.9 / 3.2 | 56% | 29.0 | 1.11 | 0.36 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 3.6 / 15 | 22, 6.1 / 16 | 48, 6.0 / 17 |
+| cost | scan | 25, 4.5 / 16 | 22, 11.3 / 31 | 48, 9.4 / 28 |
+| nearest | look | 25, 9.0 / 44 | 22, 13.9 / 46 | 48, 14.2 / 53 |
+| nearest | scan | 25, 15.7 / 68 | 22, 31.9 / 77 | 48, 27.3 / 79 |
+| round_robin | look | 25, 17.2 / 42 | 22, 17.8 / 41 | 48, 18.4 / 41 |
+| round_robin | scan | 25, 24.0 / 63 | 22, 35.3 / 69 | 48, 32.6 / 70 |
+| zone | look | 25, 16.6 / 49 | 22, 15.4 / 45 | 48, 21.2 / 55 |
+| zone | scan | 25, 24.6 / 68 | 22, 41.6 / 74 | 48, 35.8 / 73 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 40.3; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 35.8; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 21.6 ± 0.8 | -46.4% | [-19.59, -17.82] | 20/20 | 70% | better ✓ |
-| nearest | 33.8 ± 2.6 | -16.2% | [-7.55, -5.58] | 20/20 | 24% | better ✓ |
-| zone | 38.6 ± 2.1 | -4.3% | [-2.85, -0.56] | 13/20 | 6% | - |
+| cost | 23.0 ± 1.5 | -35.8% | [-13.76, -11.77] | 20/20 | 67% | better ✓ |
+| nearest | 30.5 ± 2.6 | -14.9% | [-6.46, -4.24] | 20/20 | 28% | better ✓ |
+| zone | 36.1 ± 3.3 | +0.7% | [-0.85, +1.35] | 7/20 | -1% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 21.6 | -11.5% | [-3.07, -2.52] | 20/20 | better ✓ |
-| nearest | look | 33.8 | -28.3% | [-14.62, -12.04] | 20/20 | better ✓ |
-| round_robin | look | 40.3 | -27.5% | [-16.54, -14.06] | 20/20 | better ✓ |
-| zone | look | 38.6 | -31.9% | [-18.87, -17.26] | 20/20 | better ✓ |
+| cost | look | 23.0 | -11.4% | [-3.55, -2.40] | 20/20 | better ✓ |
+| nearest | look | 30.5 | -29.7% | [-14.08, -11.80] | 20/20 | better ✓ |
+| round_robin | look | 35.8 | -27.3% | [-14.46, -12.39] | 20/20 | better ✓ |
+| zone | look | 36.1 | -30.9% | [-17.40, -14.78] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 21.6 | 6.4 | 18.3 | 30.4 | 8.0 | 0.54 |
-| cost | scan | 24.4 | 8.7 | 24.3 | 37.8 | 10.7 | 0.55 |
-| nearest | look | 33.8 | 18.3 | 67.3 | 84.5 | 20.1 | 0.41 |
-| nearest | scan | 47.1 | 31.4 | 84.0 | 91.8 | 33.5 | 0.51 |
-| round_robin | look | 40.3 | 25.2 | 56.9 | 75.6 | 26.7 | 0.68 |
-| round_robin | scan | 55.6 | 40.2 | 77.6 | 84.0 | 41.9 | 0.74 |
-| zone | look | 38.6 | 22.8 | 62.1 | 81.4 | 24.9 | 0.57 |
-| zone | scan | 56.6 | 40.4 | 80.7 | 95.6 | 43.0 | 0.70 |
+| cost | look | 23.0 | 5.2 | 16.2 | 24.4 | 6.4 | 0.48 |
+| cost | scan | 26.0 | 8.0 | 24.0 | 36.2 | 9.4 | 0.50 |
+| nearest | look | 30.5 | 12.6 | 56.4 | 75.2 | 13.9 | 0.32 |
+| nearest | scan | 43.3 | 25.3 | 78.5 | 82.4 | 26.8 | 0.44 |
+| round_robin | look | 35.8 | 18.2 | 43.0 | 63.9 | 19.3 | 0.63 |
+| round_robin | scan | 49.2 | 31.5 | 70.7 | 78.8 | 32.7 | 0.67 |
+| zone | look | 36.1 | 18.2 | 54.9 | 70.9 | 19.5 | 0.51 |
+| zone | scan | 52.2 | 34.1 | 75.0 | 80.7 | 35.7 | 0.65 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.4 | 1.6 | 9% / 11 | 50% | 5.0 / 2.9 | 66% | 14.5 | 1.05 | 0.12 | 0.0% |
-| cost | scan | 8.7 | 2.0 | 10% / 17 | 45% | 5.7 / 2.9 | 63% | 13.7 | 1.06 | 0.14 | 0.0% |
-| nearest | look | 18.3 | 1.8 | 31% / 40 | 29% | 3.2 / 3.2 | 65% | 14.6 | 1.05 | 0.21 | 0.0% |
-| nearest | scan | 31.4 | 2.1 | 37% / 58 | 18% | 2.9 / 2.9 | 76% | 18.2 | 1.05 | 0.18 | 0.0% |
-| round_robin | look | 25.2 | 1.5 | 39% / 38 | 20% | 12.4 / 3.4 | 89% | 20.7 | 1.03 | 0.01 | 0.0% |
-| round_robin | scan | 40.2 | 1.8 | 46% / 55 | 8% | 13.1 / 3.1 | 93% | 22.5 | 1.04 | 0.01 | 0.0% |
-| zone | look | 22.8 | 2.1 | 35% / 40 | 26% | 9.7 / 3.7 | 56% | 12.6 | 1.11 | 0.55 | 0.0% |
-| zone | scan | 40.4 | 2.6 | 43% / 58 | 14% | 11.6 / 3.3 | 71% | 16.8 | 1.14 | 0.55 | 0.1% |
+| cost | look | 5.2 | 1.3 | 5% / 10 | 71% | 4.6 / 3.2 | 38% | 18.0 | 1.08 | 0.23 | 0.0% |
+| cost | scan | 8.0 | 1.4 | 4% / 19 | 64% | 5.9 / 3.4 | 38% | 18.5 | 1.10 | 0.24 | 0.0% |
+| nearest | look | 12.6 | 1.3 | 21% / 38 | 53% | 3.6 / 3.6 | 40% | 19.2 | 1.08 | 0.29 | 0.0% |
+| nearest | scan | 25.3 | 1.4 | 26% / 60 | 43% | 3.5 / 3.5 | 50% | 25.6 | 1.09 | 0.27 | 0.0% |
+| round_robin | look | 18.2 | 1.1 | 16% / 34 | 71% | 14.3 / 3.4 | 60% | 30.1 | 1.02 | 0.03 | 0.0% |
+| round_robin | scan | 31.5 | 1.2 | 25% / 55 | 52% | 14.4 / 3.4 | 71% | 37.3 | 1.05 | 0.03 | 0.0% |
+| zone | look | 18.2 | 1.4 | 24% / 39 | 51% | 10.4 / 3.0 | 42% | 20.7 | 1.08 | 0.36 | 0.0% |
+| zone | scan | 34.1 | 1.5 | 29% / 58 | 39% | 11.6 / 2.9 | 55% | 28.9 | 1.11 | 0.36 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 5.4 / 18 | 22, 5.3 / 14 | 48, 5.0 / 14 |
+| cost | scan | 25, 5.9 / 18 | 22, 8.7 / 22 | 48, 8.5 / 25 |
+| nearest | look | 25, 11.6 / 53 | 22, 13.3 / 43 | 48, 12.8 / 52 |
+| nearest | scan | 25, 22.0 / 77 | 22, 28.7 / 77 | 48, 25.7 / 78 |
+| round_robin | look | 25, 18.8 / 43 | 22, 17.4 / 40 | 48, 18.2 / 41 |
+| round_robin | scan | 25, 26.3 / 64 | 22, 34.2 / 68 | 48, 32.7 / 69 |
+| zone | look | 25, 17.4 / 47 | 22, 14.5 / 44 | 48, 20.3 / 55 |
+| zone | scan | 25, 23.5 / 66 | 22, 41.1 / 73 | 48, 36.3 / 74 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 45.9; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 37.4; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 25.1 ± 1.2 | -45.3% | [-21.64, -19.86] | 20/20 | 64% | better ✓ |
-| nearest | 43.1 ± 3.9 | -6.2% | [-4.37, -1.17] | 15/20 | 9% | - |
-| zone | 45.5 ± 2.6 | -0.8% | [-1.30, +0.57] | 12/20 | 1% | - |
+| cost | 24.9 ± 1.4 | -33.3% | [-13.59, -11.26] | 20/20 | 60% | better ✓ |
+| nearest | 33.4 ± 3.1 | -10.7% | [-5.48, -2.53] | 16/20 | 19% | better ✓ |
+| zone | 38.9 ± 3.8 | +4.0% | [+0.62, +2.40] | 4/20 | -7% | worse ✗ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 25.1 | -14.0% | [-4.54, -3.67] | 20/20 | better ✓ |
-| nearest | look | 43.1 | -20.9% | [-12.80, -9.98] | 20/20 | better ✓ |
-| round_robin | look | 45.9 | -24.9% | [-16.38, -14.21] | 20/20 | better ✓ |
-| zone | look | 45.5 | -30.2% | [-21.22, -18.19] | 20/20 | better ✓ |
+| cost | look | 24.9 | -12.2% | [-3.90, -2.99] | 20/20 | better ✓ |
+| nearest | look | 33.4 | -28.8% | [-15.45, -11.69] | 20/20 | better ✓ |
+| round_robin | look | 37.4 | -27.1% | [-14.68, -13.16] | 20/20 | better ✓ |
+| zone | look | 38.9 | -29.7% | [-17.61, -14.98] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 25.1 | 8.4 | 23.8 | 41.4 | 11.5 | 0.54 |
-| cost | scan | 29.2 | 11.7 | 33.2 | 63.1 | 15.6 | 0.52 |
-| nearest | look | 43.1 | 25.1 | 84.0 | 106.2 | 29.5 | 0.44 |
-| nearest | scan | 54.5 | 36.2 | 95.7 | 116.6 | 40.9 | 0.52 |
-| round_robin | look | 45.9 | 29.1 | 64.2 | 83.2 | 32.3 | 0.69 |
-| round_robin | scan | 61.2 | 43.8 | 83.6 | 94.2 | 47.6 | 0.74 |
-| zone | look | 45.5 | 27.4 | 74.6 | 103.9 | 31.9 | 0.57 |
-| zone | scan | 65.3 | 46.1 | 92.5 | 125.3 | 51.6 | 0.70 |
+| cost | look | 24.9 | 6.0 | 18.7 | 32.1 | 8.4 | 0.45 |
+| cost | scan | 28.4 | 9.1 | 29.1 | 57.2 | 11.8 | 0.43 |
+| nearest | look | 33.4 | 14.0 | 59.7 | 81.3 | 16.8 | 0.32 |
+| nearest | scan | 46.9 | 27.2 | 81.9 | 90.8 | 30.3 | 0.44 |
+| round_robin | look | 37.4 | 18.7 | 44.6 | 64.9 | 20.8 | 0.62 |
+| round_robin | scan | 51.3 | 32.3 | 73.1 | 80.6 | 34.7 | 0.66 |
+| zone | look | 38.9 | 19.5 | 58.0 | 78.2 | 22.3 | 0.52 |
+| zone | scan | 55.3 | 35.6 | 76.7 | 86.7 | 38.7 | 0.65 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 8.4 | 3.1 | 11% / 15 | 43% | 6.1 / 3.2 | 75% | 14.9 | 1.07 | 0.12 | 0.0% |
-| cost | scan | 11.7 | 3.9 | 11% / 20 | 37% | 6.6 / 3.3 | 72% | 14.2 | 1.07 | 0.13 | 0.0% |
-| nearest | look | 25.1 | 4.4 | 33% / 51 | 22% | 3.8 / 3.8 | 66% | 13.3 | 1.07 | 0.31 | 0.0% |
-| nearest | scan | 36.2 | 4.6 | 36% / 66 | 13% | 3.5 / 3.5 | 76% | 16.3 | 1.07 | 0.29 | 0.1% |
-| round_robin | look | 29.1 | 3.2 | 40% / 42 | 15% | 12.6 / 3.7 | 92% | 19.6 | 1.04 | 0.01 | 0.0% |
-| round_robin | scan | 43.8 | 3.8 | 47% / 60 | 6% | 13.5 / 5.4 | 94% | 20.9 | 1.04 | 0.01 | 0.0% |
-| zone | look | 27.4 | 4.6 | 37% / 46 | 22% | 9.8 / 4.0 | 60% | 11.9 | 1.12 | 0.55 | 0.1% |
-| zone | scan | 46.1 | 5.5 | 44% / 66 | 12% | 11.8 / 3.7 | 73% | 15.9 | 1.15 | 0.55 | 0.3% |
+| cost | look | 6.0 | 2.4 | 5% / 11 | 71% | 5.2 / 3.4 | 43% | 18.9 | 1.08 | 0.25 | 0.0% |
+| cost | scan | 9.1 | 2.8 | 6% / 21 | 63% | 6.2 / 3.4 | 43% | 19.1 | 1.09 | 0.25 | 0.0% |
+| nearest | look | 14.0 | 2.8 | 20% / 41 | 51% | 3.8 / 3.8 | 42% | 18.6 | 1.08 | 0.36 | 0.0% |
+| nearest | scan | 27.2 | 3.1 | 27% / 63 | 39% | 3.8 / 3.8 | 52% | 25.1 | 1.10 | 0.30 | 0.0% |
+| round_robin | look | 18.7 | 2.2 | 16% / 37 | 70% | 14.2 / 3.6 | 63% | 29.8 | 1.03 | 0.03 | 0.0% |
+| round_robin | scan | 32.3 | 2.4 | 25% / 57 | 50% | 14.3 / 3.6 | 73% | 36.5 | 1.05 | 0.03 | 0.0% |
+| zone | look | 19.5 | 2.8 | 24% / 42 | 49% | 10.8 / 3.5 | 45% | 20.4 | 1.08 | 0.36 | 0.0% |
+| zone | scan | 35.6 | 3.1 | 28% / 60 | 37% | 12.1 / 3.3 | 57% | 28.2 | 1.12 | 0.36 | 0.0% |
 
-## uniform · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 4.3 / 17 | 22, 6.7 / 17 | 48, 6.5 / 18 |
+| cost | scan | 25, 4.7 / 16 | 22, 11.5 / 33 | 48, 10.1 / 30 |
+| nearest | look | 25, 8.6 / 41 | 22, 16.6 / 57 | 48, 15.4 / 59 |
+| nearest | scan | 25, 15.9 / 68 | 22, 34.3 / 80 | 48, 29.8 / 83 |
+| round_robin | look | 25, 17.8 / 45 | 22, 18.4 / 42 | 48, 19.1 / 42 |
+| round_robin | scan | 25, 25.5 / 66 | 22, 35.9 / 72 | 48, 33.9 / 72 |
+| zone | look | 25, 17.8 / 53 | 22, 15.9 / 46 | 48, 22.2 / 60 |
+| zone | scan | 25, 25.3 / 72 | 22, 43.7 / 76 | 48, 37.0 / 76 |
+
+## quiet · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.12 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 45.3; B0 floor = 13.6)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 37.5; B0 floor = 16.6)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.6 ± 1.3 | -45.8% | [-21.66, -19.77] | 20/20 | 66% | better ✓ |
-| nearest | 38.8 ± 2.5 | -14.3% | [-7.85, -5.37] | 20/20 | 21% | better ✓ |
-| zone | 45.2 ± 2.3 | -0.3% | [-1.01, +0.72] | 10/20 | 0% | - |
+| cost | 24.6 ± 1.5 | -34.5% | [-14.01, -11.84] | 20/20 | 62% | better ✓ |
+| nearest | 33.5 ± 3.0 | -10.7% | [-5.28, -2.70] | 18/20 | 19% | better ✓ |
+| zone | 38.4 ± 3.5 | +2.3% | [-0.08, +1.81] | 7/20 | -4% | - |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.6 | -12.9% | [-4.13, -3.15] | 20/20 | better ✓ |
-| nearest | look | 38.8 | -27.3% | [-15.89, -13.26] | 20/20 | better ✓ |
-| round_robin | look | 45.3 | -25.3% | [-16.62, -14.08] | 20/20 | better ✓ |
-| zone | look | 45.2 | -29.2% | [-19.89, -17.41] | 20/20 | better ✓ |
+| cost | look | 24.6 | -10.9% | [-3.52, -2.44] | 20/20 | better ✓ |
+| nearest | look | 33.5 | -29.4% | [-15.43, -12.45] | 20/20 | better ✓ |
+| round_robin | look | 37.5 | -27.1% | [-14.98, -12.95] | 20/20 | better ✓ |
+| zone | look | 38.4 | -30.6% | [-18.19, -15.37] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.6 | 7.9 | 22.2 | 36.0 | 10.9 | 0.54 |
-| cost | scan | 28.2 | 10.6 | 29.7 | 45.4 | 14.6 | 0.56 |
-| nearest | look | 38.8 | 21.3 | 77.3 | 106.8 | 25.2 | 0.41 |
-| nearest | scan | 53.4 | 35.3 | 95.5 | 111.7 | 39.7 | 0.50 |
-| round_robin | look | 45.3 | 28.5 | 64.6 | 83.8 | 31.7 | 0.68 |
-| round_robin | scan | 60.7 | 43.3 | 84.3 | 94.5 | 47.1 | 0.74 |
-| zone | look | 45.2 | 27.0 | 74.4 | 101.7 | 31.5 | 0.56 |
-| zone | scan | 63.8 | 44.7 | 91.7 | 116.2 | 50.2 | 0.70 |
+| cost | look | 24.6 | 5.6 | 17.1 | 27.7 | 8.0 | 0.48 |
+| cost | scan | 27.6 | 8.2 | 24.9 | 39.6 | 11.0 | 0.48 |
+| nearest | look | 33.5 | 14.2 | 61.7 | 80.3 | 16.9 | 0.33 |
+| nearest | scan | 47.4 | 27.9 | 82.6 | 88.5 | 30.9 | 0.45 |
+| round_robin | look | 37.5 | 18.8 | 44.8 | 66.2 | 21.0 | 0.63 |
+| round_robin | scan | 51.5 | 32.5 | 72.6 | 80.8 | 34.9 | 0.67 |
+| zone | look | 38.4 | 19.1 | 57.3 | 75.6 | 21.8 | 0.51 |
+| zone | scan | 55.3 | 35.6 | 77.6 | 88.3 | 38.8 | 0.65 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.9 | 3.1 | 10% / 14 | 46% | 5.6 / 2.9 | 75% | 14.8 | 1.07 | 0.10 | 0.0% |
-| cost | scan | 10.6 | 3.9 | 11% / 19 | 38% | 6.3 / 2.9 | 71% | 14.1 | 1.07 | 0.13 | 0.0% |
-| nearest | look | 21.3 | 3.9 | 31% / 46 | 26% | 3.1 / 3.1 | 69% | 14.1 | 1.06 | 0.21 | 0.1% |
-| nearest | scan | 35.3 | 4.5 | 38% / 65 | 16% | 2.9 / 2.9 | 78% | 16.9 | 1.07 | 0.21 | 0.0% |
-| round_robin | look | 28.5 | 3.2 | 40% / 42 | 16% | 12.5 / 3.3 | 92% | 19.5 | 1.04 | 0.01 | 0.0% |
-| round_robin | scan | 43.3 | 3.7 | 46% / 60 | 6% | 13.3 / 3.0 | 94% | 20.9 | 1.04 | 0.01 | 0.0% |
-| zone | look | 27.0 | 4.5 | 36% / 47 | 23% | 9.5 / 3.7 | 59% | 11.8 | 1.12 | 0.55 | 0.1% |
-| zone | scan | 44.7 | 5.5 | 44% / 63 | 12% | 11.6 / 3.3 | 72% | 15.7 | 1.15 | 0.55 | 0.2% |
+| cost | look | 5.6 | 2.4 | 4% / 10 | 72% | 4.9 / 3.2 | 42% | 18.6 | 1.09 | 0.23 | 0.0% |
+| cost | scan | 8.2 | 2.8 | 5% / 20 | 64% | 5.9 / 3.3 | 42% | 18.8 | 1.10 | 0.23 | 0.0% |
+| nearest | look | 14.2 | 2.7 | 21% / 41 | 50% | 3.5 / 3.5 | 42% | 19.0 | 1.08 | 0.33 | 0.0% |
+| nearest | scan | 27.9 | 3.0 | 28% / 64 | 39% | 3.7 / 3.7 | 52% | 25.3 | 1.10 | 0.29 | 0.0% |
+| round_robin | look | 18.8 | 2.2 | 16% / 37 | 70% | 14.3 / 3.4 | 63% | 29.9 | 1.03 | 0.03 | 0.0% |
+| round_robin | scan | 32.5 | 2.4 | 25% / 57 | 49% | 14.5 / 3.4 | 74% | 36.8 | 1.05 | 0.03 | 0.0% |
+| zone | look | 19.1 | 2.8 | 24% / 41 | 49% | 10.6 / 3.0 | 44% | 20.2 | 1.09 | 0.36 | 0.0% |
+| zone | scan | 35.6 | 3.1 | 28% / 61 | 37% | 11.7 / 2.8 | 57% | 28.3 | 1.12 | 0.36 | 0.0% |
 
-## mixed · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 5.3 / 18 | 22, 5.8 / 14 | 48, 5.6 / 16 |
+| cost | scan | 25, 5.6 / 18 | 22, 9.3 / 24 | 48, 8.9 / 26 |
+| nearest | look | 25, 13.6 / 57 | 22, 15.7 / 55 | 48, 13.7 / 56 |
+| nearest | scan | 25, 23.7 / 79 | 22, 33.2 / 81 | 48, 27.4 / 81 |
+| round_robin | look | 25, 19.4 / 45 | 22, 18.0 / 42 | 48, 18.8 / 42 |
+| round_robin | scan | 25, 28.0 / 67 | 22, 34.2 / 70 | 48, 33.9 / 71 |
+| zone | look | 25, 18.0 / 50 | 22, 15.1 / 47 | 48, 21.6 / 60 |
+| zone | scan | 25, 24.0 / 68 | 22, 43.7 / 77 | 48, 37.6 / 77 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.9; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.1; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 20.2 ± 0.9 | -42.2% | [-15.33, -14.15] | 20/20 | 70% | better ✓ |
-| nearest | 29.6 ± 1.5 | -15.2% | [-6.14, -4.48] | 20/20 | 25% | better ✓ |
-| zone | 30.0 ± 1.5 | -14.2% | [-5.64, -4.28] | 20/20 | 24% | better ✓ |
+| cost | 24.6 ± 1.0 | -35.3% | [-14.04, -12.87] | 20/20 | 56% | better ✓ |
+| nearest | 37.5 ± 2.7 | -1.4% | [-1.50, +0.55] | 14/20 | 2% | - |
+| zone | 30.8 ± 0.9 | -19.1% | [-7.71, -6.88] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 20.2 | -8.8% | [-2.27, -1.65] | 20/20 | better ✓ |
-| nearest | look | 29.6 | -23.1% | [-9.88, -7.85] | 20/20 | better ✓ |
-| round_robin | look | 34.9 | -17.2% | [-8.08, -6.46] | 20/20 | better ✓ |
-| zone | look | 30.0 | -27.2% | [-11.89, -10.45] | 20/20 | better ✓ |
+| cost | look | 24.6 | -1.5% | [-0.60, -0.12] | 13/20 | - |
+| nearest | look | 37.5 | -13.1% | [-6.64, -4.59] | 20/20 | better ✓ |
+| round_robin | look | 38.1 | -10.4% | [-5.01, -3.74] | 20/20 | better ✓ |
+| zone | look | 30.8 | -27.7% | [-12.36, -11.35] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 20.2 | 6.2 | 17.8 | 30.0 | 6.2 | 0.53 |
-| cost | scan | 22.1 | 8.1 | 23.6 | 43.6 | 8.1 | 0.51 |
-| nearest | look | 29.6 | 15.6 | 49.8 | 56.2 | 15.6 | 0.45 |
-| nearest | scan | 38.5 | 24.5 | 56.5 | 57.0 | 24.5 | 0.55 |
-| round_robin | look | 34.9 | 20.9 | 46.9 | 54.9 | 20.9 | 0.68 |
-| round_robin | scan | 42.2 | 28.2 | 54.3 | 57.0 | 28.2 | 0.73 |
-| zone | look | 30.0 | 16.0 | 43.8 | 55.0 | 16.0 | 0.56 |
-| zone | scan | 41.2 | 27.2 | 54.4 | 57.0 | 27.2 | 0.70 |
+| cost | look | 24.6 | 10.6 | 24.3 | 30.7 | 10.6 | 0.66 |
+| cost | scan | 25.0 | 10.9 | 24.9 | 42.4 | 10.9 | 0.64 |
+| nearest | look | 37.5 | 23.4 | 56.5 | 99.2 | 23.4 | 0.54 |
+| nearest | scan | 43.2 | 29.1 | 58.9 | 107.0 | 29.1 | 0.58 |
+| round_robin | look | 38.1 | 24.0 | 49.5 | 56.4 | 24.0 | 0.71 |
+| round_robin | scan | 42.5 | 28.4 | 54.5 | 56.9 | 28.4 | 0.74 |
+| zone | look | 30.8 | 16.7 | 45.7 | 67.7 | 16.7 | 0.57 |
+| zone | scan | 42.6 | 28.5 | 56.0 | 89.4 | 28.5 | 0.70 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.2 | 0.0 | 11% / 10 | 34% | 5.3 / 3.2 | 72% | 11.8 | 1.31 | 0.14 | 0.0% |
-| cost | scan | 8.1 | 0.0 | 7% / 17 | 34% | 6.3 / 3.2 | 68% | 11.2 | 1.35 | 0.14 | 0.0% |
-| nearest | look | 15.6 | 0.0 | 34% / 33 | 21% | 3.6 / 3.6 | 75% | 12.6 | 1.31 | 0.13 | 0.0% |
-| nearest | scan | 24.5 | 0.0 | 39% / 46 | 13% | 3.8 / 3.8 | 82% | 14.0 | 1.39 | 0.19 | 0.0% |
-| round_robin | look | 20.9 | 0.0 | 44% / 32 | 12% | 10.3 / 4.0 | 92% | 15.4 | 1.30 | 0.00 | 0.0% |
-| round_robin | scan | 28.2 | 0.0 | 47% / 40 | 7% | 11.5 / 4.5 | 94% | 16.2 | 1.37 | 0.00 | 0.0% |
-| zone | look | 16.0 | 0.0 | 36% / 28 | 27% | 8.0 / 3.3 | 70% | 11.7 | 1.30 | 0.14 | 0.0% |
-| zone | scan | 27.2 | 0.0 | 42% / 41 | 14% | 10.6 / 4.0 | 83% | 14.0 | 1.46 | 0.14 | 0.0% |
+| cost | look | 10.6 | 0.0 | 6% / 14 | 17% | 10.1 / 4.8 | 68% | 7.4 | 1.64 | 0.15 | 0.0% |
+| cost | scan | 10.9 | 0.0 | 3% / 21 | 19% | 10.3 / 4.8 | 67% | 7.3 | 1.65 | 0.15 | 0.0% |
+| nearest | look | 23.4 | 0.0 | 42% / 41 | 8% | 5.0 / 5.0 | 75% | 8.5 | 1.61 | 0.27 | 5.4% |
+| nearest | scan | 29.1 | 0.0 | 44% / 51 | 5% | 4.9 / 4.9 | 82% | 9.4 | 1.62 | 0.25 | 5.8% |
+| round_robin | look | 24.0 | 0.0 | 49% / 36 | 2% | 11.5 / 4.3 | 97% | 10.9 | 1.51 | 0.01 | 0.0% |
+| round_robin | scan | 28.4 | 0.0 | 49% / 42 | 2% | 13.3 / 8.7 | 98% | 11.0 | 1.56 | 0.01 | 0.0% |
+| zone | look | 16.7 | 0.0 | 42% / 27 | 16% | 8.4 / 2.9 | 82% | 9.1 | 1.50 | 0.08 | 0.5% |
+| zone | scan | 28.5 | 0.0 | 47% / 43 | 7% | 12.4 / 4.8 | 90% | 10.1 | 1.76 | 0.08 | 1.9% |
 
-## mixed · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 11.6 / 25 | 24, 7.4 / 18 | 46, 7.2 / 18 |
+| cost | scan | 234, 11.7 / 25 | 24, 8.4 / 22 | 46, 8.2 / 21 |
+| nearest | look | 234, 24.6 / 57 | 24, 19.4 / 52 | 46, 19.9 / 53 |
+| nearest | scan | 234, 30.4 / 60 | 24, 25.3 / 55 | 46, 24.6 / 57 |
+| round_robin | look | 234, 23.9 / 50 | 24, 24.2 / 47 | 46, 24.2 / 48 |
+| round_robin | scan | 234, 28.3 / 54 | 24, 29.5 / 53 | 46, 28.3 / 54 |
+| zone | look | 234, 15.9 / 45 | 24, 15.4 / 38 | 46, 21.2 / 50 |
+| zone | scan | 234, 28.3 / 56 | 24, 28.5 / 54 | 46, 29.8 / 58 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 35.0; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.2; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 20.2 ± 0.8 | -42.3% | [-15.30, -14.33] | 20/20 | 70% | better ✓ |
-| nearest | 29.8 ± 1.7 | -15.0% | [-5.88, -4.61] | 20/20 | 25% | better ✓ |
-| zone | 29.8 ± 1.3 | -15.0% | [-5.72, -4.78] | 20/20 | 25% | better ✓ |
+| cost | 24.7 ± 1.0 | -35.2% | [-14.04, -12.83] | 20/20 | 56% | better ✓ |
+| nearest | 38.3 ± 2.9 | +0.5% | [-1.13, +1.64] | 11/20 | -1% | - |
+| zone | 30.8 ± 1.1 | -19.4% | [-7.80, -7.05] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 20.2 | -7.3% | [-1.92, -1.27] | 20/20 | better ✓ |
-| nearest | look | 29.8 | -23.4% | [-10.02, -8.08] | 20/20 | better ✓ |
-| round_robin | look | 35.0 | -16.5% | [-7.48, -6.39] | 20/20 | better ✓ |
-| zone | look | 29.8 | -28.3% | [-12.37, -11.14] | 20/20 | better ✓ |
+| cost | look | 24.7 | +0.2% | [-0.20, +0.34] | 12/20 | - |
+| nearest | look | 38.3 | -16.2% | [-9.17, -5.81] | 20/20 | better ✓ |
+| round_robin | look | 38.2 | -10.6% | [-5.14, -3.85] | 20/20 | better ✓ |
+| zone | look | 30.8 | -27.5% | [-12.20, -11.14] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 20.2 | 6.2 | 17.4 | 28.6 | 6.2 | 0.54 |
-| cost | scan | 21.8 | 7.8 | 21.8 | 34.5 | 7.8 | 0.54 |
-| nearest | look | 29.8 | 15.8 | 50.0 | 56.6 | 15.8 | 0.46 |
-| nearest | scan | 38.9 | 24.9 | 56.7 | 57.0 | 24.9 | 0.55 |
-| round_robin | look | 35.0 | 21.0 | 46.9 | 55.0 | 21.0 | 0.68 |
-| round_robin | scan | 41.9 | 27.9 | 54.5 | 56.9 | 27.9 | 0.73 |
-| zone | look | 29.8 | 15.8 | 43.8 | 55.0 | 15.8 | 0.56 |
-| zone | scan | 41.5 | 27.5 | 54.5 | 57.0 | 27.5 | 0.71 |
+| cost | look | 24.7 | 10.6 | 24.4 | 31.6 | 10.6 | 0.66 |
+| cost | scan | 24.7 | 10.6 | 24.4 | 29.9 | 10.6 | 0.66 |
+| nearest | look | 38.3 | 24.3 | 59.3 | 100.8 | 24.3 | 0.54 |
+| nearest | scan | 45.8 | 31.7 | 70.1 | 121.2 | 31.7 | 0.58 |
+| round_robin | look | 38.2 | 24.1 | 49.9 | 56.5 | 24.1 | 0.72 |
+| round_robin | scan | 42.7 | 28.6 | 54.6 | 57.0 | 28.6 | 0.74 |
+| zone | look | 30.8 | 16.7 | 45.5 | 73.2 | 16.7 | 0.57 |
+| zone | scan | 42.4 | 28.4 | 55.5 | 85.2 | 28.4 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.2 | 0.0 | 10% / 10 | 33% | 5.4 / 3.1 | 72% | 11.8 | 1.31 | 0.13 | 0.0% |
-| cost | scan | 7.8 | 0.0 | 7% / 15 | 35% | 6.3 / 3.2 | 69% | 11.3 | 1.35 | 0.12 | 0.0% |
-| nearest | look | 15.8 | 0.0 | 36% / 33 | 21% | 3.7 / 3.7 | 75% | 12.7 | 1.31 | 0.16 | 0.0% |
-| nearest | scan | 24.9 | 0.0 | 41% / 46 | 12% | 3.6 / 3.6 | 83% | 14.1 | 1.39 | 0.18 | 0.0% |
-| round_robin | look | 21.0 | 0.0 | 44% / 32 | 12% | 10.3 / 3.9 | 92% | 15.4 | 1.30 | 0.00 | 0.0% |
-| round_robin | scan | 27.9 | 0.0 | 46% / 41 | 7% | 11.3 / 4.1 | 94% | 16.2 | 1.37 | 0.00 | 0.0% |
-| zone | look | 15.8 | 0.0 | 36% / 28 | 27% | 8.1 / 3.3 | 70% | 11.8 | 1.30 | 0.14 | 0.0% |
-| zone | scan | 27.5 | 0.0 | 44% / 41 | 14% | 10.6 / 3.8 | 83% | 14.1 | 1.46 | 0.14 | 0.0% |
+| cost | look | 10.6 | 0.0 | 6% / 15 | 17% | 10.2 / 4.8 | 67% | 7.4 | 1.65 | 0.16 | 0.0% |
+| cost | scan | 10.6 | 0.0 | 2% / 13 | 18% | 10.2 / 4.8 | 66% | 7.2 | 1.66 | 0.14 | 0.0% |
+| nearest | look | 24.3 | 0.0 | 44% / 41 | 7% | 4.9 / 4.9 | 77% | 8.7 | 1.59 | 0.27 | 6.1% |
+| nearest | scan | 31.7 | 0.0 | 44% / 53 | 5% | 4.7 / 4.7 | 80% | 9.2 | 1.64 | 0.30 | 9.2% |
+| round_robin | look | 24.1 | 0.0 | 49% / 36 | 2% | 11.7 / 4.4 | 97% | 10.9 | 1.51 | 0.01 | 0.0% |
+| round_robin | scan | 28.6 | 0.0 | 50% / 42 | 2% | 13.1 / 4.7 | 97% | 11.0 | 1.57 | 0.01 | 0.0% |
+| zone | look | 16.7 | 0.0 | 42% / 27 | 16% | 8.5 / 2.9 | 81% | 9.1 | 1.50 | 0.08 | 0.6% |
+| zone | scan | 28.4 | 0.0 | 47% / 43 | 7% | 12.4 / 4.5 | 91% | 10.2 | 1.75 | 0.08 | 1.8% |
 
-## mixed · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 11.7 / 25 | 24, 7.0 / 18 | 46, 7.0 / 18 |
+| cost | scan | 234, 11.4 / 25 | 24, 7.3 / 18 | 46, 8.2 / 21 |
+| nearest | look | 234, 25.9 / 60 | 24, 18.5 / 50 | 46, 19.0 / 57 |
+| nearest | scan | 234, 33.8 / 74 | 24, 26.4 / 56 | 46, 23.6 / 58 |
+| round_robin | look | 234, 24.0 / 50 | 24, 23.4 / 47 | 46, 24.9 / 49 |
+| round_robin | scan | 234, 28.6 / 55 | 24, 28.8 / 53 | 46, 28.5 / 55 |
+| zone | look | 234, 15.8 / 44 | 24, 15.7 / 39 | 46, 21.8 / 51 |
+| zone | scan | 234, 28.1 / 56 | 24, 29.6 / 53 | 46, 29.0 / 57 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.5; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.6; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 23.1 ± 0.8 | -40.1% | [-15.85, -15.04] | 20/20 | 63% | better ✓ |
-| nearest | 33.9 ± 1.7 | -12.0% | [-5.24, -3.99] | 20/20 | 19% | better ✓ |
-| zone | 32.9 ± 1.9 | -14.6% | [-6.27, -4.98] | 20/20 | 23% | better ✓ |
+| cost | 28.3 ± 1.1 | -35.1% | [-15.84, -14.71] | 20/20 | 52% | better ✓ |
+| nearest | 47.7 ± 5.5 | +9.4% | [+2.04, +6.81] | 2/20 | -14% | worse ✗ |
+| zone | 34.7 ± 1.1 | -20.5% | [-9.39, -8.50] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 23.1 | -9.2% | [-2.82, -1.89] | 20/20 | better ✓ |
-| nearest | look | 33.9 | -20.7% | [-9.94, -7.81] | 20/20 | better ✓ |
-| round_robin | look | 38.5 | -15.8% | [-8.06, -6.44] | 20/20 | better ✓ |
-| zone | look | 32.9 | -27.4% | [-13.20, -11.71] | 20/20 | better ✓ |
+| cost | look | 28.3 | -4.2% | [-1.71, -0.75] | 18/20 | better ✓ |
+| nearest | look | 47.7 | -17.9% | [-14.79, -5.84] | 18/20 | better ✓ |
+| round_robin | look | 43.6 | -10.1% | [-5.50, -4.24] | 20/20 | better ✓ |
+| zone | look | 34.7 | -29.7% | [-15.40, -13.95] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 23.1 | 7.4 | 21.0 | 35.1 | 9.1 | 0.53 |
-| cost | scan | 25.4 | 9.5 | 28.1 | 48.9 | 11.4 | 0.51 |
-| nearest | look | 33.9 | 18.1 | 56.3 | 64.8 | 19.9 | 0.45 |
-| nearest | scan | 42.8 | 26.7 | 62.3 | 67.4 | 28.8 | 0.55 |
-| round_robin | look | 38.5 | 22.9 | 51.6 | 60.5 | 24.5 | 0.68 |
-| round_robin | scan | 45.8 | 29.9 | 58.3 | 63.1 | 31.8 | 0.72 |
-| zone | look | 32.9 | 17.2 | 48.2 | 62.8 | 18.9 | 0.55 |
-| zone | scan | 45.3 | 29.3 | 58.3 | 64.5 | 31.3 | 0.70 |
+| cost | look | 28.3 | 11.2 | 25.9 | 38.0 | 14.2 | 0.64 |
+| cost | scan | 29.5 | 12.2 | 28.5 | 47.0 | 15.4 | 0.63 |
+| nearest | look | 47.7 | 30.5 | 74.5 | 126.5 | 33.6 | 0.54 |
+| nearest | scan | 58.1 | 40.7 | 98.4 | 174.9 | 44.0 | 0.57 |
+| round_robin | look | 43.6 | 26.9 | 55.2 | 64.1 | 29.5 | 0.71 |
+| round_robin | scan | 48.5 | 31.5 | 60.5 | 69.8 | 34.4 | 0.74 |
+| zone | look | 34.7 | 18.4 | 50.2 | 93.5 | 20.6 | 0.55 |
+| zone | scan | 49.3 | 32.6 | 62.9 | 124.3 | 35.2 | 0.70 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.4 | 1.7 | 12% / 13 | 29% | 5.8 / 3.3 | 79% | 11.5 | 1.36 | 0.10 | 0.0% |
-| cost | scan | 9.5 | 1.9 | 9% / 21 | 28% | 6.5 / 3.4 | 76% | 11.1 | 1.39 | 0.10 | 0.0% |
-| nearest | look | 18.1 | 1.8 | 35% / 38 | 18% | 3.5 / 3.5 | 79% | 11.8 | 1.34 | 0.15 | 0.0% |
-| nearest | scan | 26.7 | 2.1 | 39% / 50 | 11% | 3.9 / 3.9 | 84% | 13.1 | 1.42 | 0.18 | 0.0% |
-| round_robin | look | 22.9 | 1.6 | 43% / 35 | 9% | 10.4 / 3.9 | 94% | 14.4 | 1.33 | 0.00 | 0.0% |
-| round_robin | scan | 29.9 | 1.8 | 47% / 44 | 5% | 11.2 / 5.1 | 96% | 15.0 | 1.40 | 0.00 | 0.0% |
-| zone | look | 17.2 | 1.7 | 35% / 31 | 24% | 8.0 / 3.2 | 74% | 11.0 | 1.33 | 0.14 | 0.0% |
-| zone | scan | 29.3 | 2.0 | 42% / 44 | 12% | 10.6 / 4.0 | 86% | 13.4 | 1.50 | 0.14 | 0.0% |
+| cost | look | 11.2 | 3.0 | 8% / 19 | 14% | 9.8 / 4.4 | 79% | 7.5 | 1.67 | 0.11 | 0.0% |
+| cost | scan | 12.2 | 3.2 | 5% / 26 | 15% | 10.6 / 4.5 | 78% | 7.3 | 1.68 | 0.08 | 0.0% |
+| nearest | look | 30.5 | 3.2 | 42% / 50 | 6% | 5.0 / 5.0 | 80% | 7.9 | 1.63 | 0.23 | 9.7% |
+| nearest | scan | 40.7 | 3.3 | 45% / 64 | 5% | 4.9 / 4.9 | 82% | 8.5 | 1.66 | 0.25 | 14.4% |
+| round_robin | look | 26.9 | 2.6 | 50% / 40 | 2% | 11.8 / 4.6 | 98% | 9.7 | 1.56 | 0.01 | 0.0% |
+| round_robin | scan | 31.5 | 2.8 | 51% / 46 | 2% | 13.3 / 8.1 | 97% | 9.9 | 1.61 | 0.01 | 0.1% |
+| zone | look | 18.4 | 2.1 | 42% / 31 | 13% | 8.6 / 2.7 | 85% | 8.3 | 1.56 | 0.08 | 0.9% |
+| zone | scan | 32.6 | 2.6 | 49% / 47 | 5% | 12.4 / 4.9 | 93% | 9.4 | 1.85 | 0.08 | 3.1% |
 
-## mixed · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 11.8 / 26 | 24, 8.7 / 20 | 46, 9.5 / 25 |
+| cost | scan | 234, 12.7 / 28 | 24, 10.4 / 27 | 46, 10.8 / 28 |
+| nearest | look | 234, 32.6 / 78 | 24, 22.8 / 58 | 46, 23.5 / 64 |
+| nearest | scan | 234, 43.7 / 101 | 24, 31.0 / 63 | 46, 30.8 / 75 |
+| round_robin | look | 234, 26.7 / 55 | 24, 27.1 / 53 | 46, 28.0 / 54 |
+| round_robin | scan | 234, 31.4 / 60 | 24, 33.6 / 59 | 46, 31.4 / 61 |
+| zone | look | 234, 17.2 / 49 | 24, 17.4 / 45 | 46, 24.9 / 61 |
+| zone | scan | 234, 32.0 / 63 | 24, 32.3 / 59 | 46, 35.8 / 76 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.7; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.6; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 22.9 ± 0.9 | -40.8% | [-16.27, -15.37] | 20/20 | 64% | better ✓ |
-| nearest | 33.7 ± 1.9 | -12.9% | [-5.75, -4.18] | 20/20 | 20% | better ✓ |
-| zone | 33.0 ± 1.6 | -14.8% | [-6.30, -5.17] | 20/20 | 23% | better ✓ |
+| cost | 28.2 ± 1.4 | -35.3% | [-16.12, -14.65] | 20/20 | 52% | better ✓ |
+| nearest | 51.1 ± 9.2 | +17.1% | [+3.71, +11.56] | 3/20 | -25% | worse ✗ |
+| zone | 34.9 ± 1.2 | -20.1% | [-9.24, -8.22] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 22.9 | -7.9% | [-2.41, -1.56] | 20/20 | better ✓ |
-| nearest | look | 33.7 | -20.4% | [-9.74, -7.42] | 20/20 | better ✓ |
-| round_robin | look | 38.7 | -14.9% | [-7.66, -5.87] | 20/20 | better ✓ |
-| zone | look | 33.0 | -27.4% | [-13.25, -11.70] | 20/20 | better ✓ |
+| cost | look | 28.2 | -2.6% | [-1.31, -0.21] | 14/20 | - |
+| nearest | look | 51.1 | -7.9% | [-8.45, -0.17] | 16/20 | better ✓ |
+| round_robin | look | 43.6 | -9.5% | [-5.12, -4.05] | 20/20 | better ✓ |
+| zone | look | 34.9 | -28.8% | [-14.82, -13.40] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 22.9 | 7.2 | 20.5 | 33.9 | 8.9 | 0.53 |
-| cost | scan | 24.9 | 9.0 | 25.5 | 40.3 | 10.9 | 0.53 |
-| nearest | look | 33.7 | 17.9 | 55.7 | 64.2 | 19.7 | 0.46 |
-| nearest | scan | 42.4 | 26.4 | 62.3 | 66.8 | 28.4 | 0.54 |
-| round_robin | look | 38.7 | 23.1 | 51.2 | 61.0 | 24.7 | 0.69 |
-| round_robin | scan | 45.5 | 29.7 | 58.1 | 63.3 | 31.5 | 0.73 |
-| zone | look | 33.0 | 17.3 | 49.1 | 62.8 | 19.0 | 0.55 |
-| zone | scan | 45.5 | 29.5 | 58.5 | 64.1 | 31.5 | 0.70 |
+| cost | look | 28.2 | 11.1 | 25.6 | 35.4 | 14.1 | 0.64 |
+| cost | scan | 29.0 | 11.7 | 26.5 | 36.5 | 14.9 | 0.65 |
+| nearest | look | 51.1 | 33.8 | 89.4 | 145.1 | 37.0 | 0.54 |
+| nearest | scan | 55.4 | 38.1 | 89.1 | 143.4 | 41.3 | 0.57 |
+| round_robin | look | 43.6 | 26.9 | 55.1 | 64.2 | 29.5 | 0.72 |
+| round_robin | scan | 48.2 | 31.3 | 60.5 | 69.2 | 34.1 | 0.73 |
+| zone | look | 34.9 | 18.6 | 50.8 | 84.7 | 20.8 | 0.56 |
+| zone | scan | 49.0 | 32.3 | 61.8 | 119.3 | 34.9 | 0.70 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.2 | 1.7 | 11% / 14 | 29% | 5.7 / 3.2 | 79% | 11.5 | 1.36 | 0.11 | 0.0% |
-| cost | scan | 9.0 | 1.9 | 8% / 20 | 29% | 6.4 / 3.3 | 75% | 11.0 | 1.38 | 0.12 | 0.0% |
-| nearest | look | 17.9 | 1.8 | 35% / 37 | 18% | 3.5 / 3.5 | 79% | 12.0 | 1.35 | 0.15 | 0.0% |
-| nearest | scan | 26.4 | 2.0 | 39% / 50 | 11% | 3.8 / 3.8 | 84% | 13.0 | 1.42 | 0.18 | 0.0% |
-| round_robin | look | 23.1 | 1.6 | 43% / 35 | 9% | 10.5 / 3.8 | 94% | 14.5 | 1.33 | 0.00 | 0.0% |
-| round_robin | scan | 29.7 | 1.8 | 45% / 43 | 5% | 11.6 / 4.1 | 96% | 14.9 | 1.40 | 0.00 | 0.0% |
-| zone | look | 17.3 | 1.7 | 36% / 31 | 24% | 8.1 / 3.1 | 74% | 11.0 | 1.33 | 0.14 | 0.0% |
-| zone | scan | 29.5 | 2.0 | 44% / 44 | 11% | 10.4 / 3.7 | 86% | 13.4 | 1.50 | 0.14 | 0.0% |
+| cost | look | 11.1 | 3.1 | 8% / 19 | 15% | 9.8 / 4.4 | 79% | 7.5 | 1.67 | 0.11 | 0.0% |
+| cost | scan | 11.7 | 3.2 | 4% / 21 | 15% | 10.4 / 4.4 | 76% | 7.2 | 1.69 | 0.08 | 0.0% |
+| nearest | look | 33.8 | 3.2 | 44% / 53 | 6% | 5.0 / 5.0 | 79% | 7.9 | 1.65 | 0.29 | 12.5% |
+| nearest | scan | 38.1 | 3.2 | 45% / 61 | 4% | 4.6 / 4.6 | 86% | 8.7 | 1.66 | 0.24 | 12.3% |
+| round_robin | look | 26.9 | 2.6 | 50% / 40 | 2% | 12.0 / 4.4 | 98% | 9.7 | 1.56 | 0.01 | 0.0% |
+| round_robin | scan | 31.3 | 2.8 | 52% / 46 | 1% | 13.1 / 4.5 | 97% | 9.9 | 1.61 | 0.01 | 0.1% |
+| zone | look | 18.6 | 2.1 | 42% / 31 | 13% | 8.7 / 2.7 | 85% | 8.3 | 1.56 | 0.08 | 0.8% |
+| zone | scan | 32.3 | 2.6 | 49% / 47 | 5% | 12.3 / 4.5 | 92% | 9.4 | 1.84 | 0.08 | 2.8% |
 
-## mixed · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 11.8 / 26 | 24, 7.9 / 19 | 46, 9.2 / 26 |
+| cost | scan | 234, 12.2 / 27 | 24, 9.0 / 21 | 46, 10.1 / 25 |
+| nearest | look | 234, 36.4 / 92 | 24, 22.0 / 57 | 46, 26.2 / 71 |
+| nearest | scan | 234, 40.9 / 90 | 24, 27.3 / 62 | 46, 29.3 / 72 |
+| round_robin | look | 234, 26.8 / 55 | 24, 26.8 / 52 | 46, 28.0 / 55 |
+| round_robin | scan | 234, 31.2 / 60 | 24, 32.9 / 60 | 46, 30.7 / 60 |
+| zone | look | 234, 17.5 / 49 | 24, 18.7 / 46 | 46, 24.2 / 59 |
+| zone | scan | 234, 31.8 / 62 | 24, 31.9 / 58 | 46, 35.0 / 76 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.6; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 50.7; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.6 ± 1.7 | -39.0% | [-17.62, -16.42] | 20/20 | 57% | better ✓ |
-| nearest | 38.6 ± 2.4 | -11.4% | [-5.84, -4.09] | 20/20 | 17% | better ✓ |
-| zone | 36.5 ± 1.6 | -16.2% | [-7.72, -6.39] | 20/20 | 24% | better ✓ |
+| cost | 33.3 ± 1.7 | -34.3% | [-18.28, -16.64] | 20/20 | 48% | better ✓ |
+| nearest | 63.6 ± 12.1 | +25.6% | [+8.30, +18.24] | 2/20 | -35% | worse ✗ |
+| zone | 40.3 ± 1.1 | -20.6% | [-11.07, -9.67] | 20/20 | 28% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.6 | -11.2% | [-4.58, -2.15] | 18/20 | better ✓ |
-| nearest | look | 38.6 | -18.1% | [-9.78, -7.33] | 20/20 | better ✓ |
-| round_robin | look | 43.6 | -12.3% | [-6.88, -5.27] | 20/20 | better ✓ |
-| zone | look | 36.5 | -27.4% | [-14.52, -12.96] | 20/20 | better ✓ |
+| cost | look | 33.3 | -17.9% | [-9.67, -4.89] | 19/20 | better ✓ |
+| nearest | look | 63.6 | -18.8% | [-24.21, -5.64] | 17/20 | better ✓ |
+| round_robin | look | 50.7 | -9.1% | [-5.69, -4.55] | 20/20 | better ✓ |
+| zone | look | 40.3 | -28.5% | [-16.76, -15.43] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.6 | 9.2 | 25.6 | 40.6 | 12.6 | 0.54 |
-| cost | scan | 29.9 | 12.0 | 33.6 | 53.0 | 15.9 | 0.53 |
-| nearest | look | 38.6 | 20.7 | 64.2 | 77.9 | 24.6 | 0.46 |
-| nearest | scan | 47.1 | 28.8 | 69.6 | 80.5 | 33.1 | 0.54 |
-| round_robin | look | 43.6 | 26.1 | 55.5 | 68.3 | 29.6 | 0.70 |
-| round_robin | scan | 49.7 | 31.9 | 63.2 | 72.5 | 35.7 | 0.72 |
-| zone | look | 36.5 | 18.9 | 53.2 | 70.5 | 22.5 | 0.55 |
-| zone | scan | 50.2 | 32.1 | 63.2 | 76.4 | 36.2 | 0.71 |
+| cost | look | 33.3 | 13.2 | 31.9 | 52.1 | 19.2 | 0.62 |
+| cost | scan | 40.5 | 20.8 | 48.7 | 62.4 | 26.5 | 0.63 |
+| nearest | look | 63.6 | 43.1 | 121.0 | 199.7 | 49.6 | 0.52 |
+| nearest | scan | 78.4 | 57.6 | 156.8 | 235.1 | 64.3 | 0.55 |
+| round_robin | look | 50.7 | 30.9 | 63.3 | 75.4 | 36.6 | 0.71 |
+| round_robin | scan | 55.8 | 35.5 | 68.8 | 82.1 | 41.7 | 0.73 |
+| zone | look | 40.3 | 21.7 | 58.2 | 147.2 | 26.2 | 0.53 |
+| zone | scan | 56.3 | 36.8 | 73.2 | 176.1 | 42.3 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 9.2 | 3.4 | 14% / 18 | 22% | 6.3 / 3.5 | 85% | 11.2 | 1.41 | 0.09 | 0.0% |
-| cost | scan | 12.0 | 3.9 | 12% / 25 | 22% | 7.3 / 3.8 | 83% | 11.0 | 1.44 | 0.11 | 0.0% |
-| nearest | look | 20.7 | 3.9 | 35% / 42 | 16% | 3.6 / 3.6 | 82% | 11.0 | 1.39 | 0.16 | 0.2% |
-| nearest | scan | 28.8 | 4.3 | 39% / 54 | 9% | 3.8 / 3.8 | 86% | 12.1 | 1.45 | 0.15 | 0.1% |
-| round_robin | look | 26.1 | 3.5 | 44% / 39 | 7% | 10.7 / 3.9 | 95% | 13.3 | 1.37 | 0.00 | 0.0% |
-| round_robin | scan | 31.9 | 3.8 | 47% / 46 | 4% | 11.4 / 5.4 | 96% | 13.8 | 1.43 | 0.00 | 0.0% |
-| zone | look | 18.9 | 3.6 | 35% / 34 | 21% | 8.0 / 3.3 | 78% | 10.3 | 1.37 | 0.14 | 0.0% |
-| zone | scan | 32.1 | 4.2 | 43% / 47 | 9% | 10.6 / 3.9 | 89% | 12.6 | 1.54 | 0.14 | 0.0% |
+| cost | look | 13.2 | 6.0 | 12% / 26 | 11% | 10.2 / 4.4 | 89% | 7.5 | 1.71 | 0.08 | 0.0% |
+| cost | scan | 20.8 | 5.7 | 24% / 39 | 7% | 12.2 / 6.8 | 92% | 8.0 | 1.79 | 0.09 | 0.0% |
+| nearest | look | 43.1 | 6.5 | 44% / 66 | 5% | 4.8 / 4.8 | 83% | 7.4 | 1.67 | 0.25 | 16.1% |
+| nearest | scan | 57.6 | 6.7 | 46% / 84 | 4% | 5.0 / 5.0 | 84% | 8.0 | 1.69 | 0.22 | 21.6% |
+| round_robin | look | 30.9 | 5.7 | 50% / 46 | 2% | 11.9 / 4.2 | 98% | 8.7 | 1.60 | 0.01 | 0.2% |
+| round_robin | scan | 35.5 | 6.2 | 53% / 51 | 2% | 13.2 / 7.8 | 98% | 8.7 | 1.65 | 0.01 | 0.3% |
+| zone | look | 21.7 | 4.5 | 44% / 35 | 10% | 8.7 / 2.6 | 88% | 7.5 | 1.62 | 0.08 | 1.5% |
+| zone | scan | 36.8 | 5.5 | 51% / 51 | 3% | 12.4 / 5.1 | 94% | 8.7 | 1.92 | 0.08 | 4.6% |
 
-## mixed · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 13.4 / 32 | 24, 11.1 / 26 | 46, 13.6 / 34 |
+| cost | scan | 234, 20.4 / 47 | 24, 20.6 / 45 | 46, 22.2 / 51 |
+| nearest | look | 234, 46.6 / 124 | 24, 29.0 / 68 | 46, 32.4 / 87 |
+| nearest | scan | 234, 63.9 / 163 | 24, 34.3 / 73 | 46, 36.1 / 93 |
+| round_robin | look | 234, 30.4 / 63 | 24, 33.1 / 62 | 46, 32.6 / 63 |
+| round_robin | scan | 234, 35.4 / 68 | 24, 36.1 / 68 | 46, 35.7 / 68 |
+| zone | look | 234, 20.0 / 56 | 24, 19.6 / 50 | 46, 31.2 / 81 |
+| zone | scan | 234, 36.0 / 72 | 24, 34.2 / 63 | 46, 42.1 / 103 |
+
+## morning_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.4; B0 floor = 14.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 50.8; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.5 ± 1.4 | -39.0% | [-17.61, -16.14] | 20/20 | 58% | better ✓ |
-| nearest | 38.7 ± 1.4 | -10.9% | [-5.56, -3.86] | 20/20 | 16% | better ✓ |
-| zone | 36.9 ± 2.0 | -15.0% | [-7.45, -5.63] | 20/20 | 22% | better ✓ |
+| cost | 32.7 ± 1.7 | -35.6% | [-18.94, -17.27] | 20/20 | 49% | better ✓ |
+| nearest | 64.4 ± 15.6 | +26.7% | [+7.76, +21.09] | 1/20 | -37% | worse ✗ |
+| zone | 40.0 ± 1.7 | -21.3% | [-11.66, -9.95] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.5 | -9.2% | [-3.64, -1.82] | 18/20 | better ✓ |
-| nearest | look | 38.7 | -18.5% | [-10.00, -7.55] | 20/20 | better ✓ |
-| round_robin | look | 43.4 | -11.6% | [-6.68, -4.79] | 20/20 | better ✓ |
-| zone | look | 36.9 | -26.7% | [-14.50, -12.42] | 20/20 | better ✓ |
+| cost | look | 32.7 | -5.0% | [-2.83, -0.68] | 15/20 | - |
+| nearest | look | 64.4 | -18.7% | [-25.28, -4.85] | 16/20 | better ✓ |
+| round_robin | look | 50.8 | -8.7% | [-5.31, -4.36] | 20/20 | better ✓ |
+| zone | look | 40.0 | -29.2% | [-17.39, -15.53] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.5 | 9.1 | 25.1 | 41.8 | 12.5 | 0.54 |
-| cost | scan | 29.2 | 11.3 | 33.0 | 46.1 | 15.2 | 0.54 |
-| nearest | look | 38.7 | 20.8 | 63.8 | 76.8 | 24.7 | 0.46 |
-| nearest | scan | 47.5 | 29.2 | 70.1 | 84.5 | 33.5 | 0.54 |
-| round_robin | look | 43.4 | 26.0 | 55.5 | 67.8 | 29.4 | 0.70 |
-| round_robin | scan | 49.1 | 31.3 | 63.4 | 72.2 | 35.1 | 0.71 |
-| zone | look | 36.9 | 19.3 | 54.4 | 73.2 | 22.9 | 0.55 |
-| zone | scan | 50.3 | 32.2 | 64.1 | 75.5 | 36.4 | 0.71 |
+| cost | look | 32.7 | 12.6 | 30.7 | 56.5 | 18.6 | 0.61 |
+| cost | scan | 34.4 | 14.1 | 35.3 | 49.0 | 20.4 | 0.62 |
+| nearest | look | 64.4 | 43.7 | 115.7 | 232.3 | 50.3 | 0.53 |
+| nearest | scan | 79.1 | 58.2 | 161.8 | 251.7 | 65.1 | 0.54 |
+| round_robin | look | 50.8 | 31.0 | 63.2 | 74.6 | 36.7 | 0.72 |
+| round_robin | scan | 55.6 | 35.4 | 68.8 | 86.0 | 41.5 | 0.73 |
+| zone | look | 40.0 | 21.4 | 58.6 | 119.7 | 25.9 | 0.54 |
+| zone | scan | 56.4 | 36.9 | 72.4 | 181.1 | 42.3 | 0.68 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 9.1 | 3.4 | 13% / 18 | 23% | 6.2 / 3.4 | 85% | 11.3 | 1.41 | 0.10 | 0.0% |
-| cost | scan | 11.3 | 3.9 | 10% / 25 | 22% | 7.3 / 3.6 | 83% | 10.9 | 1.44 | 0.13 | 0.0% |
-| nearest | look | 20.8 | 3.9 | 34% / 43 | 16% | 3.6 / 3.6 | 83% | 11.1 | 1.39 | 0.15 | 0.1% |
-| nearest | scan | 29.2 | 4.3 | 39% / 55 | 10% | 3.9 / 3.9 | 87% | 12.2 | 1.44 | 0.17 | 0.1% |
-| round_robin | look | 26.0 | 3.4 | 42% / 39 | 7% | 10.8 / 3.8 | 95% | 13.3 | 1.37 | 0.00 | 0.0% |
-| round_robin | scan | 31.3 | 3.8 | 45% / 46 | 4% | 11.3 / 3.7 | 96% | 13.7 | 1.43 | 0.00 | 0.0% |
-| zone | look | 19.3 | 3.6 | 36% / 34 | 21% | 8.0 / 3.1 | 78% | 10.3 | 1.37 | 0.14 | 0.0% |
-| zone | scan | 32.2 | 4.1 | 43% / 48 | 9% | 10.5 / 3.8 | 89% | 12.6 | 1.54 | 0.14 | 0.0% |
+| cost | look | 12.6 | 6.0 | 11% / 25 | 11% | 9.9 / 4.2 | 88% | 7.4 | 1.71 | 0.10 | 0.0% |
+| cost | scan | 14.1 | 6.3 | 8% / 29 | 11% | 10.9 / 4.5 | 86% | 7.3 | 1.73 | 0.10 | 0.0% |
+| nearest | look | 43.7 | 6.6 | 45% / 67 | 5% | 4.7 / 4.7 | 82% | 7.3 | 1.68 | 0.24 | 16.8% |
+| nearest | scan | 58.2 | 6.8 | 46% / 84 | 4% | 4.7 / 4.7 | 81% | 7.9 | 1.69 | 0.29 | 23.5% |
+| round_robin | look | 31.0 | 5.7 | 50% / 46 | 1% | 12.1 / 4.5 | 98% | 8.7 | 1.61 | 0.01 | 0.2% |
+| round_robin | scan | 35.4 | 6.1 | 53% / 51 | 1% | 13.0 / 4.4 | 98% | 8.8 | 1.64 | 0.01 | 0.3% |
+| zone | look | 21.4 | 4.5 | 43% / 34 | 10% | 8.7 / 2.6 | 88% | 7.6 | 1.62 | 0.08 | 1.5% |
+| zone | scan | 36.9 | 5.4 | 50% / 52 | 3% | 12.5 / 4.3 | 94% | 8.7 | 1.92 | 0.08 | 4.4% |
 
-## mixed · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 234, 12.7 / 30 | 24, 11.2 / 27 | 46, 13.1 / 33 |
+| cost | scan | 234, 14.0 / 35 | 24, 13.2 / 33 | 46, 14.8 / 37 |
+| nearest | look | 234, 47.5 / 120 | 24, 28.6 / 69 | 46, 31.1 / 85 |
+| nearest | scan | 234, 65.4 / 170 | 24, 31.2 / 72 | 46, 35.7 / 93 |
+| round_robin | look | 234, 30.5 / 63 | 24, 32.7 / 61 | 46, 32.8 / 62 |
+| round_robin | scan | 234, 35.3 / 68 | 24, 35.1 / 67 | 46, 36.0 / 68 |
+| zone | look | 234, 19.7 / 56 | 24, 22.1 / 53 | 46, 29.4 / 77 |
+| zone | scan | 234, 36.1 / 72 | 24, 35.4 / 64 | 46, 42.1 / 97 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 44.9; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 50.9; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.3 ± 1.2 | -45.8% | [-21.15, -19.99] | 20/20 | 78% | better ✓ |
-| nearest | 36.4 ± 2.6 | -18.9% | [-9.44, -7.56] | 20/20 | 32% | better ✓ |
-| zone | 38.3 ± 1.8 | -14.7% | [-7.32, -5.91] | 20/20 | 25% | better ✓ |
+| cost | 33.7 ± 2.0 | -33.8% | [-18.14, -16.28] | 20/20 | 54% | better ✓ |
+| nearest | 54.9 ± 7.6 | +7.8% | [+1.18, +7.51] | 6/20 | -12% | - |
+| zone | 40.9 ± 1.8 | -19.7% | [-10.81, -9.18] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.3 | -7.1% | [-2.17, -1.55] | 20/20 | better ✓ |
-| nearest | look | 36.4 | -26.1% | [-14.31, -11.51] | 20/20 | better ✓ |
-| round_robin | look | 44.9 | -19.4% | [-11.65, -9.81] | 20/20 | better ✓ |
-| zone | look | 38.3 | -30.7% | [-17.72, -16.12] | 20/20 | better ✓ |
+| cost | look | 33.7 | -2.1% | [-1.24, -0.22] | 13/20 | - |
+| nearest | look | 54.9 | -8.8% | [-8.83, -1.42] | 15/20 | - |
+| round_robin | look | 50.9 | -9.9% | [-6.47, -4.69] | 20/20 | better ✓ |
+| zone | look | 40.9 | -27.0% | [-15.79, -14.37] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.3 | 5.9 | 18.0 | 33.8 | 5.9 | 0.47 |
-| cost | scan | 26.2 | 7.8 | 24.7 | 58.6 | 7.8 | 0.42 |
-| nearest | look | 36.4 | 18.0 | 66.1 | 77.0 | 18.0 | 0.39 |
-| nearest | scan | 49.2 | 30.9 | 76.4 | 80.5 | 30.9 | 0.50 |
-| round_robin | look | 44.9 | 26.5 | 60.2 | 72.8 | 26.5 | 0.67 |
-| round_robin | scan | 55.7 | 37.3 | 73.5 | 77.0 | 37.3 | 0.73 |
-| zone | look | 38.3 | 19.9 | 56.7 | 74.4 | 19.9 | 0.54 |
-| zone | scan | 55.2 | 36.8 | 73.9 | 77.0 | 36.8 | 0.69 |
+| cost | look | 33.7 | 14.8 | 32.7 | 38.6 | 14.8 | 0.68 |
+| cost | scan | 34.4 | 15.5 | 33.5 | 56.2 | 15.5 | 0.67 |
+| nearest | look | 54.9 | 35.9 | 88.8 | 174.4 | 35.9 | 0.52 |
+| nearest | scan | 60.2 | 41.2 | 89.7 | 151.6 | 41.2 | 0.56 |
+| round_robin | look | 50.9 | 32.0 | 65.6 | 75.2 | 32.0 | 0.72 |
+| round_robin | scan | 56.5 | 37.5 | 73.2 | 77.0 | 37.5 | 0.73 |
+| zone | look | 40.9 | 21.9 | 59.6 | 107.0 | 21.9 | 0.56 |
+| zone | scan | 56.0 | 37.0 | 74.7 | 137.2 | 37.0 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 5.9 | 0.0 | 8% / 10 | 44% | 5.3 / 3.1 | 64% | 15.9 | 1.25 | 0.15 | 0.0% |
-| cost | scan | 7.8 | 0.0 | 5% / 21 | 45% | 5.9 / 3.0 | 61% | 15.1 | 1.27 | 0.20 | 0.0% |
-| nearest | look | 18.0 | 0.0 | 30% / 41 | 28% | 3.3 / 3.3 | 68% | 17.3 | 1.25 | 0.20 | 0.0% |
-| nearest | scan | 30.9 | 0.0 | 36% / 63 | 17% | 3.6 / 3.6 | 76% | 19.9 | 1.33 | 0.24 | 0.0% |
-| round_robin | look | 26.5 | 0.0 | 42% / 41 | 18% | 13.6 / 3.7 | 88% | 22.8 | 1.23 | 0.01 | 0.0% |
-| round_robin | scan | 37.3 | 0.0 | 45% / 54 | 10% | 15.3 / 4.6 | 92% | 24.2 | 1.32 | 0.01 | 0.0% |
-| zone | look | 19.9 | 0.0 | 35% / 36 | 31% | 10.4 / 3.3 | 65% | 16.8 | 1.25 | 0.17 | 0.0% |
-| zone | scan | 36.8 | 0.0 | 42% / 56 | 17% | 13.6 / 3.5 | 80% | 21.0 | 1.41 | 0.17 | 0.0% |
+| cost | look | 14.8 | 0.0 | 5% / 18 | 17% | 14.3 / 5.6 | 56% | 8.9 | 1.66 | 0.29 | 0.0% |
+| cost | scan | 15.5 | 0.0 | 2% / 26 | 17% | 14.8 / 5.6 | 54% | 8.6 | 1.67 | 0.29 | 0.0% |
+| nearest | look | 35.9 | 0.0 | 42% / 61 | 9% | 5.4 / 5.4 | 67% | 11.3 | 1.59 | 0.39 | 10.2% |
+| nearest | scan | 41.2 | 0.0 | 43% / 72 | 7% | 4.8 / 4.8 | 75% | 12.7 | 1.60 | 0.37 | 8.8% |
+| round_robin | look | 32.0 | 0.0 | 49% / 47 | 3% | 15.6 / 4.2 | 96% | 15.8 | 1.47 | 0.01 | 0.0% |
+| round_robin | scan | 37.5 | 0.0 | 48% / 57 | 3% | 17.7 / 7.8 | 96% | 16.0 | 1.52 | 0.01 | 0.0% |
+| zone | look | 21.9 | 0.0 | 42% / 37 | 20% | 11.0 / 2.5 | 76% | 12.6 | 1.47 | 0.16 | 0.5% |
+| zone | scan | 37.0 | 0.0 | 45% / 59 | 11% | 15.8 / 4.0 | 85% | 14.3 | 1.72 | 0.16 | 1.2% |
 
-## mixed · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 16.4 / 33 | 22, 8.4 / 20 | 48, 9.0 / 25 |
+| cost | scan | 249, 16.9 / 34 | 22, 9.6 / 24 | 48, 10.4 / 28 |
+| nearest | look | 249, 38.8 / 95 | 22, 25.4 / 67 | 48, 25.7 / 75 |
+| nearest | scan | 249, 43.8 / 91 | 22, 32.6 / 74 | 48, 31.6 / 81 |
+| round_robin | look | 249, 31.9 / 66 | 22, 31.4 / 61 | 48, 32.6 / 64 |
+| round_robin | scan | 249, 37.5 / 73 | 22, 37.4 / 70 | 48, 38.1 / 72 |
+| zone | look | 249, 21.0 / 58 | 22, 17.6 / 46 | 48, 28.8 / 69 |
+| zone | scan | 249, 36.1 / 75 | 22, 38.6 / 71 | 48, 41.3 / 84 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 44.8; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 50.9; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.1 ± 1.1 | -46.1% | [-21.31, -19.99] | 20/20 | 78% | better ✓ |
-| nearest | 36.9 ± 2.6 | -17.7% | [-8.99, -6.96] | 20/20 | 30% | better ✓ |
-| zone | 38.0 ± 1.8 | -15.2% | [-7.45, -6.22] | 20/20 | 26% | better ✓ |
+| cost | 33.6 ± 1.8 | -34.0% | [-18.12, -16.41] | 20/20 | 54% | better ✓ |
+| nearest | 53.8 ± 6.1 | +5.6% | [+0.25, +5.83] | 9/20 | -9% | - |
+| zone | 40.5 ± 1.4 | -20.4% | [-11.30, -9.51] | 20/20 | 33% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.1 | -5.2% | [-1.63, -1.04] | 20/20 | better ✓ |
-| nearest | look | 36.9 | -26.2% | [-14.51, -11.69] | 20/20 | better ✓ |
-| round_robin | look | 44.8 | -19.9% | [-12.29, -9.98] | 20/20 | better ✓ |
-| zone | look | 38.0 | -31.3% | [-18.12, -16.58] | 20/20 | better ✓ |
+| cost | look | 33.6 | -0.5% | [-0.57, +0.26] | 13/20 | - |
+| nearest | look | 53.8 | -11.8% | [-9.89, -4.32] | 19/20 | better ✓ |
+| round_robin | look | 50.9 | -10.3% | [-6.49, -5.18] | 20/20 | better ✓ |
+| zone | look | 40.5 | -27.0% | [-15.56, -14.24] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.1 | 5.7 | 17.0 | 30.4 | 5.7 | 0.49 |
-| cost | scan | 25.5 | 7.1 | 21.9 | 36.5 | 7.1 | 0.48 |
-| nearest | look | 36.9 | 18.5 | 66.3 | 75.5 | 18.5 | 0.39 |
-| nearest | scan | 49.9 | 31.6 | 76.5 | 77.0 | 31.6 | 0.51 |
-| round_robin | look | 44.8 | 26.4 | 60.4 | 72.2 | 26.4 | 0.67 |
-| round_robin | scan | 55.9 | 37.5 | 73.3 | 76.8 | 37.5 | 0.73 |
-| zone | look | 38.0 | 19.6 | 56.5 | 74.2 | 19.6 | 0.53 |
-| zone | scan | 55.3 | 36.9 | 73.7 | 77.0 | 36.9 | 0.70 |
+| cost | look | 33.6 | 14.7 | 32.6 | 39.0 | 14.7 | 0.68 |
+| cost | scan | 33.8 | 14.8 | 32.5 | 39.1 | 14.8 | 0.68 |
+| nearest | look | 53.8 | 34.8 | 87.4 | 147.2 | 34.8 | 0.53 |
+| nearest | scan | 60.9 | 42.0 | 84.7 | 168.1 | 42.0 | 0.55 |
+| round_robin | look | 50.9 | 32.0 | 65.2 | 75.9 | 32.0 | 0.72 |
+| round_robin | scan | 56.8 | 37.8 | 73.3 | 77.0 | 37.8 | 0.74 |
+| zone | look | 40.5 | 21.6 | 59.6 | 101.6 | 21.6 | 0.56 |
+| zone | scan | 55.4 | 36.5 | 74.9 | 137.9 | 36.5 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 5.7 | 0.0 | 8% / 10 | 44% | 5.2 / 2.9 | 64% | 15.8 | 1.25 | 0.15 | 0.0% |
-| cost | scan | 7.1 | 0.0 | 5% / 17 | 46% | 5.8 / 2.9 | 61% | 15.2 | 1.27 | 0.17 | 0.0% |
-| nearest | look | 18.5 | 0.0 | 32% / 42 | 27% | 3.2 / 3.2 | 68% | 17.4 | 1.25 | 0.20 | 0.0% |
-| nearest | scan | 31.6 | 0.0 | 38% / 63 | 17% | 3.4 / 3.4 | 78% | 20.2 | 1.34 | 0.21 | 0.0% |
-| round_robin | look | 26.4 | 0.0 | 41% / 41 | 18% | 13.7 / 3.5 | 88% | 22.8 | 1.24 | 0.01 | 0.0% |
-| round_robin | scan | 37.5 | 0.0 | 46% / 55 | 10% | 15.4 / 3.8 | 92% | 24.2 | 1.32 | 0.01 | 0.0% |
-| zone | look | 19.6 | 0.0 | 34% / 36 | 31% | 10.3 / 3.0 | 65% | 16.7 | 1.25 | 0.17 | 0.0% |
-| zone | scan | 36.9 | 0.0 | 42% / 55 | 17% | 13.5 / 3.4 | 80% | 21.0 | 1.41 | 0.17 | 0.0% |
+| cost | look | 14.7 | 0.0 | 4% / 17 | 17% | 14.3 / 5.5 | 55% | 8.7 | 1.68 | 0.23 | 0.0% |
+| cost | scan | 14.8 | 0.0 | 1% / 16 | 17% | 14.5 / 5.5 | 53% | 8.5 | 1.68 | 0.25 | 0.0% |
+| nearest | look | 34.8 | 0.0 | 42% / 59 | 8% | 5.2 / 5.2 | 66% | 11.1 | 1.60 | 0.39 | 9.8% |
+| nearest | scan | 42.0 | 0.0 | 43% / 72 | 6% | 4.9 / 4.9 | 73% | 12.3 | 1.62 | 0.42 | 9.2% |
+| round_robin | look | 32.0 | 0.0 | 49% / 47 | 3% | 15.7 / 4.1 | 96% | 15.8 | 1.47 | 0.01 | 0.0% |
+| round_robin | scan | 37.8 | 0.0 | 49% / 57 | 3% | 18.1 / 4.3 | 96% | 16.0 | 1.52 | 0.01 | 0.0% |
+| zone | look | 21.6 | 0.0 | 39% / 37 | 20% | 11.1 / 2.6 | 76% | 12.5 | 1.47 | 0.16 | 0.4% |
+| zone | scan | 36.5 | 0.0 | 44% / 58 | 11% | 16.0 / 3.8 | 86% | 14.3 | 1.72 | 0.16 | 1.3% |
 
-## mixed · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 16.5 / 33 | 22, 7.9 / 19 | 48, 8.4 / 24 |
+| cost | scan | 249, 16.4 / 33 | 22, 7.8 / 19 | 48, 9.7 / 27 |
+| nearest | look | 249, 37.9 / 90 | 22, 21.5 / 65 | 48, 23.9 / 74 |
+| nearest | scan | 249, 44.7 / 88 | 22, 32.2 / 75 | 48, 31.5 / 82 |
+| round_robin | look | 249, 31.8 / 65 | 22, 31.9 / 60 | 48, 33.1 / 64 |
+| round_robin | scan | 249, 37.9 / 73 | 22, 38.7 / 71 | 48, 37.5 / 72 |
+| zone | look | 249, 20.7 / 58 | 22, 18.6 / 52 | 48, 27.6 / 67 |
+| zone | scan | 249, 35.4 / 75 | 22, 38.1 / 72 | 48, 41.8 / 87 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 48.4; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 55.9; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.7 ± 1.4 | -44.9% | [-22.55, -20.94] | 20/20 | 72% | better ✓ |
-| nearest | 40.7 ± 2.0 | -15.9% | [-8.65, -6.66] | 20/20 | 26% | better ✓ |
-| zone | 40.9 ± 1.4 | -15.6% | [-8.56, -6.59] | 20/20 | 25% | better ✓ |
+| cost | 36.8 ± 1.8 | -34.2% | [-20.03, -18.08] | 20/20 | 52% | better ✓ |
+| nearest | 64.4 ± 10.0 | +15.2% | [+4.72, +13.14] | 3/20 | -23% | worse ✗ |
+| zone | 44.6 ± 1.9 | -20.2% | [-12.14, -10.38] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.7 | -8.4% | [-2.91, -1.97] | 20/20 | better ✓ |
-| nearest | look | 40.7 | -23.1% | [-13.50, -10.83] | 20/20 | better ✓ |
-| round_robin | look | 48.4 | -18.3% | [-11.54, -10.00] | 20/20 | better ✓ |
-| zone | look | 40.9 | -31.0% | [-19.15, -17.64] | 20/20 | better ✓ |
+| cost | look | 36.8 | -2.2% | [-1.36, -0.26] | 15/20 | - |
+| nearest | look | 64.4 | -19.6% | [-23.06, -8.95] | 18/20 | better ✓ |
+| round_robin | look | 55.9 | -10.5% | [-7.24, -5.84] | 20/20 | better ✓ |
+| zone | look | 44.6 | -28.0% | [-18.49, -16.29] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.7 | 6.7 | 20.6 | 36.5 | 8.3 | 0.47 |
-| cost | scan | 29.1 | 8.9 | 28.2 | 63.1 | 10.7 | 0.42 |
-| nearest | look | 40.7 | 20.6 | 71.7 | 82.5 | 22.3 | 0.40 |
-| nearest | scan | 52.9 | 32.6 | 81.8 | 87.0 | 34.5 | 0.49 |
-| round_robin | look | 48.4 | 28.5 | 64.6 | 77.0 | 30.0 | 0.67 |
-| round_robin | scan | 59.2 | 39.2 | 76.3 | 81.9 | 40.8 | 0.73 |
-| zone | look | 40.9 | 20.9 | 61.0 | 78.2 | 22.5 | 0.54 |
-| zone | scan | 59.3 | 39.0 | 77.5 | 82.8 | 40.9 | 0.70 |
+| cost | look | 36.8 | 14.5 | 33.3 | 42.6 | 17.9 | 0.65 |
+| cost | scan | 37.6 | 15.1 | 34.4 | 58.4 | 18.7 | 0.64 |
+| nearest | look | 64.4 | 42.2 | 116.6 | 218.0 | 45.4 | 0.50 |
+| nearest | scan | 80.0 | 57.7 | 153.2 | 286.4 | 61.1 | 0.54 |
+| round_robin | look | 55.9 | 34.5 | 70.9 | 81.9 | 36.9 | 0.71 |
+| round_robin | scan | 62.4 | 40.8 | 78.8 | 84.5 | 43.5 | 0.73 |
+| zone | look | 44.6 | 23.6 | 64.7 | 114.2 | 25.6 | 0.55 |
+| zone | scan | 61.9 | 40.5 | 79.4 | 172.8 | 43.0 | 0.67 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.7 | 1.6 | 7% / 13 | 42% | 5.6 / 3.1 | 70% | 16.0 | 1.28 | 0.16 | 0.0% |
-| cost | scan | 8.9 | 1.8 | 6% / 24 | 39% | 6.4 / 3.1 | 67% | 15.1 | 1.31 | 0.18 | 0.0% |
-| nearest | look | 20.6 | 1.7 | 32% / 48 | 26% | 3.3 / 3.3 | 70% | 16.7 | 1.28 | 0.21 | 0.0% |
-| nearest | scan | 32.6 | 1.9 | 35% / 67 | 15% | 3.4 / 3.4 | 78% | 19.1 | 1.35 | 0.24 | 0.0% |
-| round_robin | look | 28.5 | 1.5 | 42% / 44 | 15% | 13.7 / 3.6 | 90% | 21.8 | 1.26 | 0.01 | 0.0% |
-| round_robin | scan | 39.2 | 1.7 | 46% / 57 | 8% | 15.3 / 5.3 | 93% | 22.9 | 1.34 | 0.01 | 0.0% |
-| zone | look | 20.9 | 1.5 | 34% / 39 | 29% | 10.3 / 3.1 | 68% | 16.0 | 1.28 | 0.17 | 0.0% |
-| zone | scan | 39.0 | 1.9 | 42% / 58 | 14% | 13.6 / 3.5 | 82% | 20.1 | 1.44 | 0.17 | 0.0% |
+| cost | look | 14.5 | 3.4 | 6% / 23 | 16% | 13.4 / 5.0 | 65% | 9.3 | 1.67 | 0.18 | 0.0% |
+| cost | scan | 15.1 | 3.6 | 2% / 28 | 17% | 13.7 / 5.1 | 63% | 8.9 | 1.68 | 0.19 | 0.0% |
+| nearest | look | 42.2 | 3.2 | 42% / 72 | 9% | 5.0 / 5.0 | 70% | 10.7 | 1.61 | 0.37 | 12.3% |
+| nearest | scan | 57.7 | 3.4 | 42% / 91 | 7% | 4.9 / 4.9 | 73% | 11.7 | 1.63 | 0.42 | 19.0% |
+| round_robin | look | 34.5 | 2.4 | 49% / 52 | 3% | 15.8 / 4.1 | 96% | 14.6 | 1.50 | 0.01 | 0.0% |
+| round_robin | scan | 40.8 | 2.7 | 51% / 60 | 2% | 17.4 / 8.4 | 96% | 15.0 | 1.54 | 0.01 | 0.0% |
+| zone | look | 23.6 | 2.0 | 42% / 40 | 18% | 11.0 / 2.3 | 79% | 11.8 | 1.51 | 0.16 | 0.5% |
+| zone | scan | 40.5 | 2.5 | 47% / 62 | 8% | 16.0 / 4.1 | 88% | 13.7 | 1.78 | 0.16 | 1.7% |
 
-## mixed · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 15.8 / 34 | 22, 8.7 / 21 | 48, 9.9 / 27 |
+| cost | scan | 249, 16.1 / 34 | 22, 10.4 / 26 | 48, 11.8 / 32 |
+| nearest | look | 249, 45.8 / 118 | 22, 27.9 / 75 | 48, 29.5 / 92 |
+| nearest | scan | 249, 63.2 / 159 | 22, 37.4 / 84 | 48, 37.3 / 104 |
+| round_robin | look | 249, 34.0 / 71 | 22, 37.0 / 67 | 48, 36.1 / 71 |
+| round_robin | scan | 249, 40.6 / 79 | 22, 41.9 / 76 | 48, 40.9 / 76 |
+| zone | look | 249, 22.4 / 63 | 22, 20.2 / 51 | 48, 31.8 / 75 |
+| zone | scan | 249, 39.5 / 79 | 22, 40.7 / 75 | 48, 45.6 / 99 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 48.6; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 56.0; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.2 ± 1.2 | -46.1% | [-23.19, -21.60] | 20/20 | 74% | better ✓ |
-| nearest | 40.9 ± 2.8 | -15.9% | [-8.81, -6.71] | 20/20 | 26% | better ✓ |
-| zone | 40.7 ± 1.4 | -16.4% | [-9.02, -6.95] | 20/20 | 26% | better ✓ |
+| cost | 36.5 ± 1.8 | -34.8% | [-20.53, -18.44] | 20/20 | 53% | better ✓ |
+| nearest | 70.3 ± 20.4 | +25.5% | [+7.12, +24.63] | 2/20 | -38% | worse ✗ |
+| zone | 44.3 ± 1.8 | -20.9% | [-12.54, -10.86] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.2 | -7.0% | [-2.37, -1.59] | 20/20 | better ✓ |
-| nearest | look | 40.9 | -21.8% | [-12.58, -10.31] | 20/20 | better ✓ |
-| round_robin | look | 48.6 | -17.4% | [-11.39, -9.07] | 20/20 | better ✓ |
-| zone | look | 40.7 | -30.4% | [-18.61, -16.99] | 20/20 | better ✓ |
+| cost | look | 36.5 | -1.9% | [-1.21, -0.28] | 15/20 | - |
+| nearest | look | 70.3 | -10.1% | [-12.89, -2.53] | 14/20 | - |
+| round_robin | look | 56.0 | -9.8% | [-6.69, -5.54] | 20/20 | better ✓ |
+| zone | look | 44.3 | -27.6% | [-18.34, -15.63] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.2 | 6.3 | 19.3 | 33.9 | 7.8 | 0.48 |
-| cost | scan | 28.2 | 8.0 | 24.6 | 43.4 | 9.8 | 0.47 |
-| nearest | look | 40.9 | 20.8 | 72.4 | 82.6 | 22.5 | 0.39 |
-| nearest | scan | 52.3 | 32.0 | 81.4 | 86.8 | 33.9 | 0.48 |
-| round_robin | look | 48.6 | 28.8 | 65.0 | 76.8 | 30.3 | 0.68 |
-| round_robin | scan | 58.9 | 38.8 | 76.1 | 81.8 | 40.5 | 0.73 |
-| zone | look | 40.7 | 20.8 | 60.6 | 80.3 | 22.3 | 0.53 |
-| zone | scan | 58.4 | 38.2 | 77.4 | 83.7 | 40.0 | 0.69 |
+| cost | look | 36.5 | 14.2 | 32.7 | 41.1 | 17.6 | 0.66 |
+| cost | scan | 37.3 | 14.7 | 33.0 | 40.9 | 18.3 | 0.67 |
+| nearest | look | 70.3 | 48.1 | 130.0 | 223.2 | 51.3 | 0.52 |
+| nearest | scan | 78.2 | 55.9 | 139.5 | 252.2 | 59.3 | 0.54 |
+| round_robin | look | 56.0 | 34.7 | 71.3 | 82.5 | 37.1 | 0.72 |
+| round_robin | scan | 62.1 | 40.5 | 78.5 | 84.8 | 43.2 | 0.73 |
+| zone | look | 44.3 | 23.4 | 65.3 | 117.8 | 25.4 | 0.55 |
+| zone | scan | 61.2 | 39.8 | 79.7 | 171.2 | 42.3 | 0.66 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.3 | 1.6 | 7% / 13 | 42% | 5.3 / 2.9 | 69% | 15.8 | 1.29 | 0.15 | 0.0% |
-| cost | scan | 8.0 | 1.8 | 6% / 21 | 40% | 6.1 / 3.0 | 66% | 15.0 | 1.31 | 0.16 | 0.0% |
-| nearest | look | 20.8 | 1.7 | 32% / 49 | 25% | 3.1 / 3.1 | 71% | 16.6 | 1.29 | 0.22 | 0.0% |
-| nearest | scan | 32.0 | 1.9 | 35% / 66 | 15% | 3.2 / 3.2 | 78% | 19.2 | 1.36 | 0.23 | 0.0% |
-| round_robin | look | 28.8 | 1.5 | 42% / 44 | 14% | 13.8 / 3.4 | 91% | 21.9 | 1.26 | 0.01 | 0.0% |
-| round_robin | scan | 38.8 | 1.7 | 46% / 57 | 8% | 15.3 / 4.0 | 93% | 23.0 | 1.34 | 0.01 | 0.0% |
-| zone | look | 20.8 | 1.5 | 33% / 39 | 29% | 10.3 / 3.0 | 68% | 16.0 | 1.28 | 0.17 | 0.0% |
-| zone | scan | 38.2 | 1.9 | 41% / 58 | 15% | 13.4 / 3.2 | 82% | 20.1 | 1.43 | 0.17 | 0.0% |
+| cost | look | 14.2 | 3.4 | 4% / 21 | 16% | 13.3 / 5.0 | 64% | 9.1 | 1.69 | 0.21 | 0.0% |
+| cost | scan | 14.7 | 3.6 | 1% / 19 | 16% | 13.7 / 5.0 | 60% | 8.5 | 1.70 | 0.18 | 0.0% |
+| nearest | look | 48.1 | 3.3 | 44% / 77 | 7% | 5.2 / 5.2 | 67% | 10.6 | 1.62 | 0.42 | 15.4% |
+| nearest | scan | 55.9 | 3.3 | 44% / 89 | 5% | 4.5 / 4.5 | 74% | 12.0 | 1.63 | 0.38 | 16.4% |
+| round_robin | look | 34.7 | 2.4 | 49% / 52 | 3% | 15.9 / 4.1 | 96% | 14.6 | 1.50 | 0.01 | 0.0% |
+| round_robin | scan | 40.5 | 2.7 | 49% / 61 | 2% | 17.8 / 4.1 | 96% | 14.9 | 1.55 | 0.01 | 0.0% |
+| zone | look | 23.4 | 2.0 | 40% / 40 | 18% | 11.3 / 2.3 | 80% | 11.8 | 1.52 | 0.16 | 0.6% |
+| zone | scan | 39.8 | 2.4 | 45% / 62 | 8% | 16.0 / 3.7 | 88% | 13.7 | 1.79 | 0.16 | 1.9% |
 
-## mixed · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 15.6 / 33 | 22, 8.3 / 20 | 48, 9.4 / 26 |
+| cost | scan | 249, 16.0 / 33 | 22, 8.3 / 20 | 48, 10.7 / 28 |
+| nearest | look | 249, 52.6 / 133 | 22, 28.3 / 78 | 48, 32.3 / 96 |
+| nearest | scan | 249, 60.6 / 141 | 22, 36.0 / 83 | 48, 38.9 / 110 |
+| round_robin | look | 249, 34.2 / 71 | 22, 35.8 / 68 | 48, 36.6 / 72 |
+| round_robin | scan | 249, 40.3 / 78 | 22, 41.6 / 74 | 48, 41.3 / 78 |
+| zone | look | 249, 22.0 / 62 | 22, 21.0 / 56 | 48, 31.7 / 81 |
+| zone | scan | 249, 38.2 / 79 | 22, 41.5 / 77 | 48, 47.6 / 106 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.1; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 61.7; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 28.6 ± 1.3 | -45.0% | [-24.06, -22.82] | 20/20 | 70% | better ✓ |
-| nearest | 44.2 ± 2.4 | -15.1% | [-8.76, -6.85] | 20/20 | 23% | better ✓ |
-| zone | 44.6 ± 1.6 | -14.3% | [-8.27, -6.66] | 20/20 | 22% | better ✓ |
+| cost | 39.4 ± 1.6 | -36.2% | [-23.17, -21.55] | 20/20 | 52% | better ✓ |
+| nearest | 79.6 ± 22.3 | +29.0% | [+10.07, +28.60] | 1/20 | -42% | worse ✗ |
+| zone | 48.8 ± 2.4 | -20.9% | [-13.75, -12.08] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 28.6 | -11.3% | [-4.08, -3.26] | 20/20 | better ✓ |
-| nearest | look | 44.2 | -22.9% | [-14.69, -11.62] | 20/20 | better ✓ |
-| round_robin | look | 52.1 | -17.5% | [-12.14, -10.08] | 20/20 | better ✓ |
-| zone | look | 44.6 | -29.2% | [-19.28, -17.56] | 20/20 | better ✓ |
+| cost | look | 39.4 | -4.8% | [-3.41, -0.97] | 18/20 | better ✓ |
+| nearest | look | 79.6 | -17.1% | [-22.76, -11.08] | 18/20 | better ✓ |
+| round_robin | look | 61.7 | -9.2% | [-6.89, -5.59] | 20/20 | better ✓ |
+| zone | look | 48.8 | -29.1% | [-21.62, -18.59] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 28.6 | 7.2 | 22.7 | 37.2 | 10.2 | 0.47 |
-| cost | scan | 32.3 | 10.4 | 34.3 | 67.8 | 13.9 | 0.42 |
-| nearest | look | 44.2 | 22.3 | 77.7 | 90.9 | 25.8 | 0.40 |
-| nearest | scan | 57.3 | 35.0 | 88.3 | 98.4 | 39.0 | 0.50 |
-| round_robin | look | 52.1 | 30.6 | 68.8 | 84.0 | 33.7 | 0.67 |
-| round_robin | scan | 63.1 | 41.3 | 80.3 | 88.4 | 44.7 | 0.72 |
-| zone | look | 44.6 | 23.1 | 65.5 | 88.2 | 26.2 | 0.54 |
-| zone | scan | 63.0 | 40.8 | 81.9 | 92.7 | 44.6 | 0.69 |
+| cost | look | 39.4 | 14.3 | 34.2 | 45.5 | 20.5 | 0.63 |
+| cost | scan | 41.4 | 15.9 | 38.8 | 67.5 | 22.4 | 0.60 |
+| nearest | look | 79.6 | 54.1 | 145.4 | 269.6 | 60.7 | 0.51 |
+| nearest | scan | 96.0 | 70.2 | 196.6 | 323.8 | 77.1 | 0.52 |
+| round_robin | look | 61.7 | 37.6 | 78.2 | 90.8 | 42.8 | 0.70 |
+| round_robin | scan | 68.0 | 43.3 | 85.2 | 94.5 | 49.0 | 0.72 |
+| zone | look | 48.8 | 25.8 | 71.1 | 151.0 | 29.9 | 0.53 |
+| zone | scan | 68.9 | 44.9 | 87.3 | 262.9 | 49.9 | 0.64 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 7.2 | 3.0 | 8% / 13 | 38% | 5.7 / 3.0 | 76% | 15.9 | 1.31 | 0.13 | 0.0% |
-| cost | scan | 10.4 | 3.5 | 7% / 28 | 34% | 6.8 / 3.2 | 72% | 15.2 | 1.34 | 0.14 | 0.0% |
-| nearest | look | 22.3 | 3.5 | 31% / 52 | 22% | 3.3 / 3.3 | 73% | 16.2 | 1.31 | 0.21 | 0.0% |
-| nearest | scan | 35.0 | 4.0 | 36% / 70 | 14% | 3.4 / 3.4 | 81% | 18.3 | 1.38 | 0.24 | 0.0% |
-| round_robin | look | 30.6 | 3.1 | 42% / 48 | 12% | 13.8 / 3.5 | 92% | 20.8 | 1.29 | 0.01 | 0.0% |
-| round_robin | scan | 41.3 | 3.5 | 47% / 60 | 6% | 15.2 / 5.1 | 94% | 22.0 | 1.36 | 0.01 | 0.0% |
-| zone | look | 23.1 | 3.1 | 34% / 43 | 27% | 10.4 / 3.0 | 71% | 15.4 | 1.30 | 0.17 | 0.0% |
-| zone | scan | 40.8 | 3.8 | 42% / 62 | 13% | 13.4 / 3.5 | 83% | 19.3 | 1.46 | 0.17 | 0.0% |
+| cost | look | 14.3 | 6.2 | 5% / 24 | 16% | 12.7 / 4.5 | 76% | 9.9 | 1.68 | 0.13 | 0.0% |
+| cost | scan | 15.9 | 6.5 | 5% / 38 | 15% | 13.2 / 5.0 | 74% | 9.5 | 1.70 | 0.17 | 0.0% |
+| nearest | look | 54.1 | 6.6 | 42% / 84 | 8% | 4.9 / 4.9 | 71% | 10.2 | 1.63 | 0.36 | 17.9% |
+| nearest | scan | 70.2 | 6.9 | 43% / 109 | 6% | 5.0 / 5.0 | 72% | 11.2 | 1.64 | 0.37 | 21.7% |
+| round_robin | look | 37.6 | 5.2 | 50% / 57 | 3% | 15.7 / 3.9 | 96% | 13.5 | 1.52 | 0.01 | 0.0% |
+| round_robin | scan | 43.3 | 5.7 | 52% / 64 | 2% | 17.7 / 9.2 | 97% | 13.7 | 1.57 | 0.01 | 0.0% |
+| zone | look | 25.8 | 4.1 | 41% / 44 | 16% | 11.1 / 2.2 | 82% | 11.1 | 1.56 | 0.16 | 1.0% |
+| zone | scan | 44.9 | 5.0 | 48% / 67 | 7% | 16.1 / 3.9 | 90% | 13.0 | 1.83 | 0.16 | 2.8% |
 
-## mixed · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 14.9 / 34 | 22, 10.5 / 24 | 48, 12.4 / 34 |
+| cost | scan | 249, 16.3 / 38 | 22, 12.7 / 32 | 48, 15.1 / 41 |
+| nearest | look | 249, 58.6 / 149 | 22, 33.9 / 85 | 48, 38.4 / 115 |
+| nearest | scan | 249, 77.1 / 198 | 22, 42.1 / 93 | 48, 45.0 / 127 |
+| round_robin | look | 249, 36.7 / 77 | 22, 40.5 / 74 | 48, 40.9 / 79 |
+| round_robin | scan | 249, 43.0 / 85 | 22, 44.1 / 84 | 48, 44.7 / 86 |
+| zone | look | 249, 24.0 / 69 | 22, 22.9 / 59 | 48, 36.6 / 93 |
+| zone | scan | 249, 43.1 / 86 | 22, 42.0 / 79 | 48, 55.9 / 133 |
+
+## morning_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.0; B0 floor = 18.4)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 61.8; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 28.3 ± 1.2 | -45.6% | [-24.46, -22.96] | 20/20 | 70% | better ✓ |
-| nearest | 44.2 ± 3.1 | -15.1% | [-9.29, -6.50] | 20/20 | 23% | better ✓ |
-| zone | 44.1 ± 1.7 | -15.3% | [-8.81, -7.09] | 20/20 | 24% | better ✓ |
+| cost | 39.6 ± 1.6 | -36.0% | [-23.16, -21.29] | 20/20 | 52% | better ✓ |
+| nearest | 79.6 ± 20.5 | +28.7% | [+9.69, +27.73] | 3/20 | -41% | worse ✗ |
+| zone | 48.5 ± 2.6 | -21.6% | [-14.37, -12.30] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 28.3 | -8.3% | [-3.20, -1.89] | 19/20 | better ✓ |
-| nearest | look | 44.2 | -22.4% | [-14.66, -10.86] | 20/20 | better ✓ |
-| round_robin | look | 52.0 | -17.8% | [-12.44, -10.16] | 20/20 | better ✓ |
-| zone | look | 44.1 | -30.1% | [-19.95, -17.99] | 20/20 | better ✓ |
+| cost | look | 39.6 | -0.9% | [-0.89, +0.20] | 16/20 | - |
+| nearest | look | 79.6 | -10.8% | [-17.72, -1.52] | 14/20 | - |
+| round_robin | look | 61.8 | -9.7% | [-7.15, -6.11] | 20/20 | better ✓ |
+| zone | look | 48.5 | -29.0% | [-21.28, -18.30] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 28.3 | 6.9 | 21.7 | 37.1 | 9.9 | 0.47 |
-| cost | scan | 30.9 | 9.0 | 27.9 | 47.0 | 12.5 | 0.47 |
-| nearest | look | 44.2 | 22.3 | 76.7 | 93.9 | 25.8 | 0.39 |
-| nearest | scan | 56.9 | 34.6 | 88.0 | 99.0 | 38.5 | 0.49 |
-| round_robin | look | 52.0 | 30.6 | 69.5 | 84.0 | 33.7 | 0.67 |
-| round_robin | scan | 63.3 | 41.5 | 81.2 | 88.6 | 44.9 | 0.73 |
-| zone | look | 44.1 | 22.5 | 64.2 | 86.2 | 25.7 | 0.54 |
-| zone | scan | 63.1 | 40.9 | 82.0 | 90.9 | 44.7 | 0.70 |
+| cost | look | 39.6 | 14.3 | 33.7 | 46.2 | 20.6 | 0.64 |
+| cost | scan | 39.9 | 14.2 | 33.2 | 46.9 | 21.0 | 0.65 |
+| nearest | look | 79.6 | 54.0 | 145.5 | 252.5 | 60.6 | 0.51 |
+| nearest | scan | 89.2 | 63.3 | 163.8 | 287.5 | 70.2 | 0.56 |
+| round_robin | look | 61.8 | 37.7 | 77.9 | 90.4 | 42.9 | 0.71 |
+| round_robin | scan | 68.4 | 43.8 | 85.4 | 95.0 | 49.5 | 0.73 |
+| zone | look | 48.5 | 25.4 | 69.9 | 149.4 | 29.5 | 0.53 |
+| zone | scan | 68.2 | 44.3 | 89.2 | 244.8 | 49.3 | 0.64 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 6.9 | 3.0 | 8% / 14 | 39% | 5.5 / 2.8 | 76% | 15.9 | 1.31 | 0.12 | 0.0% |
-| cost | scan | 9.0 | 3.5 | 6% / 22 | 35% | 6.4 / 2.9 | 72% | 15.1 | 1.34 | 0.12 | 0.0% |
-| nearest | look | 22.3 | 3.5 | 32% / 52 | 24% | 3.2 / 3.2 | 74% | 16.2 | 1.31 | 0.20 | 0.1% |
-| nearest | scan | 34.6 | 3.9 | 36% / 70 | 14% | 3.3 / 3.3 | 81% | 18.7 | 1.38 | 0.20 | 0.0% |
-| round_robin | look | 30.6 | 3.1 | 42% / 47 | 12% | 13.7 / 3.3 | 92% | 20.9 | 1.29 | 0.01 | 0.0% |
-| round_robin | scan | 41.5 | 3.5 | 47% / 60 | 6% | 15.3 / 3.6 | 94% | 22.0 | 1.36 | 0.01 | 0.0% |
-| zone | look | 22.5 | 3.2 | 33% / 43 | 27% | 10.5 / 2.9 | 70% | 15.3 | 1.30 | 0.17 | 0.0% |
-| zone | scan | 40.9 | 3.8 | 41% / 62 | 13% | 13.6 / 3.2 | 84% | 19.5 | 1.46 | 0.17 | 0.0% |
+| cost | look | 14.3 | 6.3 | 4% / 23 | 16% | 12.9 / 4.5 | 75% | 9.7 | 1.69 | 0.12 | 0.1% |
+| cost | scan | 14.2 | 6.8 | 1% / 21 | 15% | 12.8 / 4.5 | 71% | 9.0 | 1.71 | 0.15 | 0.0% |
+| nearest | look | 54.0 | 6.7 | 42% / 83 | 7% | 4.6 / 4.6 | 70% | 10.1 | 1.65 | 0.37 | 18.0% |
+| nearest | scan | 63.3 | 6.9 | 45% / 98 | 5% | 4.7 / 4.7 | 75% | 11.3 | 1.64 | 0.33 | 19.6% |
+| round_robin | look | 37.7 | 5.2 | 49% / 57 | 2% | 16.0 / 3.9 | 96% | 13.6 | 1.53 | 0.01 | 0.0% |
+| round_robin | scan | 43.8 | 5.7 | 51% / 64 | 2% | 17.7 / 4.1 | 97% | 13.9 | 1.57 | 0.01 | 0.0% |
+| zone | look | 25.4 | 4.2 | 40% / 44 | 16% | 11.3 / 2.2 | 82% | 11.1 | 1.55 | 0.16 | 0.8% |
+| zone | scan | 44.3 | 5.0 | 46% / 67 | 7% | 16.5 / 3.6 | 90% | 13.1 | 1.84 | 0.16 | 3.1% |
 
-## morning_rush · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 249, 15.1 / 34 | 22, 9.4 / 22 | 48, 12.3 / 34 |
+| cost | scan | 249, 14.9 / 33 | 22, 10.0 / 23 | 48, 12.7 / 34 |
+| nearest | look | 249, 59.6 / 150 | 22, 29.7 / 81 | 48, 33.9 / 102 |
+| nearest | scan | 249, 69.4 / 171 | 22, 39.3 / 91 | 48, 42.1 / 121 |
+| round_robin | look | 249, 37.0 / 77 | 22, 40.3 / 73 | 48, 40.0 / 79 |
+| round_robin | scan | 249, 43.6 / 85 | 22, 44.5 / 82 | 48, 44.3 / 84 |
+| zone | look | 249, 23.4 / 67 | 22, 23.6 / 62 | 48, 36.4 / 95 |
+| zone | scan | 249, 42.5 / 87 | 22, 41.2 / 80 | 48, 55.1 / 134 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 35.4; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 37.2; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.2 ± 1.1 | -31.6% | [-11.70, -10.67] | 20/20 | 53% | better ✓ |
-| nearest | 34.5 ± 2.8 | -2.6% | [-2.04, +0.22] | 12/20 | 4% | - |
-| zone | 30.0 ± 1.6 | -15.2% | [-5.89, -4.85] | 20/20 | 25% | better ✓ |
+| cost | 21.1 ± 0.7 | -43.3% | [-16.65, -15.53] | 20/20 | 70% | better ✓ |
+| nearest | 32.6 ± 1.5 | -12.2% | [-5.27, -3.70] | 20/20 | 20% | better ✓ |
+| zone | 30.2 ± 1.1 | -18.6% | [-7.47, -6.34] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.2 | -2.1% | [-0.82, -0.25] | 15/20 | - |
-| nearest | look | 34.5 | -16.3% | [-8.17, -5.09] | 18/20 | better ✓ |
-| round_robin | look | 35.4 | -15.9% | [-7.42, -5.96] | 20/20 | better ✓ |
-| zone | look | 30.0 | -26.3% | [-11.41, -9.99] | 20/20 | better ✓ |
+| cost | look | 21.1 | -7.3% | [-1.87, -1.44] | 20/20 | better ✓ |
+| nearest | look | 32.6 | -17.1% | [-7.43, -5.97] | 20/20 | better ✓ |
+| round_robin | look | 37.2 | -11.9% | [-5.63, -4.45] | 20/20 | better ✓ |
+| zone | look | 30.2 | -28.6% | [-12.48, -11.69] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.2 | 9.9 | 23.7 | 28.8 | 9.9 | 0.64 |
-| cost | scan | 24.7 | 10.4 | 24.6 | 38.6 | 10.4 | 0.63 |
-| nearest | look | 34.5 | 20.2 | 55.0 | 71.8 | 20.2 | 0.51 |
-| nearest | scan | 41.2 | 26.9 | 56.8 | 73.8 | 26.9 | 0.57 |
-| round_robin | look | 35.4 | 21.1 | 46.4 | 55.0 | 21.1 | 0.68 |
-| round_robin | scan | 42.1 | 27.8 | 54.4 | 57.0 | 27.8 | 0.72 |
-| zone | look | 30.0 | 15.7 | 41.9 | 55.1 | 15.7 | 0.58 |
-| zone | scan | 40.7 | 26.4 | 54.5 | 57.4 | 26.4 | 0.68 |
+| cost | look | 21.1 | 7.0 | 19.1 | 30.7 | 7.0 | 0.56 |
+| cost | scan | 22.7 | 8.7 | 24.9 | 43.5 | 8.7 | 0.53 |
+| nearest | look | 32.6 | 18.6 | 52.1 | 57.2 | 18.6 | 0.50 |
+| nearest | scan | 39.4 | 25.3 | 56.5 | 59.3 | 25.3 | 0.56 |
+| round_robin | look | 37.2 | 23.1 | 47.9 | 55.7 | 23.1 | 0.71 |
+| round_robin | scan | 42.2 | 28.1 | 54.1 | 57.0 | 28.1 | 0.74 |
+| zone | look | 30.2 | 16.2 | 44.3 | 55.6 | 16.2 | 0.57 |
+| zone | scan | 42.3 | 28.3 | 54.6 | 57.1 | 28.3 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 9.9 | 0.0 | 6% / 14 | 24% | 9.5 / 5.3 | 56% | 9.3 | 1.58 | 0.22 | 0.0% |
-| cost | scan | 10.4 | 0.0 | 2% / 18 | 26% | 9.9 / 5.1 | 56% | 9.3 | 1.58 | 0.20 | 0.0% |
-| nearest | look | 20.2 | 0.0 | 41% / 38 | 13% | 5.3 / 5.3 | 63% | 10.6 | 1.52 | 0.29 | 2.0% |
-| nearest | scan | 26.9 | 0.0 | 44% / 50 | 9% | 5.2 / 5.2 | 71% | 12.2 | 1.56 | 0.29 | 1.2% |
-| round_robin | look | 21.1 | 0.0 | 46% / 33 | 10% | 10.9 / 4.1 | 93% | 15.6 | 1.35 | 0.00 | 0.0% |
-| round_robin | scan | 27.8 | 0.0 | 47% / 42 | 7% | 13.0 / 5.4 | 94% | 16.1 | 1.45 | 0.00 | 0.0% |
-| zone | look | 15.7 | 0.0 | 37% / 27 | 25% | 8.7 / 2.8 | 72% | 12.1 | 1.37 | 0.11 | 0.0% |
-| zone | scan | 26.4 | 0.0 | 43% / 43 | 16% | 11.8 / 4.3 | 81% | 13.9 | 1.55 | 0.11 | 0.0% |
+| cost | look | 7.0 | 0.0 | 13% / 12 | 21% | 5.8 / 3.3 | 83% | 9.8 | 1.44 | 0.09 | 0.0% |
+| cost | scan | 8.7 | 0.0 | 9% / 17 | 25% | 6.6 / 3.4 | 78% | 9.2 | 1.47 | 0.13 | 0.0% |
+| nearest | look | 18.6 | 0.0 | 39% / 36 | 12% | 3.7 / 3.7 | 85% | 10.3 | 1.44 | 0.16 | 0.0% |
+| nearest | scan | 25.3 | 0.0 | 42% / 46 | 7% | 3.8 / 3.8 | 89% | 11.0 | 1.51 | 0.15 | 0.1% |
+| round_robin | look | 23.1 | 0.0 | 48% / 33 | 4% | 10.6 / 4.1 | 96% | 11.7 | 1.45 | 0.01 | 0.0% |
+| round_robin | scan | 28.1 | 0.0 | 49% / 40 | 3% | 11.7 / 6.2 | 97% | 11.8 | 1.51 | 0.01 | 0.0% |
+| zone | look | 16.2 | 0.0 | 41% / 27 | 18% | 7.8 / 3.4 | 80% | 9.6 | 1.42 | 0.09 | 0.0% |
+| zone | scan | 28.3 | 0.0 | 48% / 40 | 7% | 10.9 / 4.5 | 91% | 11.1 | 1.65 | 0.09 | 0.0% |
 
-## morning_rush · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 6.4 / 18 | 120, 7.5 / 20 | 46, 7.2 / 18 |
+| cost | scan | 114, 7.0 / 20 | 120, 10.2 / 28 | 46, 8.7 / 22 |
+| nearest | look | 114, 17.2 / 52 | 120, 19.6 / 51 | 46, 19.3 / 51 |
+| nearest | scan | 114, 24.9 / 57 | 120, 26.7 / 56 | 46, 22.5 / 56 |
+| round_robin | look | 114, 22.4 / 47 | 120, 23.3 / 48 | 46, 24.1 / 47 |
+| round_robin | scan | 114, 27.8 / 54 | 120, 28.4 / 54 | 46, 28.2 / 53 |
+| zone | look | 114, 15.0 / 43 | 120, 15.7 / 43 | 46, 20.0 / 46 |
+| zone | scan | 114, 27.2 / 54 | 120, 29.0 / 54 | 46, 28.9 / 54 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 35.6; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 36.9; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 24.3 ± 1.0 | -31.7% | [-12.05, -10.59] | 20/20 | 53% | better ✓ |
-| nearest | 34.6 ± 1.7 | -2.8% | [-2.05, +0.06] | 12/20 | 5% | - |
-| zone | 30.4 ± 1.5 | -14.7% | [-5.82, -4.68] | 20/20 | 25% | better ✓ |
+| cost | 20.9 ± 1.0 | -43.2% | [-16.58, -15.30] | 20/20 | 70% | better ✓ |
+| nearest | 32.8 ± 1.8 | -11.0% | [-4.85, -3.25] | 20/20 | 18% | better ✓ |
+| zone | 30.4 ± 1.1 | -17.6% | [-7.04, -5.92] | 20/20 | 28% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 24.3 | -1.1% | [-0.55, -0.02] | 12/20 | - |
-| nearest | look | 34.6 | -16.8% | [-7.92, -6.03] | 20/20 | better ✓ |
-| round_robin | look | 35.6 | -15.4% | [-7.06, -5.86] | 20/20 | better ✓ |
-| zone | look | 30.4 | -25.5% | [-11.00, -9.78] | 20/20 | better ✓ |
+| cost | look | 20.9 | -6.2% | [-1.60, -1.19] | 20/20 | better ✓ |
+| nearest | look | 32.8 | -16.7% | [-7.15, -6.05] | 20/20 | better ✓ |
+| round_robin | look | 36.9 | -12.5% | [-5.74, -4.84] | 20/20 | better ✓ |
+| zone | look | 30.4 | -27.8% | [-12.28, -11.13] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 24.3 | 10.0 | 23.9 | 28.8 | 10.0 | 0.65 |
-| cost | scan | 24.6 | 10.3 | 24.0 | 29.9 | 10.3 | 0.65 |
-| nearest | look | 34.6 | 20.3 | 52.4 | 63.0 | 20.3 | 0.53 |
-| nearest | scan | 41.6 | 27.3 | 56.8 | 68.9 | 27.3 | 0.57 |
-| round_robin | look | 35.6 | 21.3 | 46.2 | 55.3 | 21.3 | 0.69 |
-| round_robin | scan | 42.1 | 27.8 | 54.8 | 57.0 | 27.8 | 0.73 |
-| zone | look | 30.4 | 16.1 | 42.7 | 54.7 | 16.1 | 0.58 |
-| zone | scan | 40.7 | 26.4 | 54.8 | 58.8 | 26.4 | 0.68 |
+| cost | look | 20.9 | 6.9 | 18.9 | 29.7 | 6.9 | 0.56 |
+| cost | scan | 22.3 | 8.3 | 22.9 | 36.4 | 8.3 | 0.55 |
+| nearest | look | 32.8 | 18.8 | 51.8 | 58.1 | 18.8 | 0.50 |
+| nearest | scan | 39.4 | 25.3 | 56.7 | 63.5 | 25.3 | 0.55 |
+| round_robin | look | 36.9 | 22.8 | 48.1 | 55.9 | 22.8 | 0.71 |
+| round_robin | scan | 42.2 | 28.1 | 54.4 | 57.0 | 28.1 | 0.74 |
+| zone | look | 30.4 | 16.3 | 44.3 | 56.4 | 16.3 | 0.57 |
+| zone | scan | 42.1 | 28.0 | 54.4 | 59.6 | 28.0 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.0 | 0.0 | 6% / 14 | 23% | 9.6 / 5.3 | 56% | 9.2 | 1.59 | 0.21 | 0.0% |
-| cost | scan | 10.3 | 0.0 | 1% / 14 | 26% | 10.0 / 5.2 | 56% | 9.2 | 1.59 | 0.20 | 0.0% |
-| nearest | look | 20.3 | 0.0 | 42% / 38 | 12% | 5.3 / 5.3 | 64% | 10.8 | 1.52 | 0.30 | 0.8% |
-| nearest | scan | 27.3 | 0.0 | 45% / 50 | 8% | 5.2 / 5.2 | 72% | 12.3 | 1.57 | 0.34 | 1.6% |
-| round_robin | look | 21.3 | 0.0 | 46% / 33 | 9% | 11.0 / 4.0 | 93% | 15.7 | 1.36 | 0.00 | 0.0% |
-| round_robin | scan | 27.8 | 0.0 | 47% / 42 | 6% | 13.1 / 5.1 | 95% | 16.2 | 1.45 | 0.00 | 0.0% |
-| zone | look | 16.1 | 0.0 | 38% / 28 | 25% | 8.8 / 2.8 | 72% | 12.1 | 1.37 | 0.11 | 0.0% |
-| zone | scan | 26.4 | 0.0 | 43% / 43 | 16% | 11.8 / 4.0 | 82% | 13.9 | 1.55 | 0.11 | 0.1% |
+| cost | look | 6.9 | 0.0 | 13% / 11 | 22% | 5.7 / 3.3 | 83% | 9.7 | 1.44 | 0.10 | 0.0% |
+| cost | scan | 8.3 | 0.0 | 9% / 16 | 25% | 6.5 / 3.3 | 78% | 9.3 | 1.47 | 0.14 | 0.0% |
+| nearest | look | 18.8 | 0.0 | 40% / 36 | 12% | 3.7 / 3.7 | 86% | 10.4 | 1.44 | 0.14 | 0.0% |
+| nearest | scan | 25.3 | 0.0 | 42% / 46 | 6% | 3.6 / 3.6 | 89% | 11.0 | 1.51 | 0.14 | 0.1% |
+| round_robin | look | 22.8 | 0.0 | 47% / 33 | 4% | 10.5 / 3.9 | 96% | 11.7 | 1.45 | 0.01 | 0.0% |
+| round_robin | scan | 28.1 | 0.0 | 49% / 40 | 3% | 11.6 / 3.8 | 97% | 11.9 | 1.51 | 0.01 | 0.0% |
+| zone | look | 16.3 | 0.0 | 41% / 27 | 18% | 7.7 / 3.3 | 80% | 9.6 | 1.41 | 0.09 | 0.0% |
+| zone | scan | 28.0 | 0.0 | 47% / 41 | 7% | 10.8 / 3.8 | 91% | 11.1 | 1.64 | 0.09 | 0.0% |
 
-## morning_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 6.3 / 18 | 120, 7.3 / 19 | 46, 7.1 / 18 |
+| cost | scan | 114, 7.0 / 21 | 120, 9.3 / 25 | 46, 8.7 / 21 |
+| nearest | look | 114, 18.1 / 52 | 120, 18.9 / 50 | 46, 19.8 / 52 |
+| nearest | scan | 114, 25.9 / 57 | 120, 25.4 / 56 | 46, 23.8 / 56 |
+| round_robin | look | 114, 22.5 / 48 | 120, 22.8 / 47 | 46, 23.4 / 46 |
+| round_robin | scan | 114, 27.9 / 54 | 120, 28.4 / 54 | 46, 27.7 / 53 |
+| zone | look | 114, 15.0 / 42 | 120, 16.1 / 43 | 46, 20.3 / 47 |
+| zone | scan | 114, 26.7 / 54 | 120, 29.2 / 54 | 46, 28.4 / 54 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 39.3; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 42.4; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 27.0 ± 1.4 | -31.2% | [-12.99, -11.43] | 20/20 | 49% | better ✓ |
-| nearest | 39.8 ± 3.6 | +1.3% | [-1.19, +2.40] | 12/20 | -2% | - |
-| zone | 32.7 ± 1.8 | -16.6% | [-7.07, -5.90] | 20/20 | 26% | better ✓ |
+| cost | 25.3 ± 1.3 | -40.4% | [-17.67, -16.55] | 20/20 | 60% | better ✓ |
+| nearest | 38.2 ± 2.2 | -9.8% | [-5.11, -3.19] | 19/20 | 15% | better ✓ |
+| zone | 34.2 ± 1.5 | -19.3% | [-8.70, -7.63] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 27.0 | -2.0% | [-0.97, -0.11] | 14/20 | - |
-| nearest | look | 39.8 | -12.2% | [-6.89, -4.14] | 19/20 | better ✓ |
-| round_robin | look | 39.3 | -14.1% | [-7.42, -5.59] | 20/20 | better ✓ |
-| zone | look | 32.7 | -27.2% | [-12.94, -11.58] | 20/20 | better ✓ |
+| cost | look | 25.3 | -10.8% | [-3.82, -2.27] | 19/20 | better ✓ |
+| nearest | look | 38.2 | -15.1% | [-8.19, -5.41] | 20/20 | better ✓ |
+| round_robin | look | 42.4 | -11.0% | [-5.78, -4.70] | 20/20 | better ✓ |
+| zone | look | 34.2 | -27.2% | [-13.40, -12.19] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 27.0 | 10.2 | 24.5 | 29.6 | 12.7 | 0.62 |
-| cost | scan | 27.6 | 10.6 | 25.7 | 41.2 | 13.3 | 0.61 |
-| nearest | look | 39.8 | 22.9 | 60.3 | 84.2 | 25.5 | 0.51 |
-| nearest | scan | 45.3 | 28.3 | 63.3 | 84.8 | 31.0 | 0.54 |
-| round_robin | look | 39.3 | 23.1 | 50.4 | 59.0 | 25.0 | 0.68 |
-| round_robin | scan | 45.7 | 29.3 | 58.0 | 62.7 | 31.4 | 0.71 |
-| zone | look | 32.7 | 16.7 | 46.4 | 61.8 | 18.4 | 0.56 |
-| zone | scan | 45.0 | 28.6 | 58.1 | 65.2 | 30.7 | 0.69 |
+| cost | look | 25.3 | 9.2 | 24.5 | 37.0 | 11.2 | 0.57 |
+| cost | scan | 28.3 | 11.9 | 33.3 | 49.5 | 14.3 | 0.55 |
+| nearest | look | 38.2 | 21.9 | 60.0 | 80.9 | 24.2 | 0.51 |
+| nearest | scan | 45.1 | 28.5 | 64.5 | 78.5 | 31.0 | 0.56 |
+| round_robin | look | 42.4 | 26.3 | 54.0 | 63.0 | 28.3 | 0.72 |
+| round_robin | scan | 47.6 | 31.4 | 60.1 | 66.0 | 33.6 | 0.74 |
+| zone | look | 34.2 | 18.3 | 50.2 | 64.2 | 20.1 | 0.57 |
+| zone | scan | 47.0 | 30.7 | 60.0 | 72.6 | 32.9 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.2 | 2.5 | 5% / 16 | 23% | 9.4 / 4.9 | 63% | 9.3 | 1.60 | 0.17 | 0.0% |
-| cost | scan | 10.6 | 2.6 | 2% / 22 | 24% | 9.6 / 4.8 | 63% | 9.3 | 1.59 | 0.15 | 0.0% |
-| nearest | look | 22.9 | 2.6 | 41% / 44 | 11% | 5.2 / 5.2 | 65% | 9.8 | 1.56 | 0.33 | 2.5% |
-| nearest | scan | 28.3 | 2.7 | 42% / 55 | 9% | 5.1 / 5.1 | 73% | 11.3 | 1.58 | 0.30 | 2.1% |
-| round_robin | look | 23.1 | 1.8 | 47% / 36 | 8% | 11.1 / 4.1 | 94% | 14.6 | 1.39 | 0.00 | 0.0% |
-| round_robin | scan | 29.3 | 2.1 | 49% / 45 | 5% | 12.8 / 5.2 | 95% | 15.0 | 1.48 | 0.00 | 0.0% |
-| zone | look | 16.7 | 1.7 | 37% / 30 | 23% | 8.7 / 2.6 | 76% | 11.5 | 1.40 | 0.11 | 0.1% |
-| zone | scan | 28.6 | 2.1 | 46% / 45 | 13% | 11.8 / 4.0 | 85% | 13.3 | 1.60 | 0.11 | 0.1% |
+| cost | look | 9.2 | 2.0 | 16% / 16 | 14% | 6.6 / 3.6 | 90% | 9.4 | 1.51 | 0.09 | 0.0% |
+| cost | scan | 11.9 | 2.3 | 13% / 24 | 16% | 7.7 / 3.9 | 86% | 9.0 | 1.55 | 0.13 | 0.0% |
+| nearest | look | 21.9 | 2.3 | 39% / 41 | 9% | 3.9 / 3.9 | 88% | 9.5 | 1.49 | 0.14 | 0.4% |
+| nearest | scan | 28.5 | 2.5 | 42% / 51 | 6% | 3.7 / 3.7 | 90% | 9.9 | 1.55 | 0.16 | 0.2% |
+| round_robin | look | 26.3 | 2.0 | 48% / 38 | 3% | 10.6 / 4.0 | 97% | 10.5 | 1.50 | 0.01 | 0.0% |
+| round_robin | scan | 31.4 | 2.2 | 48% / 44 | 2% | 11.7 / 7.1 | 97% | 10.7 | 1.54 | 0.01 | 0.0% |
+| zone | look | 18.3 | 1.9 | 39% / 31 | 15% | 7.9 / 3.2 | 84% | 8.8 | 1.47 | 0.09 | 0.0% |
+| zone | scan | 30.7 | 2.3 | 46% / 45 | 5% | 10.7 / 4.3 | 93% | 10.2 | 1.70 | 0.09 | 0.1% |
 
-## morning_rush · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 7.9 / 23 | 120, 9.9 / 25 | 46, 10.2 / 25 |
+| cost | scan | 114, 9.8 / 30 | 120, 13.7 / 36 | 46, 12.5 / 31 |
+| nearest | look | 114, 19.7 / 59 | 120, 24.0 / 59 | 46, 22.1 / 61 |
+| nearest | scan | 114, 27.1 / 64 | 120, 30.2 / 64 | 46, 27.5 / 65 |
+| round_robin | look | 114, 25.3 / 54 | 120, 26.7 / 53 | 46, 27.7 / 53 |
+| round_robin | scan | 114, 31.1 / 60 | 120, 31.7 / 60 | 46, 31.0 / 59 |
+| zone | look | 114, 16.7 / 49 | 120, 17.8 / 49 | 46, 23.4 / 51 |
+| zone | scan | 114, 29.3 / 59 | 120, 31.8 / 60 | 46, 31.3 / 60 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 39.5; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 42.5; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 27.1 ± 1.2 | -31.4% | [-13.32, -11.51] | 20/20 | 49% | better ✓ |
-| nearest | 39.4 ± 2.7 | -0.2% | [-1.43, +1.24] | 12/20 | 0% | - |
-| zone | 32.8 ± 1.4 | -16.9% | [-7.28, -6.06] | 20/20 | 26% | better ✓ |
+| cost | 25.0 ± 1.0 | -41.1% | [-17.96, -16.85] | 20/20 | 61% | better ✓ |
+| nearest | 37.9 ± 2.0 | -10.8% | [-5.31, -3.92] | 20/20 | 16% | better ✓ |
+| zone | 34.0 ± 1.5 | -20.1% | [-9.09, -7.93] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 27.1 | -1.3% | [-0.72, +0.01] | 11/20 | - |
-| nearest | look | 39.4 | -14.7% | [-7.88, -5.73] | 20/20 | better ✓ |
-| round_robin | look | 39.5 | -13.8% | [-7.26, -5.46] | 20/20 | better ✓ |
-| zone | look | 32.8 | -26.2% | [-12.27, -11.16] | 20/20 | better ✓ |
+| cost | look | 25.0 | -7.5% | [-2.63, -1.47] | 19/20 | better ✓ |
+| nearest | look | 37.9 | -16.9% | [-8.61, -6.75] | 20/20 | better ✓ |
+| round_robin | look | 42.5 | -10.2% | [-5.36, -4.25] | 20/20 | better ✓ |
+| zone | look | 34.0 | -28.0% | [-13.83, -12.59] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 27.1 | 10.2 | 24.5 | 30.4 | 12.8 | 0.64 |
-| cost | scan | 27.5 | 10.5 | 24.8 | 32.7 | 13.2 | 0.64 |
-| nearest | look | 39.4 | 22.6 | 58.8 | 78.0 | 25.1 | 0.51 |
-| nearest | scan | 46.2 | 29.3 | 63.4 | 77.2 | 31.9 | 0.56 |
-| round_robin | look | 39.5 | 23.4 | 50.8 | 59.4 | 25.2 | 0.69 |
-| round_robin | scan | 45.8 | 29.5 | 57.7 | 62.6 | 31.6 | 0.72 |
-| zone | look | 32.8 | 16.8 | 46.5 | 60.5 | 18.6 | 0.56 |
-| zone | scan | 44.5 | 28.2 | 58.3 | 63.9 | 30.2 | 0.68 |
+| cost | look | 25.0 | 8.9 | 23.5 | 37.6 | 11.0 | 0.57 |
+| cost | scan | 27.1 | 10.7 | 29.4 | 43.2 | 13.0 | 0.56 |
+| nearest | look | 37.9 | 21.6 | 59.8 | 76.7 | 23.8 | 0.50 |
+| nearest | scan | 45.5 | 29.0 | 64.5 | 86.8 | 31.5 | 0.56 |
+| round_robin | look | 42.5 | 26.4 | 54.3 | 63.8 | 28.4 | 0.72 |
+| round_robin | scan | 47.3 | 31.0 | 59.8 | 66.2 | 33.2 | 0.73 |
+| zone | look | 34.0 | 18.0 | 49.4 | 65.0 | 19.9 | 0.57 |
+| zone | scan | 47.2 | 30.9 | 60.0 | 71.0 | 33.1 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.2 | 2.6 | 5% / 16 | 23% | 9.5 / 4.8 | 64% | 9.3 | 1.60 | 0.17 | 0.0% |
-| cost | scan | 10.5 | 2.6 | 2% / 17 | 24% | 9.8 / 4.8 | 64% | 9.4 | 1.59 | 0.15 | 0.0% |
-| nearest | look | 22.6 | 2.6 | 42% / 43 | 11% | 5.3 / 5.3 | 66% | 9.9 | 1.57 | 0.32 | 1.7% |
-| nearest | scan | 29.3 | 2.7 | 44% / 55 | 7% | 4.7 / 4.7 | 74% | 11.6 | 1.59 | 0.32 | 1.6% |
-| round_robin | look | 23.4 | 1.8 | 48% / 36 | 7% | 11.2 / 4.1 | 95% | 14.6 | 1.40 | 0.00 | 0.0% |
-| round_robin | scan | 29.5 | 2.1 | 48% / 45 | 4% | 13.0 / 4.6 | 95% | 15.0 | 1.48 | 0.00 | 0.0% |
-| zone | look | 16.8 | 1.7 | 36% / 30 | 23% | 8.8 / 2.6 | 76% | 11.5 | 1.40 | 0.11 | 0.1% |
-| zone | scan | 28.2 | 2.1 | 44% / 45 | 13% | 11.9 / 4.1 | 85% | 13.2 | 1.61 | 0.11 | 0.2% |
+| cost | look | 8.9 | 2.0 | 15% / 16 | 14% | 6.4 / 3.5 | 90% | 9.3 | 1.52 | 0.09 | 0.0% |
+| cost | scan | 10.7 | 2.3 | 11% / 22 | 18% | 7.3 / 3.6 | 86% | 8.9 | 1.54 | 0.11 | 0.0% |
+| nearest | look | 21.6 | 2.2 | 39% / 41 | 9% | 3.7 / 3.7 | 88% | 9.5 | 1.50 | 0.13 | 0.3% |
+| nearest | scan | 29.0 | 2.4 | 43% / 52 | 5% | 3.7 / 3.7 | 92% | 10.1 | 1.56 | 0.16 | 0.3% |
+| round_robin | look | 26.4 | 2.0 | 47% / 38 | 3% | 10.7 / 3.9 | 97% | 10.6 | 1.50 | 0.01 | 0.0% |
+| round_robin | scan | 31.0 | 2.2 | 48% / 44 | 2% | 11.6 / 3.7 | 97% | 10.7 | 1.54 | 0.01 | 0.0% |
+| zone | look | 18.0 | 1.9 | 39% / 30 | 15% | 8.0 / 3.2 | 84% | 8.9 | 1.47 | 0.09 | 0.0% |
+| zone | scan | 30.9 | 2.3 | 47% / 45 | 5% | 10.7 / 4.0 | 93% | 10.2 | 1.70 | 0.09 | 0.1% |
 
-## morning_rush · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 8.0 / 22 | 120, 9.5 / 24 | 46, 9.5 / 23 |
+| cost | scan | 114, 8.7 / 26 | 120, 12.0 / 31 | 46, 11.9 / 29 |
+| nearest | look | 114, 20.4 / 60 | 120, 22.8 / 59 | 46, 21.5 / 59 |
+| nearest | scan | 114, 27.5 / 65 | 120, 30.8 / 65 | 46, 28.1 / 64 |
+| round_robin | look | 114, 25.6 / 54 | 120, 26.7 / 53 | 46, 27.6 / 53 |
+| round_robin | scan | 114, 30.4 / 59 | 120, 31.5 / 60 | 46, 31.5 / 59 |
+| zone | look | 114, 16.5 / 47 | 120, 17.7 / 48 | 46, 22.4 / 52 |
+| zone | scan | 114, 29.6 / 59 | 120, 31.9 / 60 | 46, 31.3 / 60 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.3; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 48.4; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.9 ± 1.5 | -30.9% | [-14.17, -12.42] | 20/20 | 46% | better ✓ |
-| nearest | 47.6 ± 6.2 | +9.9% | [+1.39, +7.48] | 7/20 | -15% | - |
-| zone | 35.8 ± 1.8 | -17.4% | [-8.13, -6.90] | 20/20 | 26% | better ✓ |
+| cost | 30.3 ± 1.8 | -37.4% | [-18.76, -17.36] | 20/20 | 53% | better ✓ |
+| nearest | 45.2 ± 2.7 | -6.6% | [-4.33, -2.01] | 18/20 | 9% | better ✓ |
+| zone | 38.7 ± 1.4 | -20.0% | [-10.35, -9.04] | 20/20 | 28% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.9 | -2.4% | [-1.15, -0.40] | 16/20 | better ✓ |
-| nearest | look | 47.6 | -13.4% | [-10.86, -4.31] | 18/20 | better ✓ |
-| round_robin | look | 43.3 | -13.2% | [-7.32, -5.91] | 20/20 | better ✓ |
-| zone | look | 35.8 | -26.5% | [-13.69, -12.03] | 20/20 | better ✓ |
+| cost | look | 30.3 | -21.9% | [-11.42, -5.82] | 18/20 | better ✓ |
+| nearest | look | 45.2 | -13.6% | [-8.27, -5.82] | 20/20 | better ✓ |
+| round_robin | look | 48.4 | -9.5% | [-5.95, -4.24] | 20/20 | better ✓ |
+| zone | look | 38.7 | -27.0% | [-15.00, -13.63] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.9 | 10.7 | 26.0 | 36.6 | 15.6 | 0.61 |
-| cost | scan | 30.7 | 11.3 | 28.9 | 45.9 | 16.4 | 0.58 |
-| nearest | look | 47.6 | 27.9 | 76.8 | 120.6 | 33.3 | 0.49 |
-| nearest | scan | 55.0 | 35.0 | 84.5 | 131.4 | 40.7 | 0.54 |
-| round_robin | look | 43.3 | 25.1 | 55.5 | 65.9 | 29.0 | 0.68 |
-| round_robin | scan | 49.9 | 31.2 | 62.1 | 69.3 | 35.6 | 0.71 |
-| zone | look | 35.8 | 17.9 | 50.4 | 68.0 | 21.5 | 0.55 |
-| zone | scan | 48.7 | 30.1 | 61.8 | 73.0 | 34.4 | 0.68 |
+| cost | look | 30.3 | 12.0 | 31.4 | 53.4 | 16.2 | 0.57 |
+| cost | scan | 38.8 | 20.3 | 49.1 | 62.9 | 24.8 | 0.61 |
+| nearest | look | 45.2 | 26.3 | 70.8 | 99.0 | 31.1 | 0.51 |
+| nearest | scan | 52.3 | 32.8 | 77.3 | 116.6 | 38.2 | 0.55 |
+| round_robin | look | 48.4 | 30.0 | 62.0 | 73.7 | 34.3 | 0.71 |
+| round_robin | scan | 53.5 | 34.7 | 67.6 | 77.8 | 39.4 | 0.73 |
+| zone | look | 38.7 | 20.7 | 57.3 | 84.7 | 24.6 | 0.56 |
+| zone | scan | 53.0 | 34.2 | 66.6 | 89.1 | 38.9 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.7 | 4.9 | 7% / 20 | 22% | 9.4 / 4.4 | 73% | 9.6 | 1.60 | 0.14 | 0.0% |
-| cost | scan | 11.3 | 5.0 | 4% / 29 | 22% | 9.6 / 4.5 | 72% | 9.5 | 1.61 | 0.11 | 0.0% |
-| nearest | look | 27.9 | 5.4 | 41% / 52 | 10% | 5.0 / 5.0 | 69% | 9.3 | 1.59 | 0.31 | 5.5% |
-| nearest | scan | 35.0 | 5.7 | 43% / 62 | 8% | 5.2 / 5.2 | 76% | 10.7 | 1.60 | 0.27 | 6.3% |
-| round_robin | look | 25.1 | 3.9 | 46% / 39 | 6% | 11.3 / 4.0 | 96% | 13.4 | 1.43 | 0.00 | 0.0% |
-| round_robin | scan | 31.2 | 4.4 | 50% / 47 | 3% | 12.9 / 5.5 | 97% | 14.0 | 1.51 | 0.00 | 0.0% |
-| zone | look | 17.9 | 3.6 | 37% / 33 | 21% | 8.7 / 2.5 | 79% | 10.7 | 1.45 | 0.11 | 0.1% |
-| zone | scan | 30.1 | 4.3 | 45% / 48 | 10% | 11.9 / 4.3 | 88% | 12.7 | 1.66 | 0.11 | 0.3% |
+| cost | look | 12.0 | 4.2 | 17% / 23 | 8% | 7.2 / 3.9 | 95% | 8.8 | 1.59 | 0.08 | 0.0% |
+| cost | scan | 20.3 | 4.4 | 25% / 35 | 7% | 9.6 / 5.8 | 94% | 9.0 | 1.67 | 0.09 | 0.0% |
+| nearest | look | 26.3 | 4.9 | 40% / 49 | 7% | 3.9 / 3.9 | 90% | 8.6 | 1.55 | 0.15 | 0.4% |
+| nearest | scan | 32.8 | 5.4 | 40% / 60 | 5% | 4.1 / 4.1 | 91% | 8.9 | 1.60 | 0.18 | 0.7% |
+| round_robin | look | 30.0 | 4.3 | 46% / 44 | 2% | 10.6 / 4.0 | 97% | 9.4 | 1.54 | 0.01 | 0.0% |
+| round_robin | scan | 34.7 | 4.7 | 47% / 50 | 2% | 11.7 / 6.7 | 98% | 9.5 | 1.58 | 0.01 | 0.0% |
+| zone | look | 20.7 | 4.0 | 39% / 35 | 12% | 8.0 / 3.2 | 87% | 8.0 | 1.53 | 0.09 | 0.1% |
+| zone | scan | 34.2 | 4.8 | 45% / 50 | 4% | 10.8 / 4.3 | 94% | 9.4 | 1.76 | 0.09 | 0.1% |
 
-## morning_rush · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 10.1 / 29 | 120, 13.0 / 32 | 46, 14.5 / 36 |
+| cost | scan | 114, 17.6 / 45 | 120, 22.4 / 51 | 46, 21.5 / 49 |
+| nearest | look | 114, 22.1 / 70 | 120, 29.8 / 71 | 46, 27.1 / 70 |
+| nearest | scan | 114, 29.8 / 77 | 120, 35.6 / 78 | 46, 32.5 / 76 |
+| round_robin | look | 114, 28.8 / 61 | 120, 31.0 / 62 | 46, 30.1 / 62 |
+| round_robin | scan | 114, 34.4 / 67 | 120, 34.7 / 68 | 46, 35.4 / 67 |
+| zone | look | 114, 18.5 / 55 | 120, 20.7 / 56 | 46, 25.6 / 57 |
+| zone | scan | 114, 32.6 / 65 | 120, 35.0 / 67 | 46, 35.9 / 67 |
+
+## lunch · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.5; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 48.4; B0 floor = 14.1)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.8 ± 1.3 | -31.5% | [-14.52, -12.96] | 20/20 | 47% | better ✓ |
-| nearest | 46.8 ± 4.3 | +7.6% | [+1.49, +5.13] | 4/20 | -11% | worse ✗ |
-| zone | 35.8 ± 1.4 | -17.7% | [-8.44, -7.01] | 20/20 | 26% | better ✓ |
+| cost | 29.6 ± 2.2 | -38.7% | [-19.65, -17.75] | 20/20 | 55% | better ✓ |
+| nearest | 44.1 ± 1.4 | -8.8% | [-5.29, -3.29] | 20/20 | 12% | better ✓ |
+| zone | 38.7 ± 1.6 | -19.9% | [-10.23, -8.99] | 20/20 | 28% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.8 | -1.8% | [-1.00, -0.08] | 14/20 | - |
-| nearest | look | 46.8 | -12.5% | [-8.89, -4.67] | 18/20 | better ✓ |
-| round_robin | look | 43.5 | -13.0% | [-7.37, -5.77] | 20/20 | better ✓ |
-| zone | look | 35.8 | -27.4% | [-14.13, -12.95] | 20/20 | better ✓ |
+| cost | look | 29.6 | -16.4% | [-7.84, -3.94] | 18/20 | better ✓ |
+| nearest | look | 44.1 | -14.0% | [-8.71, -5.72] | 20/20 | better ✓ |
+| round_robin | look | 48.4 | -9.4% | [-5.66, -4.35] | 20/20 | better ✓ |
+| zone | look | 38.7 | -27.0% | [-15.11, -13.57] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.8 | 10.6 | 25.9 | 35.0 | 15.5 | 0.61 |
-| cost | scan | 30.3 | 10.9 | 26.8 | 37.4 | 16.0 | 0.61 |
-| nearest | look | 46.8 | 27.1 | 68.7 | 105.8 | 32.5 | 0.52 |
-| nearest | scan | 53.5 | 33.6 | 79.7 | 115.6 | 39.2 | 0.55 |
-| round_robin | look | 43.5 | 25.3 | 55.7 | 65.7 | 29.2 | 0.68 |
-| round_robin | scan | 50.0 | 31.3 | 62.2 | 69.8 | 35.7 | 0.71 |
-| zone | look | 35.8 | 17.9 | 50.7 | 70.7 | 21.5 | 0.55 |
-| zone | scan | 49.4 | 30.8 | 61.9 | 77.7 | 35.1 | 0.69 |
+| cost | look | 29.6 | 11.4 | 29.7 | 49.8 | 15.6 | 0.57 |
+| cost | scan | 35.5 | 16.9 | 44.9 | 59.0 | 21.4 | 0.57 |
+| nearest | look | 44.1 | 25.2 | 69.5 | 100.3 | 30.0 | 0.50 |
+| nearest | scan | 51.3 | 31.9 | 76.3 | 112.5 | 37.2 | 0.54 |
+| round_robin | look | 48.4 | 29.9 | 62.0 | 74.7 | 34.3 | 0.71 |
+| round_robin | scan | 53.4 | 34.6 | 67.6 | 77.7 | 39.3 | 0.73 |
+| zone | look | 38.7 | 20.7 | 56.7 | 79.7 | 24.7 | 0.57 |
+| zone | scan | 53.0 | 34.2 | 66.9 | 91.8 | 39.0 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.6 | 4.9 | 6% / 20 | 21% | 9.2 / 4.5 | 72% | 9.5 | 1.62 | 0.10 | 0.0% |
-| cost | scan | 10.9 | 5.2 | 2% / 22 | 22% | 9.5 / 4.3 | 71% | 9.4 | 1.62 | 0.11 | 0.0% |
-| nearest | look | 27.1 | 5.4 | 42% / 49 | 10% | 5.1 / 5.1 | 69% | 9.4 | 1.59 | 0.33 | 3.9% |
-| nearest | scan | 33.6 | 5.6 | 43% / 60 | 8% | 5.1 / 5.1 | 76% | 10.9 | 1.61 | 0.28 | 4.8% |
-| round_robin | look | 25.3 | 3.9 | 46% / 39 | 6% | 11.3 / 4.0 | 96% | 13.5 | 1.44 | 0.00 | 0.0% |
-| round_robin | scan | 31.3 | 4.4 | 49% / 47 | 3% | 13.0 / 4.6 | 97% | 14.0 | 1.51 | 0.00 | 0.0% |
-| zone | look | 17.9 | 3.6 | 36% / 33 | 20% | 8.9 / 2.6 | 80% | 10.7 | 1.45 | 0.11 | 0.1% |
-| zone | scan | 30.8 | 4.3 | 47% / 48 | 10% | 12.1 / 4.1 | 89% | 12.8 | 1.66 | 0.11 | 0.3% |
+| cost | look | 11.4 | 4.2 | 16% / 21 | 9% | 7.0 / 3.7 | 94% | 8.7 | 1.59 | 0.08 | 0.0% |
+| cost | scan | 16.9 | 4.5 | 19% / 32 | 10% | 8.5 / 4.7 | 92% | 8.8 | 1.63 | 0.10 | 0.0% |
+| nearest | look | 25.2 | 4.8 | 39% / 48 | 6% | 3.6 / 3.6 | 91% | 8.7 | 1.55 | 0.13 | 0.3% |
+| nearest | scan | 31.9 | 5.3 | 40% / 58 | 5% | 4.2 / 4.2 | 92% | 9.0 | 1.60 | 0.19 | 0.9% |
+| round_robin | look | 29.9 | 4.3 | 45% / 44 | 2% | 10.7 / 3.9 | 97% | 9.4 | 1.54 | 0.01 | 0.0% |
+| round_robin | scan | 34.6 | 4.7 | 47% / 50 | 2% | 11.5 / 3.8 | 98% | 9.5 | 1.57 | 0.01 | 0.0% |
+| zone | look | 20.7 | 4.0 | 39% / 35 | 12% | 8.0 / 3.2 | 87% | 8.0 | 1.53 | 0.09 | 0.1% |
+| zone | scan | 34.2 | 4.8 | 46% / 49 | 4% | 10.9 / 3.9 | 94% | 9.4 | 1.76 | 0.09 | 0.1% |
 
-## morning_rush · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 114, 9.5 / 27 | 120, 12.3 / 31 | 46, 13.6 / 32 |
+| cost | scan | 114, 14.3 / 42 | 120, 19.1 / 47 | 46, 17.5 / 43 |
+| nearest | look | 114, 21.7 / 69 | 120, 28.2 / 70 | 46, 26.0 / 67 |
+| nearest | scan | 114, 30.0 / 76 | 120, 34.0 / 76 | 46, 31.1 / 82 |
+| round_robin | look | 114, 28.6 / 61 | 120, 30.8 / 62 | 46, 30.9 / 61 |
+| round_robin | scan | 114, 33.9 / 67 | 120, 35.4 / 68 | 46, 33.9 / 67 |
+| zone | look | 114, 18.3 / 54 | 120, 20.6 / 56 | 46, 26.7 / 60 |
+| zone | scan | 114, 32.9 / 66 | 120, 35.6 / 67 | 46, 34.0 / 67 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 46.6; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.3; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 32.3 ± 2.0 | -30.7% | [-15.07, -13.47] | 20/20 | 52% | better ✓ |
-| nearest | 46.8 ± 2.8 | +0.5% | [-0.97, +1.60] | 10/20 | -1% | - |
-| zone | 38.8 ± 2.1 | -16.7% | [-8.51, -7.07] | 20/20 | 28% | better ✓ |
+| cost | 25.2 ± 0.7 | -48.9% | [-24.71, -23.39] | 20/20 | 79% | better ✓ |
+| nearest | 41.9 ± 2.4 | -14.9% | [-8.15, -6.49] | 20/20 | 24% | better ✓ |
+| zone | 39.4 ± 1.5 | -20.0% | [-10.33, -9.34] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 32.3 | +0.3% | [-0.34, +0.53] | 7/20 | - |
-| nearest | look | 46.8 | -14.3% | [-9.19, -6.28] | 20/20 | better ✓ |
-| round_robin | look | 46.6 | -15.7% | [-9.46, -7.93] | 20/20 | better ✓ |
-| zone | look | 38.8 | -26.2% | [-14.74, -12.92] | 20/20 | better ✓ |
+| cost | look | 25.2 | -6.1% | [-1.91, -1.38] | 20/20 | better ✓ |
+| nearest | look | 41.9 | -18.8% | [-10.78, -8.76] | 20/20 | better ✓ |
+| round_robin | look | 49.3 | -13.9% | [-8.79, -7.21] | 20/20 | better ✓ |
+| zone | look | 39.4 | -29.9% | [-17.61, -16.13] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 32.3 | 13.3 | 31.0 | 37.5 | 13.3 | 0.64 |
-| cost | scan | 32.2 | 13.2 | 31.4 | 45.9 | 13.2 | 0.63 |
-| nearest | look | 46.8 | 27.8 | 72.0 | 89.0 | 27.8 | 0.51 |
-| nearest | scan | 54.6 | 35.6 | 76.8 | 95.2 | 35.6 | 0.54 |
-| round_robin | look | 46.6 | 27.6 | 61.5 | 74.5 | 27.6 | 0.68 |
-| round_robin | scan | 55.3 | 36.3 | 73.1 | 76.8 | 36.3 | 0.70 |
-| zone | look | 38.8 | 19.8 | 55.4 | 73.5 | 19.8 | 0.56 |
-| zone | scan | 52.6 | 33.6 | 73.6 | 78.6 | 33.6 | 0.64 |
+| cost | look | 25.2 | 6.5 | 18.8 | 36.2 | 6.5 | 0.51 |
+| cost | scan | 26.8 | 8.1 | 23.7 | 60.4 | 8.1 | 0.46 |
+| nearest | look | 41.9 | 23.2 | 70.6 | 81.2 | 23.2 | 0.46 |
+| nearest | scan | 51.7 | 32.9 | 76.7 | 82.3 | 32.9 | 0.52 |
+| round_robin | look | 49.3 | 30.5 | 64.2 | 75.2 | 30.5 | 0.71 |
+| round_robin | scan | 57.2 | 38.5 | 73.8 | 77.0 | 38.5 | 0.74 |
+| zone | look | 39.4 | 20.7 | 58.6 | 74.8 | 20.7 | 0.55 |
+| zone | scan | 56.3 | 37.5 | 73.5 | 78.7 | 37.5 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 13.3 | 0.0 | 4% / 18 | 22% | 12.8 / 6.3 | 43% | 10.9 | 1.61 | 0.42 | 0.0% |
-| cost | scan | 13.2 | 0.0 | 1% / 20 | 24% | 12.7 / 6.1 | 44% | 11.1 | 1.60 | 0.37 | 0.0% |
-| nearest | look | 27.8 | 0.0 | 43% / 53 | 14% | 5.6 / 5.6 | 54% | 14.0 | 1.51 | 0.50 | 2.1% |
-| nearest | scan | 35.6 | 0.0 | 43% / 69 | 11% | 5.4 / 5.4 | 63% | 16.5 | 1.53 | 0.47 | 1.5% |
-| round_robin | look | 27.6 | 0.0 | 45% / 43 | 14% | 14.4 / 3.7 | 90% | 23.2 | 1.30 | 0.01 | 0.0% |
-| round_robin | scan | 36.3 | 0.0 | 46% / 57 | 9% | 17.1 / 5.2 | 92% | 24.1 | 1.40 | 0.01 | 0.0% |
-| zone | look | 19.8 | 0.0 | 35% / 36 | 31% | 11.2 / 2.4 | 66% | 17.1 | 1.32 | 0.17 | 0.0% |
-| zone | scan | 33.6 | 0.0 | 39% / 59 | 21% | 14.8 / 3.4 | 76% | 19.9 | 1.48 | 0.17 | 0.1% |
+| cost | look | 6.5 | 0.0 | 9% / 11 | 28% | 5.7 / 3.2 | 76% | 13.2 | 1.40 | 0.16 | 0.0% |
+| cost | scan | 8.1 | 0.0 | 5% / 20 | 30% | 6.4 / 3.2 | 71% | 12.4 | 1.43 | 0.16 | 0.0% |
+| nearest | look | 23.2 | 0.0 | 36% / 48 | 15% | 3.6 / 3.6 | 80% | 14.6 | 1.39 | 0.17 | 0.1% |
+| nearest | scan | 32.9 | 0.0 | 39% / 64 | 9% | 3.5 / 3.5 | 85% | 15.7 | 1.47 | 0.23 | 0.1% |
+| round_robin | look | 30.5 | 0.0 | 47% / 45 | 6% | 14.1 / 3.9 | 95% | 17.1 | 1.40 | 0.01 | 0.0% |
+| round_robin | scan | 38.5 | 0.0 | 49% / 54 | 3% | 15.8 / 7.0 | 95% | 17.6 | 1.46 | 0.01 | 0.0% |
+| zone | look | 20.7 | 0.0 | 39% / 36 | 23% | 10.3 / 3.2 | 74% | 13.4 | 1.38 | 0.16 | 0.0% |
+| zone | scan | 37.5 | 0.0 | 45% / 55 | 11% | 14.6 / 3.8 | 87% | 15.9 | 1.61 | 0.16 | 0.0% |
 
-## morning_rush · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 5.8 / 18 | 116, 6.7 / 19 | 48, 7.4 / 19 |
+| cost | scan | 124, 6.4 / 19 | 116, 9.8 / 29 | 48, 8.3 / 22 |
+| nearest | look | 124, 20.7 / 71 | 116, 24.5 / 69 | 48, 26.4 / 69 |
+| nearest | scan | 124, 32.2 / 77 | 116, 34.8 / 76 | 48, 30.6 / 76 |
+| round_robin | look | 124, 29.8 / 64 | 116, 30.9 / 64 | 48, 31.7 / 62 |
+| round_robin | scan | 124, 37.7 / 73 | 116, 39.6 / 74 | 48, 38.0 / 73 |
+| zone | look | 124, 19.7 / 58 | 116, 19.3 / 55 | 48, 26.5 / 61 |
+| zone | scan | 124, 35.9 / 73 | 116, 39.6 / 74 | 48, 36.9 / 72 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 47.1; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.3; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 32.5 ± 1.7 | -31.0% | [-15.36, -13.81] | 20/20 | 52% | better ✓ |
-| nearest | 46.8 ± 3.7 | -0.8% | [-2.00, +1.32] | 12/20 | 1% | - |
-| zone | 38.7 ± 1.9 | -17.9% | [-9.04, -7.87] | 20/20 | 30% | better ✓ |
+| cost | 25.0 ± 0.8 | -49.3% | [-25.03, -23.58] | 20/20 | 79% | better ✓ |
+| nearest | 41.8 ± 2.0 | -15.3% | [-8.25, -6.91] | 20/20 | 25% | better ✓ |
+| zone | 39.2 ± 1.3 | -20.5% | [-10.64, -9.62] | 20/20 | 33% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 32.5 | +0.2% | [-0.27, +0.44] | 10/20 | - |
-| nearest | look | 46.8 | -14.5% | [-9.37, -6.60] | 20/20 | better ✓ |
-| round_robin | look | 47.1 | -15.4% | [-9.53, -7.68] | 20/20 | better ✓ |
-| zone | look | 38.7 | -27.2% | [-15.19, -13.71] | 20/20 | better ✓ |
+| cost | look | 25.0 | -4.2% | [-1.34, -0.82] | 19/20 | better ✓ |
+| nearest | look | 41.8 | -19.4% | [-11.53, -8.68] | 20/20 | better ✓ |
+| round_robin | look | 49.3 | -14.1% | [-8.90, -7.30] | 20/20 | better ✓ |
+| zone | look | 39.2 | -30.3% | [-17.65, -16.43] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 32.5 | 13.5 | 31.4 | 37.9 | 13.5 | 0.65 |
-| cost | scan | 32.4 | 13.4 | 31.2 | 38.4 | 13.4 | 0.66 |
-| nearest | look | 46.8 | 27.7 | 72.2 | 101.2 | 27.7 | 0.50 |
-| nearest | scan | 54.7 | 35.7 | 76.8 | 84.3 | 35.7 | 0.55 |
-| round_robin | look | 47.1 | 28.1 | 61.8 | 74.0 | 28.1 | 0.69 |
-| round_robin | scan | 55.7 | 36.7 | 73.5 | 77.0 | 36.7 | 0.72 |
-| zone | look | 38.7 | 19.7 | 55.2 | 73.3 | 19.7 | 0.56 |
-| zone | scan | 53.1 | 34.1 | 74.1 | 81.8 | 34.1 | 0.65 |
+| cost | look | 25.0 | 6.3 | 18.1 | 31.4 | 6.3 | 0.53 |
+| cost | scan | 26.1 | 7.4 | 21.3 | 35.0 | 7.4 | 0.53 |
+| nearest | look | 41.8 | 23.1 | 70.5 | 76.5 | 23.1 | 0.45 |
+| nearest | scan | 51.8 | 33.1 | 76.6 | 80.1 | 33.1 | 0.52 |
+| round_robin | look | 49.3 | 30.6 | 65.0 | 75.7 | 30.6 | 0.70 |
+| round_robin | scan | 57.4 | 38.7 | 73.6 | 77.0 | 38.7 | 0.74 |
+| zone | look | 39.2 | 20.5 | 58.8 | 75.2 | 20.5 | 0.54 |
+| zone | scan | 56.3 | 37.6 | 73.8 | 80.9 | 37.6 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 13.5 | 0.0 | 4% / 21 | 21% | 13.1 / 6.3 | 43% | 10.8 | 1.64 | 0.43 | 0.0% |
-| cost | scan | 13.4 | 0.0 | 1% / 15 | 22% | 13.1 / 6.3 | 43% | 10.7 | 1.63 | 0.38 | 0.0% |
-| nearest | look | 27.7 | 0.0 | 42% / 53 | 12% | 5.9 / 5.9 | 52% | 13.3 | 1.54 | 0.49 | 2.8% |
-| nearest | scan | 35.7 | 0.0 | 43% / 69 | 10% | 5.4 / 5.4 | 63% | 16.5 | 1.56 | 0.48 | 1.5% |
-| round_robin | look | 28.1 | 0.0 | 45% / 43 | 13% | 14.7 / 3.8 | 91% | 23.3 | 1.31 | 0.01 | 0.0% |
-| round_robin | scan | 36.7 | 0.0 | 46% / 57 | 9% | 17.4 / 4.6 | 92% | 24.3 | 1.40 | 0.01 | 0.0% |
-| zone | look | 19.7 | 0.0 | 34% / 36 | 31% | 11.5 / 2.5 | 67% | 17.2 | 1.33 | 0.17 | 0.0% |
-| zone | scan | 34.1 | 0.0 | 39% / 59 | 21% | 15.1 / 3.4 | 77% | 20.1 | 1.49 | 0.17 | 0.1% |
+| cost | look | 6.3 | 0.0 | 9% / 10 | 28% | 5.6 / 3.0 | 76% | 13.2 | 1.40 | 0.14 | 0.0% |
+| cost | scan | 7.4 | 0.0 | 5% / 15 | 30% | 6.3 / 3.1 | 72% | 12.5 | 1.44 | 0.14 | 0.0% |
+| nearest | look | 23.1 | 0.0 | 37% / 47 | 16% | 3.5 / 3.5 | 81% | 14.7 | 1.39 | 0.18 | 0.0% |
+| nearest | scan | 33.1 | 0.0 | 40% / 63 | 9% | 3.5 / 3.5 | 86% | 15.9 | 1.48 | 0.17 | 0.1% |
+| round_robin | look | 30.6 | 0.0 | 47% / 45 | 5% | 14.0 / 3.7 | 95% | 17.1 | 1.40 | 0.01 | 0.0% |
+| round_robin | scan | 38.7 | 0.0 | 50% / 55 | 3% | 15.5 / 3.7 | 96% | 17.6 | 1.46 | 0.01 | 0.0% |
+| zone | look | 20.5 | 0.0 | 39% / 36 | 23% | 10.2 / 3.1 | 74% | 13.4 | 1.38 | 0.16 | 0.0% |
+| zone | scan | 37.6 | 0.0 | 45% / 55 | 11% | 14.5 / 3.7 | 87% | 15.9 | 1.60 | 0.16 | 0.0% |
 
-## morning_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 6.0 / 18 | 116, 6.3 / 17 | 48, 7.2 / 18 |
+| cost | scan | 124, 6.4 / 19 | 116, 8.3 / 23 | 48, 8.0 / 22 |
+| nearest | look | 124, 21.3 / 71 | 116, 24.7 / 70 | 48, 23.6 / 68 |
+| nearest | scan | 124, 32.8 / 77 | 116, 34.2 / 76 | 48, 31.4 / 76 |
+| round_robin | look | 124, 30.2 / 66 | 116, 30.6 / 63 | 48, 31.6 / 64 |
+| round_robin | scan | 124, 38.3 / 73 | 116, 38.8 / 73 | 48, 40.0 / 73 |
+| zone | look | 124, 19.3 / 55 | 116, 19.6 / 57 | 48, 26.2 / 62 |
+| zone | scan | 124, 35.9 / 73 | 116, 39.2 / 73 | 48, 37.9 / 72 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.6; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 53.6; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 34.7 ± 2.0 | -30.1% | [-15.79, -14.07] | 20/20 | 49% | better ✓ |
-| nearest | 51.0 ± 6.1 | +2.8% | [-0.97, +4.13] | 11/20 | -5% | - |
-| zone | 41.3 ± 2.6 | -16.8% | [-9.22, -7.56] | 20/20 | 27% | better ✓ |
+| cost | 28.2 ± 1.0 | -47.4% | [-26.01, -24.84] | 20/20 | 73% | better ✓ |
+| nearest | 46.1 ± 2.3 | -14.1% | [-8.50, -6.72] | 20/20 | 22% | better ✓ |
+| zone | 42.7 ± 1.3 | -20.4% | [-11.53, -10.34] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 34.7 | -1.0% | [-0.62, -0.06] | 14/20 | - |
-| nearest | look | 51.0 | -14.2% | [-10.48, -6.44] | 19/20 | better ✓ |
-| round_robin | look | 49.6 | -15.8% | [-10.21, -8.40] | 20/20 | better ✓ |
-| zone | look | 41.3 | -27.7% | [-17.13, -14.70] | 20/20 | better ✓ |
+| cost | look | 28.2 | -7.7% | [-2.79, -1.92] | 20/20 | better ✓ |
+| nearest | look | 46.1 | -18.4% | [-11.73, -9.13] | 20/20 | better ✓ |
+| round_robin | look | 53.6 | -13.5% | [-9.30, -7.43] | 20/20 | better ✓ |
+| zone | look | 42.7 | -30.2% | [-19.26, -17.77] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 34.7 | 12.8 | 31.5 | 38.5 | 15.7 | 0.62 |
-| cost | scan | 35.0 | 13.1 | 32.0 | 49.1 | 16.0 | 0.61 |
-| nearest | look | 51.0 | 29.4 | 80.3 | 105.8 | 32.0 | 0.48 |
-| nearest | scan | 59.5 | 37.8 | 85.1 | 127.0 | 40.5 | 0.52 |
-| round_robin | look | 49.6 | 29.0 | 64.3 | 77.3 | 30.6 | 0.67 |
-| round_robin | scan | 58.9 | 38.0 | 76.0 | 81.1 | 39.9 | 0.71 |
-| zone | look | 41.3 | 20.7 | 58.3 | 79.7 | 22.3 | 0.54 |
-| zone | scan | 57.1 | 36.2 | 76.5 | 90.2 | 38.1 | 0.66 |
+| cost | look | 28.2 | 7.5 | 21.4 | 37.8 | 9.5 | 0.53 |
+| cost | scan | 30.6 | 9.6 | 28.6 | 66.2 | 11.8 | 0.47 |
+| nearest | look | 46.1 | 25.2 | 77.6 | 91.7 | 27.3 | 0.45 |
+| nearest | scan | 56.4 | 35.4 | 83.7 | 94.8 | 37.7 | 0.52 |
+| round_robin | look | 53.6 | 33.1 | 69.7 | 81.6 | 34.9 | 0.71 |
+| round_robin | scan | 62.0 | 41.2 | 77.9 | 84.2 | 43.3 | 0.74 |
+| zone | look | 42.7 | 22.2 | 63.8 | 83.8 | 24.0 | 0.54 |
+| zone | scan | 61.2 | 40.3 | 78.4 | 85.5 | 42.5 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 12.8 | 2.9 | 4% / 20 | 22% | 12.1 / 5.5 | 49% | 11.1 | 1.62 | 0.37 | 0.0% |
-| cost | scan | 13.1 | 3.0 | 1% / 19 | 23% | 12.3 / 5.5 | 49% | 11.0 | 1.61 | 0.36 | 0.0% |
-| nearest | look | 29.4 | 2.6 | 39% / 57 | 14% | 5.4 / 5.4 | 55% | 13.2 | 1.54 | 0.43 | 4.0% |
-| nearest | scan | 37.8 | 2.6 | 42% / 74 | 11% | 5.0 / 5.0 | 64% | 15.7 | 1.55 | 0.48 | 3.0% |
-| round_robin | look | 29.0 | 1.6 | 45% / 46 | 11% | 14.4 / 3.6 | 92% | 22.3 | 1.33 | 0.01 | 0.0% |
-| round_robin | scan | 38.0 | 1.9 | 46% / 59 | 7% | 17.2 / 5.2 | 93% | 23.2 | 1.42 | 0.01 | 0.0% |
-| zone | look | 20.7 | 1.6 | 34% / 39 | 29% | 11.0 / 2.2 | 69% | 16.4 | 1.35 | 0.17 | 0.1% |
-| zone | scan | 36.2 | 1.9 | 42% / 61 | 18% | 15.4 / 3.5 | 79% | 19.5 | 1.54 | 0.17 | 0.1% |
+| cost | look | 7.5 | 2.0 | 10% / 14 | 23% | 6.0 / 3.3 | 82% | 13.0 | 1.45 | 0.13 | 0.0% |
+| cost | scan | 9.6 | 2.2 | 6% / 24 | 24% | 7.0 / 3.3 | 79% | 12.4 | 1.47 | 0.14 | 0.0% |
+| nearest | look | 25.2 | 2.1 | 36% / 52 | 13% | 3.5 / 3.5 | 83% | 13.7 | 1.43 | 0.17 | 0.1% |
+| nearest | scan | 35.4 | 2.3 | 39% / 68 | 8% | 3.5 / 3.5 | 87% | 14.8 | 1.49 | 0.21 | 0.1% |
+| round_robin | look | 33.1 | 1.9 | 46% / 49 | 4% | 14.3 / 3.9 | 95% | 16.0 | 1.43 | 0.01 | 0.0% |
+| round_robin | scan | 41.2 | 2.1 | 49% / 58 | 3% | 15.7 / 7.4 | 97% | 16.4 | 1.48 | 0.01 | 0.0% |
+| zone | look | 22.2 | 1.8 | 38% / 39 | 21% | 10.2 / 3.0 | 77% | 12.6 | 1.42 | 0.16 | 0.0% |
+| zone | scan | 40.3 | 2.1 | 46% / 59 | 8% | 14.5 / 4.3 | 88% | 15.1 | 1.65 | 0.16 | 0.0% |
 
-## morning_rush · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 6.6 / 20 | 116, 8.1 / 22 | 48, 8.5 / 23 |
+| cost | scan | 124, 7.5 / 23 | 116, 11.5 / 34 | 48, 10.4 / 27 |
+| nearest | look | 124, 20.7 / 77 | 116, 29.4 / 77 | 48, 26.6 / 75 |
+| nearest | scan | 124, 32.7 / 83 | 116, 39.1 / 84 | 48, 33.6 / 83 |
+| round_robin | look | 124, 32.6 / 69 | 116, 33.3 / 69 | 48, 33.3 / 68 |
+| round_robin | scan | 124, 40.6 / 77 | 116, 42.3 / 78 | 48, 40.5 / 76 |
+| zone | look | 124, 21.0 / 62 | 116, 20.8 / 61 | 48, 28.9 / 68 |
+| zone | scan | 124, 39.2 / 78 | 116, 41.8 / 78 | 48, 39.7 / 77 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 50.0; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 54.0; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 35.0 ± 2.0 | -30.0% | [-15.92, -13.98] | 20/20 | 48% | better ✓ |
-| nearest | 50.9 ± 3.2 | +1.9% | [-0.42, +2.47] | 10/20 | -3% | - |
-| zone | 41.3 ± 2.4 | -17.3% | [-9.40, -8.01] | 20/20 | 28% | better ✓ |
+| cost | 28.0 ± 1.0 | -48.1% | [-26.52, -25.40] | 20/20 | 74% | better ✓ |
+| nearest | 46.4 ± 2.5 | -14.1% | [-8.56, -6.56] | 20/20 | 22% | better ✓ |
+| zone | 42.8 ± 1.8 | -20.8% | [-12.10, -10.30] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 35.0 | +0.3% | [-0.42, +0.57] | 9/20 | - |
-| nearest | look | 50.9 | -17.4% | [-12.64, -8.96] | 20/20 | better ✓ |
-| round_robin | look | 50.0 | -16.0% | [-10.25, -8.76] | 20/20 | better ✓ |
-| zone | look | 41.3 | -27.8% | [-17.18, -14.76] | 20/20 | better ✓ |
+| cost | look | 28.0 | -3.9% | [-1.52, -0.78] | 19/20 | better ✓ |
+| nearest | look | 46.4 | -17.8% | [-11.56, -8.46] | 20/20 | better ✓ |
+| round_robin | look | 54.0 | -11.6% | [-7.93, -6.29] | 20/20 | better ✓ |
+| zone | look | 42.8 | -29.2% | [-18.72, -16.42] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 35.0 | 13.1 | 32.0 | 39.1 | 16.0 | 0.63 |
-| cost | scan | 34.9 | 12.9 | 30.9 | 38.9 | 15.9 | 0.63 |
-| nearest | look | 50.9 | 29.3 | 79.2 | 111.0 | 31.9 | 0.49 |
-| nearest | scan | 61.7 | 39.9 | 88.0 | 130.7 | 42.7 | 0.54 |
-| round_robin | look | 50.0 | 29.3 | 64.7 | 77.8 | 31.0 | 0.68 |
-| round_robin | scan | 59.4 | 38.5 | 76.0 | 81.3 | 40.4 | 0.72 |
-| zone | look | 41.3 | 20.7 | 58.1 | 78.0 | 22.3 | 0.55 |
-| zone | scan | 57.2 | 36.3 | 76.8 | 85.5 | 38.2 | 0.66 |
+| cost | look | 28.0 | 7.4 | 20.8 | 36.5 | 9.3 | 0.53 |
+| cost | scan | 29.2 | 8.3 | 23.1 | 39.1 | 10.4 | 0.54 |
+| nearest | look | 46.4 | 25.6 | 77.1 | 86.2 | 27.7 | 0.45 |
+| nearest | scan | 56.4 | 35.4 | 84.0 | 93.7 | 37.7 | 0.51 |
+| round_robin | look | 54.0 | 33.4 | 69.9 | 81.5 | 35.3 | 0.71 |
+| round_robin | scan | 61.1 | 40.3 | 78.4 | 84.6 | 42.4 | 0.73 |
+| zone | look | 42.8 | 22.3 | 63.1 | 82.2 | 24.1 | 0.55 |
+| zone | scan | 60.4 | 39.6 | 78.1 | 92.2 | 41.7 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 13.1 | 2.9 | 3% / 20 | 21% | 12.4 / 5.5 | 48% | 11.0 | 1.64 | 0.31 | 0.0% |
-| cost | scan | 12.9 | 3.0 | 1% / 15 | 22% | 12.2 / 5.5 | 48% | 10.8 | 1.63 | 0.34 | 0.0% |
-| nearest | look | 29.3 | 2.6 | 41% / 58 | 12% | 5.4 / 5.4 | 55% | 13.1 | 1.55 | 0.45 | 2.5% |
-| nearest | scan | 39.9 | 2.8 | 43% / 75 | 9% | 5.2 / 5.2 | 62% | 15.4 | 1.58 | 0.47 | 3.9% |
-| round_robin | look | 29.3 | 1.6 | 45% / 46 | 11% | 14.6 / 3.6 | 92% | 22.3 | 1.33 | 0.01 | 0.0% |
-| round_robin | scan | 38.5 | 1.9 | 48% / 59 | 7% | 17.5 / 4.9 | 93% | 23.2 | 1.43 | 0.01 | 0.0% |
-| zone | look | 20.7 | 1.6 | 33% / 38 | 29% | 11.4 / 2.2 | 69% | 16.4 | 1.35 | 0.17 | 0.0% |
-| zone | scan | 36.3 | 1.9 | 42% / 61 | 17% | 15.5 / 3.4 | 79% | 19.6 | 1.54 | 0.17 | 0.1% |
+| cost | look | 7.4 | 2.0 | 9% / 13 | 24% | 6.0 / 3.1 | 82% | 12.9 | 1.45 | 0.13 | 0.0% |
+| cost | scan | 8.3 | 2.1 | 5% / 18 | 26% | 6.6 / 3.1 | 79% | 12.5 | 1.47 | 0.12 | 0.0% |
+| nearest | look | 25.6 | 2.1 | 37% / 53 | 13% | 3.5 / 3.5 | 83% | 13.8 | 1.43 | 0.18 | 0.2% |
+| nearest | scan | 35.4 | 2.3 | 40% / 69 | 8% | 3.3 / 3.3 | 87% | 14.8 | 1.50 | 0.23 | 0.2% |
+| round_robin | look | 33.4 | 1.9 | 47% / 49 | 4% | 14.3 / 3.6 | 95% | 16.0 | 1.43 | 0.01 | 0.0% |
+| round_robin | scan | 40.3 | 2.1 | 48% / 58 | 3% | 15.7 / 3.6 | 96% | 16.4 | 1.48 | 0.01 | 0.0% |
+| zone | look | 22.3 | 1.7 | 39% / 39 | 21% | 10.3 / 3.0 | 77% | 12.6 | 1.41 | 0.16 | 0.0% |
+| zone | scan | 39.6 | 2.1 | 44% / 59 | 8% | 14.3 / 3.5 | 88% | 15.1 | 1.66 | 0.16 | 0.0% |
 
-## morning_rush · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 6.8 / 20 | 116, 7.6 / 20 | 48, 8.2 / 22 |
+| cost | scan | 124, 6.9 / 20 | 116, 9.4 / 24 | 48, 9.4 / 25 |
+| nearest | look | 124, 23.4 / 78 | 116, 27.7 / 77 | 48, 26.3 / 74 |
+| nearest | scan | 124, 33.7 / 84 | 116, 38.5 / 84 | 48, 32.0 / 84 |
+| round_robin | look | 124, 32.8 / 69 | 116, 33.6 / 69 | 48, 34.7 / 69 |
+| round_robin | scan | 124, 39.7 / 78 | 116, 41.1 / 78 | 48, 40.2 / 77 |
+| zone | look | 124, 20.8 / 61 | 116, 21.5 / 61 | 48, 28.2 / 65 |
+| zone | scan | 124, 37.1 / 77 | 116, 41.2 / 77 | 48, 41.9 / 78 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.8; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 59.6; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 36.7 ± 2.1 | -30.5% | [-17.00, -15.14] | 20/20 | 48% | better ✓ |
-| nearest | 59.1 ± 13.5 | +11.9% | [+1.66, +12.68] | 5/20 | -19% | - |
-| zone | 44.0 ± 2.6 | -16.6% | [-9.75, -7.85] | 20/20 | 26% | better ✓ |
+| cost | 32.0 ± 1.6 | -46.4% | [-28.49, -26.82] | 20/20 | 68% | better ✓ |
+| nearest | 51.6 ± 3.0 | -13.4% | [-9.16, -6.88] | 20/20 | 20% | better ✓ |
+| zone | 46.6 ± 1.6 | -21.8% | [-13.70, -12.21] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 36.7 | -1.8% | [-1.14, -0.22] | 16/20 | better ✓ |
-| nearest | look | 59.1 | -14.0% | [-13.17, -4.70] | 19/20 | better ✓ |
-| round_robin | look | 52.8 | -16.3% | [-11.02, -9.48] | 20/20 | better ✓ |
-| zone | look | 44.0 | -28.2% | [-18.49, -16.29] | 20/20 | better ✓ |
+| cost | look | 32.0 | -12.4% | [-7.62, -2.58] | 18/20 | better ✓ |
+| nearest | look | 51.6 | -18.1% | [-13.06, -9.73] | 20/20 | better ✓ |
+| round_robin | look | 59.6 | -10.6% | [-7.95, -6.24] | 20/20 | better ✓ |
+| zone | look | 46.6 | -29.7% | [-20.57, -18.82] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 36.7 | 12.3 | 31.7 | 39.4 | 17.7 | 0.59 |
-| cost | scan | 37.4 | 12.9 | 32.6 | 53.0 | 18.4 | 0.58 |
-| nearest | look | 59.1 | 34.7 | 97.3 | 149.9 | 40.1 | 0.46 |
-| nearest | scan | 68.7 | 44.1 | 108.0 | 173.3 | 49.7 | 0.52 |
-| round_robin | look | 52.8 | 30.4 | 67.9 | 81.8 | 33.8 | 0.67 |
-| round_robin | scan | 63.0 | 40.1 | 79.7 | 87.0 | 44.0 | 0.71 |
-| zone | look | 44.0 | 21.8 | 63.0 | 83.0 | 25.0 | 0.54 |
-| zone | scan | 61.3 | 38.5 | 80.2 | 92.6 | 42.3 | 0.66 |
+| cost | look | 32.0 | 9.4 | 26.2 | 45.8 | 13.2 | 0.54 |
+| cost | scan | 36.5 | 13.5 | 38.7 | 71.2 | 17.8 | 0.50 |
+| nearest | look | 51.6 | 28.5 | 85.6 | 109.7 | 32.9 | 0.45 |
+| nearest | scan | 63.1 | 39.3 | 95.5 | 147.7 | 44.3 | 0.51 |
+| round_robin | look | 59.6 | 37.0 | 76.2 | 88.7 | 40.9 | 0.71 |
+| round_robin | scan | 66.7 | 43.7 | 84.2 | 94.2 | 48.0 | 0.73 |
+| zone | look | 46.6 | 24.3 | 68.0 | 95.0 | 27.9 | 0.55 |
+| zone | scan | 66.4 | 43.2 | 84.5 | 99.5 | 47.6 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 12.3 | 5.3 | 4% / 22 | 23% | 11.3 / 5.0 | 56% | 11.6 | 1.61 | 0.28 | 0.0% |
-| cost | scan | 12.9 | 5.4 | 1% / 28 | 23% | 11.7 / 5.1 | 56% | 11.7 | 1.61 | 0.28 | 0.0% |
-| nearest | look | 34.7 | 5.4 | 38% / 67 | 13% | 5.1 / 5.1 | 58% | 12.6 | 1.56 | 0.45 | 6.7% |
-| nearest | scan | 44.1 | 5.6 | 42% / 82 | 10% | 5.3 / 5.3 | 64% | 14.7 | 1.58 | 0.46 | 6.4% |
-| round_robin | look | 30.4 | 3.4 | 45% / 48 | 10% | 14.6 / 3.5 | 93% | 21.1 | 1.36 | 0.01 | 0.0% |
-| round_robin | scan | 40.1 | 3.9 | 48% / 61 | 6% | 17.1 / 5.5 | 93% | 22.1 | 1.44 | 0.01 | 0.0% |
-| zone | look | 21.8 | 3.2 | 35% / 41 | 27% | 11.1 / 2.2 | 72% | 15.8 | 1.37 | 0.17 | 0.1% |
-| zone | scan | 38.5 | 3.8 | 44% / 63 | 16% | 15.4 / 3.5 | 82% | 18.9 | 1.56 | 0.17 | 0.3% |
+| cost | look | 9.4 | 3.9 | 11% / 18 | 18% | 6.8 / 3.5 | 88% | 12.8 | 1.50 | 0.11 | 0.0% |
+| cost | scan | 13.5 | 4.3 | 10% / 30 | 19% | 8.4 / 4.0 | 85% | 12.4 | 1.53 | 0.12 | 0.0% |
+| nearest | look | 28.5 | 4.4 | 36% / 59 | 12% | 3.5 / 3.5 | 84% | 12.8 | 1.47 | 0.18 | 0.2% |
+| nearest | scan | 39.3 | 5.0 | 39% / 75 | 8% | 4.0 / 4.0 | 87% | 13.7 | 1.53 | 0.23 | 1.0% |
+| round_robin | look | 37.0 | 3.9 | 47% / 54 | 3% | 14.4 / 3.8 | 96% | 14.9 | 1.46 | 0.01 | 0.0% |
+| round_robin | scan | 43.7 | 4.3 | 48% / 62 | 3% | 15.7 / 7.8 | 96% | 15.1 | 1.51 | 0.01 | 0.0% |
+| zone | look | 24.3 | 3.6 | 38% / 43 | 19% | 10.4 / 3.1 | 79% | 11.9 | 1.45 | 0.16 | 0.1% |
+| zone | scan | 43.2 | 4.4 | 45% / 63 | 7% | 14.5 / 4.3 | 90% | 14.4 | 1.70 | 0.16 | 0.1% |
 
-## morning_rush · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 7.8 / 24 | 116, 10.4 / 28 | 48, 11.1 / 27 |
+| cost | scan | 124, 10.6 / 33 | 116, 16.3 / 43 | 48, 14.2 / 35 |
+| nearest | look | 124, 22.8 / 84 | 116, 33.7 / 86 | 48, 30.8 / 84 |
+| nearest | scan | 124, 35.3 / 96 | 116, 43.2 / 94 | 48, 40.1 / 100 |
+| round_robin | look | 124, 35.7 / 76 | 116, 37.8 / 76 | 48, 38.2 / 75 |
+| round_robin | scan | 124, 42.1 / 83 | 116, 44.5 / 84 | 48, 45.7 / 85 |
+| zone | look | 124, 22.3 / 65 | 116, 23.4 / 66 | 48, 32.0 / 71 |
+| zone | scan | 124, 41.3 / 83 | 116, 44.9 / 85 | 48, 44.5 / 83 |
+
+## lunch · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.36 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.9; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 59.5; B0 floor = 18.7)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 36.9 ± 2.0 | -30.3% | [-16.97, -15.02] | 20/20 | 47% | better ✓ |
-| nearest | 58.1 ± 5.0 | +9.7% | [+2.76, +7.80] | 3/20 | -15% | worse ✗ |
-| zone | 44.0 ± 2.6 | -16.9% | [-9.65, -8.24] | 20/20 | 26% | better ✓ |
+| cost | 31.4 ± 1.5 | -47.3% | [-29.00, -27.36] | 20/20 | 69% | better ✓ |
+| nearest | 52.1 ± 3.2 | -12.6% | [-8.47, -6.30] | 19/20 | 18% | better ✓ |
+| zone | 46.4 ± 1.9 | -22.1% | [-13.99, -12.37] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 36.9 | -0.7% | [-0.68, +0.15] | 11/20 | - |
-| nearest | look | 58.1 | -12.9% | [-12.09, -5.79] | 18/20 | better ✓ |
-| round_robin | look | 52.9 | -16.7% | [-11.21, -10.00] | 20/20 | better ✓ |
-| zone | look | 44.0 | -27.8% | [-18.08, -15.95] | 20/20 | better ✓ |
+| cost | look | 31.4 | -6.4% | [-2.84, -1.50] | 19/20 | better ✓ |
+| nearest | look | 52.1 | -16.7% | [-11.99, -8.74] | 20/20 | better ✓ |
+| round_robin | look | 59.5 | -10.0% | [-7.66, -5.49] | 20/20 | better ✓ |
+| zone | look | 46.4 | -30.0% | [-21.06, -18.71] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 36.9 | 12.5 | 31.5 | 39.4 | 17.9 | 0.60 |
-| cost | scan | 37.1 | 12.6 | 31.8 | 42.8 | 18.1 | 0.60 |
-| nearest | look | 58.1 | 33.5 | 88.4 | 133.1 | 39.1 | 0.49 |
-| nearest | scan | 66.7 | 42.1 | 97.4 | 126.2 | 47.7 | 0.53 |
-| round_robin | look | 52.9 | 30.5 | 67.7 | 81.9 | 33.9 | 0.68 |
-| round_robin | scan | 63.5 | 40.6 | 80.3 | 87.2 | 44.5 | 0.72 |
-| zone | look | 44.0 | 21.8 | 61.8 | 83.6 | 25.0 | 0.55 |
-| zone | scan | 60.9 | 38.1 | 80.1 | 92.1 | 41.9 | 0.66 |
+| cost | look | 31.4 | 8.9 | 25.1 | 41.7 | 12.7 | 0.54 |
+| cost | scan | 33.5 | 10.6 | 30.8 | 48.7 | 14.8 | 0.52 |
+| nearest | look | 52.1 | 28.9 | 86.1 | 103.5 | 33.3 | 0.46 |
+| nearest | scan | 62.5 | 38.8 | 94.7 | 123.9 | 43.7 | 0.52 |
+| round_robin | look | 59.5 | 36.9 | 75.5 | 87.9 | 40.8 | 0.72 |
+| round_robin | scan | 66.1 | 43.1 | 84.1 | 93.6 | 47.4 | 0.73 |
+| zone | look | 46.4 | 24.0 | 69.3 | 91.0 | 27.7 | 0.54 |
+| zone | scan | 66.3 | 43.1 | 84.4 | 100.5 | 47.6 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 12.5 | 5.4 | 3% / 20 | 22% | 11.6 / 5.1 | 55% | 11.6 | 1.63 | 0.31 | 0.0% |
-| cost | scan | 12.6 | 5.5 | 1% / 16 | 22% | 11.7 / 5.1 | 55% | 11.5 | 1.62 | 0.26 | 0.0% |
-| nearest | look | 33.5 | 5.5 | 41% / 63 | 11% | 5.4 / 5.4 | 57% | 12.4 | 1.58 | 0.50 | 4.5% |
-| nearest | scan | 42.1 | 5.5 | 43% / 80 | 9% | 4.9 / 4.9 | 65% | 15.1 | 1.59 | 0.47 | 3.5% |
-| round_robin | look | 30.5 | 3.4 | 44% / 48 | 9% | 14.8 / 3.4 | 94% | 21.2 | 1.37 | 0.01 | 0.0% |
-| round_robin | scan | 40.6 | 3.9 | 49% / 62 | 6% | 17.3 / 4.5 | 94% | 22.2 | 1.45 | 0.01 | 0.0% |
-| zone | look | 21.8 | 3.2 | 34% / 41 | 27% | 11.5 / 2.2 | 72% | 15.9 | 1.38 | 0.17 | 0.0% |
-| zone | scan | 38.1 | 3.8 | 43% / 63 | 16% | 15.5 / 3.3 | 82% | 19.1 | 1.57 | 0.17 | 0.1% |
+| cost | look | 8.9 | 3.8 | 10% / 17 | 18% | 6.5 / 3.2 | 88% | 12.8 | 1.50 | 0.11 | 0.0% |
+| cost | scan | 10.6 | 4.3 | 7% / 24 | 20% | 7.4 / 3.3 | 84% | 12.2 | 1.52 | 0.12 | 0.0% |
+| nearest | look | 28.9 | 4.4 | 37% / 59 | 11% | 3.5 / 3.5 | 85% | 13.0 | 1.47 | 0.19 | 0.1% |
+| nearest | scan | 38.8 | 4.9 | 39% / 74 | 7% | 3.7 / 3.7 | 87% | 13.8 | 1.54 | 0.20 | 0.7% |
+| round_robin | look | 36.9 | 3.9 | 46% / 53 | 3% | 14.5 / 3.5 | 96% | 14.9 | 1.46 | 0.01 | 0.0% |
+| round_robin | scan | 43.1 | 4.3 | 47% / 62 | 2% | 15.6 / 3.4 | 96% | 15.2 | 1.51 | 0.01 | 0.0% |
+| zone | look | 24.0 | 3.6 | 38% / 43 | 19% | 10.2 / 2.8 | 80% | 11.8 | 1.45 | 0.16 | 0.0% |
+| zone | scan | 43.1 | 4.4 | 45% / 63 | 7% | 14.5 / 3.5 | 90% | 14.4 | 1.69 | 0.16 | 0.0% |
 
-## evening_rush · 30 floors x 4 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 124, 7.5 / 23 | 116, 9.8 / 26 | 48, 10.0 / 25 |
+| cost | scan | 124, 8.5 / 27 | 116, 12.1 / 33 | 48, 12.0 / 31 |
+| nearest | look | 124, 25.0 / 86 | 116, 32.9 / 85 | 48, 29.1 / 82 |
+| nearest | scan | 124, 37.5 / 95 | 116, 40.8 / 93 | 48, 37.1 / 93 |
+| round_robin | look | 124, 35.5 / 75 | 116, 37.6 / 74 | 48, 38.7 / 76 |
+| round_robin | scan | 124, 42.1 / 84 | 116, 43.8 / 84 | 48, 44.2 / 84 |
+| zone | look | 124, 22.2 / 64 | 116, 23.3 / 67 | 48, 30.6 / 73 |
+| zone | scan | 124, 41.1 / 83 | 116, 44.8 / 84 | 48, 44.1 / 84 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.9; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.4; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 23.7 ± 1.1 | -32.2% | [-11.88, -10.65] | 20/20 | 55% | better ✓ |
-| nearest | 33.7 ± 2.4 | -3.6% | [-2.24, -0.31] | 15/20 | 6% | - |
-| zone | 30.3 ± 1.4 | -13.2% | [-5.18, -4.05] | 20/20 | 22% | better ✓ |
+| cost | 23.8 ± 1.1 | -38.0% | [-15.06, -14.07] | 20/20 | 60% | better ✓ |
+| nearest | 39.3 ± 4.5 | +2.2% | [-0.90, +2.92] | 12/20 | -3% | - |
+| zone | 31.3 ± 1.6 | -18.5% | [-7.59, -6.66] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 23.7 | -23.5% | [-7.91, -6.64] | 20/20 | better ✓ |
-| nearest | look | 33.7 | -19.0% | [-8.86, -6.91] | 20/20 | better ✓ |
-| round_robin | look | 34.9 | -18.7% | [-8.88, -7.18] | 20/20 | better ✓ |
-| zone | look | 30.3 | -31.5% | [-14.67, -13.30] | 20/20 | better ✓ |
+| cost | look | 23.8 | -25.6% | [-8.84, -7.61] | 20/20 | better ✓ |
+| nearest | look | 39.3 | -9.0% | [-5.61, -1.91] | 16/20 | better ✓ |
+| round_robin | look | 38.4 | -10.6% | [-5.17, -3.95] | 20/20 | better ✓ |
+| zone | look | 31.3 | -29.8% | [-13.87, -12.73] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 23.7 | 9.4 | 26.0 | 35.4 | 9.4 | 0.56 |
-| cost | scan | 30.9 | 16.6 | 39.9 | 52.9 | 16.6 | 0.61 |
-| nearest | look | 33.7 | 19.4 | 52.2 | 103.8 | 19.4 | 0.49 |
-| nearest | scan | 41.6 | 27.3 | 57.1 | 88.6 | 27.3 | 0.59 |
-| round_robin | look | 34.9 | 20.6 | 45.2 | 54.1 | 20.6 | 0.70 |
-| round_robin | scan | 43.0 | 28.7 | 54.5 | 57.0 | 28.7 | 0.75 |
-| zone | look | 30.3 | 16.0 | 43.0 | 55.2 | 16.0 | 0.59 |
-| zone | scan | 44.3 | 30.0 | 54.9 | 69.8 | 30.0 | 0.75 |
+| cost | look | 23.8 | 9.6 | 26.5 | 42.1 | 9.6 | 0.57 |
+| cost | scan | 32.0 | 17.8 | 41.7 | 54.1 | 17.8 | 0.64 |
+| nearest | look | 39.3 | 25.0 | 71.8 | 187.7 | 25.0 | 0.44 |
+| nearest | scan | 43.2 | 28.9 | 61.3 | 143.3 | 28.9 | 0.57 |
+| round_robin | look | 38.4 | 24.2 | 48.8 | 56.0 | 24.2 | 0.73 |
+| round_robin | scan | 43.0 | 28.7 | 54.5 | 62.2 | 28.7 | 0.75 |
+| zone | look | 31.3 | 17.1 | 45.2 | 76.5 | 17.1 | 0.58 |
+| zone | scan | 44.6 | 30.4 | 55.6 | 116.8 | 30.4 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 9.4 | 0.0 | 14% / 13 | 34% | 7.6 / 4.4 | 72% | 12.0 | 1.36 | 0.15 | 0.0% |
-| cost | scan | 16.6 | 0.0 | 22% / 25 | 25% | 8.3 / 4.2 | 50% | 8.3 | 1.57 | 0.46 | 0.0% |
-| nearest | look | 19.4 | 0.0 | 35% / 34 | 20% | 4.9 / 4.9 | 58% | 9.8 | 1.43 | 0.40 | 2.3% |
-| nearest | scan | 27.3 | 0.0 | 38% / 43 | 13% | 3.5 / 3.5 | 78% | 13.2 | 1.51 | 0.23 | 0.9% |
-| round_robin | look | 20.6 | 0.0 | 43% / 29 | 15% | 10.0 / 4.1 | 90% | 15.1 | 1.36 | 0.00 | 0.0% |
-| round_robin | scan | 28.7 | 0.0 | 47% / 38 | 8% | 10.4 / 4.3 | 94% | 15.9 | 1.48 | 0.00 | 0.0% |
-| zone | look | 16.0 | 0.0 | 36% / 27 | 26% | 8.4 / 4.7 | 72% | 12.1 | 1.37 | 0.11 | 0.0% |
-| zone | scan | 30.0 | 0.0 | 45% / 39 | 12% | 10.0 / 3.8 | 86% | 14.7 | 1.66 | 0.11 | 0.2% |
+| cost | look | 9.6 | 0.0 | 20% / 14 | 19% | 7.0 / 3.9 | 84% | 9.0 | 1.49 | 0.11 | 0.3% |
+| cost | scan | 17.8 | 0.0 | 25% / 25 | 19% | 8.4 / 3.7 | 63% | 6.8 | 1.63 | 0.29 | 0.0% |
+| nearest | look | 25.0 | 0.0 | 40% / 39 | 12% | 4.3 / 4.3 | 72% | 7.9 | 1.55 | 0.31 | 6.4% |
+| nearest | scan | 28.9 | 0.0 | 43% / 44 | 6% | 3.1 / 3.1 | 88% | 9.8 | 1.60 | 0.16 | 2.6% |
+| round_robin | look | 24.2 | 0.0 | 50% / 33 | 4% | 9.7 / 3.9 | 96% | 10.6 | 1.52 | 0.00 | 0.0% |
+| round_robin | scan | 28.7 | 0.0 | 49% / 38 | 3% | 10.2 / 6.0 | 97% | 10.6 | 1.59 | 0.00 | 0.1% |
+| zone | look | 17.1 | 0.0 | 42% / 27 | 16% | 7.8 / 4.5 | 82% | 8.9 | 1.52 | 0.10 | 0.5% |
+| zone | scan | 30.4 | 0.0 | 47% / 40 | 5% | 9.8 / 4.2 | 93% | 10.2 | 1.84 | 0.10 | 1.9% |
 
-## evening_rush · 30 floors x 4 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 3.5 / 14 | 242, 10.0 / 27 | 46, 10.1 / 26 |
+| cost | scan | 23, 1.4 / 7 | 242, 20.6 / 43 | 46, 10.8 / 29 |
+| nearest | look | 23, 4.9 / 26 | 242, 27.4 / 81 | 46, 21.9 / 55 |
+| nearest | scan | 23, 20.6 / 55 | 242, 30.9 / 62 | 46, 22.3 / 56 |
+| round_robin | look | 23, 22.6 / 46 | 242, 24.2 / 49 | 46, 25.0 / 48 |
+| round_robin | scan | 23, 27.6 / 51 | 242, 28.9 / 55 | 46, 28.2 / 54 |
+| zone | look | 23, 13.3 / 37 | 242, 16.6 / 44 | 46, 21.5 / 48 |
+| zone | scan | 23, 26.6 / 52 | 242, 30.8 / 56 | 46, 29.8 / 54 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 34.9; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 38.3; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 23.5 ± 1.1 | -32.8% | [-12.04, -10.89] | 20/20 | 56% | better ✓ |
-| nearest | 34.0 ± 2.3 | -2.7% | [-1.84, +0.07] | 14/20 | 5% | - |
-| zone | 30.2 ± 1.5 | -13.7% | [-5.35, -4.20] | 20/20 | 23% | better ✓ |
+| cost | 23.6 ± 1.0 | -38.2% | [-15.11, -14.09] | 20/20 | 61% | better ✓ |
+| nearest | 37.6 ± 5.1 | -1.7% | [-2.63, +2.18] | 15/20 | 3% | - |
+| zone | 31.3 ± 1.4 | -18.2% | [-7.48, -6.51] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 23.5 | -22.2% | [-7.32, -6.14] | 20/20 | better ✓ |
-| nearest | look | 34.0 | -17.3% | [-8.03, -6.21] | 20/20 | better ✓ |
-| round_robin | look | 34.9 | -18.8% | [-8.87, -7.30] | 20/20 | better ✓ |
-| zone | look | 30.2 | -31.6% | [-14.69, -13.22] | 20/20 | better ✓ |
+| cost | look | 23.6 | -24.1% | [-8.16, -6.93] | 20/20 | better ✓ |
+| nearest | look | 37.6 | -11.1% | [-6.60, -2.07] | 18/20 | better ✓ |
+| round_robin | look | 38.3 | -10.4% | [-5.00, -3.93] | 20/20 | better ✓ |
+| zone | look | 31.3 | -28.9% | [-13.29, -12.24] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 23.5 | 9.2 | 26.1 | 35.0 | 9.2 | 0.55 |
-| cost | scan | 30.2 | 15.9 | 38.8 | 52.0 | 15.9 | 0.60 |
-| nearest | look | 34.0 | 19.7 | 52.6 | 107.7 | 19.7 | 0.48 |
-| nearest | scan | 41.1 | 26.8 | 56.7 | 78.7 | 26.8 | 0.59 |
-| round_robin | look | 34.9 | 20.6 | 45.5 | 54.4 | 20.6 | 0.70 |
-| round_robin | scan | 43.0 | 28.7 | 54.4 | 57.0 | 28.7 | 0.75 |
-| zone | look | 30.2 | 15.9 | 42.5 | 55.0 | 15.9 | 0.58 |
-| zone | scan | 44.1 | 29.8 | 54.8 | 68.7 | 29.8 | 0.75 |
+| cost | look | 23.6 | 9.4 | 26.2 | 40.4 | 9.4 | 0.56 |
+| cost | scan | 31.2 | 16.9 | 40.5 | 54.5 | 16.9 | 0.62 |
+| nearest | look | 37.6 | 23.3 | 70.0 | 159.2 | 23.3 | 0.46 |
+| nearest | scan | 42.3 | 28.0 | 58.4 | 138.3 | 28.0 | 0.56 |
+| round_robin | look | 38.3 | 24.0 | 48.5 | 58.6 | 24.0 | 0.73 |
+| round_robin | scan | 42.7 | 28.5 | 54.6 | 58.2 | 28.5 | 0.74 |
+| zone | look | 31.3 | 17.0 | 45.2 | 75.2 | 17.0 | 0.58 |
+| zone | scan | 44.0 | 29.8 | 55.5 | 110.5 | 29.8 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 9.2 | 0.0 | 14% / 13 | 35% | 7.5 / 4.2 | 72% | 12.0 | 1.35 | 0.12 | 0.0% |
-| cost | scan | 15.9 | 0.0 | 21% / 25 | 26% | 8.2 / 4.1 | 51% | 8.4 | 1.55 | 0.42 | 0.0% |
-| nearest | look | 19.7 | 0.0 | 36% / 35 | 21% | 4.7 / 4.7 | 59% | 9.9 | 1.43 | 0.31 | 2.5% |
-| nearest | scan | 26.8 | 0.0 | 39% / 43 | 14% | 3.4 / 3.4 | 79% | 13.6 | 1.49 | 0.17 | 0.6% |
-| round_robin | look | 20.6 | 0.0 | 44% / 29 | 15% | 10.0 / 3.9 | 90% | 15.1 | 1.36 | 0.00 | 0.0% |
-| round_robin | scan | 28.7 | 0.0 | 48% / 39 | 8% | 10.3 / 3.9 | 93% | 15.9 | 1.47 | 0.00 | 0.0% |
-| zone | look | 15.9 | 0.0 | 38% / 26 | 26% | 8.1 / 4.4 | 72% | 12.1 | 1.37 | 0.11 | 0.0% |
-| zone | scan | 29.8 | 0.0 | 46% / 39 | 12% | 9.8 / 3.5 | 87% | 14.7 | 1.65 | 0.11 | 0.2% |
+| cost | look | 9.4 | 0.0 | 20% / 14 | 19% | 6.9 / 3.7 | 84% | 9.0 | 1.49 | 0.12 | 0.3% |
+| cost | scan | 16.9 | 0.0 | 24% / 24 | 19% | 8.3 / 3.6 | 64% | 6.9 | 1.63 | 0.27 | 0.0% |
+| nearest | look | 23.3 | 0.0 | 39% / 38 | 13% | 4.1 / 4.1 | 74% | 8.2 | 1.53 | 0.22 | 5.2% |
+| nearest | scan | 28.0 | 0.0 | 42% / 44 | 6% | 3.0 / 3.0 | 88% | 9.8 | 1.61 | 0.15 | 2.4% |
+| round_robin | look | 24.0 | 0.0 | 50% / 33 | 4% | 9.7 / 3.6 | 96% | 10.5 | 1.52 | 0.00 | 0.0% |
+| round_robin | scan | 28.5 | 0.0 | 49% / 38 | 3% | 10.1 / 3.2 | 96% | 10.6 | 1.57 | 0.00 | 0.0% |
+| zone | look | 17.0 | 0.0 | 43% / 26 | 16% | 7.8 / 4.4 | 82% | 8.9 | 1.52 | 0.10 | 0.4% |
+| zone | scan | 29.8 | 0.0 | 46% / 40 | 6% | 9.6 / 3.4 | 92% | 10.2 | 1.84 | 0.10 | 1.6% |
 
-## evening_rush · 30 floors x 4 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 3.5 / 13 | 242, 9.8 / 26 | 46, 10.1 / 26 |
+| cost | scan | 23, 1.2 / 7 | 242, 19.5 / 42 | 46, 10.7 / 28 |
+| nearest | look | 23, 5.6 / 29 | 242, 25.4 / 74 | 46, 21.0 / 53 |
+| nearest | scan | 23, 18.6 / 55 | 242, 29.7 / 59 | 46, 23.7 / 56 |
+| round_robin | look | 23, 22.4 / 46 | 242, 23.9 / 49 | 46, 25.2 / 47 |
+| round_robin | scan | 23, 29.1 / 53 | 242, 28.4 / 55 | 46, 28.3 / 53 |
+| zone | look | 23, 14.0 / 38 | 242, 16.5 / 44 | 46, 21.5 / 47 |
+| zone | scan | 23, 26.1 / 52 | 242, 30.4 / 56 | 46, 28.3 / 54 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 39.4; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 44.7; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.7 ± 1.6 | -32.3% | [-13.27, -12.17] | 20/20 | 51% | better ✓ |
-| nearest | 39.7 ± 2.6 | +0.9% | [-0.81, +1.47] | 8/20 | -1% | - |
-| zone | 33.6 ± 1.3 | -14.6% | [-6.35, -5.21] | 20/20 | 23% | better ✓ |
+| cost | 28.5 ± 1.3 | -36.2% | [-16.75, -15.57] | 20/20 | 53% | better ✓ |
+| nearest | 49.3 ± 9.6 | +10.4% | [+1.29, +9.39] | 7/20 | -15% | - |
+| zone | 35.7 ± 1.9 | -20.0% | [-9.75, -8.22] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.7 | -23.5% | [-9.13, -7.26] | 20/20 | better ✓ |
-| nearest | look | 39.7 | -14.6% | [-8.02, -5.73] | 20/20 | better ✓ |
-| round_robin | look | 39.4 | -16.5% | [-8.62, -6.84] | 20/20 | better ✓ |
-| zone | look | 33.6 | -30.1% | [-15.09, -13.82] | 20/20 | better ✓ |
+| cost | look | 28.5 | -22.0% | [-8.92, -7.27] | 20/20 | better ✓ |
+| nearest | look | 49.3 | -8.8% | [-8.09, -0.33] | 18/20 | better ✓ |
+| round_robin | look | 44.7 | -9.0% | [-5.16, -3.82] | 20/20 | better ✓ |
+| zone | look | 35.7 | -29.7% | [-16.28, -14.06] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.7 | 10.5 | 27.8 | 42.4 | 12.4 | 0.57 |
-| cost | scan | 34.8 | 17.5 | 42.5 | 57.5 | 20.5 | 0.61 |
-| nearest | look | 39.7 | 22.9 | 61.2 | 125.7 | 25.4 | 0.49 |
-| nearest | scan | 46.6 | 29.7 | 62.5 | 109.2 | 32.3 | 0.58 |
-| round_robin | look | 39.4 | 23.1 | 49.9 | 60.2 | 25.1 | 0.70 |
-| round_robin | scan | 47.2 | 30.7 | 58.1 | 63.0 | 32.9 | 0.74 |
-| zone | look | 33.6 | 17.6 | 47.2 | 65.6 | 19.3 | 0.58 |
-| zone | scan | 48.1 | 31.6 | 58.7 | 77.8 | 33.8 | 0.74 |
+| cost | look | 28.5 | 11.8 | 31.2 | 49.9 | 14.3 | 0.58 |
+| cost | scan | 36.6 | 18.9 | 44.9 | 67.8 | 22.3 | 0.63 |
+| nearest | look | 49.3 | 32.1 | 99.0 | 270.2 | 35.1 | 0.43 |
+| nearest | scan | 54.1 | 36.7 | 82.5 | 260.9 | 39.9 | 0.50 |
+| round_robin | look | 44.7 | 27.7 | 55.8 | 75.1 | 30.4 | 0.73 |
+| round_robin | scan | 49.1 | 31.9 | 61.3 | 85.7 | 34.9 | 0.74 |
+| zone | look | 35.7 | 19.3 | 51.2 | 107.7 | 21.5 | 0.56 |
+| zone | scan | 50.9 | 33.9 | 62.5 | 147.7 | 36.6 | 0.69 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.5 | 1.9 | 17% / 17 | 29% | 7.6 / 4.2 | 81% | 12.1 | 1.40 | 0.11 | 0.0% |
-| cost | scan | 17.5 | 3.0 | 21% / 27 | 22% | 8.6 / 4.1 | 61% | 8.9 | 1.60 | 0.31 | 0.0% |
-| nearest | look | 22.9 | 2.5 | 36% / 40 | 18% | 4.5 / 4.5 | 65% | 9.6 | 1.46 | 0.32 | 2.5% |
-| nearest | scan | 29.7 | 2.5 | 39% / 47 | 10% | 3.5 / 3.5 | 81% | 12.7 | 1.54 | 0.23 | 1.1% |
-| round_robin | look | 23.1 | 1.9 | 44% / 33 | 12% | 10.1 / 4.0 | 92% | 14.2 | 1.40 | 0.00 | 0.0% |
-| round_robin | scan | 30.7 | 2.2 | 47% / 42 | 6% | 10.3 / 4.6 | 96% | 14.9 | 1.50 | 0.00 | 0.0% |
-| zone | look | 17.6 | 1.7 | 38% / 29 | 23% | 8.0 / 4.4 | 76% | 11.5 | 1.41 | 0.11 | 0.2% |
-| zone | scan | 31.6 | 2.2 | 45% / 43 | 10% | 9.8 / 3.9 | 88% | 13.9 | 1.70 | 0.11 | 0.3% |
+| cost | look | 11.8 | 2.4 | 23% / 19 | 13% | 7.3 / 3.9 | 92% | 8.7 | 1.57 | 0.07 | 0.1% |
+| cost | scan | 18.9 | 3.4 | 24% / 29 | 14% | 8.5 / 3.8 | 76% | 7.0 | 1.71 | 0.16 | 0.1% |
+| nearest | look | 32.1 | 2.9 | 40% / 49 | 10% | 4.0 / 4.0 | 78% | 7.5 | 1.60 | 0.25 | 8.3% |
+| nearest | scan | 36.7 | 3.1 | 42% / 54 | 4% | 3.3 / 3.3 | 90% | 9.0 | 1.67 | 0.17 | 5.7% |
+| round_robin | look | 27.7 | 2.7 | 48% / 38 | 3% | 9.8 / 3.9 | 97% | 9.4 | 1.57 | 0.00 | 0.2% |
+| round_robin | scan | 31.9 | 2.9 | 47% / 44 | 2% | 10.2 / 6.4 | 98% | 9.6 | 1.62 | 0.00 | 0.2% |
+| zone | look | 19.3 | 2.2 | 40% / 30 | 13% | 7.7 / 4.4 | 85% | 8.1 | 1.59 | 0.10 | 0.9% |
+| zone | scan | 33.9 | 2.7 | 46% / 45 | 4% | 9.6 / 4.4 | 94% | 9.4 | 1.92 | 0.10 | 2.7% |
 
-## evening_rush · 30 floors x 4 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 6.0 / 19 | 242, 12.1 / 31 | 46, 13.2 / 32 |
+| cost | scan | 23, 3.9 / 16 | 242, 21.4 / 46 | 46, 12.7 / 32 |
+| nearest | look | 23, 8.2 / 45 | 242, 35.4 / 116 | 46, 25.8 / 66 |
+| nearest | scan | 23, 23.7 / 63 | 242, 39.7 / 95 | 46, 27.5 / 65 |
+| round_robin | look | 23, 25.2 / 51 | 242, 27.8 / 56 | 46, 28.6 / 55 |
+| round_robin | scan | 23, 29.3 / 56 | 242, 32.4 / 61 | 46, 30.7 / 60 |
+| zone | look | 23, 16.2 / 43 | 242, 18.8 / 51 | 46, 23.7 / 53 |
+| zone | scan | 23, 30.4 / 57 | 242, 34.6 / 64 | 46, 32.6 / 62 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 39.2; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 44.6; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 26.4 ± 1.7 | -32.7% | [-13.47, -12.09] | 20/20 | 51% | better ✓ |
-| nearest | 38.8 ± 2.3 | -1.0% | [-1.67, +0.77] | 11/20 | 2% | - |
-| zone | 33.7 ± 1.4 | -13.8% | [-6.23, -4.66] | 20/20 | 22% | better ✓ |
+| cost | 28.3 ± 1.1 | -36.7% | [-16.82, -15.85] | 20/20 | 54% | better ✓ |
+| nearest | 44.9 ± 5.9 | +0.7% | [-1.66, +3.03] | 12/20 | -1% | - |
+| zone | 35.9 ± 1.7 | -19.5% | [-9.17, -8.23] | 20/20 | 29% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 26.4 | -22.2% | [-8.48, -6.64] | 20/20 | better ✓ |
-| nearest | look | 38.8 | -16.1% | [-8.39, -6.56] | 20/20 | better ✓ |
-| round_robin | look | 39.2 | -16.3% | [-8.45, -6.73] | 20/20 | better ✓ |
-| zone | look | 33.7 | -29.5% | [-14.95, -13.40] | 20/20 | better ✓ |
+| cost | look | 28.3 | -21.3% | [-8.23, -7.08] | 20/20 | better ✓ |
+| nearest | look | 44.9 | -14.2% | [-11.05, -3.74] | 18/20 | better ✓ |
+| round_robin | look | 44.6 | -8.8% | [-4.88, -3.74] | 20/20 | better ✓ |
+| zone | look | 35.9 | -29.2% | [-15.56, -14.05] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 26.4 | 10.2 | 27.5 | 42.0 | 12.1 | 0.56 |
-| cost | scan | 33.9 | 16.6 | 40.3 | 55.4 | 19.6 | 0.60 |
-| nearest | look | 38.8 | 22.0 | 59.8 | 122.5 | 24.5 | 0.48 |
-| nearest | scan | 46.2 | 29.4 | 62.4 | 104.8 | 31.9 | 0.58 |
-| round_robin | look | 39.2 | 22.9 | 49.8 | 60.8 | 24.9 | 0.69 |
-| round_robin | scan | 46.8 | 30.3 | 58.6 | 63.0 | 32.5 | 0.74 |
-| zone | look | 33.7 | 17.7 | 47.6 | 64.8 | 19.4 | 0.58 |
-| zone | scan | 47.9 | 31.4 | 58.8 | 78.8 | 33.6 | 0.74 |
+| cost | look | 28.3 | 11.6 | 30.5 | 50.4 | 14.0 | 0.58 |
+| cost | scan | 35.9 | 18.2 | 44.0 | 62.9 | 21.6 | 0.62 |
+| nearest | look | 44.9 | 27.8 | 76.0 | 211.9 | 30.7 | 0.46 |
+| nearest | scan | 52.4 | 35.0 | 80.1 | 274.4 | 38.1 | 0.48 |
+| round_robin | look | 44.6 | 27.7 | 55.7 | 68.3 | 30.4 | 0.73 |
+| round_robin | scan | 48.9 | 31.7 | 61.1 | 82.3 | 34.7 | 0.73 |
+| zone | look | 35.9 | 19.5 | 51.9 | 104.9 | 21.7 | 0.56 |
+| zone | scan | 50.7 | 33.8 | 63.0 | 158.4 | 36.4 | 0.68 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.2 | 1.8 | 17% / 17 | 30% | 7.4 / 4.0 | 81% | 12.0 | 1.38 | 0.12 | 0.1% |
-| cost | scan | 16.6 | 3.0 | 20% / 27 | 24% | 8.5 / 4.0 | 60% | 8.8 | 1.58 | 0.28 | 0.0% |
-| nearest | look | 22.0 | 2.4 | 36% / 39 | 19% | 4.4 / 4.4 | 66% | 9.7 | 1.45 | 0.27 | 2.5% |
-| nearest | scan | 29.4 | 2.5 | 40% / 47 | 12% | 3.3 / 3.3 | 82% | 12.8 | 1.53 | 0.15 | 0.9% |
-| round_robin | look | 22.9 | 1.9 | 44% / 33 | 12% | 10.0 / 3.9 | 92% | 14.1 | 1.39 | 0.00 | 0.0% |
-| round_robin | scan | 30.3 | 2.2 | 46% / 42 | 6% | 10.2 / 3.6 | 95% | 14.9 | 1.50 | 0.00 | 0.0% |
-| zone | look | 17.7 | 1.7 | 38% / 30 | 23% | 7.9 / 4.3 | 77% | 11.4 | 1.40 | 0.11 | 0.1% |
-| zone | scan | 31.4 | 2.1 | 45% / 43 | 10% | 9.6 / 3.5 | 88% | 13.9 | 1.70 | 0.11 | 0.3% |
+| cost | look | 11.6 | 2.4 | 23% / 19 | 13% | 7.1 / 3.8 | 92% | 8.7 | 1.57 | 0.08 | 0.3% |
+| cost | scan | 18.2 | 3.4 | 23% / 28 | 15% | 8.4 / 3.5 | 75% | 7.0 | 1.70 | 0.14 | 0.0% |
+| nearest | look | 27.8 | 2.9 | 41% / 45 | 10% | 3.8 / 3.8 | 81% | 7.8 | 1.57 | 0.18 | 5.1% |
+| nearest | scan | 35.0 | 3.1 | 43% / 54 | 5% | 3.2 / 3.2 | 90% | 9.0 | 1.67 | 0.19 | 4.7% |
+| round_robin | look | 27.7 | 2.7 | 49% / 38 | 3% | 9.8 / 3.6 | 97% | 9.4 | 1.57 | 0.00 | 0.1% |
+| round_robin | scan | 31.7 | 2.9 | 48% / 44 | 2% | 10.0 / 3.2 | 97% | 9.6 | 1.61 | 0.00 | 0.3% |
+| zone | look | 19.5 | 2.2 | 41% / 30 | 13% | 7.6 / 4.2 | 85% | 8.1 | 1.59 | 0.10 | 0.9% |
+| zone | scan | 33.8 | 2.7 | 46% / 45 | 4% | 9.3 / 3.3 | 93% | 9.4 | 1.92 | 0.10 | 2.9% |
 
-## evening_rush · 30 floors x 4 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 5.9 / 19 | 242, 11.9 / 30 | 46, 13.1 / 32 |
+| cost | scan | 23, 3.6 / 15 | 242, 20.7 / 46 | 46, 12.2 / 31 |
+| nearest | look | 23, 8.1 / 37 | 242, 30.1 / 83 | 46, 25.2 / 65 |
+| nearest | scan | 23, 25.3 / 64 | 242, 37.2 / 89 | 46, 27.9 / 65 |
+| round_robin | look | 23, 25.1 / 52 | 242, 27.7 / 56 | 46, 28.4 / 53 |
+| round_robin | scan | 23, 30.0 / 57 | 242, 31.6 / 61 | 46, 33.0 / 61 |
+| zone | look | 23, 16.6 / 43 | 242, 18.9 / 51 | 46, 23.9 / 54 |
+| zone | scan | 23, 28.8 / 56 | 242, 34.5 / 65 | 46, 32.3 / 60 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.7; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.0; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.8 ± 1.6 | -31.8% | [-14.65, -13.10] | 20/20 | 47% | better ✓ |
-| nearest | 45.7 ± 3.1 | +4.6% | [+0.57, +3.64] | 4/20 | -7% | worse ✗ |
-| zone | 36.9 ± 1.9 | -15.5% | [-7.61, -5.90] | 20/20 | 23% | better ✓ |
+| cost | 34.4 ± 1.5 | -33.9% | [-18.47, -16.74] | 20/20 | 47% | better ✓ |
+| nearest | 60.2 ± 8.9 | +15.9% | [+4.94, +12.27] | 3/20 | -22% | worse ✗ |
+| zone | 41.7 ± 2.5 | -19.8% | [-11.32, -9.26] | 20/20 | 27% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.8 | -22.3% | [-9.57, -7.52] | 20/20 | better ✓ |
-| nearest | look | 45.7 | -13.1% | [-8.63, -5.08] | 19/20 | better ✓ |
-| round_robin | look | 43.7 | -16.4% | [-9.37, -7.76] | 20/20 | better ✓ |
-| zone | look | 36.9 | -28.7% | [-15.84, -13.95] | 20/20 | better ✓ |
+| cost | look | 34.4 | -19.3% | [-9.82, -6.69] | 20/20 | better ✓ |
+| nearest | look | 60.2 | -8.6% | [-9.79, -1.19] | 15/20 | - |
+| round_robin | look | 52.0 | -9.0% | [-5.79, -4.43] | 20/20 | better ✓ |
+| zone | look | 41.7 | -29.7% | [-19.10, -16.35] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.8 | 11.9 | 31.3 | 47.0 | 15.5 | 0.58 |
-| cost | scan | 38.4 | 18.5 | 45.0 | 63.1 | 24.1 | 0.61 |
-| nearest | look | 45.7 | 26.3 | 72.1 | 151.6 | 31.4 | 0.47 |
-| nearest | scan | 52.6 | 33.1 | 75.5 | 126.8 | 38.3 | 0.57 |
-| round_robin | look | 43.7 | 25.3 | 55.0 | 65.7 | 29.4 | 0.70 |
-| round_robin | scan | 52.3 | 33.4 | 63.1 | 73.7 | 38.0 | 0.75 |
-| zone | look | 36.9 | 19.0 | 51.7 | 71.3 | 22.6 | 0.57 |
-| zone | scan | 51.8 | 33.0 | 62.9 | 87.9 | 37.5 | 0.73 |
+| cost | look | 34.4 | 15.2 | 38.4 | 59.0 | 20.1 | 0.60 |
+| cost | scan | 42.6 | 22.1 | 50.7 | 73.2 | 28.3 | 0.65 |
+| nearest | look | 60.2 | 39.7 | 129.7 | 353.6 | 46.0 | 0.40 |
+| nearest | scan | 65.9 | 45.1 | 127.2 | 362.4 | 51.6 | 0.45 |
+| round_robin | look | 52.0 | 31.7 | 64.6 | 108.0 | 37.7 | 0.71 |
+| round_robin | scan | 57.1 | 36.4 | 70.3 | 121.3 | 42.8 | 0.72 |
+| zone | look | 41.7 | 22.9 | 60.8 | 149.1 | 27.4 | 0.53 |
+| zone | scan | 59.3 | 39.6 | 81.4 | 228.6 | 45.0 | 0.63 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 11.9 | 3.7 | 20% / 20 | 24% | 7.7 / 4.1 | 88% | 11.8 | 1.44 | 0.09 | 0.1% |
-| cost | scan | 18.5 | 5.5 | 20% / 30 | 20% | 8.7 / 4.1 | 71% | 9.4 | 1.64 | 0.20 | 0.1% |
-| nearest | look | 26.3 | 5.1 | 37% / 45 | 16% | 4.5 / 4.5 | 69% | 9.2 | 1.50 | 0.31 | 3.4% |
-| nearest | scan | 33.1 | 5.2 | 39% / 53 | 9% | 3.6 / 3.6 | 84% | 11.9 | 1.58 | 0.18 | 1.9% |
-| round_robin | look | 25.3 | 4.1 | 44% / 37 | 10% | 10.1 / 3.9 | 94% | 13.1 | 1.44 | 0.00 | 0.0% |
-| round_robin | scan | 33.4 | 4.6 | 46% / 46 | 4% | 10.4 / 5.0 | 96% | 13.9 | 1.53 | 0.00 | 0.1% |
-| zone | look | 19.0 | 3.6 | 36% / 32 | 21% | 7.7 / 4.2 | 80% | 10.8 | 1.46 | 0.11 | 0.2% |
-| zone | scan | 33.0 | 4.5 | 43% / 45 | 8% | 9.5 / 3.7 | 90% | 13.1 | 1.74 | 0.11 | 0.5% |
+| cost | look | 15.2 | 4.9 | 27% / 25 | 6% | 7.8 / 4.1 | 96% | 8.1 | 1.69 | 0.06 | 0.6% |
+| cost | scan | 22.1 | 6.2 | 26% / 34 | 8% | 9.2 / 4.4 | 88% | 7.4 | 1.82 | 0.06 | 0.1% |
+| nearest | look | 39.7 | 6.2 | 40% / 61 | 8% | 4.1 / 4.1 | 83% | 6.9 | 1.66 | 0.24 | 10.0% |
+| nearest | scan | 45.1 | 6.6 | 42% / 66 | 3% | 3.7 / 3.7 | 91% | 8.2 | 1.73 | 0.17 | 8.0% |
+| round_robin | look | 31.7 | 6.0 | 46% / 45 | 2% | 9.9 / 3.9 | 97% | 8.4 | 1.63 | 0.00 | 0.5% |
+| round_robin | scan | 36.4 | 6.4 | 46% / 51 | 1% | 10.2 / 5.7 | 97% | 8.5 | 1.66 | 0.00 | 1.1% |
+| zone | look | 22.9 | 4.5 | 40% / 35 | 11% | 7.4 / 4.1 | 88% | 7.3 | 1.67 | 0.10 | 1.7% |
+| zone | scan | 39.6 | 5.4 | 46% / 52 | 3% | 9.3 / 4.3 | 95% | 8.7 | 2.01 | 0.10 | 5.1% |
 
-## evening_rush · 30 floors x 4 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 8.9 / 24 | 242, 15.6 / 38 | 46, 16.6 / 38 |
+| cost | scan | 23, 10.1 / 32 | 242, 23.9 / 52 | 46, 18.4 / 45 |
+| nearest | look | 23, 10.7 / 49 | 242, 43.7 / 149 | 46, 32.8 / 92 |
+| nearest | scan | 23, 26.1 / 71 | 242, 48.8 / 147 | 46, 34.2 / 79 |
+| round_robin | look | 23, 28.7 / 60 | 242, 32.0 / 65 | 46, 31.5 / 62 |
+| round_robin | scan | 23, 33.0 / 63 | 242, 36.9 / 71 | 46, 35.2 / 67 |
+| zone | look | 23, 18.1 / 51 | 242, 22.3 / 61 | 46, 27.9 / 63 |
+| zone | scan | 23, 32.6 / 63 | 242, 40.6 / 86 | 46, 37.9 / 75 |
+
+## evening_rush · 30 floors x 4 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 43.6; B0 floor = 14.3)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.0; B0 floor = 14.3)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.6 ± 1.8 | -32.2% | [-14.79, -13.32] | 20/20 | 48% | better ✓ |
-| nearest | 44.9 ± 3.4 | +3.0% | [-0.40, +3.19] | 8/20 | -4% | - |
-| zone | 37.0 ± 2.0 | -15.1% | [-7.44, -5.79] | 20/20 | 23% | better ✓ |
+| cost | 33.8 ± 1.8 | -35.0% | [-18.92, -17.53] | 20/20 | 48% | better ✓ |
+| nearest | 54.7 ± 5.3 | +5.1% | [+0.71, +5.04] | 5/20 | -7% | - |
+| zone | 41.6 ± 2.8 | -20.0% | [-11.47, -9.33] | 20/20 | 28% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.6 | -20.4% | [-8.64, -6.50] | 20/20 | better ✓ |
-| nearest | look | 44.9 | -12.7% | [-8.00, -5.03] | 20/20 | better ✓ |
-| round_robin | look | 43.6 | -16.3% | [-9.43, -7.41] | 20/20 | better ✓ |
-| zone | look | 37.0 | -29.0% | [-15.92, -14.20] | 20/20 | better ✓ |
+| cost | look | 33.8 | -16.6% | [-7.68, -5.74] | 20/20 | better ✓ |
+| nearest | look | 54.7 | -15.8% | [-13.15, -7.57] | 19/20 | better ✓ |
+| round_robin | look | 52.0 | -9.0% | [-5.75, -4.63] | 20/20 | better ✓ |
+| zone | look | 41.6 | -29.6% | [-19.05, -16.24] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.6 | 11.6 | 31.1 | 49.9 | 15.3 | 0.57 |
-| cost | scan | 37.1 | 17.3 | 43.1 | 61.4 | 22.8 | 0.59 |
-| nearest | look | 44.9 | 25.6 | 68.9 | 145.0 | 30.6 | 0.48 |
-| nearest | scan | 51.4 | 32.0 | 70.2 | 128.8 | 37.1 | 0.58 |
-| round_robin | look | 43.6 | 25.2 | 54.7 | 66.1 | 29.3 | 0.70 |
-| round_robin | scan | 52.1 | 33.2 | 63.9 | 74.5 | 37.8 | 0.74 |
-| zone | look | 37.0 | 19.1 | 51.4 | 68.9 | 22.7 | 0.57 |
-| zone | scan | 52.1 | 33.3 | 63.4 | 93.5 | 37.8 | 0.72 |
+| cost | look | 33.8 | 14.6 | 37.2 | 59.1 | 19.5 | 0.60 |
+| cost | scan | 40.5 | 19.8 | 47.3 | 68.8 | 26.3 | 0.64 |
+| nearest | look | 54.7 | 34.3 | 93.2 | 276.1 | 40.4 | 0.44 |
+| nearest | scan | 64.9 | 44.2 | 125.9 | 342.6 | 50.7 | 0.46 |
+| round_robin | look | 52.0 | 31.8 | 65.0 | 99.8 | 37.8 | 0.71 |
+| round_robin | scan | 57.2 | 36.6 | 70.0 | 127.2 | 42.9 | 0.72 |
+| zone | look | 41.6 | 22.8 | 60.7 | 147.4 | 27.4 | 0.53 |
+| zone | scan | 59.1 | 39.5 | 80.1 | 217.1 | 44.9 | 0.63 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 11.6 | 3.6 | 21% / 20 | 24% | 7.5 / 3.9 | 88% | 11.8 | 1.44 | 0.08 | 0.1% |
-| cost | scan | 17.3 | 5.5 | 18% / 29 | 21% | 8.4 / 3.8 | 70% | 9.3 | 1.62 | 0.18 | 0.1% |
-| nearest | look | 25.6 | 5.0 | 38% / 46 | 16% | 4.2 / 4.2 | 72% | 9.6 | 1.48 | 0.25 | 3.0% |
-| nearest | scan | 32.0 | 5.2 | 40% / 52 | 10% | 3.5 / 3.5 | 84% | 11.9 | 1.56 | 0.17 | 1.1% |
-| round_robin | look | 25.2 | 4.1 | 44% / 37 | 10% | 10.1 / 3.8 | 94% | 13.1 | 1.44 | 0.00 | 0.0% |
-| round_robin | scan | 33.2 | 4.6 | 47% / 46 | 4% | 10.3 / 3.6 | 95% | 13.8 | 1.52 | 0.00 | 0.1% |
-| zone | look | 19.1 | 3.6 | 37% / 32 | 21% | 7.6 / 4.2 | 80% | 10.7 | 1.45 | 0.11 | 0.1% |
-| zone | scan | 33.3 | 4.5 | 44% / 46 | 9% | 9.3 / 3.6 | 90% | 13.1 | 1.73 | 0.11 | 0.5% |
+| cost | look | 14.6 | 5.0 | 26% / 24 | 7% | 7.4 / 3.8 | 96% | 8.0 | 1.67 | 0.06 | 0.3% |
+| cost | scan | 19.8 | 6.5 | 22% / 31 | 10% | 8.7 / 3.6 | 87% | 7.2 | 1.78 | 0.08 | 0.1% |
+| nearest | look | 34.3 | 6.1 | 42% / 54 | 7% | 3.8 / 3.8 | 85% | 7.2 | 1.64 | 0.18 | 6.5% |
+| nearest | scan | 44.2 | 6.5 | 43% / 65 | 4% | 3.4 / 3.4 | 91% | 8.2 | 1.72 | 0.18 | 7.4% |
+| round_robin | look | 31.8 | 6.0 | 46% / 45 | 2% | 9.8 / 3.5 | 97% | 8.4 | 1.62 | 0.00 | 0.5% |
+| round_robin | scan | 36.6 | 6.3 | 48% / 50 | 1% | 10.2 / 3.3 | 97% | 8.5 | 1.66 | 0.00 | 0.9% |
+| zone | look | 22.8 | 4.6 | 41% / 36 | 11% | 7.3 / 4.0 | 88% | 7.3 | 1.66 | 0.10 | 1.7% |
+| zone | scan | 39.5 | 5.4 | 45% / 52 | 3% | 9.2 / 3.5 | 95% | 8.7 | 2.00 | 0.10 | 5.2% |
 
-## evening_rush · 40 floors x 6 cars · door_time 0 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 23, 9.1 / 25 | 242, 14.8 / 37 | 46, 16.2 / 38 |
+| cost | scan | 23, 7.4 / 26 | 242, 21.7 / 49 | 46, 15.9 / 39 |
+| nearest | look | 23, 12.5 / 56 | 242, 37.3 / 106 | 46, 29.0 / 72 |
+| nearest | scan | 23, 26.9 / 69 | 242, 47.7 / 145 | 46, 34.3 / 76 |
+| round_robin | look | 23, 28.6 / 59 | 242, 31.9 / 65 | 46, 32.9 / 64 |
+| round_robin | scan | 23, 33.6 / 64 | 242, 37.1 / 70 | 46, 35.0 / 68 |
+| zone | look | 23, 17.9 / 49 | 242, 22.2 / 60 | 46, 28.2 / 65 |
+| zone | scan | 23, 34.2 / 62 | 242, 40.4 / 85 | 46, 37.3 / 74 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 45.3; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.9; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.6 ± 1.3 | -34.7% | [-16.49, -14.94] | 20/20 | 60% | better ✓ |
-| nearest | 46.1 ± 3.2 | +1.7% | [-0.60, +2.18] | 10/20 | -3% | - |
-| zone | 39.3 ± 2.0 | -13.3% | [-6.64, -5.39] | 20/20 | 23% | better ✓ |
+| cost | 29.1 ± 0.8 | -41.7% | [-21.44, -20.17] | 20/20 | 67% | better ✓ |
+| nearest | 51.7 ± 8.2 | +3.6% | [-1.02, +5.94] | 10/20 | -6% | - |
+| zone | 40.4 ± 1.7 | -18.9% | [-10.14, -8.67] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.6 | -29.8% | [-14.12, -11.14] | 20/20 | better ✓ |
-| nearest | look | 46.1 | -17.1% | [-11.19, -7.89] | 20/20 | better ✓ |
-| round_robin | look | 45.3 | -21.0% | [-13.21, -10.97] | 20/20 | better ✓ |
-| zone | look | 39.3 | -33.6% | [-20.61, -19.14] | 20/20 | better ✓ |
+| cost | look | 29.1 | -33.4% | [-15.97, -13.03] | 20/20 | better ✓ |
+| nearest | look | 51.7 | -8.1% | [-7.65, -0.70] | 17/20 | better ✓ |
+| round_robin | look | 49.9 | -12.6% | [-7.91, -6.48] | 20/20 | better ✓ |
+| zone | look | 40.4 | -31.1% | [-19.13, -17.47] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.6 | 10.6 | 31.8 | 42.0 | 10.6 | 0.52 |
-| cost | scan | 42.2 | 23.2 | 55.9 | 72.2 | 23.2 | 0.61 |
-| nearest | look | 46.1 | 27.1 | 76.9 | 156.8 | 27.1 | 0.45 |
-| nearest | scan | 55.6 | 36.6 | 76.8 | 131.9 | 36.6 | 0.57 |
-| round_robin | look | 45.3 | 26.3 | 58.8 | 72.7 | 26.3 | 0.68 |
-| round_robin | scan | 57.4 | 38.4 | 73.2 | 76.8 | 38.4 | 0.74 |
-| zone | look | 39.3 | 20.3 | 54.9 | 72.8 | 20.3 | 0.58 |
-| zone | scan | 59.2 | 40.2 | 73.8 | 82.8 | 40.2 | 0.74 |
+| cost | look | 29.1 | 10.2 | 30.5 | 45.9 | 10.2 | 0.52 |
+| cost | scan | 43.6 | 24.7 | 58.2 | 73.0 | 24.7 | 0.62 |
+| nearest | look | 51.7 | 32.8 | 100.2 | 266.2 | 32.8 | 0.43 |
+| nearest | scan | 56.3 | 37.4 | 77.2 | 198.4 | 37.4 | 0.54 |
+| round_robin | look | 49.9 | 31.0 | 64.2 | 75.0 | 31.0 | 0.72 |
+| round_robin | scan | 57.1 | 38.2 | 73.5 | 77.0 | 38.2 | 0.74 |
+| zone | look | 40.4 | 21.6 | 58.9 | 79.3 | 21.6 | 0.58 |
+| zone | scan | 58.7 | 39.9 | 74.1 | 112.8 | 39.9 | 0.74 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.6 | 0.0 | 10% / 11 | 40% | 8.9 / 4.8 | 60% | 15.1 | 1.33 | 0.33 | 0.0% |
-| cost | scan | 23.2 | 0.0 | 25% / 33 | 25% | 10.6 / 4.9 | 40% | 10.1 | 1.56 | 0.70 | 0.0% |
-| nearest | look | 27.1 | 0.0 | 36% / 47 | 21% | 5.3 / 5.3 | 48% | 12.4 | 1.42 | 0.63 | 3.8% |
-| nearest | scan | 36.6 | 0.0 | 37% / 59 | 16% | 3.5 / 3.5 | 70% | 18.6 | 1.46 | 0.32 | 1.4% |
-| round_robin | look | 26.3 | 0.0 | 41% / 39 | 21% | 13.6 / 4.1 | 86% | 22.3 | 1.31 | 0.01 | 0.0% |
-| round_robin | scan | 38.4 | 0.0 | 45% / 51 | 11% | 14.0 / 4.7 | 91% | 24.0 | 1.44 | 0.01 | 0.0% |
-| zone | look | 20.3 | 0.0 | 35% / 35 | 30% | 10.9 / 4.9 | 67% | 17.2 | 1.33 | 0.17 | 0.0% |
-| zone | scan | 40.2 | 0.0 | 42% / 53 | 15% | 13.0 / 3.7 | 82% | 21.7 | 1.62 | 0.17 | 0.1% |
+| cost | look | 10.2 | 0.0 | 12% / 12 | 28% | 8.3 / 4.2 | 73% | 12.1 | 1.42 | 0.19 | 0.1% |
+| cost | scan | 24.7 | 0.0 | 26% / 36 | 20% | 10.4 / 4.2 | 53% | 8.8 | 1.59 | 0.49 | 0.0% |
+| nearest | look | 32.8 | 0.0 | 38% / 54 | 15% | 4.6 / 4.6 | 63% | 10.8 | 1.48 | 0.43 | 6.0% |
+| nearest | scan | 37.4 | 0.0 | 40% / 59 | 8% | 3.1 / 3.1 | 83% | 14.4 | 1.54 | 0.24 | 2.3% |
+| round_robin | look | 31.0 | 0.0 | 48% / 42 | 6% | 13.3 / 3.8 | 95% | 16.0 | 1.44 | 0.01 | 0.0% |
+| round_robin | scan | 38.2 | 0.0 | 48% / 52 | 4% | 13.5 / 6.6 | 96% | 16.5 | 1.51 | 0.01 | 0.0% |
+| zone | look | 21.6 | 0.0 | 40% / 36 | 21% | 10.6 / 4.7 | 76% | 12.9 | 1.44 | 0.15 | 0.1% |
+| zone | scan | 39.9 | 0.0 | 47% / 52 | 8% | 13.3 / 3.8 | 90% | 15.4 | 1.79 | 0.15 | 0.7% |
 
-## evening_rush · 40 floors x 6 cars · door_time 0 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 1.2 / 7 | 236, 11.0 / 31 | 48, 10.9 / 29 |
+| cost | scan | 25, 0.3 / 1 | 236, 29.6 / 61 | 48, 12.8 / 38 |
+| nearest | look | 25, 4.2 / 27 | 236, 36.7 / 110 | 48, 28.4 / 73 |
+| nearest | scan | 25, 19.4 / 72 | 236, 40.7 / 81 | 48, 29.8 / 76 |
+| round_robin | look | 25, 28.9 / 61 | 236, 31.1 / 64 | 48, 31.8 / 62 |
+| round_robin | scan | 25, 35.6 / 70 | 236, 38.4 / 73 | 48, 38.4 / 73 |
+| zone | look | 25, 20.5 / 53 | 236, 20.7 / 58 | 48, 26.8 / 60 |
+| zone | scan | 25, 35.9 / 70 | 236, 40.9 / 74 | 48, 37.2 / 72 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 0 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 45.4; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.5; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 29.2 ± 1.4 | -35.7% | [-17.02, -15.40] | 20/20 | 61% | better ✓ |
-| nearest | 44.6 ± 4.1 | -1.8% | [-2.84, +1.91] | 14/20 | 3% | - |
-| zone | 38.9 ± 2.0 | -14.2% | [-7.19, -5.79] | 20/20 | 25% | better ✓ |
+| cost | 28.8 ± 0.7 | -41.9% | [-21.20, -20.24] | 20/20 | 68% | better ✓ |
+| nearest | 47.3 ± 3.1 | -4.3% | [-3.59, -0.64] | 15/20 | 7% | - |
+| zone | 40.1 ± 1.3 | -18.9% | [-9.81, -8.89] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 29.2 | -27.1% | [-12.51, -9.43] | 20/20 | better ✓ |
-| nearest | look | 44.6 | -17.5% | [-11.06, -7.59] | 19/20 | better ✓ |
-| round_robin | look | 45.4 | -19.9% | [-12.40, -10.27] | 20/20 | better ✓ |
-| zone | look | 38.9 | -33.5% | [-20.51, -18.70] | 20/20 | better ✓ |
+| cost | look | 28.8 | -31.1% | [-14.24, -11.57] | 20/20 | better ✓ |
+| nearest | look | 47.3 | -12.5% | [-8.25, -5.20] | 19/20 | better ✓ |
+| round_robin | look | 49.5 | -13.7% | [-8.63, -7.10] | 20/20 | better ✓ |
+| zone | look | 40.1 | -32.3% | [-19.74, -18.56] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 29.2 | 10.2 | 31.2 | 41.6 | 10.2 | 0.51 |
-| cost | scan | 40.0 | 21.0 | 53.0 | 70.7 | 21.0 | 0.58 |
-| nearest | look | 44.6 | 25.6 | 75.6 | 156.1 | 25.6 | 0.43 |
-| nearest | scan | 54.0 | 35.0 | 76.6 | 112.9 | 35.0 | 0.56 |
-| round_robin | look | 45.4 | 26.4 | 59.5 | 72.8 | 26.4 | 0.68 |
-| round_robin | scan | 56.7 | 37.7 | 73.1 | 76.8 | 37.7 | 0.73 |
-| zone | look | 38.9 | 19.9 | 55.6 | 74.0 | 19.9 | 0.56 |
-| zone | scan | 58.5 | 39.5 | 74.0 | 81.5 | 39.5 | 0.73 |
+| cost | look | 28.8 | 9.9 | 29.8 | 45.9 | 9.9 | 0.52 |
+| cost | scan | 41.7 | 22.8 | 55.8 | 72.2 | 22.8 | 0.60 |
+| nearest | look | 47.3 | 28.5 | 77.1 | 208.9 | 28.5 | 0.45 |
+| nearest | scan | 54.1 | 35.2 | 76.9 | 143.2 | 35.2 | 0.56 |
+| round_robin | look | 49.5 | 30.6 | 64.2 | 75.2 | 30.6 | 0.72 |
+| round_robin | scan | 57.3 | 38.5 | 73.8 | 77.0 | 38.5 | 0.74 |
+| zone | look | 40.1 | 21.3 | 58.4 | 83.8 | 21.3 | 0.57 |
+| zone | scan | 59.3 | 40.4 | 74.3 | 112.5 | 40.4 | 0.74 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.2 | 0.0 | 10% / 11 | 41% | 8.6 / 4.5 | 59% | 15.0 | 1.32 | 0.31 | 0.0% |
-| cost | scan | 21.0 | 0.0 | 22% / 32 | 27% | 10.1 / 4.6 | 41% | 10.3 | 1.53 | 0.61 | 0.0% |
-| nearest | look | 25.6 | 0.0 | 36% / 46 | 23% | 5.0 / 5.0 | 49% | 12.5 | 1.40 | 0.53 | 3.3% |
-| nearest | scan | 35.0 | 0.0 | 37% / 58 | 17% | 3.0 / 3.0 | 72% | 19.1 | 1.44 | 0.24 | 0.5% |
-| round_robin | look | 26.4 | 0.0 | 43% / 39 | 20% | 13.6 / 3.8 | 87% | 22.3 | 1.31 | 0.01 | 0.0% |
-| round_robin | scan | 37.7 | 0.0 | 45% / 51 | 12% | 13.9 / 3.7 | 92% | 24.1 | 1.43 | 0.01 | 0.0% |
-| zone | look | 19.9 | 0.0 | 35% / 35 | 31% | 10.5 / 4.5 | 66% | 17.0 | 1.33 | 0.17 | 0.0% |
-| zone | scan | 39.5 | 0.0 | 43% / 53 | 15% | 12.6 / 3.2 | 83% | 21.6 | 1.61 | 0.17 | 0.1% |
+| cost | look | 9.9 | 0.0 | 12% / 12 | 29% | 8.0 / 4.0 | 73% | 12.1 | 1.41 | 0.19 | 0.1% |
+| cost | scan | 22.8 | 0.0 | 24% / 35 | 21% | 10.1 / 3.9 | 53% | 8.9 | 1.57 | 0.45 | 0.0% |
+| nearest | look | 28.5 | 0.0 | 38% / 49 | 16% | 4.1 / 4.1 | 66% | 11.2 | 1.46 | 0.33 | 3.8% |
+| nearest | scan | 35.2 | 0.0 | 40% / 57 | 9% | 2.8 / 2.8 | 85% | 14.7 | 1.51 | 0.18 | 1.1% |
+| round_robin | look | 30.6 | 0.0 | 47% / 42 | 6% | 13.1 / 3.4 | 94% | 16.0 | 1.44 | 0.01 | 0.0% |
+| round_robin | scan | 38.5 | 0.0 | 49% / 52 | 4% | 13.4 / 3.1 | 95% | 16.4 | 1.51 | 0.01 | 0.0% |
+| zone | look | 21.3 | 0.0 | 40% / 35 | 20% | 10.3 / 4.5 | 76% | 12.9 | 1.44 | 0.15 | 0.1% |
+| zone | scan | 40.4 | 0.0 | 48% / 53 | 8% | 13.1 / 3.3 | 90% | 15.3 | 1.78 | 0.15 | 0.8% |
 
-## evening_rush · 40 floors x 6 cars · door_time 1 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 1.3 / 7 | 236, 10.6 / 30 | 48, 10.9 / 29 |
+| cost | scan | 25, 0.4 / 2 | 236, 27.1 / 59 | 48, 12.6 / 37 |
+| nearest | look | 25, 4.4 / 27 | 236, 31.3 / 80 | 48, 26.4 / 72 |
+| nearest | scan | 25, 23.3 / 76 | 236, 37.7 / 77 | 48, 29.1 / 76 |
+| round_robin | look | 25, 29.5 / 62 | 236, 30.7 / 64 | 48, 31.0 / 62 |
+| round_robin | scan | 25, 37.5 / 71 | 236, 38.5 / 74 | 48, 38.5 / 72 |
+| zone | look | 25, 19.2 / 54 | 236, 20.5 / 57 | 48, 26.4 / 61 |
+| zone | scan | 25, 35.8 / 71 | 236, 41.1 / 75 | 48, 40.0 / 73 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 49.1; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 55.3; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 31.8 ± 1.5 | -35.2% | [-17.98, -16.45] | 20/20 | 57% | better ✓ |
-| nearest | 52.0 ± 3.8 | +5.9% | [+1.05, +4.84] | 6/20 | -10% | - |
-| zone | 42.2 ± 2.1 | -14.1% | [-7.66, -6.11] | 20/20 | 23% | better ✓ |
+| cost | 32.5 ± 0.8 | -41.2% | [-23.50, -21.99] | 20/20 | 63% | better ✓ |
+| nearest | 59.1 ± 6.8 | +6.9% | [+1.23, +6.89] | 7/20 | -10% | - |
+| zone | 44.3 ± 1.3 | -19.9% | [-11.62, -10.37] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 31.8 | -30.6% | [-15.61, -12.52] | 20/20 | better ✓ |
-| nearest | look | 52.0 | -12.7% | [-9.16, -5.92] | 19/20 | better ✓ |
-| round_robin | look | 49.1 | -20.6% | [-13.76, -11.83] | 20/20 | better ✓ |
-| zone | look | 42.2 | -32.4% | [-20.80, -19.52] | 20/20 | better ✓ |
+| cost | look | 32.5 | -29.5% | [-14.87, -12.30] | 20/20 | better ✓ |
+| nearest | look | 59.1 | -8.0% | [-7.16, -2.97] | 17/20 | better ✓ |
+| round_robin | look | 55.3 | -12.7% | [-8.91, -7.24] | 20/20 | better ✓ |
+| zone | look | 44.3 | -30.5% | [-20.00, -18.83] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 31.8 | 11.0 | 33.0 | 43.5 | 12.8 | 0.52 |
-| cost | scan | 45.8 | 23.6 | 57.9 | 77.8 | 26.8 | 0.60 |
-| nearest | look | 52.0 | 30.3 | 88.7 | 206.6 | 33.0 | 0.43 |
-| nearest | scan | 59.6 | 38.0 | 82.6 | 140.5 | 40.5 | 0.56 |
-| round_robin | look | 49.1 | 28.4 | 62.9 | 77.8 | 30.1 | 0.69 |
-| round_robin | scan | 61.8 | 40.8 | 76.5 | 82.1 | 42.8 | 0.75 |
-| zone | look | 42.2 | 21.5 | 59.4 | 77.2 | 23.2 | 0.57 |
-| zone | scan | 62.4 | 41.3 | 77.1 | 91.6 | 43.4 | 0.74 |
+| cost | look | 32.5 | 11.4 | 32.6 | 50.7 | 13.7 | 0.54 |
+| cost | scan | 46.1 | 23.8 | 59.3 | 78.3 | 27.2 | 0.60 |
+| nearest | look | 59.1 | 37.3 | 107.3 | 332.1 | 40.2 | 0.41 |
+| nearest | scan | 64.2 | 42.4 | 91.0 | 242.7 | 45.4 | 0.53 |
+| round_robin | look | 55.3 | 34.1 | 70.5 | 81.5 | 36.4 | 0.72 |
+| round_robin | scan | 63.3 | 41.8 | 78.5 | 85.0 | 44.5 | 0.75 |
+| zone | look | 44.3 | 23.4 | 63.9 | 93.2 | 25.4 | 0.57 |
+| zone | scan | 63.7 | 42.4 | 79.3 | 138.3 | 44.9 | 0.73 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 11.0 | 1.8 | 9% / 14 | 42% | 8.9 / 4.5 | 68% | 15.6 | 1.33 | 0.22 | 0.0% |
-| cost | scan | 23.6 | 3.2 | 23% / 36 | 24% | 10.6 / 4.8 | 47% | 10.7 | 1.58 | 0.54 | 0.0% |
-| nearest | look | 30.3 | 2.7 | 34% / 53 | 20% | 5.2 / 5.2 | 51% | 11.9 | 1.45 | 0.59 | 4.6% |
-| nearest | scan | 38.0 | 2.6 | 36% / 61 | 15% | 3.5 / 3.5 | 72% | 17.7 | 1.48 | 0.33 | 1.5% |
-| round_robin | look | 28.4 | 1.7 | 43% / 41 | 17% | 13.6 / 4.0 | 89% | 21.5 | 1.33 | 0.01 | 0.0% |
-| round_robin | scan | 40.8 | 2.0 | 46% / 55 | 8% | 14.0 / 5.3 | 93% | 22.9 | 1.45 | 0.01 | 0.0% |
-| zone | look | 21.5 | 1.6 | 34% / 38 | 29% | 10.8 / 4.8 | 70% | 16.5 | 1.36 | 0.17 | 0.0% |
-| zone | scan | 41.3 | 2.0 | 42% / 55 | 14% | 12.8 / 3.8 | 84% | 20.8 | 1.64 | 0.17 | 0.1% |
+| cost | look | 11.4 | 2.2 | 15% / 17 | 25% | 8.5 / 4.0 | 83% | 12.4 | 1.44 | 0.12 | 0.0% |
+| cost | scan | 23.8 | 3.5 | 24% / 38 | 18% | 10.6 / 4.1 | 63% | 9.2 | 1.64 | 0.32 | 0.0% |
+| nearest | look | 37.3 | 3.0 | 39% / 59 | 13% | 4.2 / 4.2 | 69% | 10.6 | 1.51 | 0.39 | 6.2% |
+| nearest | scan | 42.4 | 2.9 | 40% / 66 | 7% | 3.1 / 3.1 | 86% | 13.7 | 1.57 | 0.23 | 3.0% |
+| round_robin | look | 34.1 | 2.4 | 47% / 47 | 4% | 13.2 / 3.7 | 95% | 14.8 | 1.48 | 0.01 | 0.0% |
+| round_robin | scan | 41.8 | 2.6 | 48% / 56 | 3% | 13.9 / 7.1 | 97% | 15.2 | 1.54 | 0.01 | 0.0% |
+| zone | look | 23.4 | 2.0 | 39% / 39 | 18% | 10.2 / 4.5 | 79% | 12.1 | 1.49 | 0.15 | 0.3% |
+| zone | scan | 42.4 | 2.4 | 46% / 56 | 6% | 13.1 / 4.3 | 91% | 14.6 | 1.84 | 0.15 | 1.2% |
 
-## evening_rush · 40 floors x 6 cars · door_time 1 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 2.8 / 12 | 236, 12.2 / 33 | 48, 12.3 / 32 |
+| cost | scan | 25, 1.9 / 11 | 236, 27.9 / 62 | 48, 14.7 / 42 |
+| nearest | look | 25, 4.6 / 30 | 236, 41.5 / 121 | 48, 33.0 / 82 |
+| nearest | scan | 25, 23.2 / 81 | 236, 45.7 / 98 | 48, 35.9 / 85 |
+| round_robin | look | 25, 31.9 / 67 | 236, 33.8 / 70 | 48, 36.4 / 70 |
+| round_robin | scan | 25, 40.4 / 74 | 236, 42.0 / 78 | 48, 41.8 / 77 |
+| zone | look | 25, 22.3 / 58 | 236, 22.4 / 63 | 48, 29.2 / 66 |
+| zone | scan | 25, 37.9 / 75 | 236, 43.5 / 80 | 48, 39.7 / 77 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 48.9; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 55.2; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 31.4 ± 1.4 | -35.9% | [-18.32, -16.68] | 20/20 | 59% | better ✓ |
-| nearest | 49.7 ± 3.7 | +1.6% | [-1.21, +2.93] | 11/20 | -3% | - |
-| zone | 41.7 ± 2.0 | -14.9% | [-8.10, -6.44] | 20/20 | 24% | better ✓ |
+| cost | 32.1 ± 0.8 | -41.9% | [-23.84, -22.32] | 20/20 | 64% | better ✓ |
+| nearest | 56.0 ± 7.2 | +1.6% | [-1.72, +4.30] | 13/20 | -2% | - |
+| zone | 44.3 ± 1.5 | -19.7% | [-11.63, -10.16] | 20/20 | 30% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 31.4 | -28.6% | [-14.08, -11.08] | 20/20 | better ✓ |
-| nearest | look | 49.7 | -14.3% | [-9.63, -6.65] | 19/20 | better ✓ |
-| round_robin | look | 48.9 | -19.4% | [-12.72, -10.85] | 20/20 | better ✓ |
-| zone | look | 41.7 | -32.4% | [-20.97, -18.94] | 20/20 | better ✓ |
+| cost | look | 32.1 | -28.4% | [-13.94, -11.38] | 20/20 | better ✓ |
+| nearest | look | 56.0 | -8.9% | [-8.11, -1.94] | 19/20 | better ✓ |
+| round_robin | look | 55.2 | -11.9% | [-8.21, -6.76] | 20/20 | better ✓ |
+| zone | look | 44.3 | -30.4% | [-19.89, -18.80] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 31.4 | 10.6 | 32.2 | 44.2 | 12.4 | 0.51 |
-| cost | scan | 43.9 | 21.8 | 55.8 | 75.4 | 24.9 | 0.58 |
-| nearest | look | 49.7 | 28.2 | 84.4 | 174.1 | 30.7 | 0.44 |
-| nearest | scan | 58.0 | 36.6 | 81.9 | 122.2 | 39.0 | 0.55 |
-| round_robin | look | 48.9 | 28.2 | 63.0 | 77.9 | 29.9 | 0.69 |
-| round_robin | scan | 60.7 | 39.7 | 76.7 | 82.2 | 41.7 | 0.74 |
-| zone | look | 41.7 | 21.0 | 59.9 | 77.0 | 22.7 | 0.55 |
-| zone | scan | 61.6 | 40.6 | 77.1 | 94.8 | 42.6 | 0.73 |
+| cost | look | 32.1 | 11.0 | 31.9 | 51.1 | 13.2 | 0.54 |
+| cost | scan | 44.8 | 22.5 | 57.8 | 77.3 | 25.9 | 0.58 |
+| nearest | look | 56.0 | 34.3 | 99.1 | 254.6 | 37.1 | 0.43 |
+| nearest | scan | 61.5 | 39.7 | 85.1 | 213.7 | 42.6 | 0.53 |
+| round_robin | look | 55.2 | 33.9 | 70.3 | 81.4 | 36.3 | 0.72 |
+| round_robin | scan | 62.6 | 41.2 | 78.9 | 87.0 | 43.8 | 0.74 |
+| zone | look | 44.3 | 23.5 | 63.5 | 95.5 | 25.4 | 0.57 |
+| zone | scan | 63.6 | 42.3 | 79.3 | 142.4 | 44.7 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 10.6 | 1.8 | 8% / 14 | 43% | 8.6 / 4.2 | 67% | 15.5 | 1.33 | 0.20 | 0.0% |
-| cost | scan | 21.8 | 3.2 | 21% / 35 | 25% | 10.1 / 4.5 | 47% | 10.7 | 1.56 | 0.51 | 0.0% |
-| nearest | look | 28.2 | 2.5 | 36% / 53 | 22% | 4.6 / 4.6 | 55% | 12.7 | 1.41 | 0.45 | 3.0% |
-| nearest | scan | 36.6 | 2.4 | 36% / 62 | 16% | 3.1 / 3.1 | 74% | 18.3 | 1.47 | 0.24 | 0.5% |
-| round_robin | look | 28.2 | 1.7 | 43% / 41 | 17% | 13.3 / 3.7 | 89% | 21.5 | 1.33 | 0.01 | 0.0% |
-| round_robin | scan | 39.7 | 2.0 | 45% / 55 | 9% | 13.7 / 3.7 | 92% | 22.8 | 1.45 | 0.01 | 0.0% |
-| zone | look | 21.0 | 1.6 | 34% / 38 | 29% | 10.3 / 4.4 | 69% | 16.4 | 1.35 | 0.17 | 0.0% |
-| zone | scan | 40.6 | 2.0 | 41% / 55 | 14% | 12.5 / 3.5 | 83% | 20.8 | 1.64 | 0.17 | 0.2% |
+| cost | look | 11.0 | 2.2 | 14% / 16 | 25% | 8.1 / 3.7 | 83% | 12.3 | 1.44 | 0.11 | 0.0% |
+| cost | scan | 22.5 | 3.4 | 24% / 37 | 19% | 10.2 / 3.8 | 63% | 9.2 | 1.61 | 0.30 | 0.0% |
+| nearest | look | 34.3 | 2.8 | 39% / 57 | 13% | 3.6 / 3.6 | 72% | 11.2 | 1.49 | 0.31 | 4.5% |
+| nearest | scan | 39.7 | 2.9 | 39% / 66 | 8% | 2.9 / 2.9 | 87% | 13.9 | 1.55 | 0.19 | 2.0% |
+| round_robin | look | 33.9 | 2.4 | 47% / 47 | 5% | 13.3 / 3.3 | 95% | 14.9 | 1.48 | 0.01 | 0.0% |
+| round_robin | scan | 41.2 | 2.6 | 48% / 56 | 3% | 13.7 / 3.0 | 96% | 15.1 | 1.53 | 0.01 | 0.1% |
+| zone | look | 23.5 | 2.0 | 40% / 39 | 18% | 10.1 / 4.4 | 79% | 12.1 | 1.49 | 0.15 | 0.2% |
+| zone | scan | 42.3 | 2.5 | 46% / 56 | 6% | 12.8 / 3.3 | 90% | 14.7 | 1.83 | 0.15 | 1.1% |
 
-## evening_rush · 40 floors x 6 cars · door_time 2 · lobby · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 2.9 / 11 | 236, 11.5 / 32 | 48, 12.3 / 32 |
+| cost | scan | 25, 1.1 / 6 | 236, 26.4 / 60 | 48, 14.1 / 40 |
+| nearest | look | 25, 5.5 / 34 | 236, 38.1 / 105 | 48, 30.6 / 81 |
+| nearest | scan | 25, 23.6 / 81 | 236, 42.8 / 87 | 48, 32.9 / 84 |
+| round_robin | look | 25, 31.5 / 63 | 236, 33.9 / 71 | 48, 35.2 / 69 |
+| round_robin | scan | 25, 38.3 / 75 | 236, 41.4 / 79 | 48, 41.4 / 78 |
+| zone | look | 25, 22.1 / 58 | 236, 22.4 / 62 | 48, 29.4 / 65 |
+| zone | scan | 25, 37.9 / 74 | 236, 43.0 / 79 | 48, 41.5 / 78 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · lobby · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.9; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 61.6; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 34.4 ± 1.8 | -34.9% | [-19.23, -17.63] | 20/20 | 54% | better ✓ |
-| nearest | 59.4 ± 8.9 | +12.4% | [+3.27, +10.87] | 3/20 | -19% | worse ✗ |
-| zone | 45.1 ± 2.4 | -14.6% | [-8.70, -6.86] | 20/20 | 23% | better ✓ |
+| cost | 36.7 ± 1.5 | -40.5% | [-25.66, -24.21] | 20/20 | 58% | better ✓ |
+| nearest | 68.4 ± 10.5 | +11.0% | [+2.66, +12.30] | 2/20 | -16% | worse ✗ |
+| zone | 48.1 ± 1.8 | -21.9% | [-14.25, -12.66] | 20/20 | 32% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 34.4 | -28.5% | [-15.24, -12.47] | 20/20 | better ✓ |
-| nearest | look | 59.4 | -8.0% | [-7.79, -1.40] | 19/20 | better ✓ |
-| round_robin | look | 52.9 | -19.9% | [-14.24, -12.06] | 20/20 | better ✓ |
-| zone | look | 45.1 | -32.5% | [-22.71, -20.77] | 20/20 | better ✓ |
+| cost | look | 36.7 | -24.5% | [-13.32, -10.49] | 20/20 | better ✓ |
+| nearest | look | 68.4 | -7.9% | [-9.18, -2.18] | 16/20 | better ✓ |
+| round_robin | look | 61.6 | -11.2% | [-8.99, -6.61] | 20/20 | better ✓ |
+| zone | look | 48.1 | -31.2% | [-22.79, -20.97] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 34.4 | 12.0 | 34.3 | 48.5 | 15.4 | 0.54 |
-| cost | scan | 48.2 | 23.1 | 58.1 | 80.8 | 29.2 | 0.58 |
-| nearest | look | 59.4 | 35.1 | 107.0 | 240.1 | 40.4 | 0.44 |
-| nearest | scan | 64.6 | 40.4 | 90.0 | 171.0 | 45.6 | 0.54 |
-| round_robin | look | 52.9 | 30.3 | 67.4 | 81.3 | 33.9 | 0.69 |
-| round_robin | scan | 66.0 | 42.9 | 80.9 | 86.8 | 47.0 | 0.75 |
-| zone | look | 45.1 | 22.8 | 62.5 | 85.9 | 26.1 | 0.57 |
-| zone | scan | 66.9 | 43.7 | 81.5 | 104.3 | 47.9 | 0.74 |
+| cost | look | 36.7 | 13.5 | 37.1 | 58.5 | 17.8 | 0.56 |
+| cost | scan | 48.6 | 23.3 | 58.9 | 82.8 | 29.7 | 0.59 |
+| nearest | look | 68.4 | 43.5 | 136.3 | 373.7 | 49.5 | 0.41 |
+| nearest | scan | 74.2 | 49.3 | 116.2 | 347.6 | 55.4 | 0.49 |
+| round_robin | look | 61.6 | 37.7 | 78.0 | 89.4 | 42.7 | 0.72 |
+| round_robin | scan | 69.4 | 45.0 | 85.1 | 100.5 | 50.5 | 0.75 |
+| zone | look | 48.1 | 25.2 | 68.6 | 121.0 | 29.3 | 0.56 |
+| zone | scan | 70.0 | 46.1 | 85.3 | 178.1 | 51.1 | 0.72 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 12.0 | 3.4 | 11% / 17 | 40% | 9.3 / 4.5 | 75% | 16.2 | 1.34 | 0.15 | 0.0% |
-| cost | scan | 23.1 | 6.1 | 21% / 38 | 23% | 10.5 / 4.5 | 54% | 11.3 | 1.60 | 0.41 | 0.0% |
-| nearest | look | 35.1 | 5.4 | 36% / 60 | 19% | 4.9 / 4.9 | 56% | 11.9 | 1.46 | 0.53 | 4.4% |
-| nearest | scan | 40.4 | 5.2 | 35% / 66 | 13% | 3.4 / 3.4 | 75% | 17.2 | 1.51 | 0.33 | 1.9% |
-| round_robin | look | 30.3 | 3.5 | 43% / 45 | 15% | 13.5 / 3.9 | 91% | 20.5 | 1.36 | 0.01 | 0.0% |
-| round_robin | scan | 42.9 | 4.1 | 47% / 58 | 7% | 14.0 / 5.2 | 93% | 22.0 | 1.47 | 0.01 | 0.0% |
-| zone | look | 22.8 | 3.3 | 34% / 40 | 27% | 10.7 / 4.7 | 73% | 15.8 | 1.39 | 0.17 | 0.1% |
-| zone | scan | 43.7 | 4.1 | 42% / 58 | 12% | 12.7 / 3.6 | 85% | 20.1 | 1.67 | 0.17 | 0.3% |
+| cost | look | 13.5 | 4.3 | 17% / 21 | 18% | 8.9 / 4.1 | 90% | 12.3 | 1.50 | 0.10 | 0.1% |
+| cost | scan | 23.3 | 6.4 | 22% / 38 | 16% | 10.7 / 3.9 | 73% | 9.7 | 1.69 | 0.21 | 0.0% |
+| nearest | look | 43.5 | 6.0 | 39% / 69 | 11% | 4.0 / 4.0 | 72% | 10.0 | 1.56 | 0.37 | 7.7% |
+| nearest | scan | 49.3 | 6.1 | 40% / 77 | 6% | 3.4 / 3.4 | 86% | 12.8 | 1.61 | 0.22 | 4.6% |
+| round_robin | look | 37.7 | 5.0 | 47% / 53 | 4% | 13.3 / 3.7 | 96% | 13.8 | 1.51 | 0.01 | 0.0% |
+| round_robin | scan | 45.0 | 5.6 | 49% / 60 | 2% | 13.9 / 7.2 | 95% | 14.0 | 1.57 | 0.01 | 0.1% |
+| zone | look | 25.2 | 4.1 | 39% / 42 | 17% | 10.0 / 4.4 | 82% | 11.4 | 1.53 | 0.15 | 0.4% |
+| zone | scan | 46.1 | 5.1 | 46% / 61 | 5% | 12.8 / 4.3 | 91% | 13.9 | 1.88 | 0.15 | 1.8% |
 
-## evening_rush · 40 floors x 6 cars · door_time 2 · spread · 200 requests / 800 ticks
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 5.5 / 21 | 236, 14.0 / 37 | 48, 15.2 / 37 |
+| cost | scan | 25, 3.1 / 17 | 236, 26.6 / 61 | 48, 17.1 / 46 |
+| nearest | look | 25, 7.7 / 47 | 236, 48.4 / 153 | 48, 37.0 / 95 |
+| nearest | scan | 25, 23.8 / 89 | 236, 53.9 / 128 | 48, 39.4 / 94 |
+| round_robin | look | 25, 35.0 / 74 | 236, 37.5 / 78 | 48, 40.1 / 77 |
+| round_robin | scan | 25, 42.2 / 81 | 236, 45.3 / 85 | 48, 45.1 / 85 |
+| zone | look | 25, 23.1 / 61 | 236, 24.1 / 67 | 48, 32.0 / 73 |
+| zone | scan | 25, 41.9 / 80 | 236, 46.7 / 87 | 48, 45.2 / 84 |
+
+## evening_rush · 40 floors x 6 cars · capacity 8 · door_time 2 · spread · load 1 (0.39 requests/tick) · 800 ticks
 
 20 seeds.
 
-**Dispatch axis** (LOOK motion; baseline `round_robin` = 52.7; B0 floor = 19.0)
+**Dispatch axis** (LOOK motion; baseline `round_robin` = 61.5; B0 floor = 18.9)
 
 | policy | total mean ± std | Δ | 95% CI of Δ | wins | gap closed | verdict |
 |---|---:|---:|---|---:|---:|:---:|
-| cost | 33.9 ± 1.7 | -35.7% | [-19.59, -17.91] | 20/20 | 56% | better ✓ |
-| nearest | 55.6 ± 5.2 | +5.5% | [+0.71, +5.37] | 5/20 | -9% | - |
-| zone | 44.4 ± 2.2 | -15.8% | [-9.01, -7.63] | 20/20 | 25% | better ✓ |
+| cost | 36.2 ± 1.4 | -41.0% | [-26.07, -24.39] | 20/20 | 59% | better ✓ |
+| nearest | 61.6 ± 2.8 | +0.1% | [-1.43, +1.56] | 10/20 | -0% | - |
+| zone | 48.2 ± 2.1 | -21.6% | [-14.24, -12.30] | 20/20 | 31% | better ✓ |
 
 **Motion axis** (baseline `scan`)
 
 | dispatch | motion | total mean | Δ | 95% CI of Δ | wins | verdict |
 |---|---|---:|---:|---|---:|:---:|
-| cost | look | 33.9 | -27.0% | [-13.95, -11.41] | 20/20 | better ✓ |
-| nearest | look | 55.6 | -12.5% | [-9.75, -5.87] | 19/20 | better ✓ |
-| round_robin | look | 52.7 | -19.1% | [-13.55, -11.32] | 20/20 | better ✓ |
-| zone | look | 44.4 | -32.7% | [-22.54, -20.65] | 20/20 | better ✓ |
+| cost | look | 36.2 | -23.1% | [-12.13, -9.70] | 20/20 | better ✓ |
+| nearest | look | 61.6 | -11.2% | [-9.48, -5.98] | 20/20 | better ✓ |
+| round_robin | look | 61.5 | -10.5% | [-8.38, -6.02] | 20/20 | better ✓ |
+| zone | look | 48.2 | -30.6% | [-22.14, -20.38] | 20/20 | better ✓ |
 
 **All combinations** (means over seeds)
 
 | dispatch | motion | total | wait | wait p95 | wait max | excess | Jain (wait) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| cost | look | 33.9 | 11.5 | 34.0 | 49.5 | 14.9 | 0.53 |
-| cost | scan | 46.5 | 21.5 | 56.0 | 78.7 | 27.5 | 0.56 |
-| nearest | look | 55.6 | 31.6 | 95.3 | 209.4 | 36.6 | 0.43 |
-| nearest | scan | 63.6 | 39.6 | 89.3 | 156.8 | 44.6 | 0.54 |
-| round_robin | look | 52.7 | 30.2 | 67.3 | 81.3 | 33.7 | 0.69 |
-| round_robin | scan | 65.1 | 42.1 | 80.4 | 87.7 | 46.1 | 0.74 |
-| zone | look | 44.4 | 22.1 | 61.6 | 83.3 | 25.4 | 0.56 |
-| zone | scan | 66.0 | 42.9 | 80.8 | 98.5 | 47.0 | 0.73 |
+| cost | look | 36.2 | 13.1 | 36.2 | 61.5 | 17.4 | 0.55 |
+| cost | scan | 47.1 | 21.9 | 56.8 | 78.8 | 28.3 | 0.58 |
+| nearest | look | 61.6 | 36.9 | 98.2 | 265.6 | 42.7 | 0.43 |
+| nearest | scan | 69.3 | 44.4 | 98.8 | 269.6 | 50.4 | 0.50 |
+| round_robin | look | 61.5 | 37.6 | 77.4 | 91.4 | 42.6 | 0.72 |
+| round_robin | scan | 68.7 | 44.3 | 85.9 | 97.2 | 49.8 | 0.74 |
+| zone | look | 48.2 | 25.3 | 69.6 | 109.6 | 29.3 | 0.56 |
+| zone | scan | 69.5 | 45.5 | 85.6 | 181.1 | 50.6 | 0.71 |
 
 **Why: diagnostics** (means over seeds; *away* = assigned to a car moving away from the passenger; *idle* = assigned to an idle car; distance = floors from the chosen / nearest car at assignment; busy = share of car time not idle)
 
 | dispatch | motion | wait | detour | away: share / wait | idle | distance chosen / nearest | busy | floors per passenger | riders per stop | load CV | full pass-bys |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| cost | look | 11.5 | 3.4 | 10% / 17 | 41% | 8.9 / 4.2 | 75% | 16.0 | 1.33 | 0.13 | 0.0% |
-| cost | scan | 21.5 | 6.0 | 19% / 37 | 24% | 10.0 / 4.2 | 54% | 11.3 | 1.57 | 0.38 | 0.0% |
-| nearest | look | 31.6 | 5.0 | 37% / 57 | 21% | 4.5 / 4.5 | 59% | 12.6 | 1.43 | 0.40 | 3.0% |
-| nearest | scan | 39.6 | 4.9 | 37% / 68 | 14% | 3.0 / 3.0 | 76% | 17.7 | 1.49 | 0.24 | 1.3% |
-| round_robin | look | 30.2 | 3.5 | 43% / 44 | 15% | 13.4 / 3.7 | 91% | 20.5 | 1.36 | 0.01 | 0.0% |
-| round_robin | scan | 42.1 | 4.1 | 46% / 58 | 7% | 13.8 / 3.6 | 94% | 22.1 | 1.46 | 0.01 | 0.0% |
-| zone | look | 22.1 | 3.3 | 34% / 39 | 28% | 10.4 / 4.4 | 72% | 15.7 | 1.37 | 0.17 | 0.0% |
-| zone | scan | 42.9 | 4.1 | 41% / 59 | 13% | 12.4 / 3.2 | 85% | 20.1 | 1.67 | 0.17 | 0.2% |
+| cost | look | 13.1 | 4.2 | 18% / 21 | 18% | 8.6 / 3.7 | 90% | 12.2 | 1.50 | 0.10 | 0.0% |
+| cost | scan | 21.9 | 6.4 | 21% / 37 | 17% | 10.3 / 3.7 | 72% | 9.6 | 1.67 | 0.21 | 0.0% |
+| nearest | look | 36.9 | 5.8 | 39% / 64 | 12% | 3.7 / 3.7 | 76% | 10.6 | 1.53 | 0.25 | 5.1% |
+| nearest | scan | 44.4 | 6.0 | 39% / 74 | 7% | 3.1 / 3.1 | 87% | 13.0 | 1.59 | 0.22 | 3.5% |
+| round_robin | look | 37.6 | 5.0 | 47% / 53 | 4% | 13.3 / 3.3 | 96% | 13.8 | 1.51 | 0.01 | 0.0% |
+| round_robin | scan | 44.3 | 5.5 | 47% / 61 | 2% | 13.7 / 3.1 | 95% | 14.1 | 1.56 | 0.01 | 0.0% |
+| zone | look | 25.3 | 4.1 | 39% / 42 | 16% | 9.9 / 4.1 | 82% | 11.3 | 1.53 | 0.15 | 0.4% |
+| zone | scan | 45.5 | 5.0 | 45% / 62 | 6% | 12.4 / 3.3 | 91% | 13.8 | 1.88 | 0.15 | 1.7% |
+
+**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; inbound = from the lobby, outbound = to the lobby)
+
+| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 | inter-floor: n, wait mean / p95 |
+|---|---|---:|---:|---:|
+| cost | look | 25, 5.6 / 20 | 236, 13.6 / 37 | 48, 14.8 / 37 |
+| cost | scan | 25, 2.6 / 15 | 236, 24.9 / 59 | 48, 16.9 / 44 |
+| nearest | look | 25, 9.5 / 55 | 236, 40.7 / 108 | 48, 32.1 / 88 |
+| nearest | scan | 25, 25.7 / 90 | 236, 48.1 / 109 | 48, 35.2 / 93 |
+| round_robin | look | 25, 34.8 / 72 | 236, 37.6 / 77 | 48, 38.8 / 76 |
+| round_robin | scan | 25, 41.7 / 80 | 236, 44.8 / 86 | 48, 43.1 / 84 |
+| zone | look | 25, 22.3 / 61 | 236, 24.3 / 68 | 48, 31.9 / 72 |
+| zone | scan | 25, 39.0 / 77 | 236, 46.3 / 86 | 48, 45.2 / 86 |

@@ -7,7 +7,7 @@ from elevator_sim.dispatch import make_dispatch
 from elevator_sim.events import Alighted, Boarded, CarState, DoorsOpened, RouteChanged
 from elevator_sim.journal import Journal
 from elevator_sim.motion import make_motion
-from elevator_sim.scenarios import generate
+from elevator_sim.scenarios import random_requests
 from elevator_sim.simulator import Simulator
 
 
@@ -16,7 +16,9 @@ from elevator_sim.simulator import Simulator
 def test_route_predicts_the_real_stops_when_no_new_requests_arrive(
     motion: str, door_time: int
 ) -> None:
-    requests = generate("mixed", floors=25, count=30, duration=40, seed=7)
+    requests = random_requests(
+        floors=25, count=30, duration=40, seed=7, lobby_up=0.4, lobby_down=0.4
+    )
     config = building(floors=25, cars=3, capacity=4, door_time=door_time)
     journal = Journal()
     sim = Simulator(config, make_dispatch("cost"), make_motion(motion), journal)

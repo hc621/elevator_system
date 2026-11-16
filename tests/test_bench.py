@@ -28,9 +28,8 @@ from elevator_sim.model import BuildingConfig
 
 def small(n_seeds: int = 3, **kw: object) -> Experiment:
     defaults: dict = {
-        "scenario": "uniform",
+        "scenario": "lunch",
         "config": BuildingConfig.uniform(12, 2, 4),
-        "count": 25,
         "duration": 100,
         "seeds": tuple(range(n_seeds)),
     }
@@ -44,6 +43,8 @@ def result():  # type: ignore[no-untyped-def]
 
 def test_one_row_per_seed_and_policy_pair(result) -> None:  # type: ignore[no-untyped-def]
     assert len(result.rows) == 3 * 4 * 2  # seeds x dispatch x motion
+    for r in result.rows:  # trip-type counts add up to the passengers counted
+        assert r["inbound_count"] + r["outbound_count"] + r["inter_floor_count"] == r["passengers"]
     assert {(r["dispatch"], r["motion"]) for r in result.rows} == {
         (d, m) for d in ("cost", "nearest", "round_robin", "zone") for m in ("look", "scan")
     }
@@ -137,7 +138,7 @@ def test_fairness_and_balance_helpers() -> None:
 def test_skip_first_ignores_passengers_requested_before_the_cutoff() -> None:
     full = run_task(Task(small(1), 0, "cost", "look"))
     trimmed = run_task(Task(small(1, skip_first=50), 0, "cost", "look"))
-    assert trimmed["passengers"] < full["passengers"] == 25
+    assert trimmed["passengers"] < full["passengers"] == len(small(1).requests(0))
     assert trimmed["makespan"] == full["makespan"]  # the simulation itself is unchanged
 
 
@@ -160,6 +161,7 @@ def test_outputs_and_markdown(tmp_path: Path) -> None:
     md = (tmp_path / "summary.md").read_text()
     assert "## Headline: `cost` vs `round_robin`" in md
     assert "**Dispatch axis**" in md and "**Motion axis**" in md and "**All combinations**" in md
+    assert "**By trip type**" in md
     exp = summary["experiments"][0]
     assert [c["policy"] for c in exp["dispatch_axis"]] == ["cost", "nearest", "zone"]
     assert len(exp["motion_axis"]) == 4 and len(exp["combos"]) == 8
@@ -176,14 +178,16 @@ def test_axes_are_skipped_when_their_baseline_is_not_run() -> None:
 def test_suites_expand_over_the_requested_axes() -> None:
     standard = build_suite("standard", SuiteOptions(seeds=2))
     assert len(standard) == 4 * 2  # scenarios x buildings
-    assert {e.count for e in standard} == {200}
+    assert {e.scenario for e in standard} == {"quiet", "morning_rush", "lunch", "evening_rush"}
+    assert {e.load for e in standard} == {1.0}
     swept = build_suite(
         "quick",
-        SuiteOptions(seeds=1, door_times=(0, 2), placements=("lobby", "spread"), rates=(0.1, 0.5)),
+        SuiteOptions(seeds=1, door_times=(0, 2), placements=("lobby", "spread"), loads=(1, 1.5)),
     )
     assert len(swept) == 2 * 2 * 2 * 2
     assert {e.config.door_time for e in swept} == {0, 2}
-    assert {e.count for e in swept} == {40, 200}
+    assert {e.load for e in swept} == {1, 1.5}
+    assert {e.key["rate"] for e in swept if e.scenario == "quiet"} == {0.12, 0.18}
     spread = next(e for e in swept if e.placement == "spread")
     assert [c.start_floor for c in spread.config.cars] == [1, 8, 16, 23]
     with pytest.raises(ValueError, match="unknown suite"):
@@ -192,7 +196,7 @@ def test_suites_expand_over_the_requested_axes() -> None:
 
 def test_experiment_validation() -> None:
     for bad, match in [
-        ({"scenario": "lunch"}, "scenario"),
+        ({"scenario": "uniform"}, "scenario"),
         ({"dispatch_policies": ("elevator_operator",)}, "dispatch"),
         ({"motion_policies": ("teleport",)}, "motion"),
         ({"seeds": ()}, "seed"),
@@ -203,25 +207,24 @@ def test_experiment_validation() -> None:
 
 def test_bench_cli(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     out = tmp_path / "bench"
-    args = ["bench", "--suite", "quick", "--seeds", "2", "--scenarios", "uniform", "--rates", "0.1"]
+    args = ["bench", "--suite", "quick", "--seeds", "2", "--scenarios", "quiet"]
     assert main([*args, "--dispatch", "cost,round_robin", "--workers", "1", "-o", str(out)]) == 0
     assert "8 runs over 1 experiments" in capsys.readouterr().out
     assert {p.name for p in out.iterdir()} == {"raw.jsonl", "summary.json", "summary.md"}
 
 
 def test_bench_cli_rejects_bad_lists() -> None:
-    for flag, value in [("--dispatch", "cost,psychic"), ("--door-times", "1,x"), ("--rates", ",")]:
+    for flag, value in [("--dispatch", "cost,psychic"), ("--door-times", "1,x"), ("--loads", ",")]:
         with pytest.raises(SystemExit):
             main(["bench", flag, value])
 
 
 def test_sensitivity_tables_appear_only_when_settings_vary(tmp_path: Path) -> None:
     options = SuiteOptions(
-        seeds=2, door_times=(0, 1), scenarios=("uniform",), dispatch=("cost", "round_robin")
+        seeds=2, door_times=(0, 1), scenarios=("quiet",), dispatch=("cost", "round_robin")
     )
     experiments = [
-        Experiment(**{**e.__dict__, "count": 20, "duration": 80})
-        for e in build_suite("quick", options)
+        Experiment(**{**e.__dict__, "duration": 80}) for e in build_suite("quick", options)
     ]
     summary = write_outputs(Benchmark(workers=1).run(experiments), tmp_path, resamples=50)
     md = (tmp_path / "summary.md").read_text()

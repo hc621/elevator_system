@@ -1,7 +1,8 @@
 """Evaluation harness: run policies on identical inputs across seeds and compare them to baselines.
 
 The unit of comparison is an :class:`Experiment`: one scenario on one building at one load, run
-for several seeds. For each seed the requests are generated once, from the seed alone, so every
+for several seeds. For each seed the requests are generated once, from the seed alone (three Poisson
+streams, see ``scenarios``), so every
 (dispatch, motion) combination sees exactly the same passengers and start state; differences
 between policies come from the policy, not from the random draw (a *paired* design).
 
@@ -34,7 +35,14 @@ from elevator_sim.dispatch import DISPATCH_POLICIES, is_dispatch_policy, make_di
 from elevator_sim.feed import IteratorFeed
 from elevator_sim.model import BuildingConfig, Request
 from elevator_sim.motion import MOTION_POLICIES, make_motion
-from elevator_sim.report import PassengerRecord, RunReport, Stats, aggregate
+from elevator_sim.report import (
+    TRIP_KINDS,
+    PassengerRecord,
+    RunReport,
+    Stats,
+    aggregate,
+    trip_breakdown,
+)
 from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
@@ -54,9 +62,9 @@ class Experiment:
 
     scenario: str
     config: BuildingConfig
-    count: int  # requests per run
     duration: int  # arrival window in ticks
     seeds: tuple[int, ...]
+    load: float = 1.0  # multiplies every stream's Poisson rate (scenarios.generate)
     dispatch_policies: tuple[str, ...] = tuple(sorted(DISPATCH_POLICIES))
     motion_policies: tuple[str, ...] = ("look", "scan")
     placement: str = "lobby"  # label only; the start floors live in ``config``
@@ -87,23 +95,34 @@ class Experiment:
             "capacity": cfg.cars[0].capacity,
             "door_time": cfg.door_time,
             "placement": self.placement,
-            "count": self.count,
             "duration": self.duration,
-            "rate": round(self.count / self.duration, 4),
+            "load": self.load,
+            "rate": round(SCENARIOS[self.scenario].scaled(self.load).total, 4),
             "skip_first": self.skip_first,
         }
 
     @property
     def title(self) -> str:
-        k = self.key
-        return (
-            f"{k['scenario']} · {k['floors']} floors x {k['cars']} cars"
-            f" · door_time {k['door_time']} · {k['placement']}"
-            f" · {k['count']} requests / {k['duration']} ticks"
-        )
+        return experiment_title(self.key)
 
     def requests(self, seed: int) -> list[Request]:
-        return generate(self.scenario, self.config.floors, self.count, self.duration, seed)
+        return generate(self.scenario, self.config.floors, self.duration, seed, self.load)
+
+
+def experiment_title(k: Mapping[str, Any]) -> str:
+    """A readable one-line name for an experiment, from its key."""
+    return (
+        f"{k['scenario']} · {k['floors']} floors x {k['cars']} cars · capacity {k['capacity']}"
+        f" · door_time {k['door_time']} · {k['placement']}"
+        f" · load {k['load']:.3g} ({k['rate']:.3g} requests/tick) · {k['duration']} ticks"
+    )
+
+
+def retitle(summary: dict[str, Any]) -> dict[str, Any]:
+    """Refresh every experiment's title from its key (after a title-format change)."""
+    for e in summary["experiments"]:
+        e["title"] = experiment_title(e["key"])
+    return summary
 
 
 @dataclass(frozen=True)
@@ -177,7 +196,20 @@ def run_task(task: Task) -> Row:
         "trips": sum(c.trips for c in cars),
         "load_cv": round(coefficient_of_variation([c.passengers for c in cars]), 4),
         **diagnostic_metrics(report),
+        **trip_metrics(counted),
     }
+
+
+def trip_metrics(records: Sequence[PassengerRecord]) -> dict[str, float]:
+    """Per trip type (inbound / outbound / inter_floor): count, wait mean / p95 / max, total."""
+    out: dict[str, float] = {}
+    for kind, t in trip_breakdown(records).items():
+        out[f"{kind}_count"] = t.count
+        out[f"{kind}_wait_mean"] = round(t.wait.mean, 4)
+        out[f"{kind}_wait_p95"] = round(t.wait.p95, 4)
+        out[f"{kind}_wait_max"] = t.wait.max
+        out[f"{kind}_total_mean"] = round(t.total.mean, 4)
+    return out
 
 
 def diagnostic_metrics(report: RunReport) -> dict[str, float]:
@@ -369,6 +401,8 @@ MEAN_COLUMNS = (
     "detour_mean", "away_share", "away_wait", "idle_pick_share", "chosen_distance",
     "nearest_distance", "busy_share", "distance_per_passenger", "riders_per_stop",
     "full_passby_share", "load_cv",
+    *(f"{kind}_{m}" for kind in TRIP_KINDS
+      for m in ("count", "wait_mean", "wait_p95", "wait_max", "total_mean")),
 )  # fmt: skip
 
 
@@ -471,42 +505,72 @@ class SuiteOptions:
     seeds: int = 20
     door_times: tuple[int, ...] = (1,)
     placements: tuple[str, ...] = ("lobby",)
-    rates: tuple[float, ...] | None = None  # requests per tick; None = the suite's default
+    loads: tuple[float, ...] = (1.0,)  # multiples of the scenario rates
     scenarios: tuple[str, ...] | None = None
     dispatch: tuple[str, ...] | None = None
     motion: tuple[str, ...] | None = None
     skip_first: int = 0
-    fairness: tuple[
-        float, ...
-    ] = ()  # fairness weights; adds cost:<alpha> variants (0 = plain cost)
+    fairness: tuple[float, ...] = ()  # adds cost:<alpha> variants (0 = plain cost)
 
 
-# name -> (scenarios, buildings as (floors, cars, capacity), default rate, duration)
-SUITES: dict[str, tuple[tuple[str, ...], tuple[tuple[int, int, int], ...], float, int]] = {
-    "standard": (
-        ("uniform", "mixed", "morning_rush", "evening_rush"),
-        ((30, 4, 8), (40, 6, 8)),
-        0.25,
+BUSINESS = ("quiet", "morning_rush", "lunch", "evening_rush")
+BASE_BUILDING = (30, 4, 8)  # floors, cars, capacity
+
+
+def one_at_a_time(
+    base: tuple[int, int, int],
+    floors: Sequence[int],
+    cars: Sequence[int],
+    capacities: Sequence[int],
+) -> tuple[tuple[int, int, int], ...]:
+    """Buildings that vary one setting at a time around ``base`` (each building listed once)."""
+    f0, c0, k0 = base
+    variants = [
+        *((f, c0, k0) for f in floors),
+        *((f0, c, k0) for c in cars),
+        *((f0, c0, k) for k in capacities),
+    ]
+    return tuple(dict.fromkeys([base, *variants]))
+
+
+@dataclass(frozen=True)
+class Suite:
+    scenarios: tuple[str, ...]
+    buildings: tuple[tuple[int, int, int], ...]  # (floors, cars, capacity)
+    duration: int  # arrival window in ticks
+    motion: tuple[str, ...] = ("look", "scan")
+    # Same people per floor: scale every rate by (floors - 1) / (base floors - 1).
+    demand_per_floor: bool = False
+
+
+SUITES: dict[str, Suite] = {
+    "standard": Suite(BUSINESS, ((30, 4, 8), (40, 6, 8)), 800),
+    "quick": Suite(("quiet", "morning_rush"), (BASE_BUILDING,), 400),
+    "buildings": Suite(
+        BUSINESS,
+        one_at_a_time(BASE_BUILDING, (15, 30, 45, 60), (2, 3, 4, 6, 8), (4, 6, 8, 12)),
         800,
+        motion=("look",),
+        demand_per_floor=True,
     ),
-    "quick": (("uniform", "morning_rush"), ((30, 4, 8),), 0.25, 400),
 }
 
 
 def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Experiment]:
     if name not in SUITES:
         raise ValueError(f"unknown suite {name!r}; expected one of {sorted(SUITES)}")
-    scenarios, buildings, default_rate, duration = SUITES[name]
+    suite = SUITES[name]
     dispatch = options.dispatch or tuple(sorted(DISPATCH_POLICIES))
     if options.fairness:
         variants = tuple(fairness_name(a) for a in options.fairness)
         dispatch = tuple(dict.fromkeys((*dispatch, *variants)))
     experiments = []
-    for scenario in options.scenarios or scenarios:
-        for floors, cars, capacity in buildings:
+    for scenario in options.scenarios or suite.scenarios:
+        for floors, cars, capacity in suite.buildings:
+            scale = (floors - 1) / (BASE_BUILDING[0] - 1) if suite.demand_per_floor else 1.0
             for door_time in options.door_times:
                 for placement in options.placements:
-                    for rate in options.rates or (default_rate,):
+                    for load in options.loads:
                         config = BuildingConfig.uniform(
                             floors, cars, capacity, placement, door_time
                         )
@@ -514,11 +578,11 @@ def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Exper
                             Experiment(
                                 scenario=scenario,
                                 config=config,
-                                count=round(rate * duration),
-                                duration=duration,
+                                duration=suite.duration,
+                                load=round(load * scale, 4),
                                 seeds=tuple(range(options.seeds)),
                                 dispatch_policies=dispatch,
-                                motion_policies=options.motion or ("look", "scan"),
+                                motion_policies=options.motion or suite.motion,
                                 placement=placement,
                                 skip_first=options.skip_first,
                             )
@@ -573,6 +637,7 @@ def format_markdown(summary: Mapping[str, object]) -> str:
         lines.append("")
 
     lines += _sensitivity_tables(experiments)
+    lines += _building_tables(experiments)
 
     for e in experiments:
         lines += [f"## {e['title']}", "", f"{e['seeds']} seeds.", ""]
@@ -658,11 +723,26 @@ def format_markdown(summary: Mapping[str, object]) -> str:
                 f"| {c['riders_per_stop']:.2f} | {c['load_cv']:.2f} "
                 f"| {c['full_passby_share']:.1%} |"
             )
+        lines += [
+            "",
+            "**By trip type** (means over seeds: passengers per run, mean / p95 wait in ticks; "
+            "inbound = from the lobby, outbound = to the lobby)",
+            "",
+            "| dispatch | motion | inbound: n, wait mean / p95 | outbound: n, wait mean / p95 "
+            "| inter-floor: n, wait mean / p95 |",
+            "|---|---|---:|---:|---:|",
+        ]
+        for c in e["combos"]:
+            cells = [
+                f"{c[k + '_count']:.0f}, {c[k + '_wait_mean']:.1f} / {c[k + '_wait_p95']:.0f}"
+                for k in TRIP_KINDS
+            ]
+            lines.append(f"| {c['dispatch']} | {c['motion']} | " + " | ".join(cells) + " |")
         lines.append("")
     return "\n".join(lines)
 
 
-SENSITIVITY_FIELDS = ("door_time", "placement", "rate")
+SENSITIVITY_FIELDS = ("door_time", "placement", "load")
 _MARK = {"better": "✓", "worse": "✗", "inconclusive": "?"}
 
 
@@ -672,7 +752,15 @@ def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
     Rows are (scenario, building); columns the settings that vary; cells Δ% vs the baseline with
     ✓ better / ✗ worse / ? inconclusive. Shows at a glance which conclusions survive.
     """
-    varying = [f for f in SENSITIVITY_FIELDS if len({e["key"][f] for e in experiments}) > 1]
+    groups: dict[tuple, list[Mapping[str, Any]]] = {}
+    for e in experiments:
+        k = e["key"]
+        groups.setdefault((k["scenario"], k["floors"], k["cars"], k["capacity"]), []).append(e)
+    varying = [
+        f
+        for f in SENSITIVITY_FIELDS
+        if any(len({e["key"][f] for e in g}) > 1 for g in groups.values())
+    ]
     if not varying:
         return []
 
@@ -680,7 +768,7 @@ def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
         return tuple(e["key"][f] for f in varying)
 
     def label(values: tuple) -> str:
-        names = {"door_time": "door {}", "placement": "{}", "rate": "{}/tick"}
+        names = {"door_time": "door {}", "placement": "{}", "load": "load {:g}"}
         return " · ".join(names[f].format(v) for f, v in zip(varying, values, strict=True))
 
     columns = sorted({setting(e) for e in experiments})
@@ -735,6 +823,78 @@ def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
     for dispatch in dispatches:
         lines += table(f"LOOK vs SCAN with `{dispatch}`", motion_cell(dispatch))
     lines += table("Ranking by mean total time (LOOK, best first)", ranking)
+    return lines
+
+
+BUILDING_FACTORS = ("floors", "cars", "capacity")
+
+
+def building_families(
+    experiments: Sequence[Mapping[str, Any]],
+) -> dict[str, list[Mapping[str, Any]]]:
+    """For a one-at-a-time building sweep: per factor, the experiments where only it varies.
+
+    The base building is the most common value of each factor. Empty when buildings don't vary.
+    """
+    keys = [e["key"] for e in experiments]
+    if len({(k["floors"], k["cars"], k["capacity"]) for k in keys}) < 3:
+        return {}
+    base = {
+        f: max({k[f] for k in keys}, key=lambda v, f=f: sum(k[f] == v for k in keys))
+        for f in BUILDING_FACTORS
+    }
+    families = {}
+    for factor in BUILDING_FACTORS:
+        others = [f for f in BUILDING_FACTORS if f != factor]
+        members = [e for e in experiments if all(e["key"][o] == base[o] for o in others)]
+        if len({e["key"][factor] for e in members}) > 1:
+            families[factor] = members
+    return families
+
+
+def _building_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
+    families = building_families(experiments)
+    if not families:
+        return []
+    lines = [
+        "## Building sweep: one setting at a time",
+        "",
+        "Cells: mean total time per passenger, round_robin → cost (Δ, verdict), LOOK; then the "
+        "ranking of all dispatch policies (C cost, N nearest, Z zone, R round_robin).",
+        "",
+    ]
+    letters = {"cost": "C", "nearest": "N", "zone": "Z", "round_robin": "R"}
+    for factor, members in families.items():
+        values = sorted({e["key"][factor] for e in members})
+        lines += [
+            f"### Varying {factor}",
+            "",
+            "| scenario | " + " | ".join(f"{factor} {v}" for v in values) + " |",
+            "|---|" + "---:|" * len(values),
+        ]
+        scenarios = list(dict.fromkeys(e["key"]["scenario"] for e in members))
+        for scenario in scenarios:
+            cells = []
+            for v in values:
+                e = next(
+                    (e for e in members if e["key"]["scenario"] == scenario
+                     and e["key"][factor] == v), None,
+                )  # fmt: skip
+                c = e and next((c for c in e["dispatch_axis"] if c["policy"] == "cost"), None)
+                if not c:
+                    cells.append("")
+                    continue
+                look = sorted(
+                    (x for x in e["combos"] if x["motion"] == "look"),
+                    key=lambda x: x["total_mean"],
+                )
+                rank = "".join(letters.get(x["dispatch"].partition(":")[0], "?") for x in look)
+                cells.append(
+                    f"{c['baseline_mean']:.1f} → {c['mean']:.1f} ({c['delta_pct']:+.0%} "
+                    f"{_MARK[c['verdict']]}) {rank}"
+                )
+            lines.append(f"| {scenario} | " + " | ".join(cells) + " |")
+        lines.append("")
     return lines
 
 

@@ -6,9 +6,10 @@ the same thing.
 elevator-sim run requests.csv --elevators 3 --floors 60 --capacity 8
 elevator-sim requests.csv ...             # "run" is the default command
 elevator-sim summarize out/journal.jsonl  # rebuild the report from a saved journal
-elevator-sim generate morning_rush --floors 30 --count 200 -o rush.csv
+elevator-sim generate morning_rush --floors 30 --duration 800 -o rush.csv
 elevator-sim bench --suite standard --seeds 20 -o results/standard
-elevator-sim bench --fairness 0,0.05,0.2,1 --rates 0.25,0.55 --dispatch round_robin,cost
+elevator-sim bench --fairness 0,0.05,0.2,1 --loads 1,1.5 --dispatch round_robin --motion look
+elevator-sim report out/run.jsonl -o out/report.html     # or a bench folder: results/standard
 
 A run writes ``positions.jsonl``, ``passengers.json`` and ``report.json`` to ``--out`` and prints a
 text summary.
@@ -17,7 +18,9 @@ text summary.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+from collections import Counter
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -41,14 +44,15 @@ from elevator_sim.bench import (
 from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
 from elevator_sim.dispatcher import NoEligibleCar
 from elevator_sim.feed import InvalidRequest, IteratorFeed, SimulationStalled
+from elevator_sim.html_report import render_bench, render_run
 from elevator_sim.journal import Journal
 from elevator_sim.model import PLACEMENTS, BuildingConfig, Floor
 from elevator_sim.motion import MOTION_POLICIES, make_motion
-from elevator_sim.report import aggregate
+from elevator_sim.report import TRIP_KINDS, aggregate, trip_kind
 from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
-COMMANDS = ("run", "summarize", "generate", "bench")
+COMMANDS = ("run", "summarize", "generate", "bench", "report")
 OUTPUTS = ("positions.jsonl", "passengers.json", "report.json")
 
 
@@ -113,16 +117,21 @@ def _parser() -> argparse.ArgumentParser:
     )
     run.add_argument("--max-ticks", type=int, help="fail if the run goes beyond this tick")
     run.add_argument("-q", "--quiet", action="store_true", help="don't print the summary")
+    run.add_argument("--html", action="store_true", help="also write report.html to --out")
 
     summarize = sub.add_parser("summarize", help="rebuild the summary from a saved journal")
     summarize.add_argument("journal", type=Path)
     summarize.add_argument("-o", "--out", type=Path, help="also write the JSON outputs here")
 
-    gen = sub.add_parser("generate", help="write a seeded random request file")
+    gen = sub.add_parser(
+        "generate", help="write a seeded business-building scenario (Poisson arrivals) to a CSV"
+    )
     gen.add_argument("scenario", choices=sorted(SCENARIOS))
     gen.add_argument("-f", "--floors", type=int, default=30)
-    gen.add_argument("-n", "--count", type=int, default=100)
-    gen.add_argument("-d", "--duration", type=int, default=300, help="arrival window in ticks")
+    gen.add_argument("-d", "--duration", type=int, default=800, help="arrival window in ticks")
+    gen.add_argument(
+        "-l", "--load", type=float, default=1.0, help="multiple of the scenario's rates (default 1)"
+    )
     gen.add_argument("-s", "--seed", type=int, default=0)
     gen.add_argument("-o", "--output", type=Path, required=True)
 
@@ -134,7 +143,12 @@ def _parser() -> argparse.ArgumentParser:
         "--placements", type=_csv_of(str, ("lobby", "spread")), default=("lobby",),
         help="e.g. lobby,spread",
     )  # fmt: skip
-    bench.add_argument("--rates", type=_csv_of(float), help="requests per tick, e.g. 0.1,0.2,0.4")
+    bench.add_argument(
+        "--loads",
+        type=_csv_of(float),
+        default=(1.0,),
+        help="multiples of the scenario rates, e.g. 1,1.5",
+    )
     bench.add_argument("--scenarios", type=_csv_of(str, sorted(SCENARIOS)))
     bench.add_argument("--dispatch", type=_csv_of(str, sorted(DISPATCH_POLICIES)))
     bench.add_argument("--motion", type=_csv_of(str, sorted(MOTION_POLICIES)))
@@ -149,6 +163,12 @@ def _parser() -> argparse.ArgumentParser:
     )
     bench.add_argument("--workers", type=int, help="processes (default: all CPUs; 1 = in-process)")
     bench.add_argument("-o", "--out", type=Path, default=Path("results/bench"))
+
+    report = sub.add_parser("report", help="write a self-contained HTML report")
+    report.add_argument(
+        "input", type=Path, help="a run journal (.jsonl) or a bench folder / summary.json"
+    )
+    report.add_argument("-o", "--output", type=Path, default=Path("report.html"))
     return parser
 
 
@@ -182,6 +202,8 @@ def _run(args: argparse.Namespace) -> int:
         max_ticks=args.max_ticks,
     )
     summary = _write_outputs(journal, args.out)
+    if args.html:
+        (args.out / "report.html").write_text(render_run(journal), encoding="utf-8")
     if args.journal:
         args.journal.parent.mkdir(parents=True, exist_ok=True)
         journal.to_jsonl(args.journal)
@@ -201,9 +223,11 @@ def _summarize(args: argparse.Namespace) -> int:
 
 
 def _generate(args: argparse.Namespace) -> int:
-    requests = generate(args.scenario, args.floors, args.count, args.duration, args.seed)
+    requests = generate(args.scenario, args.floors, args.duration, args.seed, args.load)
     write_requests(requests, args.output)
-    print(f"Wrote {len(requests)} requests to {args.output}")
+    kinds = Counter(trip_kind(r.source, r.dest) for r in requests)
+    split = ", ".join(f"{kinds[k]} {k.replace('_', '-')}" for k in TRIP_KINDS)
+    print(f"Wrote {len(requests)} requests to {args.output} ({split})")
     return 0
 
 
@@ -212,7 +236,7 @@ def _bench(args: argparse.Namespace) -> int:
         seeds=args.seeds,
         door_times=args.door_times,
         placements=args.placements,
-        rates=args.rates,
+        loads=args.loads,
         scenarios=args.scenarios,
         dispatch=args.dispatch,
         motion=args.motion,
@@ -227,12 +251,32 @@ def _bench(args: argparse.Namespace) -> int:
     return 0
 
 
+def _report(args: argparse.Namespace) -> int:
+    source: Path = args.input
+    if source.is_dir():
+        source = source / "summary.json"
+    if source.suffix == ".json":
+        page = render_bench(json.loads(source.read_text(encoding="utf-8")))
+    else:
+        page = render_run(Journal.from_jsonl(source))
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(page, encoding="utf-8")
+    print(f"Wrote {args.output}")
+    return 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args_list = list(sys.argv[1:] if argv is None else argv)
     if args_list and args_list[0] not in COMMANDS and not args_list[0].startswith("-"):
         args_list.insert(0, "run")
     args = _parser().parse_args(args_list)
-    handlers = {"run": _run, "summarize": _summarize, "generate": _generate, "bench": _bench}
+    handlers = {
+        "run": _run,
+        "summarize": _summarize,
+        "generate": _generate,
+        "bench": _bench,
+        "report": _report,
+    }
     try:
         return handlers[args.command](args)
     except (InvalidRequest, NoEligibleCar, SimulationStalled, ValueError, OSError) as exc:
