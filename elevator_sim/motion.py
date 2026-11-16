@@ -62,6 +62,10 @@ class _SweepMotion:
     """Behaviour shared by LOOK and SCAN; subclasses choose the direction."""
 
     name = "sweep"
+    # A moving car with closed doors keeps moving until the next floor where someone gets off or
+    # is waiting, so a projection may jump straight there (Car.project). Policies that decide on
+    # anything else must leave this False.
+    skip_floors_without_work = True
 
     def choose_direction(self, s: CarSnapshot) -> Direction:
         raise NotImplementedError

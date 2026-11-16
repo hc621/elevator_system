@@ -1,4 +1,5 @@
 {
+  "parking": [],
   "metric": "total_mean",
   "claim_rule": "95% CI of the difference excludes 0 and >= 80% of seeds go the same way",
   "resamples": 2000,
@@ -14,7 +15,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.12,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -411,7 +413,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.18,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.18 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -808,7 +811,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.12,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -1205,7 +1209,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.18,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.18 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -1602,7 +1607,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.39,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -1999,7 +2005,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.585,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.585 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -2396,7 +2403,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.39,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -2793,7 +2801,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.585,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.585 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -3190,7 +3199,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.36,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -3587,7 +3597,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.54,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.54 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -3984,7 +3995,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.36,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -4381,7 +4393,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.54,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.54 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -4778,7 +4791,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.39,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -5175,7 +5189,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.585,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.585 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -5572,7 +5587,8 @@
         "duration": 800,
         "load": 1.0,
         "rate": 0.39,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
       "seeds": 20,
@@ -5969,7 +5985,8 @@
         "duration": 800,
         "load": 1.5,
         "rate": 0.585,
-        "skip_first": 0
+        "skip_first": 0,
+        "parking": "stay"
       },
       "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1.5 (0.585 requests/tick) · 800 ticks",
       "seeds": 20,

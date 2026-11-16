@@ -71,6 +71,9 @@ class Car:
         self.waiting: dict[PassengerId, Request] = {}  # assigned, not yet aboard
         self.onboard: dict[PassengerId, Request] = {}
 
+        self._plan: list[Event] | None = None  # cached projection events (see project())
+        self._last_with: tuple[int, PassengerId, list[Event]] | None = None
+        self._version = 0  # bumped on every change of state
         self.park_floor: Floor | None = None  # where to wait while idle (parking policy)
         self.park_decided = False  # the parking policy has been asked since the car went idle
 
@@ -111,11 +114,16 @@ class Car:
     def assign(self, request: Request) -> None:
         if request.id in self.waiting or request.id in self.onboard:
             raise ValueError(f"passenger {request.id!r} is already assigned to car {self.id}")
+        seeded = self._last_with
         if not self.has_passengers and self.doors is Doors.CLOSED:
             self.direction = Direction.IDLE  # a parking car drops its target and chooses afresh
         self.park_floor = None
         self.park_decided = False
         self.waiting[request.id] = request
+        # The plan changes; if project(request) was just computed from this exact state, reuse it.
+        self._plan = seeded[2] if seeded and seeded[:2] == (self._version, request.id) else None
+        self._last_with = None
+        self._version += 1
 
     def step(self, now: Tick) -> list[Event]:
         """One tick of behaviour. Returns the events it caused; ``advance`` applies the move."""
@@ -125,6 +133,7 @@ class Car:
             )
         self._stepped = True
         self._pending_move = None
+        self._version += 1
         events: list[Event] = []
 
         if self.doors is Doors.OPEN:
@@ -151,32 +160,71 @@ class Car:
         self._pending_move = None
         self._stepped = False
         self.next_tick += 1
+        self._version += 1
 
     # --- look-ahead --------------------------------------------------------------------------
 
-    def project(self, extra: Request | None = None) -> Projection:
+    def project(self, extra: Request | None = None, *, fast: bool = True) -> Projection:
         """Run this car's own rules on a private copy until it has no passengers left.
 
         This is the only look-ahead in the system. It uses the real motion policy, door timing and
         capacity rule, so it stays exact for LOOK, SCAN and any stop time.
+
+        Two shortcuts (``fast=True``) give the same answer, faster:
+        - without ``extra``, the car's future is fixed until its next assignment (the real car
+          follows the projection tick for tick), so the plan is cached and only trimmed to future
+          events and current passengers; ``assign`` invalidates it;
+        - a moving copy with closed doors jumps straight to the next floor where someone gets off
+          or waits, when the motion policy allows it (``skip_floors_without_work``).
+        ``fast=False`` does neither; tests use it as the reference.
         """
+        start = self.next_tick + (1 if self._stepped else 0)
+        if extra is None and fast and self._plan is not None:
+            passengers = {**self.onboard, **self.waiting}
+            return _build_projection([e for e in self._plan if e.tick >= start], passengers)
         clone = self._clone()
         if extra is not None:
             clone.assign(extra)
         if clone._stepped:  # called between step() and advance(): finish this tick first
             clone.advance()
         passengers = {**clone.onboard, **clone.waiting}
-        start = clone.next_tick
         horizon = (len(passengers) + 1) * 2 * (self.top_floor + 1) * (self.door_time + 2)
+        skip = fast and getattr(self.motion, "skip_floors_without_work", False)
         events: list[Event] = []
         while clone.has_passengers:
             if clone.next_tick - start > horizon:
                 raise SimulationStalled(
                     f"car {self.id}: projection did not finish within {horizon} ticks"
                 )
+            if skip and (jump := clone._floors_without_work()):
+                clone.floor += jump * clone.direction.value
+                clone.next_tick += jump
+                continue
             events.extend(clone.step(clone.next_tick))
             clone.advance()
+        if fast:
+            if extra is None:
+                self._plan = events
+            else:
+                self._last_with = (self._version, extra.id, events)
         return _build_projection(events, passengers)
+
+    def _floors_without_work(self) -> int:
+        """Floors a moving car will pass without deciding anything (0 if it must decide now).
+
+        With closed doors and a direction, a sweep policy keeps moving while work lies ahead and
+        stops only where someone gets off or waits; so if the current floor holds no work, the car
+        reaches the nearest work floor ahead in exactly that many ticks, with no events between.
+        """
+        if self.doors is not Doors.CLOSED or self.direction is Direction.IDLE:
+            return 0
+        here, sign = self.floor, self.direction.value
+        floors = [p.dest for p in self.onboard.values()]
+        floors += [w.source for w in self.waiting.values()]
+        if here in floors:
+            return 0
+        ahead = [(f - here) * sign for f in floors if (f - here) * sign > 0]
+        return min(ahead) if ahead else 0
 
     def route(self) -> tuple[PlannedStop, ...]:
         return self.project().route
@@ -187,6 +235,8 @@ class Car:
         clone = copy.copy(self)
         clone.waiting = dict(self.waiting)
         clone.onboard = dict(self.onboard)
+        clone._plan = None
+        clone._last_with = None
         return clone
 
     def _decide(self, now: Tick, events: list[Event]) -> None:

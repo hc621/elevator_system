@@ -46,6 +46,9 @@ Numbers are from `results/` (20 paired seeds); the README has the tables and the
   car). `zone` is strong in rushes and even beats `cost` when a morning rush overloads the
   building: an honest limit of the greedy policy.
 - Robust: `cost` is best in all 48 door-time / start-position settings.
+- Parking idle cars: back to the lobby before the morning rush (up to 17% better), spread out when
+  it's quiet; a demand-following policy is never worse. Round-robin gains nothing from parking
+  (it ignores where cars are). Default stays "don't move": parking trips cost the building.
 
 ## 6. Fairness vs efficiency (1 min)
 
@@ -56,7 +59,9 @@ Numbers are from `results/` (20 paired seeds); the README has the tables and the
 ## 7. Limits and next steps (1 min)
 
 - Fixed assignments (stale projections), no hard wait bound, sectoring for saturated up-peak,
-  parking, express banks, a full-day timeline calibrated to real data.
+  express banks, a full-day timeline calibrated from accumulated daily data.
+- Quality: 249 tests incl. property-based ones; projections made 5x faster with byte-identical
+  results (10k requests, 60 floors, 10 cars in 8.4 s).
 
 ## Demo (as time allows)
 
