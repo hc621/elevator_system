@@ -9,7 +9,7 @@ from __future__ import annotations
 from collections.abc import Callable, Sequence
 from typing import Protocol
 
-from elevator_sim.car import CarView
+from elevator_sim.car import CarView, Projection
 from elevator_sim.model import CarId, Request, Tick
 
 
@@ -71,24 +71,40 @@ class ZoneDispatch:
 
 
 class CostDispatch:
-    """Destination dispatch by marginal cost.
+    """Destination dispatch by marginal cost, with an optional fairness penalty.
 
     For each car, project its future with and without the new passenger and take the increase in
     total time summed over everyone on that car: the newcomer's own wait and ride plus any delay
     imposed on passengers already assigned. The projection runs the car's real rules, including the
     capacity check at boarding, so a car that would be full along the way shows up as a late pickup
     and costs more.
+
+    ``fairness`` (alpha >= 0) adds ``alpha * increase in sum(wait ** 2)`` over the car's passengers
+    still waiting (projected waits). Squaring makes one passenger waiting 40 ticks cost as much as
+    sixteen waiting 10, and makes delaying someone who already waits long expensive, so the policy
+    stops trading one long wait for a few short ones. alpha = 0 is the plain cost policy.
     """
 
-    name = "cost"
-
-    def __init__(self) -> None:
+    def __init__(self, fairness: float = 0.0) -> None:
+        if fairness < 0:
+            raise ValueError("fairness must be >= 0")
+        self.fairness = fairness
+        self.name = f"cost:{fairness:g}" if fairness else "cost"
         self.last_cost: float | None = None
 
+    @staticmethod
+    def wait_penalty(projection: Projection) -> int:
+        """Sum of squared projected waits of the car's passengers not yet aboard."""
+        return sum(w * w for w in projection.waits.values())
+
     def choose(self, request: Request, cars: Sequence[CarView], now: Tick) -> CarId:
-        best: tuple[int, CarId] | None = None
+        best: tuple[float, CarId] | None = None
         for car in sorted(cars, key=lambda c: c.id):
-            cost = car.project(request).total_time - car.project().total_time
+            with_new, without = car.project(request), car.project()
+            cost: float = with_new.total_time - without.total_time
+            if self.fairness:
+                increase = self.wait_penalty(with_new) - self.wait_penalty(without)
+                cost += self.fairness * increase
             if best is None or cost < best[0]:
                 best = (cost, car.id)
         assert best is not None, "dispatcher always passes at least one car"
@@ -105,10 +121,28 @@ DISPATCH_POLICIES: dict[str, Callable[[], DispatchPolicy]] = {
 
 
 def make_dispatch(name: str) -> DispatchPolicy:
-    """A fresh policy instance (some policies keep state, so never share one across runs)."""
+    """A fresh policy instance (some policies keep state, so never share one across runs).
+
+    ``cost:<alpha>`` is the cost policy with fairness weight alpha, e.g. ``cost:0.5``.
+    """
+    base, _, arg = name.partition(":")
+    if base == "cost" and arg:
+        try:
+            return CostDispatch(fairness=float(arg))
+        except ValueError:
+            raise ValueError(f"bad fairness weight in {name!r}; expected e.g. cost:0.5") from None
     try:
         return DISPATCH_POLICIES[name]()
     except KeyError:
         raise ValueError(
-            f"unknown dispatch policy {name!r}; expected one of {sorted(DISPATCH_POLICIES)}"
+            f"unknown dispatch policy {name!r}; expected one of {sorted(DISPATCH_POLICIES)} "
+            "or cost:<fairness>"
         ) from None
+
+
+def is_dispatch_policy(name: str) -> bool:
+    try:
+        make_dispatch(name)
+    except ValueError:
+        return False
+    return True

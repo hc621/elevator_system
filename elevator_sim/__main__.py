@@ -8,6 +8,7 @@ elevator-sim requests.csv ...             # "run" is the default command
 elevator-sim summarize out/journal.jsonl  # rebuild the report from a saved journal
 elevator-sim generate morning_rush --floors 30 --count 200 -o rush.csv
 elevator-sim bench --suite standard --seeds 20 -o results/standard
+elevator-sim bench --fairness 0,0.05,0.2,1 --rates 0.25,0.55 --dispatch round_robin,cost
 
 A run writes ``positions.jsonl``, ``passengers.json`` and ``report.json`` to ``--out`` and prints a
 text summary.
@@ -29,7 +30,14 @@ from elevator_sim.adapters import (
     write_report,
     write_requests,
 )
-from elevator_sim.bench import SUITES, Benchmark, SuiteOptions, build_suite, write_outputs
+from elevator_sim.bench import (
+    SUITES,
+    Benchmark,
+    SuiteOptions,
+    build_suite,
+    fairness_name,
+    write_outputs,
+)
 from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
 from elevator_sim.dispatcher import NoEligibleCar
 from elevator_sim.feed import InvalidRequest, IteratorFeed, SimulationStalled
@@ -91,6 +99,12 @@ def _parser() -> argparse.ArgumentParser:
         help="start floors: lobby, spread, or e.g. 1,20,40 (default lobby)",
     )
     run.add_argument("--algorithm", choices=sorted(DISPATCH_POLICIES), default="cost")
+    run.add_argument(
+        "--fairness",
+        type=float,
+        default=0.0,
+        help="cost policy only: weight on squared waits (0 = plain cost; e.g. 0.2)",
+    )
     run.add_argument("--motion", choices=sorted(MOTION_POLICIES), default="look")
     run.add_argument("-o", "--out", type=Path, default=Path("out"), help="output directory")
     run.add_argument("--journal", type=Path, help="also save the event journal (JSONL) here")
@@ -125,6 +139,12 @@ def _parser() -> argparse.ArgumentParser:
     bench.add_argument("--dispatch", type=_csv_of(str, sorted(DISPATCH_POLICIES)))
     bench.add_argument("--motion", type=_csv_of(str, sorted(MOTION_POLICIES)))
     bench.add_argument(
+        "--fairness",
+        type=_csv_of(float),
+        default=(),
+        help="add cost policies with these fairness weights, e.g. 0,0.05,0.2,1",
+    )
+    bench.add_argument(
         "--skip-first", type=int, default=0, help="ignore passengers requested before this tick"
     )
     bench.add_argument("--workers", type=int, help="processes (default: all CPUs; 1 = in-process)")
@@ -141,6 +161,14 @@ def _write_outputs(journal: Journal, out: Path) -> str:
     return format_summary(report)
 
 
+def _dispatch_name(args: argparse.Namespace) -> str:
+    if args.fairness < 0:
+        raise ValueError("--fairness must be >= 0")
+    if args.fairness and args.algorithm != "cost":
+        raise ValueError("--fairness applies to the cost policy only")
+    return fairness_name(args.fairness) if args.algorithm == "cost" else args.algorithm
+
+
 def _run(args: argparse.Namespace) -> int:
     config = BuildingConfig.uniform(
         args.floors, args.elevators, args.capacity, args.placement, args.door_time
@@ -148,7 +176,7 @@ def _run(args: argparse.Namespace) -> int:
     journal = simulate(
         config,
         IteratorFeed(read_requests(args.input)),
-        make_dispatch(args.algorithm),
+        make_dispatch(_dispatch_name(args)),
         make_motion(args.motion),
         journal_routes=args.journal_routes,
         max_ticks=args.max_ticks,
@@ -189,6 +217,7 @@ def _bench(args: argparse.Namespace) -> int:
         dispatch=args.dispatch,
         motion=args.motion,
         skip_first=args.skip_first,
+        fairness=args.fairness,
     )
     experiments = build_suite(args.suite, options)
     result = Benchmark(args.workers).run(experiments)

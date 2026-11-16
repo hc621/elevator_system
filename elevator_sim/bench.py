@@ -30,7 +30,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
-from elevator_sim.dispatch import DISPATCH_POLICIES, make_dispatch
+from elevator_sim.dispatch import DISPATCH_POLICIES, is_dispatch_policy, make_dispatch
 from elevator_sim.feed import IteratorFeed
 from elevator_sim.model import BuildingConfig, Request
 from elevator_sim.motion import MOTION_POLICIES, make_motion
@@ -68,7 +68,7 @@ class Experiment:
         if self.scenario not in SCENARIOS:
             raise ValueError(f"unknown scenario {self.scenario!r}")
         for name in self.dispatch_policies:
-            if name not in DISPATCH_POLICIES:
+            if not is_dispatch_policy(name):
                 raise ValueError(f"unknown dispatch policy {name!r}")
         for name in self.motion_policies:
             if name not in MOTION_POLICIES:
@@ -413,6 +413,7 @@ def summarise(result: BenchResult, resamples: int = RESAMPLES) -> dict[str, Any]
                         c = compare(sel, "motion", motion, exp.baseline_motion, resamples=resamples)
                         axis.append({"dispatch": dispatch, **c.to_dict()})
             entry["motion_axis"] = axis
+        entry["fairness"] = fairness_frontier(rows, exp.dispatch_policies, resamples)
         experiments.append(entry)
     return {
         "metric": PRIMARY,
@@ -423,6 +424,43 @@ def summarise(result: BenchResult, resamples: int = RESAMPLES) -> dict[str, Any]
         "resamples": resamples,
         "experiments": experiments,
     }
+
+
+def fairness_name(alpha: float) -> str:
+    """The dispatch-policy name of the cost policy with fairness weight alpha."""
+    return f"cost:{alpha:g}" if alpha else "cost"
+
+
+FRONTIER_COLUMNS = ("total_mean", "wait_mean", "wait_p95", "wait_max")
+
+
+def fairness_frontier(
+    rows: Sequence[Row], policies: Sequence[str], resamples: int = RESAMPLES
+) -> list[dict[str, Any]]:
+    """Each cost:<alpha> variant against plain cost (LOOK), on efficiency and on the wait tail."""
+    look = [r for r in rows if r["motion"] == "look"]
+    variants = [p for p in policies if p.startswith("cost:")]
+    if "cost" not in policies or not variants or not look:
+        return []
+    frontier = []
+    for policy in ["cost", *variants]:
+        sel = [r for r in look if r["dispatch"] == policy]
+        entry: dict[str, Any] = {
+            "policy": policy,
+            "fairness": float(policy.partition(":")[2] or 0),
+            **{c: round(_mean([float(r[c]) for r in sel]), 4) for c in FRONTIER_COLUMNS},
+        }
+        if policy != "cost":
+            for metric in ("total_mean", "wait_p95", "wait_max"):
+                c = compare(look, "dispatch", policy, "cost", metric=metric, resamples=resamples)
+                entry[f"{metric}_vs_cost"] = {
+                    "delta": c.delta,
+                    "delta_pct": c.delta_pct,
+                    "ci95": list(c.ci95),
+                    "verdict": c.verdict,
+                }
+        frontier.append(entry)
+    return frontier
 
 
 # ---------------------------------------------------------------- suites
@@ -438,6 +476,9 @@ class SuiteOptions:
     dispatch: tuple[str, ...] | None = None
     motion: tuple[str, ...] | None = None
     skip_first: int = 0
+    fairness: tuple[
+        float, ...
+    ] = ()  # fairness weights; adds cost:<alpha> variants (0 = plain cost)
 
 
 # name -> (scenarios, buildings as (floors, cars, capacity), default rate, duration)
@@ -456,6 +497,10 @@ def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Exper
     if name not in SUITES:
         raise ValueError(f"unknown suite {name!r}; expected one of {sorted(SUITES)}")
     scenarios, buildings, default_rate, duration = SUITES[name]
+    dispatch = options.dispatch or tuple(sorted(DISPATCH_POLICIES))
+    if options.fairness:
+        variants = tuple(fairness_name(a) for a in options.fairness)
+        dispatch = tuple(dict.fromkeys((*dispatch, *variants)))
     experiments = []
     for scenario in options.scenarios or scenarios:
         for floors, cars, capacity in buildings:
@@ -472,8 +517,7 @@ def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Exper
                                 count=round(rate * duration),
                                 duration=duration,
                                 seeds=tuple(range(options.seeds)),
-                                dispatch_policies=options.dispatch
-                                or tuple(sorted(DISPATCH_POLICIES)),
+                                dispatch_policies=dispatch,
                                 motion_policies=options.motion or ("look", "scan"),
                                 placement=placement,
                                 skip_first=options.skip_first,
@@ -546,6 +590,26 @@ def format_markdown(summary: Mapping[str, object]) -> str:
                     f"| {c['policy']} | {c['mean']:.1f} ± {c['std']:.1f} | {_pct(c['delta_pct'])} "
                     f"| [{c['ci95'][0]:+.2f}, {c['ci95'][1]:+.2f}] | {c['wins']} "
                     f"| {_gap(c['gap_closed'])} | {_verdict(c['verdict'])} |"
+                )
+            lines.append("")
+        if e.get("fairness"):
+            lines += [
+                "**Fairness frontier** (`cost:<alpha>` vs plain `cost`, LOOK; Δ with verdict)",
+                "",
+                "| alpha | total mean | wait mean | wait p95 | wait max | Δ total | Δ wait p95 "
+                "| Δ wait max |",
+                "|---:|---:|---:|---:|---:|---:|---:|---:|",
+            ]
+            for f in e["fairness"]:
+                deltas = [
+                    f"{f[m + '_vs_cost']['delta']:+.1f} {_MARK[f[m + '_vs_cost']['verdict']]}"
+                    if m + "_vs_cost" in f
+                    else ""
+                    for m in ("total_mean", "wait_p95", "wait_max")
+                ]
+                lines.append(
+                    f"| {f['fairness']:g} | {f['total_mean']:.1f} | {f['wait_mean']:.1f} "
+                    f"| {f['wait_p95']:.1f} | {f['wait_max']:.1f} | " + " | ".join(deltas) + " |"
                 )
             lines.append("")
         if e["motion_axis"]:

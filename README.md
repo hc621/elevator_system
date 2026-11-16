@@ -55,7 +55,9 @@ whatever a policy says, and the `Dispatcher` is the only code that changes a car
 - **`cost`**: for each car, simulate its future with and without the new passenger (`project()`
   runs the car's own motion rules, capacity check and door timing on a copy) and pick the car where
   the total time of everyone assigned to it grows least: the newcomer's wait and ride plus any
-  delay to passengers already assigned. Ties go to the lowest id.
+  delay to passengers already assigned. Ties go to the lowest id. An optional fairness weight
+  (`--fairness`, `cost:<α>` in the benchmark) adds α × the increase in the sum of squared waits;
+  see [Fairness vs efficiency](#fairness-vs-efficiency).
 - **LOOK**: keep going while any of this car's passengers need a floor ahead; reverse when nothing
   lies ahead; idle when there is no work. **SCAN**: the same, but always run to the end of the
   shaft before reversing.
@@ -129,6 +131,7 @@ Comparisons in `summary.json` / `summary.md`, per experiment:
 | 95% CI of Δ | paired percentile bootstrap, 2,000 resamples | Uncertainty: is the effect distinguishable from 0? |
 | gap closed | (excess_baseline − excess_policy) / excess_baseline | Share of the removable time a policy removes: 0% = no better than the baseline, 100% = reaches B0 |
 | verdict | better / worse / inconclusive | A claim needs the CI to exclude 0 *and* ≥ 80% of seeds to agree; only claimed results go in this README |
+| fairness frontier | for each `cost:<α>`: mean total, mean / p95 / max wait, and Δ total, Δ p95, Δ max vs plain `cost` with verdicts | Shows what the fairness weight buys (shorter tails) and what it costs (mean total time) |
 
 ## How results are measured
 
@@ -279,6 +282,71 @@ idle cars wait *during* a run is a different question (parking, not built).
 - Verdicts on `nearest` and `zone` depend on the stop time, so claims about them in this README
   name the door_time (the standard suite uses 1).
 
+## Fairness vs efficiency
+
+The brief's third bonus: the trade-off between serving everyone quickly (fairness) and optimising
+for the majority (efficiency). The `cost` policy takes a fairness weight α:
+
+```
+cost(car) = increase in Σ total time  +  α · increase in Σ wait²     (over that car's passengers)
+```
+
+Squaring the projected waits makes one passenger waiting 40 ticks cost as much as sixteen waiting
+10, and makes delaying someone who already waits long expensive (pushing a 30-tick wait to 33 adds
+189 to Σ wait²; pushing a 3-tick wait to 6 adds 27), so the policy stops trading one long wait for
+a few short ones. α = 0 is the plain policy. Fairness is judged on p95 and max wait, not the Jain
+index (see [Metrics](#metrics-what-we-measure-and-why)).
+
+```bash
+uv run elevator-sim bench --suite standard --seeds 20 --rates 0.25,0.55 --dispatch round_robin \
+    --fairness 0,0.05,0.2,1 --motion look -o results/fairness   # 1,600 runs, ~2 min
+uv run elevator-sim rush.csv -f 30 -e 4 --fairness 0.2          # a single run with α = 0.2
+```
+
+The sweep covers α = 0, 0.05, 0.2 and 1 at the standard load (0.25 requests per tick) and a heavy
+load (0.55). Per-α frontier tables are in `results/fairness/summary.md`; α = 0.2 against plain
+`cost`, paired by seed:
+
+| scenario | building | load | `cost`: total / p95 wait / max wait | α = 0.2: Δ total | Δ wait p95 | Δ wait max |
+|---|---|---|---|---:|---:|---:|
+| uniform | 30 × 4 | 0.25/tick | 20.1 / 21 / 34 | -0.1% ? | -0.9 ? | -2.5 ? |
+| uniform | 40 × 6 | 0.25/tick | 22.2 / 20 / 37 | +0.0% ? | -0.2 ? | -2.5 ? |
+| mixed | 30 × 4 | 0.25/tick | 23.1 / 21 / 35 | -1.0% ? | -0.4 ? | -3.8 ? |
+| mixed | 40 × 6 | 0.25/tick | 26.7 / 21 / 36 | -1.3% ✓ | -0.9 ? | -2.5 ? |
+| morning_rush | 30 × 4 | 0.25/tick | 27.0 / 24 / 30 | -0.2% ? | -0.0 ? | -0.1 ? |
+| morning_rush | 40 × 6 | 0.25/tick | 34.7 / 32 / 38 | +0.3% ? | -0.2 ? | -0.7 ? |
+| evening_rush | 30 × 4 | 0.25/tick | 26.7 / 28 / 42 | -0.4% ? | -0.7 ? | -2.4 ? |
+| evening_rush | 40 × 6 | 0.25/tick | 31.8 / 33 / 44 | -0.2% ? | -0.6 ? | -1.4 ? |
+| uniform | 30 × 4 | 0.55/tick | 27.3 / 34 / 66 | -1.5% ? | -2.9 ? | -13.9 ✓ |
+| uniform | 40 × 6 | 0.55/tick | 27.6 / 28 / 56 | -2.1% ? | -2.7 ? | -13.6 ✓ |
+| mixed | 30 × 4 | 0.55/tick | 29.2 / 31 / 59 | -1.9% ? | -1.6 ? | -14.3 ✓ |
+| mixed | 40 × 6 | 0.55/tick | 31.3 / 27 / 43 | -2.3% ? | -2.1 ? | -0.9 ? |
+| morning_rush | 30 × 4 | 0.55/tick | 35.6 / 37 / 52 | +2.1% ? | +0.6 ? | -3.8 ? |
+| morning_rush | 40 × 6 | 0.55/tick | 40.0 / 36 / 49 | +0.2% ? | -1.1 ? | -5.8 ✓ |
+| evening_rush | 30 × 4 | 0.55/tick | 31.3 / 35 / 59 | -1.1% ? | -2.4 ? | -6.0 ? |
+| evening_rush | 40 × 6 | 0.55/tick | 34.2 / 34 / 55 | -0.9% ? | -1.8 ✓ | -4.2 ? |
+
+✓ better, ? inconclusive, ✗ worse (claim rule as above; the max is noisy, so few results clear
+the 80%-of-seeds bar).
+
+**What we found**
+- **At the standard load there is nothing to trade.** Plain `cost`'s worst wait is already about
+  one round trip (30-44 ticks); the fairness term changes it by 0-4 ticks, all inconclusive.
+- **Under heavy load it trims the worst waits**: max wait falls by about 14 ticks (21-24%) in
+  uniform traffic (both buildings) and mixed 30 × 4, and by 6 in the 40-floor morning rush, all
+  significant.
+- **We found no efficiency price.** Mean total time is never significantly worse at any α tested,
+  and at heavy load it is often slightly better (-1% to -3%; significant in 3 of the 24 heavy-load
+  comparisons). The only hint of a cost is the heavy 30-floor morning rush (+2%, inconclusive).
+  A likely reason: plain `cost` is greedy, so leaving one passenger waiting long is not even good
+  for the total; the penalty corrects some of those greedy choices.
+- **No guarantee per input.** On a small starvation-prone case (20 floors, 3 cars, 120 requests in
+  200 ticks), α = 1 lowers the max wait in 20 of 30 seeds but raises it in 7.
+- So, within `cost`, fairness and efficiency did not conflict in our settings. The visible
+  trade-off is between policies: round-robin gives the most *equal* waits (highest Jain index)
+  but the longest ones. The default stays α = 0 so the headline results are the plain policy;
+  α = 0.2 is a reasonable setting when the building runs heavy.
+
 ## Assumptions and trade-offs
 
 The brief fixes 1 tick = 1 floor, no peeking ahead, and immediate assignment of each passenger to
@@ -352,7 +420,9 @@ one car. Everything else below is a choice made here.
 **Known gap: starvation.** Nothing proves that every passenger is eventually served. LOOK keeps
 sweeping back in practice, but under sustained heavy load a full car could keep passing someone.
 The simulator stops with an error if nobody boards or alights for a long stretch while passengers
-are waiting, so this can't hang silently. A fairness rule that bounds the wait is the planned fix.
+are waiting, so this can't hang silently. The fairness weight (above) shortens the worst waits
+under heavy load but gives no per-passenger bound; a hard bound would need re-assigning a
+passenger whose wait passes a limit, or a car that must serve the oldest request next.
 
 ## Development
 

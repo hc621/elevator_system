@@ -45,6 +45,7 @@ class Projection:
     pickup_eta: Mapping[PassengerId, Tick]  # passengers not yet aboard
     dropoff_eta: Mapping[PassengerId, Tick]
     total_time: int  # sum over the car's passengers of (dropoff_eta - request time)
+    waits: Mapping[PassengerId, int]  # pickup_eta - request time, for passengers not yet aboard
 
 
 class Car:
@@ -261,7 +262,8 @@ def _build_projection(
     if open_stop:
         flush()
     total = sum(dropoff[pid] - r.time for pid, r in passengers.items())
-    return Projection(tuple(stops), pickup, dropoff, total)
+    waits = {pid: tick - passengers[pid].time for pid, tick in pickup.items()}
+    return Projection(tuple(stops), pickup, dropoff, total, waits)
 
 
 class CarView:
