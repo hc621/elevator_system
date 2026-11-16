@@ -71,6 +71,9 @@ class Car:
         self.waiting: dict[PassengerId, Request] = {}  # assigned, not yet aboard
         self.onboard: dict[PassengerId, Request] = {}
 
+        self.park_floor: Floor | None = None  # where to wait while idle (parking policy)
+        self.park_decided = False  # the parking policy has been asked since the car went idle
+
         self.next_tick: Tick = 0
         self._stepped = False
         self._pending_move: Direction | None = None
@@ -108,6 +111,10 @@ class Car:
     def assign(self, request: Request) -> None:
         if request.id in self.waiting or request.id in self.onboard:
             raise ValueError(f"passenger {request.id!r} is already assigned to car {self.id}")
+        if not self.has_passengers and self.doors is Doors.CLOSED:
+            self.direction = Direction.IDLE  # a parking car drops its target and chooses afresh
+        self.park_floor = None
+        self.park_decided = False
         self.waiting[request.id] = request
 
     def step(self, now: Tick) -> list[Event]:
@@ -200,6 +207,11 @@ class Car:
                     )
                 self.direction = action.direction
                 self._pending_move = action.direction
+                return
+            if self.park_floor is not None and self.park_floor != self.floor:
+                # No work: drive towards the parking floor (no stop, no door time).
+                self.direction = Direction.UP if self.park_floor > self.floor else Direction.DOWN
+                self._pending_move = self.direction
                 return
             self.direction = Direction.IDLE
             return

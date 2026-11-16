@@ -48,6 +48,7 @@ from elevator_sim.html_report import render_bench, render_run
 from elevator_sim.journal import Journal
 from elevator_sim.model import PLACEMENTS, BuildingConfig, Floor
 from elevator_sim.motion import MOTION_POLICIES, make_motion
+from elevator_sim.parking import PARKING_POLICIES, make_parking
 from elevator_sim.report import TRIP_KINDS, aggregate, trip_kind
 from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
@@ -110,6 +111,12 @@ def _parser() -> argparse.ArgumentParser:
         help="cost policy only: weight on squared waits (0 = plain cost; e.g. 0.2)",
     )
     run.add_argument("--motion", choices=sorted(MOTION_POLICIES), default="look")
+    run.add_argument(
+        "--parking",
+        choices=sorted(PARKING_POLICIES),
+        default="stay",
+        help="where idle cars wait (default stay)",
+    )
     run.add_argument("-o", "--out", type=Path, default=Path("out"), help="output directory")
     run.add_argument("--journal", type=Path, help="also save the event journal (JSONL) here")
     run.add_argument(
@@ -152,6 +159,12 @@ def _parser() -> argparse.ArgumentParser:
     bench.add_argument("--scenarios", type=_csv_of(str, sorted(SCENARIOS)))
     bench.add_argument("--dispatch", type=_csv_of(str, sorted(DISPATCH_POLICIES)))
     bench.add_argument("--motion", type=_csv_of(str, sorted(MOTION_POLICIES)))
+    bench.add_argument(
+        "--parking",
+        type=_csv_of(str, sorted(PARKING_POLICIES)),
+        default=("stay",),
+        help="parking policies, e.g. stay,lobby,spread,demand (each vs stay)",
+    )
     bench.add_argument(
         "--fairness",
         type=_csv_of(float),
@@ -198,6 +211,7 @@ def _run(args: argparse.Namespace) -> int:
         IteratorFeed(read_requests(args.input)),
         make_dispatch(_dispatch_name(args)),
         make_motion(args.motion),
+        parking=make_parking(args.parking),
         journal_routes=args.journal_routes,
         max_ticks=args.max_ticks,
     )
@@ -242,6 +256,7 @@ def _bench(args: argparse.Namespace) -> int:
         motion=args.motion,
         skip_first=args.skip_first,
         fairness=args.fairness,
+        parking=args.parking,
     )
     experiments = build_suite(args.suite, options)
     result = Benchmark(args.workers).run(experiments)

@@ -30,3 +30,4 @@ out/
 results/sensitivity/raw.jsonl
 results/fairness/raw.jsonl
 results/buildings/raw.jsonl
+results/parking/raw.jsonl

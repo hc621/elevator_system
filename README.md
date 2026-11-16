@@ -17,7 +17,7 @@ traffic, explains *why* one policy beats another, and renders the results as an 
 [How results are measured](#how-results-are-measured) ·
 [Sensitivity](#sensitivity-stop-time-and-start-position) ·
 [Building sweep](#building-sweep-floors-cars-and-capacity) ·
-[Fairness](#fairness-vs-efficiency) · [Visual report](#visual-report) ·
+[Parking](#parking-idle-cars) · [Fairness](#fairness-vs-efficiency) · [Visual report](#visual-report) ·
 [Reproduce every result](#reproduce-every-result) · [Testing](#testing) ·
 [Assumptions and trade-offs](#assumptions-and-trade-offs) ·
 [What I'd improve](#what-id-improve-with-more-time) · [How I used AI](#how-i-used-ai) ·
@@ -77,6 +77,10 @@ and at least 80% of seeds agree. Details and tables are in the sections linked.
   60-floor office at rush hour, more cars help with diminishing returns past 6, and capacity only
   matters when it is tight (at capacity 4, `cost`'s capacity-aware projection cuts full-car
   pass-bys to 7-21% vs 20-39% for round-robin).
+- **Parking idle cars helps when it matches the traffic**: back to the lobby before the morning
+  rush (up to 17% better), spread out when it's quiet (5.5%); a demand-following policy is never
+  worse and needs no knowledge of the scenario, at the price of extra travel.
+  [Parking](#parking-idle-cars)
 - **Fairness costs nothing measurable**: a fairness weight on `cost` trims the worst rush-hour waits
   by 7-10 ticks under heavy load with no significant change in mean total time; there is no
   per-passenger guarantee. [Fairness](#fairness-vs-efficiency)
@@ -119,6 +123,7 @@ elevator_sim/
   motion.py       motion policies: LOOK, SCAN (where a car goes, when it stops, who boards)
   car.py          the Car state machine (doors, capacity) and project(), the only look-ahead
   dispatch.py     dispatch policies: cost (+ fairness), nearest, zone, round_robin
+  parking.py      parking policies: stay, lobby, spread, demand (where idle cars wait)
   dispatcher.py   per tick: assign new requests, step every car; the only code that changes cars
   simulator.py    Simulator (one tick at a time) and simulate() (a whole run)
   events.py       the event types; journal.py: the append-only journal (save / load as JSONL)
@@ -129,8 +134,8 @@ elevator_sim/
   html_report.py  the self-contained HTML report
   __main__.py     the CLI: run, summarize, generate, bench, report
 scripts/          install.sh (uv setup); readme_tables.py (the README's tables from results/)
-tests/            227 tests (unit, scenario, golden, invariant, benchmark, report, CLI)
-results/          committed benchmark summaries (standard, sensitivity, fairness, buildings)
+tests/            246 tests (unit, scenario, golden, invariant, benchmark, report, CLI)
+results/          committed benchmark summaries (standard, sensitivity, fairness, buildings, parking)
 ```
 
 Information flows one way: feed → clock → dispatcher → cars → journal → report. Policies get
@@ -211,6 +216,7 @@ Comparisons in `summary.json` / `summary.md`, per experiment:
 | 95% CI of Δ | paired percentile bootstrap, 2,000 resamples | Uncertainty: is the effect distinguishable from 0? |
 | gap closed | (excess_baseline − excess_policy) / excess_baseline | Share of the removable time a policy removes: 0% = no better than the baseline, 100% = reaches B0 |
 | verdict | better / worse / inconclusive | A claim needs the CI to exclude 0 *and* ≥ 80% of seeds to agree; only claimed results go in this README |
+| parking vs stay | for each parking policy: Δ mean total, mean wait, max wait and floors travelled per passenger vs `stay`, paired by seed | What parking buys (shorter waits) and what it costs (extra travel) |
 | fairness frontier | for each `cost:<α>`: mean total, mean / p95 / max wait, and Δ total, Δ p95, Δ max vs plain `cost` with verdicts | Shows what the fairness weight buys (shorter tails) and what it costs (mean total time) |
 
 ## Traffic scenarios: a business building
@@ -517,6 +523,69 @@ trend line.
   `cost` vs 20-39% under round-robin and 35-54% under `nearest`, and p95 wait 40-71 ticks vs
   122-232 (round-robin). Above capacity 6 the rushes barely change.
 
+## Parking idle cars
+
+When a car has no passengers and no assignments, where should it wait? A **parking policy**
+answers once, when the car goes idle; the car then drives there (a real move: it shows in the
+positions log, floors travelled and car trips) and drops the target the moment it is assigned a
+passenger. The decision is made at the end of the tick the car goes idle, so it leaves on the
+next tick. A policy sees read-only car views, the floors other idle cars hold, and requests
+already made, never future ones (a spy test checks this).
+
+| Policy | Rule |
+|---|---|
+| `stay` (default) | wait where the last trip ended |
+| `lobby` | go back to floor 1 |
+| `spread` | car i waits at its own home floor, spaced evenly up the building |
+| `demand` | wait at the floor where the most requests started in the last 100 ticks, skipping floors another idle car already holds |
+
+```bash
+uv run elevator-sim bench --suite standard --seeds 20 --parking stay,lobby,spread,demand \
+    --dispatch cost,round_robin --motion look -o results/parking    # 1,280 runs, ~1 min
+uv run elevator-sim rush.csv -f 30 -e 4 --parking lobby             # a single run
+```
+
+Each policy against `stay` on the same seeds and passengers (`cost` dispatch, LOOK; Δ mean total
+time with verdict, and the change in floors travelled per passenger, the price of parking moves):
+
+| scenario | building | `cost`, stay | `lobby`: Δ total, extra floors | `spread`: Δ total, extra floors | `demand`: Δ total, extra floors |
+|---|---|---:|---:|---:|---:|
+| quiet | 30 × 4 | 19.6 | +5.4% ✗, +30% | -5.5% ✓, +40% | -3.6% ✓, +25% |
+| quiet | 40 × 6 | 23.2 | +9.8% ✗, +35% | -5.5% ✓, +54% | -3.4% ✓, +29% |
+| morning_rush | 30 × 4 | 28.3 | -6.4% ✓, +24% | -5.0% ✓, +19% | -5.7% ✓, +19% |
+| morning_rush | 40 × 6 | 36.8 | -17.1% ✓, +51% | -15.0% ✓, +33% | -13.5% ✓, +30% |
+| lunch | 30 × 4 | 25.3 | -0.4% ?, +6% | -1.8% ?, +7% | -0.1% ?, +6% |
+| lunch | 40 × 6 | 28.2 | +1.0% ?, +15% | +0.1% ?, +15% | -0.5% ?, +13% |
+| evening_rush | 30 × 4 | 28.5 | +0.5% ?, +1% | -2.2% ?, +5% | -0.3% ?, +4% |
+| evening_rush | 40 × 6 | 32.5 | -0.4% ?, +0% | -3.9% ✓, +13% | -3.0% ✓, +8% |
+
+**What it shows**
+- **`lobby` does its job**: it is the best policy in the morning rush (-6%, -17%), and it backfires
+  when it's quiet (+5%, +10%), where the next passenger is rarely at the lobby.
+- **`spread` is best when it's quiet** (-5.5% in both buildings, max wait 4.5-7 ticks shorter) and
+  also helps the morning rush, at the highest travel cost (up to +54% floors per passenger).
+- **`demand` is never significantly worse** and helps in 5 of the 8 experiments, with less extra
+  travel than `spread`. In the morning rush most recent requests start at the lobby, so it parks
+  there by itself; when it's quiet it scatters the cars much like `spread`.
+- **At lunch and in the 30-floor evening rush nothing helps**: the cars are rarely idle.
+- **Round-robin gains nothing from any parking policy** (all inconclusive, within ±2.5%): it
+  never looks at where the cars are, so where they wait doesn't matter to it. Parking only pays
+  for a dispatcher that uses car positions.
+- **Parking costs travel**: up to +54% floors per passenger under `cost` (0-15% at lunch and in
+  the evening rush, where cars are rarely idle).
+
+**Decisions** (made before the results, revisited with them)
+1. **Keep `demand`.** A recent request at a floor could mean that passenger has already gone, or
+   that colleagues on the same floor of an office will leave around the same time; rather than
+   assume, let the simulation decide. It did: `demand` is never worse, and in the morning rush the
+   "colleagues follow" reading wins.
+2. **`lobby` stays a simple rule** (every idle car goes to floor 1, no cap): it exists to handle the
+   morning rush, and the results confirm it is best there and only there.
+3. **`stay` remains the default.** A trip to a parking floor is itself a cost to the building
+   (energy, wear), and the table shows that cost is real; the headline results use no parking.
+   `demand` is the best all-round choice when that travel is acceptable; `lobby` before a known
+   morning rush.
+
 ## Fairness vs efficiency
 
 The brief's third bonus: the trade-off between serving everyone quickly (fairness) and optimising
@@ -620,20 +689,22 @@ uv run elevator-sim bench --suite standard --seeds 20 --door-times 0,1,2 --place
 uv run elevator-sim bench --suite standard --seeds 20 --loads 1,1.5 --dispatch round_robin \
     --fairness 0,0.05,0.2,1 --motion look -o results/fairness
 uv run elevator-sim bench --suite buildings --seeds 20 -o results/buildings
+uv run elevator-sim bench --suite standard --seeds 20 --parking stay,lobby,spread,demand \
+    --dispatch cost,round_robin --motion look -o results/parking
 uv run python scripts/readme_tables.py                  # prints every results table in this README
-for r in standard sensitivity fairness buildings; do
+for r in standard sensitivity fairness buildings parking; do
     uv run elevator-sim report results/$r -o out/$r.html
 done
 ```
 
-About 15 minutes on 10 cores in total. Runs are deterministic: the same command gives
+About 16 minutes on 10 cores in total. Runs are deterministic: the same command gives
 byte-identical `raw.jsonl` files (a test checks this, in-process and across worker processes).
-`summary.json` and `summary.md` are committed for all four studies; `raw.jsonl` only for the
+`summary.json` and `summary.md` are committed for all five studies; `raw.jsonl` only for the
 standard suite (the others are large and regenerated by the commands above).
 
 ## Testing
 
-227 tests (`uv run pytest --cov`, about 10 s; coverage 99%, gate 95%; CI on Python 3.10-3.13).
+246 tests (`uv run pytest --cov`, about 11 s; coverage 99%, gate 95%; CI on Python 3.10-3.13).
 Expected values in the hand-worked tests were computed by hand first, tick by tick, and the tests
 written to match; the comments show the working.
 
@@ -650,6 +721,7 @@ written to match; the comments show the working.
 | **Liveness guards** | A policy that never serves anyone is caught; a long idle gap is not mistaken for a stall | `test_simulate.py::test_a_car_that_stops_serving_after_assignment_trips_the_stall_guard` |
 | **Scenarios** | Each Poisson stream has the right rate and variance ≈ mean; the inter-floor passengers are identical in every scenario; the quiet inbound stream is contained in the rush's | `test_scenarios.py::test_arrivals_are_poisson_with_the_scenario_rates`, `::test_streams_are_generated_once_and_shared_by_every_scenario` |
 | **Measurement** | Every policy in a seed sees identical requests (fingerprints); B0 equals the mean direct ride; gap closed is 0 at the baseline and 1 at the floor; the verdict needs both significance and consistency | `test_bench.py` |
+| **Parking** | An idle car returns to the lobby and a waiting passenger then boards at once (wait 0 vs 5); a parking car turns around as soon as it is assigned; `spread` homes; `demand` picks the busiest recent floor, skips claimed floors and never sees a future request; every invariant holds under every parking policy | `test_parking.py` |
 | **Diagnostics, fairness, report** | Assignment-state classification; full-car pass-bys; α = 0 is exactly plain `cost`; fairness shortens the longest wait on a starvation-prone input but not on every input; the HTML report is self-contained and escapes data | `test_diagnostics.py`, `test_fairness.py`, `test_html_report.py` |
 
 ## Assumptions and trade-offs
@@ -665,7 +737,8 @@ one car. Everything else below is a choice made here.
 
 **Building**
 - Floors are 1..n with no basement; every car serves every floor; cars start at the lobby
-  (`--placement` changes that).
+  (`--placement` changes that) and an idle car stays where it is (`--parking` changes that; see
+  [Parking](#parking-idle-cars)).
 - **Doors: `--door-time 1` by default.** A stop holds the car at the floor for `door_time + 1`
   ticks. The brief doesn't model doors; without a cost for stopping, sharing a car is free and
   every policy looks better than it would in a real building. `--door-time 0` gives the brief's
@@ -740,8 +813,9 @@ passenger whose wait passes a limit, or a car that must serve the oldest request
 - **Sectoring when the up-peak saturates.** In an overloaded morning rush `zone` beats `cost`;
   switching to destination sectoring above a load threshold, or a cost that accounts for round-trip
   time, should get the best of both.
-- **Parking idle cars** (lobby before the morning rush, spread when quiet) and **express banks /
-  sky lobbies** (cars that skip floors, with transfers): both designed in the plan, not built.
+- **Express banks / sky lobbies** (cars that skip floors, with transfers): designed in the plan,
+  not built. And a parking policy that switches with the time of day (lobby before the morning
+  rush, `demand` otherwise).
 - **A full-day timeline** with rates that change through the day, calibrated against real
   building data rather than illustrative rates, and other building types (residential reverses
   the rushes).
@@ -760,7 +834,9 @@ implementation plan with an AI assistant beforehand. The split:
   (wait percentiles, travels, car trips); the reasoning for deciding pickups on arrival from the
   car's actual load; the business-building traffic model (three Poisson streams, inter-floor at a
   steady rate, rushes as heavy inbound or outbound, generated once per seed); demand scaling with
-  floors in the building sweep; and keeping α = 0 as the default.
+  floors in the building sweep; keeping α = 0 as the default; and for parking, keeping `demand`
+  to let the results decide, `lobby` as a simple morning-rush rule, and `stay` as the default
+  because parking moves cost the building.
 - **Delegated**: most of the code and tests, running the benchmarks, drafting the analysis and
   the README text, which I then questioned and edited.
 - **How I checked it**: every README table is generated from `results/` by
@@ -794,7 +870,7 @@ About **5.5 hours** in total:
 
 ```bash
 ./scripts/install.sh                          # or, with uv already installed: uv sync
-uv run pytest --cov                           # 227 tests, coverage gate 95% (currently 99%)
+uv run pytest --cov                           # 246 tests, coverage gate 95% (currently 99%)
 uv run ruff check . && uv run ruff format --check .
 ```
 

@@ -148,7 +148,11 @@ def report_to_dict(report: RunReport) -> dict[str, object]:
             "capacities": [c.capacity for c in cfg.cars],
             "door_time": cfg.door_time,
         },
-        "policies": {"dispatch": report.dispatch, "motion": report.motion},
+        "policies": {
+            "dispatch": report.dispatch,
+            "motion": report.motion,
+            "parking": report.parking,
+        },
         "ticks": report.ticks,
         "last_dropoff": report.makespan,
         "travels": {"completed": len(report.passengers), "unserved": len(report.unserved)},
@@ -242,7 +246,8 @@ def format_summary(report: RunReport) -> str:
         "Elevator simulation summary",
         f"  building : {cfg.floors} floors, {len(cfg.cars)} cars, capacity {capacity}, "
         f"door_time {cfg.door_time}",
-        f"  policies : dispatch={report.dispatch}, motion={report.motion}",
+        f"  policies : dispatch={report.dispatch}, motion={report.motion}, "
+        f"parking={report.parking}",
         f"  travels  : {len(report.passengers)} passengers delivered"
         + (f", UNSERVED {len(report.unserved)}" if report.unserved else ""),
         f"  time     : {report.ticks} ticks logged (t=0..{report.ticks - 1}), "

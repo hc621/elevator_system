@@ -13,6 +13,7 @@ from elevator_sim.feed import Clock, RequestFeed, SimulationStalled, ValidatingF
 from elevator_sim.journal import Journal
 from elevator_sim.model import BuildingConfig, Request, Tick
 from elevator_sim.motion import LookMotion, MotionPolicy
+from elevator_sim.parking import ParkingPolicy, StayParking
 
 
 class _ProgressSink:
@@ -41,20 +42,22 @@ class Simulator:
         *,
         journal_routes: bool = False,
         max_ticks: int | None = None,
+        parking: ParkingPolicy | None = None,
     ) -> None:
         motion = motion if motion is not None else LookMotion()
+        parking = parking if parking is not None else StayParking()
         self.config = config
         self.clock = Clock(max_ticks)
         self._sink = _ProgressSink(sink if sink is not None else NullSink())
         self._dispatcher = Dispatcher(
-            config, dispatch, motion, self._sink, journal_routes=journal_routes
+            config, dispatch, motion, self._sink, journal_routes=journal_routes, parking=parking
         )
         self._pending: list[tuple[Tick, int, Request]] = []
         self._seq = 0
         # Liveness guard: with passengers in the system, someone must board or alight within this
         # many ticks (a full sweep of the shaft and back, with a stop on every floor, twice over).
         self._stall_after = 4 * (config.floors + 1) * (config.door_time + 2)
-        self._sink.emit(RunStarted(0, config, dispatch.name, motion.name))
+        self._sink.emit(RunStarted(0, config, dispatch.name, motion.name, parking.name))
 
     @property
     def now(self) -> Tick:
@@ -99,12 +102,19 @@ def simulate(
     *,
     journal_routes: bool = False,
     max_ticks: int | None = None,
+    parking: ParkingPolicy | None = None,
 ) -> Journal:
     """Run a feed to completion: every request released, every passenger delivered."""
     feed = ValidatingFeed(feed, config.floors)
     journal = Journal()
     sim = Simulator(
-        config, dispatch, motion, journal, journal_routes=journal_routes, max_ticks=max_ticks
+        config,
+        dispatch,
+        motion,
+        journal,
+        journal_routes=journal_routes,
+        max_ticks=max_ticks,
+        parking=parking,
     )
     while True:
         for request in feed.release(sim.now):

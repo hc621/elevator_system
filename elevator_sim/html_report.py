@@ -793,6 +793,7 @@ def _short_title(key: Mapping[str, Any]) -> str:
     return (
         f"{key['scenario']} · {key['floors']}×{key['cars']} · cap {key['capacity']} · "
         f"door {key['door_time']} · {key['placement']} · {load}"
+        + (f" · park {key['parking']}" if key.get("parking", "stay") != "stay" else "")
     )
 
 
@@ -834,6 +835,7 @@ def render_bench(summary: Mapping[str, Any]) -> str:
             )
         )
 
+    body.extend(_parking_cards(summary.get("parking", [])))
     body.extend(_building_cards(experiments))
 
     options = "".join(
@@ -856,6 +858,36 @@ def render_bench(summary: Mapping[str, Any]) -> str:
 
 
 POLICY_COLORS = {"cost": 0, "nearest": 1, "zone": 2, "round_robin": 3}
+
+
+def _parking_cards(comparisons: Sequence[Mapping[str, Any]]) -> list[str]:
+    """Each parking policy vs stay (cost dispatch): Δ mean total with CI, per experiment."""
+    cost = [c for c in comparisons if c["dispatch"] == "cost"]
+    if not cost:
+        return []
+    cards = []
+    for policy in dict.fromkeys(c["parking"] for c in cost):
+        rows = []
+        table = []
+        for c in (c for c in cost if c["parking"] == policy):
+            k, t, d = c["key"], c["total_mean"], c["distance_per_passenger"]
+            name = f"{k['scenario']} · {k['floors']}×{k['cars']}"
+            rows.append((name, t["delta"], t["ci95"][0], t["ci95"][1], t["verdict"]))
+            table.append([name, _num(t["stay"]), _num(t["policy"]), f"{t['delta_pct']:+.1%}",
+                          t["verdict"], f"{d['delta_pct']:+.0%}"])  # fmt: skip
+        chart = delta_chart(rows, f"parking {policy} vs stay (cost dispatch)")
+        view = _table_view(
+            ["experiment", "stay", policy, "Δ total", "verdict", "Δ floors per passenger"], table
+        )
+        cards.append(
+            _card(
+                f"Parking: {policy} vs stay",
+                "Change in mean total time per passenger (ticks; left is better) with the paired "
+                "95% CI; cost dispatch, LOOK. The table adds the extra floors travelled.",
+                chart + view,
+            )
+        )
+    return cards
 
 
 def _building_cards(experiments: Sequence[Mapping[str, Any]]) -> list[str]:

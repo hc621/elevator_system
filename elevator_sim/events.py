@@ -31,6 +31,7 @@ class RunStarted:
     config: BuildingConfig
     dispatch: str
     motion: str
+    parking: str = "stay"
 
 
 @dataclass(frozen=True)

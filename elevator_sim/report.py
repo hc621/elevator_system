@@ -185,6 +185,7 @@ class RunReport:
     diagnostics: Diagnostics
     by_trip: Mapping[str, TripStats]  # keyed by TRIP_KINDS
     observations: tuple[str, ...]
+    parking: str = "stay"
 
 
 def aggregate(journal: Journal, config: BuildingConfig | None = None) -> RunReport:
@@ -224,6 +225,7 @@ def aggregate(journal: Journal, config: BuildingConfig | None = None) -> RunRepo
         config=config,
         dispatch=run.dispatch if run else "?",
         motion=run.motion if run else "?",
+        parking=run.parking if run else "?",
         passengers=tuple(records),
         unserved=tuple(unserved),
         wait=wait,

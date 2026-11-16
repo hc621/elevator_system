@@ -1,0 +1,6889 @@
+{
+  "parking": [
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 19.6126,
+        "policy": 20.6774,
+        "delta": 1.0648,
+        "delta_pct": 0.0543,
+        "ci95": [
+          0.5711,
+          1.5641
+        ],
+        "wins": "4/20",
+        "verdict": "worse"
+      },
+      "wait_mean": {
+        "stay": 5.9926,
+        "policy": 7.0339,
+        "delta": 1.0413,
+        "delta_pct": 0.1738,
+        "ci95": [
+          0.563,
+          1.5205
+        ],
+        "wins": "2/20",
+        "verdict": "worse"
+      },
+      "wait_max": {
+        "stay": 26.4,
+        "policy": 30.8,
+        "delta": 4.4,
+        "delta_pct": 0.1667,
+        "ci95": [
+          1.45,
+          8.4
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.7252,
+        "policy": 19.0721,
+        "delta": 4.3469,
+        "delta_pct": 0.2952,
+        "ci95": [
+          3.9754,
+          4.781
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 19.6126,
+        "policy": 18.5255,
+        "delta": -1.0871,
+        "delta_pct": -0.0554,
+        "ci95": [
+          -1.5127,
+          -0.6629
+        ],
+        "wins": "16/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 5.9926,
+        "policy": 4.9774,
+        "delta": -1.0152,
+        "delta_pct": -0.1694,
+        "ci95": [
+          -1.4404,
+          -0.5937
+        ],
+        "wins": "16/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 26.4,
+        "policy": 21.9,
+        "delta": -4.5,
+        "delta_pct": -0.1705,
+        "ci95": [
+          -6.15,
+          -3.1
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "distance_per_passenger": {
+        "stay": 14.7252,
+        "policy": 20.5935,
+        "delta": 5.8683,
+        "delta_pct": 0.3985,
+        "ci95": [
+          5.4291,
+          6.3119
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 19.6126,
+        "policy": 18.9032,
+        "delta": -0.7094,
+        "delta_pct": -0.0362,
+        "ci95": [
+          -1.0774,
+          -0.3442
+        ],
+        "wins": "17/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 5.9926,
+        "policy": 5.31,
+        "delta": -0.6825,
+        "delta_pct": -0.1139,
+        "ci95": [
+          -1.0429,
+          -0.3287
+        ],
+        "wins": "17/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 26.4,
+        "policy": 24.8,
+        "delta": -1.6,
+        "delta_pct": -0.0606,
+        "ci95": [
+          -2.9,
+          -0.3
+        ],
+        "wins": "12/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.7252,
+        "policy": 18.3533,
+        "delta": 3.6281,
+        "delta_pct": 0.2464,
+        "ci95": [
+          3.3229,
+          3.9407
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 28.4728,
+        "policy": 28.4423,
+        "delta": -0.0305,
+        "delta_pct": -0.0011,
+        "ci95": [
+          -0.4885,
+          0.4884
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 14.9849,
+        "policy": 14.9418,
+        "delta": -0.0431,
+        "delta_pct": -0.0029,
+        "ci95": [
+          -0.4976,
+          0.4701
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 47.8,
+        "policy": 49.05,
+        "delta": 1.25,
+        "delta_pct": 0.0262,
+        "ci95": [
+          -1.55,
+          3.95
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 21.4125,
+        "policy": 25.3874,
+        "delta": 3.9749,
+        "delta_pct": 0.1856,
+        "ci95": [
+          3.5027,
+          4.4508
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 28.4728,
+        "policy": 27.9389,
+        "delta": -0.5338,
+        "delta_pct": -0.0187,
+        "ci95": [
+          -1.193,
+          0.0529
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 14.9849,
+        "policy": 14.4447,
+        "delta": -0.5402,
+        "delta_pct": -0.0361,
+        "ci95": [
+          -1.199,
+          0.0453
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 47.8,
+        "policy": 49.05,
+        "delta": 1.25,
+        "delta_pct": 0.0262,
+        "ci95": [
+          -1.3,
+          4.0
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 21.4125,
+        "policy": 25.9493,
+        "delta": 4.5368,
+        "delta_pct": 0.2119,
+        "ci95": [
+          4.0055,
+          5.0896
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 28.4728,
+        "policy": 27.8492,
+        "delta": -0.6235,
+        "delta_pct": -0.0219,
+        "ci95": [
+          -1.0736,
+          -0.1402
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 14.9849,
+        "policy": 14.366,
+        "delta": -0.6189,
+        "delta_pct": -0.0413,
+        "ci95": [
+          -1.0684,
+          -0.1341
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 47.8,
+        "policy": 48.6,
+        "delta": 0.8,
+        "delta_pct": 0.0167,
+        "ci95": [
+          -1.35,
+          3.0
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 21.4125,
+        "policy": 24.1246,
+        "delta": 2.7121,
+        "delta_pct": 0.1267,
+        "ci95": [
+          2.3725,
+          3.0773
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 23.2429,
+        "policy": 25.5173,
+        "delta": 2.2744,
+        "delta_pct": 0.0979,
+        "ci95": [
+          1.8079,
+          2.7526
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      },
+      "wait_mean": {
+        "stay": 5.437,
+        "policy": 7.6565,
+        "delta": 2.2195,
+        "delta_pct": 0.4082,
+        "ci95": [
+          1.7637,
+          2.6883
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      },
+      "wait_max": {
+        "stay": 29.9,
+        "policy": 37.45,
+        "delta": 7.55,
+        "delta_pct": 0.2525,
+        "ci95": [
+          4.85,
+          10.5
+        ],
+        "wins": "0/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 18.4829,
+        "policy": 24.9675,
+        "delta": 6.4846,
+        "delta_pct": 0.3508,
+        "ci95": [
+          5.8366,
+          7.0957
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 23.2429,
+        "policy": 21.9651,
+        "delta": -1.2778,
+        "delta_pct": -0.055,
+        "ci95": [
+          -1.7051,
+          -0.8612
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 5.437,
+        "policy": 4.2569,
+        "delta": -1.18,
+        "delta_pct": -0.217,
+        "ci95": [
+          -1.5986,
+          -0.7602
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 29.9,
+        "policy": 22.95,
+        "delta": -6.95,
+        "delta_pct": -0.2324,
+        "ci95": [
+          -9.4,
+          -4.35
+        ],
+        "wins": "17/20",
+        "verdict": "better"
+      },
+      "distance_per_passenger": {
+        "stay": 18.4829,
+        "policy": 28.4358,
+        "delta": 9.9529,
+        "delta_pct": 0.5385,
+        "ci95": [
+          9.3239,
+          10.5967
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 23.2429,
+        "policy": 22.4527,
+        "delta": -0.7901,
+        "delta_pct": -0.034,
+        "ci95": [
+          -1.2829,
+          -0.3846
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 5.437,
+        "policy": 4.7149,
+        "delta": -0.7221,
+        "delta_pct": -0.1328,
+        "ci95": [
+          -1.2109,
+          -0.3267
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 29.9,
+        "policy": 28.5,
+        "delta": -1.4,
+        "delta_pct": -0.0468,
+        "ci95": [
+          -3.15,
+          0.1
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 18.4829,
+        "policy": 23.8589,
+        "delta": 5.376,
+        "delta_pct": 0.2909,
+        "ci95": [
+          4.8773,
+          5.8724
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 35.6638,
+        "policy": 35.251,
+        "delta": -0.4129,
+        "delta_pct": -0.0116,
+        "ci95": [
+          -1.2152,
+          0.3162
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 18.0334,
+        "policy": 17.6141,
+        "delta": -0.4193,
+        "delta_pct": -0.0233,
+        "ci95": [
+          -1.2196,
+          0.3077
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 62.1,
+        "policy": 60.0,
+        "delta": -2.1,
+        "delta_pct": -0.0338,
+        "ci95": [
+          -6.25,
+          1.2
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 29.9993,
+        "policy": 37.4069,
+        "delta": 7.4076,
+        "delta_pct": 0.2469,
+        "ci95": [
+          6.7969,
+          8.0603
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 35.6638,
+        "policy": 34.7844,
+        "delta": -0.8794,
+        "delta_pct": -0.0247,
+        "ci95": [
+          -1.5209,
+          -0.2224
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 18.0334,
+        "policy": 17.1468,
+        "delta": -0.8866,
+        "delta_pct": -0.0492,
+        "ci95": [
+          -1.529,
+          -0.2313
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 62.1,
+        "policy": 62.75,
+        "delta": 0.65,
+        "delta_pct": 0.0105,
+        "ci95": [
+          -2.85,
+          4.5
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 29.9993,
+        "policy": 38.0693,
+        "delta": 8.07,
+        "delta_pct": 0.269,
+        "ci95": [
+          7.2585,
+          8.9722
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 35.6638,
+        "policy": 35.0689,
+        "delta": -0.5949,
+        "delta_pct": -0.0167,
+        "ci95": [
+          -1.1115,
+          -0.092
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 18.0334,
+        "policy": 17.4442,
+        "delta": -0.5893,
+        "delta_pct": -0.0327,
+        "ci95": [
+          -1.1067,
+          -0.0864
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 62.1,
+        "policy": 61.85,
+        "delta": -0.25,
+        "delta_pct": -0.004,
+        "ci95": [
+          -3.35,
+          2.65
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 29.9993,
+        "policy": 34.4953,
+        "delta": 4.496,
+        "delta_pct": 0.1499,
+        "ci95": [
+          4.0482,
+          4.9328
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 28.294,
+        "policy": 26.4784,
+        "delta": -1.8156,
+        "delta_pct": -0.0642,
+        "ci95": [
+          -2.5367,
+          -1.1451
+        ],
+        "wins": "17/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 11.1748,
+        "policy": 9.7128,
+        "delta": -1.462,
+        "delta_pct": -0.1308,
+        "ci95": [
+          -2.1368,
+          -0.822
+        ],
+        "wins": "17/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 38.0,
+        "policy": 38.8,
+        "delta": 0.8,
+        "delta_pct": 0.0211,
+        "ci95": [
+          -3.4,
+          4.7
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 7.5249,
+        "policy": 9.366,
+        "delta": 1.8411,
+        "delta_pct": 0.2447,
+        "ci95": [
+          1.6354,
+          2.0533
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 28.294,
+        "policy": 26.8938,
+        "delta": -1.4002,
+        "delta_pct": -0.0495,
+        "ci95": [
+          -1.7876,
+          -1.0215
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 11.1748,
+        "policy": 10.01,
+        "delta": -1.1648,
+        "delta_pct": -0.1042,
+        "ci95": [
+          -1.5386,
+          -0.7998
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 38.0,
+        "policy": 36.7,
+        "delta": -1.3,
+        "delta_pct": -0.0342,
+        "ci95": [
+          -5.15,
+          1.85
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 7.5249,
+        "policy": 8.961,
+        "delta": 1.4361,
+        "delta_pct": 0.1908,
+        "ci95": [
+          1.2887,
+          1.587
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 28.294,
+        "policy": 26.6831,
+        "delta": -1.6109,
+        "delta_pct": -0.0569,
+        "ci95": [
+          -2.0803,
+          -1.1192
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 11.1748,
+        "policy": 9.8469,
+        "delta": -1.3279,
+        "delta_pct": -0.1188,
+        "ci95": [
+          -1.7749,
+          -0.8463
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 38.0,
+        "policy": 37.05,
+        "delta": -0.95,
+        "delta_pct": -0.025,
+        "ci95": [
+          -4.35,
+          2.3
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 7.5249,
+        "policy": 8.9599,
+        "delta": 1.4351,
+        "delta_pct": 0.1907,
+        "ci95": [
+          1.2998,
+          1.5802
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 43.5818,
+        "policy": 43.6048,
+        "delta": 0.023,
+        "delta_pct": 0.0005,
+        "ci95": [
+          -0.1119,
+          0.1413
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.9239,
+        "policy": 26.948,
+        "delta": 0.0241,
+        "delta_pct": 0.0009,
+        "ci95": [
+          -0.1096,
+          0.1445
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 64.1,
+        "policy": 64.0,
+        "delta": -0.1,
+        "delta_pct": -0.0016,
+        "ci95": [
+          -0.3,
+          0.1
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.7032,
+        "policy": 9.8234,
+        "delta": 0.1203,
+        "delta_pct": 0.0124,
+        "ci95": [
+          0.096,
+          0.1435
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 43.5818,
+        "policy": 43.3624,
+        "delta": -0.2194,
+        "delta_pct": -0.005,
+        "ci95": [
+          -0.4705,
+          0.0486
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.9239,
+        "policy": 26.7111,
+        "delta": -0.2127,
+        "delta_pct": -0.0079,
+        "ci95": [
+          -0.4674,
+          0.0538
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 64.1,
+        "policy": 63.7,
+        "delta": -0.4,
+        "delta_pct": -0.0062,
+        "ci95": [
+          -1.25,
+          0.45
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.7032,
+        "policy": 9.8906,
+        "delta": 0.1874,
+        "delta_pct": 0.0193,
+        "ci95": [
+          0.1397,
+          0.2404
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 43.5818,
+        "policy": 43.6072,
+        "delta": 0.0253,
+        "delta_pct": 0.0006,
+        "ci95": [
+          -0.1117,
+          0.1453
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.9239,
+        "policy": 26.9522,
+        "delta": 0.0283,
+        "delta_pct": 0.0011,
+        "ci95": [
+          -0.1037,
+          0.1494
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 64.1,
+        "policy": 64.05,
+        "delta": -0.05,
+        "delta_pct": -0.0008,
+        "ci95": [
+          -0.2,
+          0.1
+        ],
+        "wins": "2/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.7032,
+        "policy": 9.791,
+        "delta": 0.0879,
+        "delta_pct": 0.0091,
+        "ci95": [
+          0.0675,
+          0.1092
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 36.7882,
+        "policy": 30.4958,
+        "delta": -6.2925,
+        "delta_pct": -0.171,
+        "ci95": [
+          -7.1118,
+          -5.5758
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 14.5019,
+        "policy": 8.9542,
+        "delta": -5.5477,
+        "delta_pct": -0.3825,
+        "ci95": [
+          -6.3015,
+          -4.8893
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 42.6,
+        "policy": 37.65,
+        "delta": -4.95,
+        "delta_pct": -0.1162,
+        "ci95": [
+          -8.4,
+          -1.4
+        ],
+        "wins": "16/20",
+        "verdict": "better"
+      },
+      "distance_per_passenger": {
+        "stay": 9.269,
+        "policy": 13.9701,
+        "delta": 4.7012,
+        "delta_pct": 0.5072,
+        "ci95": [
+          4.3908,
+          5.0416
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 36.7882,
+        "policy": 31.2749,
+        "delta": -5.5133,
+        "delta_pct": -0.1499,
+        "ci95": [
+          -6.1157,
+          -4.9361
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 14.5019,
+        "policy": 9.4626,
+        "delta": -5.0393,
+        "delta_pct": -0.3475,
+        "ci95": [
+          -5.5979,
+          -4.5111
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 42.6,
+        "policy": 36.15,
+        "delta": -6.45,
+        "delta_pct": -0.1514,
+        "ci95": [
+          -9.05,
+          -3.9
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "distance_per_passenger": {
+        "stay": 9.269,
+        "policy": 12.3601,
+        "delta": 3.0911,
+        "delta_pct": 0.3335,
+        "ci95": [
+          2.8736,
+          3.3323
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 36.7882,
+        "policy": 31.8236,
+        "delta": -4.9646,
+        "delta_pct": -0.135,
+        "ci95": [
+          -5.5408,
+          -4.3876
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 14.5019,
+        "policy": 10.017,
+        "delta": -4.4849,
+        "delta_pct": -0.3093,
+        "ci95": [
+          -5.0409,
+          -3.926
+        ],
+        "wins": "20/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 42.6,
+        "policy": 35.75,
+        "delta": -6.85,
+        "delta_pct": -0.1608,
+        "ci95": [
+          -9.25,
+          -4.5
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "distance_per_passenger": {
+        "stay": 9.269,
+        "policy": 12.0036,
+        "delta": 2.7347,
+        "delta_pct": 0.295,
+        "ci95": [
+          2.4372,
+          3.0628
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 55.8704,
+        "policy": 55.8473,
+        "delta": -0.0231,
+        "delta_pct": -0.0004,
+        "ci95": [
+          -0.1801,
+          0.1276
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.52,
+        "policy": 34.5019,
+        "delta": -0.0181,
+        "delta_pct": -0.0005,
+        "ci95": [
+          -0.1732,
+          0.1313
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.9,
+        "policy": 82.2,
+        "delta": 0.3,
+        "delta_pct": 0.0037,
+        "ci95": [
+          -0.05,
+          0.75
+        ],
+        "wins": "2/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.5762,
+        "policy": 14.921,
+        "delta": 0.3448,
+        "delta_pct": 0.0237,
+        "ci95": [
+          0.2839,
+          0.4068
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 55.8704,
+        "policy": 55.7853,
+        "delta": -0.0851,
+        "delta_pct": -0.0015,
+        "ci95": [
+          -0.5507,
+          0.4112
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.52,
+        "policy": 34.4298,
+        "delta": -0.0902,
+        "delta_pct": -0.0026,
+        "ci95": [
+          -0.5503,
+          0.3974
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.9,
+        "policy": 82.4,
+        "delta": 0.5,
+        "delta_pct": 0.0061,
+        "ci95": [
+          -0.4,
+          1.2
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.5762,
+        "policy": 14.9806,
+        "delta": 0.4045,
+        "delta_pct": 0.0277,
+        "ci95": [
+          0.3387,
+          0.4764
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 55.8704,
+        "policy": 55.9128,
+        "delta": 0.0424,
+        "delta_pct": 0.0008,
+        "ci95": [
+          -0.1382,
+          0.2353
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.52,
+        "policy": 34.5658,
+        "delta": 0.0458,
+        "delta_pct": 0.0013,
+        "ci95": [
+          -0.1379,
+          0.2397
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.9,
+        "policy": 81.9,
+        "delta": 0.0,
+        "delta_pct": 0.0,
+        "ci95": [
+          -0.55,
+          0.5
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.5762,
+        "policy": 14.776,
+        "delta": 0.1998,
+        "delta_pct": 0.0137,
+        "ci95": [
+          0.1685,
+          0.2349
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 25.2718,
+        "policy": 25.1681,
+        "delta": -0.1037,
+        "delta_pct": -0.0041,
+        "ci95": [
+          -0.4748,
+          0.2736
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 9.1622,
+        "policy": 9.0986,
+        "delta": -0.0636,
+        "delta_pct": -0.0069,
+        "ci95": [
+          -0.4467,
+          0.3183
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.0,
+        "policy": 39.3,
+        "delta": 2.3,
+        "delta_pct": 0.0622,
+        "ci95": [
+          -1.5,
+          6.55
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4053,
+        "policy": 9.9764,
+        "delta": 0.5711,
+        "delta_pct": 0.0607,
+        "ci95": [
+          0.4733,
+          0.6775
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 25.2718,
+        "policy": 24.8165,
+        "delta": -0.4553,
+        "delta_pct": -0.018,
+        "ci95": [
+          -0.768,
+          -0.1128
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 9.1622,
+        "policy": 8.7315,
+        "delta": -0.4307,
+        "delta_pct": -0.047,
+        "ci95": [
+          -0.7519,
+          -0.076
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.0,
+        "policy": 35.5,
+        "delta": -1.5,
+        "delta_pct": -0.0405,
+        "ci95": [
+          -4.25,
+          1.2
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4053,
+        "policy": 10.0909,
+        "delta": 0.6856,
+        "delta_pct": 0.0729,
+        "ci95": [
+          0.5888,
+          0.7948
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 25.2718,
+        "policy": 25.2513,
+        "delta": -0.0205,
+        "delta_pct": -0.0008,
+        "ci95": [
+          -0.4769,
+          0.4132
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 9.1622,
+        "policy": 9.1634,
+        "delta": 0.0012,
+        "delta_pct": 0.0001,
+        "ci95": [
+          -0.4571,
+          0.4418
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.0,
+        "policy": 40.05,
+        "delta": 3.05,
+        "delta_pct": 0.0824,
+        "ci95": [
+          -1.05,
+          7.5
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4053,
+        "policy": 9.9999,
+        "delta": 0.5946,
+        "delta_pct": 0.0632,
+        "ci95": [
+          0.5042,
+          0.6826
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 42.4053,
+        "policy": 42.2407,
+        "delta": -0.1646,
+        "delta_pct": -0.0039,
+        "ci95": [
+          -0.348,
+          0.0016
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.3333,
+        "policy": 26.1698,
+        "delta": -0.1635,
+        "delta_pct": -0.0062,
+        "ci95": [
+          -0.3434,
+          -0.003
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 63.05,
+        "policy": 62.9,
+        "delta": -0.15,
+        "delta_pct": -0.0024,
+        "ci95": [
+          -0.35,
+          0.0
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 10.536,
+        "policy": 10.6328,
+        "delta": 0.0968,
+        "delta_pct": 0.0092,
+        "ci95": [
+          0.0707,
+          0.1275
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 42.4053,
+        "policy": 42.3056,
+        "delta": -0.0997,
+        "delta_pct": -0.0024,
+        "ci95": [
+          -0.5509,
+          0.3588
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.3333,
+        "policy": 26.2387,
+        "delta": -0.0946,
+        "delta_pct": -0.0036,
+        "ci95": [
+          -0.541,
+          0.3613
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 63.05,
+        "policy": 63.35,
+        "delta": 0.3,
+        "delta_pct": 0.0048,
+        "ci95": [
+          -0.45,
+          1.1
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 10.536,
+        "policy": 10.7125,
+        "delta": 0.1765,
+        "delta_pct": 0.0168,
+        "ci95": [
+          0.1338,
+          0.2208
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 42.4053,
+        "policy": 42.2579,
+        "delta": -0.1474,
+        "delta_pct": -0.0035,
+        "ci95": [
+          -0.3269,
+          0.0295
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 26.3333,
+        "policy": 26.1867,
+        "delta": -0.1466,
+        "delta_pct": -0.0056,
+        "ci95": [
+          -0.3225,
+          0.0287
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 63.05,
+        "policy": 62.95,
+        "delta": -0.1,
+        "delta_pct": -0.0016,
+        "ci95": [
+          -0.25,
+          0.0
+        ],
+        "wins": "2/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 10.536,
+        "policy": 10.6347,
+        "delta": 0.0987,
+        "delta_pct": 0.0094,
+        "ci95": [
+          0.073,
+          0.1213
+        ],
+        "wins": "1/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 28.2079,
+        "policy": 28.4786,
+        "delta": 0.2708,
+        "delta_pct": 0.0096,
+        "ci95": [
+          -0.0327,
+          0.5748
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 7.5331,
+        "policy": 7.9271,
+        "delta": 0.3939,
+        "delta_pct": 0.0523,
+        "ci95": [
+          0.0923,
+          0.6898
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.75,
+        "policy": 40.3,
+        "delta": 2.55,
+        "delta_pct": 0.0675,
+        "ci95": [
+          0.5,
+          4.7
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.9763,
+        "policy": 14.9028,
+        "delta": 1.9265,
+        "delta_pct": 0.1485,
+        "ci95": [
+          1.6822,
+          2.1863
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 28.2079,
+        "policy": 28.2453,
+        "delta": 0.0374,
+        "delta_pct": 0.0013,
+        "ci95": [
+          -0.2874,
+          0.3537
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 7.5331,
+        "policy": 7.6243,
+        "delta": 0.0911,
+        "delta_pct": 0.0121,
+        "ci95": [
+          -0.2404,
+          0.4012
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.75,
+        "policy": 33.45,
+        "delta": -4.3,
+        "delta_pct": -0.1139,
+        "ci95": [
+          -6.6,
+          -2.2
+        ],
+        "wins": "14/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.9763,
+        "policy": 14.9836,
+        "delta": 2.0073,
+        "delta_pct": 0.1547,
+        "ci95": [
+          1.8416,
+          2.1679
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 28.2079,
+        "policy": 28.0556,
+        "delta": -0.1523,
+        "delta_pct": -0.0054,
+        "ci95": [
+          -0.5219,
+          0.2082
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 7.5331,
+        "policy": 7.4797,
+        "delta": -0.0534,
+        "delta_pct": -0.0071,
+        "ci95": [
+          -0.3837,
+          0.2816
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 37.75,
+        "policy": 38.15,
+        "delta": 0.4,
+        "delta_pct": 0.0106,
+        "ci95": [
+          -1.65,
+          3.3
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.9763,
+        "policy": 14.6527,
+        "delta": 1.6764,
+        "delta_pct": 0.1292,
+        "ci95": [
+          1.4929,
+          1.8782
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 53.6463,
+        "policy": 53.737,
+        "delta": 0.0908,
+        "delta_pct": 0.0017,
+        "ci95": [
+          -0.2294,
+          0.3932
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 33.0612,
+        "policy": 33.1562,
+        "delta": 0.095,
+        "delta_pct": 0.0029,
+        "ci95": [
+          -0.2252,
+          0.3967
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.6,
+        "policy": 81.6,
+        "delta": 0.0,
+        "delta_pct": 0.0,
+        "ci95": [
+          -0.6,
+          0.8
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 15.9722,
+        "policy": 16.2038,
+        "delta": 0.2317,
+        "delta_pct": 0.0145,
+        "ci95": [
+          0.1894,
+          0.2783
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 53.6463,
+        "policy": 54.0569,
+        "delta": 0.4106,
+        "delta_pct": 0.0077,
+        "ci95": [
+          -0.0361,
+          0.8541
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 33.0612,
+        "policy": 33.4631,
+        "delta": 0.4018,
+        "delta_pct": 0.0122,
+        "ci95": [
+          -0.0441,
+          0.8368
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.6,
+        "policy": 81.25,
+        "delta": -0.35,
+        "delta_pct": -0.0043,
+        "ci95": [
+          -1.25,
+          0.6
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 15.9722,
+        "policy": 16.4701,
+        "delta": 0.4979,
+        "delta_pct": 0.0312,
+        "ci95": [
+          0.4271,
+          0.5781
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 53.6463,
+        "policy": 53.8627,
+        "delta": 0.2164,
+        "delta_pct": 0.004,
+        "ci95": [
+          -0.0979,
+          0.5453
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 33.0612,
+        "policy": 33.2804,
+        "delta": 0.2192,
+        "delta_pct": 0.0066,
+        "ci95": [
+          -0.09,
+          0.5469
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.6,
+        "policy": 81.55,
+        "delta": -0.05,
+        "delta_pct": -0.0006,
+        "ci95": [
+          -0.8,
+          0.85
+        ],
+        "wins": "4/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 15.9722,
+        "policy": 16.1674,
+        "delta": 0.1953,
+        "delta_pct": 0.0122,
+        "ci95": [
+          0.1467,
+          0.2419
+        ],
+        "wins": "1/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 28.5081,
+        "policy": 28.66,
+        "delta": 0.1519,
+        "delta_pct": 0.0053,
+        "ci95": [
+          -0.2394,
+          0.5798
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 11.8353,
+        "policy": 11.994,
+        "delta": 0.1588,
+        "delta_pct": 0.0134,
+        "ci95": [
+          -0.2265,
+          0.5856
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 49.85,
+        "policy": 50.35,
+        "delta": 0.5,
+        "delta_pct": 0.01,
+        "ci95": [
+          -1.75,
+          2.7
+        ],
+        "wins": "4/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 8.702,
+        "policy": 8.7513,
+        "delta": 0.0493,
+        "delta_pct": 0.0057,
+        "ci95": [
+          -0.0082,
+          0.1229
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 28.5081,
+        "policy": 27.8706,
+        "delta": -0.6375,
+        "delta_pct": -0.0224,
+        "ci95": [
+          -1.0762,
+          -0.1552
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 11.8353,
+        "policy": 11.2293,
+        "delta": -0.606,
+        "delta_pct": -0.0512,
+        "ci95": [
+          -1.0502,
+          -0.124
+        ],
+        "wins": "14/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 49.85,
+        "policy": 49.45,
+        "delta": -0.4,
+        "delta_pct": -0.008,
+        "ci95": [
+          -3.6,
+          2.6
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 8.702,
+        "policy": 9.1222,
+        "delta": 0.4202,
+        "delta_pct": 0.0483,
+        "ci95": [
+          0.3326,
+          0.5009
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 28.5081,
+        "policy": 28.4223,
+        "delta": -0.0858,
+        "delta_pct": -0.003,
+        "ci95": [
+          -0.6985,
+          0.5179
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 11.8353,
+        "policy": 11.7835,
+        "delta": -0.0518,
+        "delta_pct": -0.0044,
+        "ci95": [
+          -0.6617,
+          0.5514
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 49.85,
+        "policy": 50.95,
+        "delta": 1.1,
+        "delta_pct": 0.0221,
+        "ci95": [
+          -2.9,
+          5.3
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 8.702,
+        "policy": 9.0131,
+        "delta": 0.3112,
+        "delta_pct": 0.0358,
+        "ci95": [
+          0.2204,
+          0.4114
+        ],
+        "wins": "1/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 44.6856,
+        "policy": 44.7056,
+        "delta": 0.02,
+        "delta_pct": 0.0004,
+        "ci95": [
+          -0.0435,
+          0.0901
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 27.7074,
+        "policy": 27.723,
+        "delta": 0.0156,
+        "delta_pct": 0.0006,
+        "ci95": [
+          -0.0468,
+          0.0859
+        ],
+        "wins": "4/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 75.1,
+        "policy": 75.1,
+        "delta": 0.0,
+        "delta_pct": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": "0/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4111,
+        "policy": 9.4244,
+        "delta": 0.0133,
+        "delta_pct": 0.0014,
+        "ci95": [
+          -0.0023,
+          0.0282
+        ],
+        "wins": "1/20",
+        "verdict": "inconclusive"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 44.6856,
+        "policy": 44.7541,
+        "delta": 0.0685,
+        "delta_pct": 0.0015,
+        "ci95": [
+          -0.2828,
+          0.4076
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 27.7074,
+        "policy": 27.7947,
+        "delta": 0.0873,
+        "delta_pct": 0.0032,
+        "ci95": [
+          -0.26,
+          0.4201
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 75.1,
+        "policy": 70.25,
+        "delta": -4.85,
+        "delta_pct": -0.0646,
+        "ci95": [
+          -13.15,
+          2.9
+        ],
+        "wins": "10/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4111,
+        "policy": 9.5815,
+        "delta": 0.1703,
+        "delta_pct": 0.0181,
+        "ci95": [
+          0.1422,
+          0.1984
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 44.6856,
+        "policy": 44.7872,
+        "delta": 0.1016,
+        "delta_pct": 0.0023,
+        "ci95": [
+          -0.0789,
+          0.3014
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 27.7074,
+        "policy": 27.8124,
+        "delta": 0.105,
+        "delta_pct": 0.0038,
+        "ci95": [
+          -0.0714,
+          0.3006
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 75.1,
+        "policy": 74.75,
+        "delta": -0.35,
+        "delta_pct": -0.0047,
+        "ci95": [
+          -0.8,
+          0.0
+        ],
+        "wins": "3/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 9.4111,
+        "policy": 9.5031,
+        "delta": 0.0919,
+        "delta_pct": 0.0098,
+        "ci95": [
+          0.0745,
+          0.1095
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 32.5128,
+        "policy": 32.3987,
+        "delta": -0.1141,
+        "delta_pct": -0.0035,
+        "ci95": [
+          -0.299,
+          0.071
+        ],
+        "wins": "12/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 11.4373,
+        "policy": 11.3186,
+        "delta": -0.1186,
+        "delta_pct": -0.0104,
+        "ci95": [
+          -0.3227,
+          0.085
+        ],
+        "wins": "11/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 50.7,
+        "policy": 51.25,
+        "delta": 0.55,
+        "delta_pct": 0.0108,
+        "ci95": [
+          -2.4,
+          5.0
+        ],
+        "wins": "8/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.3793,
+        "policy": 12.4043,
+        "delta": 0.0251,
+        "delta_pct": 0.002,
+        "ci95": [
+          -0.0795,
+          0.1349
+        ],
+        "wins": "7/20",
+        "verdict": "inconclusive"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 32.5128,
+        "policy": 31.2468,
+        "delta": -1.266,
+        "delta_pct": -0.0389,
+        "ci95": [
+          -1.6549,
+          -0.8508
+        ],
+        "wins": "19/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 11.4373,
+        "policy": 10.3111,
+        "delta": -1.1262,
+        "delta_pct": -0.0985,
+        "ci95": [
+          -1.5081,
+          -0.7299
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 50.7,
+        "policy": 48.6,
+        "delta": -2.1,
+        "delta_pct": -0.0414,
+        "ci95": [
+          -6.5,
+          2.8
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.3793,
+        "policy": 14.0404,
+        "delta": 1.6611,
+        "delta_pct": 0.1342,
+        "ci95": [
+          1.5409,
+          1.7791
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "cost",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 32.5128,
+        "policy": 31.5297,
+        "delta": -0.9831,
+        "delta_pct": -0.0302,
+        "ci95": [
+          -1.2911,
+          -0.6262
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "wait_mean": {
+        "stay": 11.4373,
+        "policy": 10.5431,
+        "delta": -0.8941,
+        "delta_pct": -0.0782,
+        "ci95": [
+          -1.1966,
+          -0.5432
+        ],
+        "wins": "18/20",
+        "verdict": "better"
+      },
+      "wait_max": {
+        "stay": 50.7,
+        "policy": 50.85,
+        "delta": 0.15,
+        "delta_pct": 0.003,
+        "ci95": [
+          -3.25,
+          3.3
+        ],
+        "wins": "9/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 12.3793,
+        "policy": 13.3426,
+        "delta": 0.9633,
+        "delta_pct": 0.0778,
+        "ci95": [
+          0.8154,
+          1.1232
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "lobby",
+      "total_mean": {
+        "stay": 55.2801,
+        "policy": 55.2984,
+        "delta": 0.0183,
+        "delta_pct": 0.0003,
+        "ci95": [
+          -0.1732,
+          0.2119
+        ],
+        "wins": "5/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.0523,
+        "policy": 34.0703,
+        "delta": 0.018,
+        "delta_pct": 0.0005,
+        "ci95": [
+          -0.1734,
+          0.209
+        ],
+        "wins": "5/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.45,
+        "policy": 81.65,
+        "delta": 0.2,
+        "delta_pct": 0.0025,
+        "ci95": [
+          0.0,
+          0.5
+        ],
+        "wins": "0/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.8483,
+        "policy": 14.9162,
+        "delta": 0.0679,
+        "delta_pct": 0.0046,
+        "ci95": [
+          0.0406,
+          0.0966
+        ],
+        "wins": "0/20",
+        "verdict": "inconclusive"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "spread",
+      "total_mean": {
+        "stay": 55.2801,
+        "policy": 54.9367,
+        "delta": -0.3434,
+        "delta_pct": -0.0062,
+        "ci95": [
+          -0.6716,
+          0.0249
+        ],
+        "wins": "15/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.0523,
+        "policy": 33.7239,
+        "delta": -0.3284,
+        "delta_pct": -0.0096,
+        "ci95": [
+          -0.6547,
+          0.0356
+        ],
+        "wins": "14/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.45,
+        "policy": 82.25,
+        "delta": 0.8,
+        "delta_pct": 0.0098,
+        "ci95": [
+          0.0,
+          1.65
+        ],
+        "wins": "6/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.8483,
+        "policy": 15.2826,
+        "delta": 0.4343,
+        "delta_pct": 0.0292,
+        "ci95": [
+          0.3588,
+          0.5099
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0
+      },
+      "dispatch": "round_robin",
+      "parking": "demand",
+      "total_mean": {
+        "stay": 55.2801,
+        "policy": 55.2015,
+        "delta": -0.0786,
+        "delta_pct": -0.0014,
+        "ci95": [
+          -0.348,
+          0.1912
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_mean": {
+        "stay": 34.0523,
+        "policy": 33.9847,
+        "delta": -0.0675,
+        "delta_pct": -0.002,
+        "ci95": [
+          -0.339,
+          0.2043
+        ],
+        "wins": "13/20",
+        "verdict": "inconclusive"
+      },
+      "wait_max": {
+        "stay": 81.45,
+        "policy": 81.25,
+        "delta": -0.2,
+        "delta_pct": -0.0025,
+        "ci95": [
+          -0.75,
+          0.35
+        ],
+        "wins": "4/20",
+        "verdict": "inconclusive"
+      },
+      "distance_per_passenger": {
+        "stay": 14.8483,
+        "policy": 15.0486,
+        "delta": 0.2003,
+        "delta_pct": 0.0135,
+        "ci95": [
+          0.1566,
+          0.2514
+        ],
+        "wins": "0/20",
+        "verdict": "worse"
+      }
+    }
+  ],
+  "metric": "total_mean",
+  "claim_rule": "95% CI of the difference excludes 0 and >= 80% of seeds go the same way",
+  "resamples": 2000,
+  "experiments": [
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 12.3581,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 19.6126,
+          "wait_mean": 5.9926,
+          "wait_p95": 18.28,
+          "wait_max": 26.4,
+          "excess_mean": 7.2544,
+          "jain_wait": 0.493,
+          "detour_mean": 1.2619,
+          "away_share": 0.0599,
+          "away_wait": 11.4684,
+          "idle_pick_share": 0.6672,
+          "chosen_distance": 5.2434,
+          "nearest_distance": 3.6457,
+          "busy_share": 0.474,
+          "distance_per_passenger": 14.7252,
+          "riders_per_stop": 1.0833,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1687,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 4.3854,
+          "inbound_wait_p95": 15.53,
+          "inbound_wait_max": 19.65,
+          "inbound_total_mean": 20.1205,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 6.4484,
+          "outbound_wait_p95": 17.76,
+          "outbound_wait_max": 21.2,
+          "outbound_total_mean": 22.6405,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 6.4264,
+          "inter_floor_wait_p95": 17.32,
+          "inter_floor_wait_max": 23.55,
+          "inter_floor_total_mean": 17.5724
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 28.4728,
+          "wait_mean": 14.9849,
+          "wait_p95": 36.1775,
+          "wait_max": 47.8,
+          "excess_mean": 16.1146,
+          "jain_wait": 0.632,
+          "detour_mean": 1.1297,
+          "away_share": 0.2104,
+          "away_wait": 27.0124,
+          "idle_pick_share": 0.6008,
+          "chosen_distance": 10.5551,
+          "nearest_distance": 3.8999,
+          "busy_share": 0.6559,
+          "distance_per_passenger": 21.4125,
+          "riders_per_stop": 1.0388,
+          "full_passby_share": 0.0,
+          "load_cv": 0.016,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 14.0489,
+          "inbound_wait_p95": 32.6075,
+          "inbound_wait_max": 39.8,
+          "inbound_total_mean": 29.6376,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 15.1668,
+          "outbound_wait_p95": 33.7425,
+          "outbound_wait_max": 40.35,
+          "outbound_total_mean": 31.2046,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 15.2653,
+          "inter_floor_wait_p95": 36.2625,
+          "inter_floor_wait_max": 44.9,
+          "inter_floor_total_mean": 26.3001
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 19.6126,
+          "std": 1.4041,
+          "baseline_mean": 28.4728,
+          "delta": -8.8602,
+          "delta_pct": -0.3112,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.7098,
+            -8.0426
+          ],
+          "gap_closed": 0.5498,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 12.3581,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 20.6774,
+          "wait_mean": 7.0339,
+          "wait_p95": 21.7675,
+          "wait_max": 30.8,
+          "excess_mean": 8.3192,
+          "jain_wait": 0.4762,
+          "detour_mean": 1.2853,
+          "away_share": 0.1753,
+          "away_wait": 9.9741,
+          "idle_pick_share": 0.4643,
+          "chosen_distance": 5.9332,
+          "nearest_distance": 4.1747,
+          "busy_share": 0.5954,
+          "distance_per_passenger": 19.0721,
+          "riders_per_stop": 1.0682,
+          "full_passby_share": 0.0,
+          "load_cv": 0.2687,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 1.3429,
+          "inbound_wait_p95": 7.2125,
+          "inbound_wait_max": 12.15,
+          "inbound_total_mean": 16.9687,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 8.6772,
+          "outbound_wait_p95": 21.2,
+          "outbound_wait_max": 27.0,
+          "outbound_total_mean": 24.9575,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 8.8165,
+          "inter_floor_wait_p95": 22.3875,
+          "inter_floor_wait_max": 27.9,
+          "inter_floor_total_mean": 20.021
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 28.4423,
+          "wait_mean": 14.9418,
+          "wait_p95": 36.96,
+          "wait_max": 49.05,
+          "excess_mean": 16.0841,
+          "jain_wait": 0.6064,
+          "detour_mean": 1.1423,
+          "away_share": 0.2863,
+          "away_wait": 23.0608,
+          "idle_pick_share": 0.4212,
+          "chosen_distance": 10.3594,
+          "nearest_distance": 4.1066,
+          "busy_share": 0.7668,
+          "distance_per_passenger": 25.3874,
+          "riders_per_stop": 1.0421,
+          "full_passby_share": 0.0,
+          "load_cv": 0.016,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 10.9231,
+          "inbound_wait_p95": 34.0325,
+          "inbound_wait_max": 41.05,
+          "inbound_total_mean": 26.506,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 15.6941,
+          "outbound_wait_p95": 34.435,
+          "outbound_wait_max": 39.7,
+          "outbound_total_mean": 31.7551,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 16.4645,
+          "inter_floor_wait_p95": 36.775,
+          "inter_floor_wait_max": 46.7,
+          "inter_floor_total_mean": 27.5174
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 20.6774,
+          "std": 1.6054,
+          "baseline_mean": 28.4423,
+          "delta": -7.7649,
+          "delta_pct": -0.273,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -8.3541,
+            -7.1375
+          ],
+          "gap_closed": 0.4828,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 12.3581,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 18.5255,
+          "wait_mean": 4.9774,
+          "wait_p95": 14.585,
+          "wait_max": 21.9,
+          "excess_mean": 6.1674,
+          "jain_wait": 0.5155,
+          "detour_mean": 1.19,
+          "away_share": 0.1425,
+          "away_wait": 7.1981,
+          "idle_pick_share": 0.503,
+          "chosen_distance": 4.3386,
+          "nearest_distance": 3.2162,
+          "busy_share": 0.6442,
+          "distance_per_passenger": 20.5935,
+          "riders_per_stop": 1.0724,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1448,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 4.2625,
+          "inbound_wait_p95": 13.065,
+          "inbound_wait_max": 17.15,
+          "inbound_total_mean": 19.9108,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 5.056,
+          "outbound_wait_p95": 12.3075,
+          "outbound_wait_max": 16.7,
+          "outbound_total_mean": 21.1333,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 5.1518,
+          "inter_floor_wait_p95": 13.84,
+          "inter_floor_wait_max": 20.0,
+          "inter_floor_total_mean": 16.2569
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 27.9389,
+          "wait_mean": 14.4447,
+          "wait_p95": 35.945,
+          "wait_max": 49.05,
+          "excess_mean": 15.5808,
+          "jain_wait": 0.6313,
+          "detour_mean": 1.1361,
+          "away_share": 0.2875,
+          "away_wait": 21.6564,
+          "idle_pick_share": 0.4171,
+          "chosen_distance": 10.1197,
+          "nearest_distance": 3.8414,
+          "busy_share": 0.7849,
+          "distance_per_passenger": 25.9493,
+          "riders_per_stop": 1.0412,
+          "full_passby_share": 0.0,
+          "load_cv": 0.016,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 14.7278,
+          "inbound_wait_p95": 33.06,
+          "inbound_wait_max": 41.8,
+          "inbound_total_mean": 30.3348,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 14.2868,
+          "outbound_wait_p95": 34.3925,
+          "outbound_wait_max": 42.0,
+          "outbound_total_mean": 30.3127,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 14.326,
+          "inter_floor_wait_p95": 34.14,
+          "inter_floor_wait_max": 44.15,
+          "inter_floor_total_mean": 25.3696
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 18.5255,
+          "std": 1.2093,
+          "baseline_mean": 27.9389,
+          "delta": -9.4134,
+          "delta_pct": -0.3369,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -10.0496,
+            -8.7558
+          ],
+          "gap_closed": 0.6042,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "quiet · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 12.3581,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 18.9032,
+          "wait_mean": 5.31,
+          "wait_p95": 16.55,
+          "wait_max": 24.8,
+          "excess_mean": 6.5451,
+          "jain_wait": 0.4784,
+          "detour_mean": 1.235,
+          "away_share": 0.1186,
+          "away_wait": 8.3272,
+          "idle_pick_share": 0.5499,
+          "chosen_distance": 4.585,
+          "nearest_distance": 3.2431,
+          "busy_share": 0.5791,
+          "distance_per_passenger": 18.3533,
+          "riders_per_stop": 1.0707,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1395,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 2.6601,
+          "inbound_wait_p95": 10.82,
+          "inbound_wait_max": 15.35,
+          "inbound_total_mean": 18.3003,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 5.8357,
+          "outbound_wait_p95": 14.7825,
+          "outbound_wait_max": 20.35,
+          "outbound_total_mean": 22.0286,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 6.219,
+          "inter_floor_wait_p95": 17.5675,
+          "inter_floor_wait_max": 22.6,
+          "inter_floor_total_mean": 17.3574
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 27.8492,
+          "wait_mean": 14.366,
+          "wait_p95": 36.73,
+          "wait_max": 48.6,
+          "excess_mean": 15.4911,
+          "jain_wait": 0.6105,
+          "detour_mean": 1.125,
+          "away_share": 0.2542,
+          "away_wait": 24.1648,
+          "idle_pick_share": 0.4745,
+          "chosen_distance": 10.096,
+          "nearest_distance": 3.6505,
+          "busy_share": 0.7302,
+          "distance_per_passenger": 24.1246,
+          "riders_per_stop": 1.0405,
+          "full_passby_share": 0.0,
+          "load_cv": 0.016,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 13.4265,
+          "inbound_wait_p95": 34.255,
+          "inbound_wait_max": 41.25,
+          "inbound_total_mean": 29.0119,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 14.2779,
+          "outbound_wait_p95": 32.635,
+          "outbound_wait_max": 40.7,
+          "outbound_total_mean": 30.2982,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 14.9577,
+          "inter_floor_wait_p95": 35.6275,
+          "inter_floor_wait_max": 45.55,
+          "inter_floor_total_mean": 25.9973
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 18.9032,
+          "std": 1.3016,
+          "baseline_mean": 27.8492,
+          "delta": -8.946,
+          "delta_pct": -0.3212,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -9.5098,
+            -8.393
+          ],
+          "gap_closed": 0.5775,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 16.5529,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 23.2429,
+          "wait_mean": 5.437,
+          "wait_p95": 17.6925,
+          "wait_max": 29.9,
+          "excess_mean": 6.6899,
+          "jain_wait": 0.4396,
+          "detour_mean": 1.253,
+          "away_share": 0.0513,
+          "away_wait": 11.2808,
+          "idle_pick_share": 0.7097,
+          "chosen_distance": 4.8713,
+          "nearest_distance": 3.3482,
+          "busy_share": 0.3874,
+          "distance_per_passenger": 18.4829,
+          "riders_per_stop": 1.0689,
+          "full_passby_share": 0.0,
+          "load_cv": 0.2637,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 3.628,
+          "inbound_wait_p95": 14.695,
+          "inbound_wait_max": 19.85,
+          "inbound_total_mean": 25.1321,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 6.0705,
+          "outbound_wait_p95": 16.26,
+          "outbound_wait_max": 21.45,
+          "outbound_total_mean": 26.9414,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 6.0306,
+          "inter_floor_wait_p95": 17.1275,
+          "inter_floor_wait_max": 27.4,
+          "inter_floor_total_mean": 20.5819
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 35.6638,
+          "wait_mean": 18.0334,
+          "wait_p95": 43.1575,
+          "wait_max": 62.1,
+          "excess_mean": 19.1109,
+          "jain_wait": 0.6282,
+          "detour_mean": 1.0775,
+          "away_share": 0.1632,
+          "away_wait": 33.8679,
+          "idle_pick_share": 0.7111,
+          "chosen_distance": 14.1939,
+          "nearest_distance": 3.6354,
+          "busy_share": 0.595,
+          "distance_per_passenger": 29.9993,
+          "riders_per_stop": 1.0239,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0258,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 17.2485,
+          "inbound_wait_p95": 42.4275,
+          "inbound_wait_max": 52.55,
+          "inbound_total_mean": 38.576,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 17.7911,
+          "outbound_wait_p95": 40.8075,
+          "outbound_wait_max": 48.65,
+          "outbound_total_mean": 38.4971,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 18.4475,
+          "inter_floor_wait_p95": 40.775,
+          "inter_floor_wait_max": 54.6,
+          "inter_floor_total_mean": 32.8289
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 23.2429,
+          "std": 1.2928,
+          "baseline_mean": 35.6638,
+          "delta": -12.421,
+          "delta_pct": -0.3483,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.3064,
+            -11.5326
+          ],
+          "gap_closed": 0.6499,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 16.5529,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 25.5173,
+          "wait_mean": 7.6565,
+          "wait_p95": 26.225,
+          "wait_max": 37.45,
+          "excess_mean": 8.9644,
+          "jain_wait": 0.4272,
+          "detour_mean": 1.3079,
+          "away_share": 0.1849,
+          "away_wait": 10.5698,
+          "idle_pick_share": 0.4649,
+          "chosen_distance": 6.6528,
+          "nearest_distance": 4.6529,
+          "busy_share": 0.5071,
+          "distance_per_passenger": 24.9675,
+          "riders_per_stop": 1.0518,
+          "full_passby_share": 0.0,
+          "load_cv": 0.5176,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 0.4412,
+          "inbound_wait_p95": 1.825,
+          "inbound_wait_max": 6.8,
+          "inbound_total_mean": 21.8261,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 10.2021,
+          "outbound_wait_p95": 25.22,
+          "outbound_wait_max": 30.3,
+          "outbound_total_mean": 31.3001,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 10.2497,
+          "inter_floor_wait_p95": 27.84,
+          "inter_floor_wait_max": 36.65,
+          "inter_floor_total_mean": 24.8744
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 35.251,
+          "wait_mean": 17.6141,
+          "wait_p95": 43.1225,
+          "wait_max": 60.0,
+          "excess_mean": 18.698,
+          "jain_wait": 0.5942,
+          "detour_mean": 1.0839,
+          "away_share": 0.2544,
+          "away_wait": 26.5053,
+          "idle_pick_share": 0.5185,
+          "chosen_distance": 14.0021,
+          "nearest_distance": 4.2524,
+          "busy_share": 0.7312,
+          "distance_per_passenger": 37.4069,
+          "riders_per_stop": 1.0225,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0258,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 10.946,
+          "inbound_wait_p95": 37.41,
+          "inbound_wait_max": 49.35,
+          "inbound_total_mean": 32.2591,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 19.8515,
+          "outbound_wait_p95": 40.3225,
+          "outbound_wait_max": 48.5,
+          "outbound_total_mean": 40.6023,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 20.095,
+          "inter_floor_wait_p95": 42.98,
+          "inter_floor_wait_max": 54.65,
+          "inter_floor_total_mean": 34.4748
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 25.5173,
+          "std": 1.5659,
+          "baseline_mean": 35.251,
+          "delta": -9.7336,
+          "delta_pct": -0.2761,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -10.8773,
+            -8.5512
+          ],
+          "gap_closed": 0.5206,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 16.5529,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 21.9651,
+          "wait_mean": 4.2569,
+          "wait_p95": 13.385,
+          "wait_max": 22.95,
+          "excess_mean": 5.4122,
+          "jain_wait": 0.4665,
+          "detour_mean": 1.1552,
+          "away_share": 0.118,
+          "away_wait": 5.4367,
+          "idle_pick_share": 0.5632,
+          "chosen_distance": 3.9707,
+          "nearest_distance": 3.0273,
+          "busy_share": 0.5788,
+          "distance_per_passenger": 28.4358,
+          "riders_per_stop": 1.0636,
+          "full_passby_share": 0.0,
+          "load_cv": 0.2205,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 4.2862,
+          "inbound_wait_p95": 13.0425,
+          "inbound_wait_max": 17.75,
+          "inbound_total_mean": 25.7689,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 4.2935,
+          "outbound_wait_p95": 11.4275,
+          "outbound_wait_max": 16.15,
+          "outbound_total_mean": 25.0307,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 4.2335,
+          "inter_floor_wait_p95": 13.0925,
+          "inter_floor_wait_max": 19.8,
+          "inter_floor_total_mean": 18.6704
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 34.7844,
+          "wait_mean": 17.1468,
+          "wait_p95": 41.085,
+          "wait_max": 62.75,
+          "excess_mean": 18.2315,
+          "jain_wait": 0.6238,
+          "detour_mean": 1.0847,
+          "away_share": 0.236,
+          "away_wait": 26.2883,
+          "idle_pick_share": 0.5314,
+          "chosen_distance": 13.6615,
+          "nearest_distance": 3.7038,
+          "busy_share": 0.7446,
+          "distance_per_passenger": 38.0693,
+          "riders_per_stop": 1.023,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0258,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 19.2409,
+          "inbound_wait_p95": 41.6575,
+          "inbound_wait_max": 50.9,
+          "inbound_total_mean": 40.5896,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 15.9574,
+          "outbound_wait_p95": 36.4725,
+          "outbound_wait_max": 46.2,
+          "outbound_total_mean": 36.6675,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 16.6196,
+          "inter_floor_wait_p95": 41.28,
+          "inter_floor_wait_max": 56.05,
+          "inter_floor_total_mean": 31.0029
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 21.9651,
+          "std": 1.5516,
+          "baseline_mean": 34.7844,
+          "delta": -12.8193,
+          "delta_pct": -0.3685,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.4924,
+            -12.1442
+          ],
+          "gap_closed": 0.7031,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "quiet",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.12,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "quiet · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.12 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 16.5529,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 22.4527,
+          "wait_mean": 4.7149,
+          "wait_p95": 15.735,
+          "wait_max": 28.5,
+          "excess_mean": 5.8998,
+          "jain_wait": 0.4152,
+          "detour_mean": 1.185,
+          "away_share": 0.0845,
+          "away_wait": 6.7392,
+          "idle_pick_share": 0.6368,
+          "chosen_distance": 4.2267,
+          "nearest_distance": 3.0185,
+          "busy_share": 0.49,
+          "distance_per_passenger": 23.8589,
+          "riders_per_stop": 1.0616,
+          "full_passby_share": 0.0,
+          "load_cv": 0.2106,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 2.5206,
+          "inbound_wait_p95": 10.1825,
+          "inbound_wait_max": 15.9,
+          "inbound_total_mean": 23.8871,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 5.4948,
+          "outbound_wait_p95": 15.4775,
+          "outbound_wait_max": 21.4,
+          "outbound_total_mean": 26.3525,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 5.4471,
+          "inter_floor_wait_p95": 16.0975,
+          "inter_floor_wait_max": 26.0,
+          "inter_floor_total_mean": 19.9437
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 35.0689,
+          "wait_mean": 17.4442,
+          "wait_p95": 42.1625,
+          "wait_max": 61.85,
+          "excess_mean": 18.516,
+          "jain_wait": 0.6116,
+          "detour_mean": 1.0718,
+          "away_share": 0.2004,
+          "away_wait": 29.0663,
+          "idle_pick_share": 0.607,
+          "chosen_distance": 13.9087,
+          "nearest_distance": 3.38,
+          "busy_share": 0.6792,
+          "distance_per_passenger": 34.4953,
+          "riders_per_stop": 1.022,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0258,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 16.2905,
+          "inbound_wait_p95": 42.92,
+          "inbound_wait_max": 52.55,
+          "inbound_total_mean": 37.6088,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 17.3662,
+          "outbound_wait_p95": 38.2525,
+          "outbound_wait_max": 48.1,
+          "outbound_total_mean": 38.0662,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 18.1334,
+          "inter_floor_wait_p95": 41.3175,
+          "inter_floor_wait_max": 54.45,
+          "inter_floor_total_mean": 32.5116
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 22.4527,
+          "std": 1.6476,
+          "baseline_mean": 35.0689,
+          "delta": -12.6162,
+          "delta_pct": -0.3598,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -13.1714,
+            -12.0319
+          ],
+          "gap_closed": 0.6814,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0779,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.294,
+          "wait_mean": 11.1748,
+          "wait_p95": 25.8725,
+          "wait_max": 38.0,
+          "excess_mean": 14.2161,
+          "jain_wait": 0.6429,
+          "detour_mean": 3.0413,
+          "away_share": 0.0787,
+          "away_wait": 19.4486,
+          "idle_pick_share": 0.1448,
+          "chosen_distance": 9.8419,
+          "nearest_distance": 4.4393,
+          "busy_share": 0.7932,
+          "distance_per_passenger": 7.5249,
+          "riders_per_stop": 1.6687,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1081,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 11.7656,
+          "inbound_wait_p95": 26.2375,
+          "inbound_wait_max": 32.75,
+          "inbound_total_mean": 30.0479,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 8.6853,
+          "outbound_wait_p95": 20.1575,
+          "outbound_wait_max": 25.6,
+          "outbound_total_mean": 25.0175,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 9.514,
+          "inter_floor_wait_p95": 25.3375,
+          "inter_floor_wait_max": 35.4,
+          "inter_floor_total_mean": 21.1553
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 43.5818,
+          "wait_mean": 26.9239,
+          "wait_p95": 55.23,
+          "wait_max": 64.1,
+          "excess_mean": 29.5039,
+          "jain_wait": 0.713,
+          "detour_mean": 2.58,
+          "away_share": 0.4965,
+          "away_wait": 40.1046,
+          "idle_pick_share": 0.0194,
+          "chosen_distance": 11.8416,
+          "nearest_distance": 4.5624,
+          "busy_share": 0.9772,
+          "distance_per_passenger": 9.7032,
+          "riders_per_stop": 1.5574,
+          "full_passby_share": 0.0002,
+          "load_cv": 0.0052,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 26.7308,
+          "inbound_wait_p95": 55.275,
+          "inbound_wait_max": 63.5,
+          "inbound_total_mean": 44.3962,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 27.1202,
+          "outbound_wait_p95": 52.5075,
+          "outbound_wait_max": 58.9,
+          "outbound_total_mean": 43.5009,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 28.0434,
+          "inter_floor_wait_p95": 54.275,
+          "inter_floor_wait_max": 59.8,
+          "inter_floor_total_mean": 39.7328
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.294,
+          "std": 1.1324,
+          "baseline_mean": 43.5818,
+          "delta": -15.2878,
+          "delta_pct": -0.3508,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -15.8367,
+            -14.7128
+          ],
+          "gap_closed": 0.5182,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0779,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.4784,
+          "wait_mean": 9.7128,
+          "wait_p95": 25.675,
+          "wait_max": 38.8,
+          "excess_mean": 12.4005,
+          "jain_wait": 0.5844,
+          "detour_mean": 2.6877,
+          "away_share": 0.1331,
+          "away_wait": 17.6931,
+          "idle_pick_share": 0.041,
+          "chosen_distance": 8.0633,
+          "nearest_distance": 4.1549,
+          "busy_share": 0.97,
+          "distance_per_passenger": 9.366,
+          "riders_per_stop": 1.6159,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0843,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 9.8006,
+          "inbound_wait_p95": 25.4375,
+          "inbound_wait_max": 35.3,
+          "inbound_total_mean": 27.6448,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 9.3028,
+          "outbound_wait_p95": 21.9775,
+          "outbound_wait_max": 29.8,
+          "outbound_total_mean": 25.6651,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 9.4314,
+          "inter_floor_wait_p95": 25.0525,
+          "inter_floor_wait_max": 35.1,
+          "inter_floor_total_mean": 20.9492
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 43.6048,
+          "wait_mean": 26.948,
+          "wait_p95": 55.34,
+          "wait_max": 64.0,
+          "excess_mean": 29.5269,
+          "jain_wait": 0.7129,
+          "detour_mean": 2.5789,
+          "away_share": 0.4968,
+          "away_wait": 40.1306,
+          "idle_pick_share": 0.0167,
+          "chosen_distance": 11.7962,
+          "nearest_distance": 4.6423,
+          "busy_share": 0.988,
+          "distance_per_passenger": 9.8234,
+          "riders_per_stop": 1.5578,
+          "full_passby_share": 0.0002,
+          "load_cv": 0.0052,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 26.7848,
+          "inbound_wait_p95": 55.3975,
+          "inbound_wait_max": 63.35,
+          "inbound_total_mean": 44.449,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 27.0797,
+          "outbound_wait_p95": 52.795,
+          "outbound_wait_max": 58.85,
+          "outbound_total_mean": 43.4641,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.9487,
+          "inter_floor_wait_p95": 54.1275,
+          "inter_floor_wait_max": 60.2,
+          "inter_floor_total_mean": 39.635
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.4784,
+          "std": 1.0812,
+          "baseline_mean": 43.6048,
+          "delta": -17.1264,
+          "delta_pct": -0.3928,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.6664,
+            -16.5942
+          ],
+          "gap_closed": 0.58,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0779,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.8938,
+          "wait_mean": 10.01,
+          "wait_p95": 25.04,
+          "wait_max": 36.7,
+          "excess_mean": 12.8159,
+          "jain_wait": 0.6133,
+          "detour_mean": 2.8059,
+          "away_share": 0.1205,
+          "away_wait": 17.1201,
+          "idle_pick_share": 0.0698,
+          "chosen_distance": 8.5248,
+          "nearest_distance": 4.2515,
+          "busy_share": 0.9301,
+          "distance_per_passenger": 8.961,
+          "riders_per_stop": 1.6349,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0878,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 10.2798,
+          "inbound_wait_p95": 25.21,
+          "inbound_wait_max": 35.2,
+          "inbound_total_mean": 28.2727,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 8.7067,
+          "outbound_wait_p95": 21.2175,
+          "outbound_wait_max": 26.35,
+          "outbound_total_mean": 25.0407,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 9.3188,
+          "inter_floor_wait_p95": 23.34,
+          "inter_floor_wait_max": 31.5,
+          "inter_floor_total_mean": 20.859
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 43.3624,
+          "wait_mean": 26.7111,
+          "wait_p95": 55.1075,
+          "wait_max": 63.7,
+          "excess_mean": 29.2845,
+          "jain_wait": 0.7127,
+          "detour_mean": 2.5734,
+          "away_share": 0.495,
+          "away_wait": 39.3747,
+          "idle_pick_share": 0.0081,
+          "chosen_distance": 11.9142,
+          "nearest_distance": 4.4032,
+          "busy_share": 0.9885,
+          "distance_per_passenger": 9.8906,
+          "riders_per_stop": 1.5602,
+          "full_passby_share": 0.0005,
+          "load_cv": 0.0052,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 26.5398,
+          "inbound_wait_p95": 55.065,
+          "inbound_wait_max": 63.5,
+          "inbound_total_mean": 44.1979,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 27.007,
+          "outbound_wait_p95": 51.255,
+          "outbound_wait_max": 56.8,
+          "outbound_total_mean": 43.3402,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.5867,
+          "inter_floor_wait_p95": 54.5475,
+          "inter_floor_wait_max": 59.05,
+          "inter_floor_total_mean": 39.2962
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.8938,
+          "std": 0.9522,
+          "baseline_mean": 43.3624,
+          "delta": -16.4686,
+          "delta_pct": -0.3798,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.0481,
+            -15.9753
+          ],
+          "gap_closed": 0.5624,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "morning_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0779,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 26.6831,
+          "wait_mean": 9.8469,
+          "wait_p95": 25.035,
+          "wait_max": 37.05,
+          "excess_mean": 12.6052,
+          "jain_wait": 0.6002,
+          "detour_mean": 2.7583,
+          "away_share": 0.1202,
+          "away_wait": 17.4103,
+          "idle_pick_share": 0.0636,
+          "chosen_distance": 8.2861,
+          "nearest_distance": 4.1728,
+          "busy_share": 0.9285,
+          "distance_per_passenger": 8.9599,
+          "riders_per_stop": 1.6279,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0951,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 10.0587,
+          "inbound_wait_p95": 25.3375,
+          "inbound_wait_max": 35.7,
+          "inbound_total_mean": 27.9922,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 8.7813,
+          "outbound_wait_p95": 19.3875,
+          "outbound_wait_max": 24.8,
+          "outbound_total_mean": 25.1165,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 9.3227,
+          "inter_floor_wait_p95": 23.59,
+          "inter_floor_wait_max": 32.25,
+          "inter_floor_total_mean": 20.857
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 43.6072,
+          "wait_mean": 26.9522,
+          "wait_p95": 55.3575,
+          "wait_max": 64.05,
+          "excess_mean": 29.5292,
+          "jain_wait": 0.7126,
+          "detour_mean": 2.577,
+          "away_share": 0.4978,
+          "away_wait": 40.1119,
+          "idle_pick_share": 0.0167,
+          "chosen_distance": 11.7938,
+          "nearest_distance": 4.6138,
+          "busy_share": 0.9851,
+          "distance_per_passenger": 9.791,
+          "riders_per_stop": 1.5578,
+          "full_passby_share": 0.0002,
+          "load_cv": 0.0052,
+          "inbound_count": 233.95,
+          "inbound_wait_mean": 26.7863,
+          "inbound_wait_p95": 55.3875,
+          "inbound_wait_max": 63.35,
+          "inbound_total_mean": 44.4477,
+          "outbound_count": 24.4,
+          "outbound_wait_mean": 26.9864,
+          "outbound_wait_p95": 52.8625,
+          "outbound_wait_max": 59.2,
+          "outbound_total_mean": 43.3733,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.997,
+          "inter_floor_wait_p95": 54.17,
+          "inter_floor_wait_max": 60.25,
+          "inter_floor_total_mean": 39.683
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 26.6831,
+          "std": 1.2936,
+          "baseline_mean": 43.6072,
+          "delta": -16.924,
+          "delta_pct": -0.3881,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.4059,
+            -16.4571
+          ],
+          "gap_closed": 0.5731,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.9355,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 36.7882,
+          "wait_mean": 14.5019,
+          "wait_p95": 33.2725,
+          "wait_max": 42.6,
+          "excess_mean": 17.8527,
+          "jain_wait": 0.6509,
+          "detour_mean": 3.3508,
+          "away_share": 0.0557,
+          "away_wait": 22.9378,
+          "idle_pick_share": 0.1645,
+          "chosen_distance": 13.4075,
+          "nearest_distance": 5.0129,
+          "busy_share": 0.6547,
+          "distance_per_passenger": 9.269,
+          "riders_per_stop": 1.6728,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1829,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 15.8387,
+          "inbound_wait_p95": 33.7375,
+          "inbound_wait_max": 39.15,
+          "inbound_total_mean": 39.5983,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 8.7371,
+          "outbound_wait_p95": 21.41,
+          "outbound_wait_max": 27.1,
+          "outbound_total_mean": 29.7852,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 9.9491,
+          "inter_floor_wait_p95": 27.4525,
+          "inter_floor_wait_max": 38.9,
+          "inter_floor_total_mean": 25.0781
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.8704,
+          "wait_mean": 34.52,
+          "wait_p95": 70.8975,
+          "wait_max": 81.9,
+          "excess_mean": 36.9349,
+          "jain_wait": 0.7118,
+          "detour_mean": 2.4149,
+          "away_share": 0.4882,
+          "away_wait": 51.777,
+          "idle_pick_share": 0.0289,
+          "chosen_distance": 15.7709,
+          "nearest_distance": 4.0884,
+          "busy_share": 0.9585,
+          "distance_per_passenger": 14.5762,
+          "riders_per_stop": 1.4974,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0064,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 33.9912,
+          "inbound_wait_p95": 70.79,
+          "inbound_wait_max": 81.2,
+          "inbound_total_mean": 56.5879,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 37.0409,
+          "outbound_wait_p95": 66.8925,
+          "outbound_wait_max": 73.3,
+          "outbound_total_mean": 58.0258,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.1372,
+          "inter_floor_wait_p95": 70.74,
+          "inter_floor_wait_max": 77.75,
+          "inter_floor_total_mean": 51.1504
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 36.7882,
+          "std": 1.8405,
+          "baseline_mean": 55.8704,
+          "delta": -19.0822,
+          "delta_pct": -0.3415,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -20.027,
+            -18.0782
+          ],
+          "gap_closed": 0.5166,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.9355,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 30.4958,
+          "wait_mean": 8.9542,
+          "wait_p95": 25.515,
+          "wait_max": 37.65,
+          "excess_mean": 11.5603,
+          "jain_wait": 0.5419,
+          "detour_mean": 2.6061,
+          "away_share": 0.1135,
+          "away_wait": 14.5274,
+          "idle_pick_share": 0.0546,
+          "chosen_distance": 7.9755,
+          "nearest_distance": 3.945,
+          "busy_share": 0.9619,
+          "distance_per_passenger": 13.9701,
+          "riders_per_stop": 1.5508,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1264,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 9.2774,
+          "inbound_wait_p95": 25.84,
+          "inbound_wait_max": 36.4,
+          "inbound_total_mean": 32.1672,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 7.966,
+          "outbound_wait_p95": 18.5625,
+          "outbound_wait_max": 23.65,
+          "outbound_total_mean": 28.9512,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 7.6751,
+          "inter_floor_wait_p95": 21.785,
+          "inter_floor_wait_max": 31.45,
+          "inter_floor_total_mean": 22.427
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.8473,
+          "wait_mean": 34.5019,
+          "wait_p95": 70.95,
+          "wait_max": 82.2,
+          "excess_mean": 36.9118,
+          "jain_wait": 0.7122,
+          "detour_mean": 2.4099,
+          "away_share": 0.4883,
+          "away_wait": 51.63,
+          "idle_pick_share": 0.025,
+          "chosen_distance": 15.7382,
+          "nearest_distance": 4.0236,
+          "busy_share": 0.9754,
+          "distance_per_passenger": 14.921,
+          "riders_per_stop": 1.4968,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0064,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 33.9445,
+          "inbound_wait_p95": 70.73,
+          "inbound_wait_max": 81.2,
+          "inbound_total_mean": 56.5348,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 37.5797,
+          "outbound_wait_p95": 67.86,
+          "outbound_wait_max": 74.3,
+          "outbound_total_mean": 58.5576,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.1488,
+          "inter_floor_wait_p95": 70.2875,
+          "inter_floor_wait_max": 78.05,
+          "inter_floor_total_mean": 51.1622
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 30.4958,
+          "std": 1.0805,
+          "baseline_mean": 55.8473,
+          "delta": -25.3516,
+          "delta_pct": -0.4539,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -26.0578,
+            -24.6291
+          ],
+          "gap_closed": 0.6868,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.9355,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 31.2749,
+          "wait_mean": 9.4626,
+          "wait_p95": 23.8225,
+          "wait_max": 36.15,
+          "excess_mean": 12.3394,
+          "jain_wait": 0.6064,
+          "detour_mean": 2.8769,
+          "away_share": 0.0673,
+          "away_wait": 12.4437,
+          "idle_pick_share": 0.1009,
+          "chosen_distance": 8.824,
+          "nearest_distance": 4.2403,
+          "busy_share": 0.8566,
+          "distance_per_passenger": 12.3601,
+          "riders_per_stop": 1.6201,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1664,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 10.0234,
+          "inbound_wait_p95": 24.2925,
+          "inbound_wait_max": 34.4,
+          "inbound_total_mean": 33.2457,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 6.9042,
+          "outbound_wait_p95": 16.845,
+          "outbound_wait_max": 21.4,
+          "outbound_total_mean": 27.8395,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 7.7296,
+          "inter_floor_wait_p95": 20.2225,
+          "inter_floor_wait_max": 30.15,
+          "inter_floor_total_mean": 22.5679
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.7853,
+          "wait_mean": 34.4298,
+          "wait_p95": 71.0325,
+          "wait_max": 82.4,
+          "excess_mean": 36.8498,
+          "jain_wait": 0.7142,
+          "detour_mean": 2.42,
+          "away_share": 0.5065,
+          "away_wait": 50.1511,
+          "idle_pick_share": 0.007,
+          "chosen_distance": 15.8042,
+          "nearest_distance": 4.2071,
+          "busy_share": 0.9775,
+          "distance_per_passenger": 14.9806,
+          "riders_per_stop": 1.4959,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0064,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 34.0156,
+          "inbound_wait_p95": 70.78,
+          "inbound_wait_max": 81.85,
+          "inbound_total_mean": 56.6169,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 36.4193,
+          "outbound_wait_p95": 67.175,
+          "outbound_wait_max": 74.6,
+          "outbound_total_mean": 57.4063,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 35.7297,
+          "inter_floor_wait_p95": 69.855,
+          "inter_floor_wait_max": 77.8,
+          "inter_floor_total_mean": 50.7492
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.2749,
+          "std": 0.9978,
+          "baseline_mean": 55.7853,
+          "delta": -24.5104,
+          "delta_pct": -0.4394,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -25.0276,
+            -23.9995
+          ],
+          "gap_closed": 0.6651,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "morning_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "morning_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.9355,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 31.8236,
+          "wait_mean": 10.017,
+          "wait_p95": 26.5075,
+          "wait_max": 35.75,
+          "excess_mean": 12.8881,
+          "jain_wait": 0.5919,
+          "detour_mean": 2.8711,
+          "away_share": 0.0736,
+          "away_wait": 15.0345,
+          "idle_pick_share": 0.1028,
+          "chosen_distance": 9.1658,
+          "nearest_distance": 4.2216,
+          "busy_share": 0.8326,
+          "distance_per_passenger": 12.0036,
+          "riders_per_stop": 1.6006,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1275,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 10.6077,
+          "inbound_wait_p95": 26.9,
+          "inbound_wait_max": 34.35,
+          "inbound_total_mean": 33.8216,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 8.1296,
+          "outbound_wait_p95": 19.9175,
+          "outbound_wait_max": 24.0,
+          "outbound_total_mean": 29.0647,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 7.7224,
+          "inter_floor_wait_p95": 21.5675,
+          "inter_floor_wait_max": 30.5,
+          "inter_floor_total_mean": 22.5637
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.9128,
+          "wait_mean": 34.5658,
+          "wait_p95": 70.7725,
+          "wait_max": 81.9,
+          "excess_mean": 36.9773,
+          "jain_wait": 0.7138,
+          "detour_mean": 2.4115,
+          "away_share": 0.492,
+          "away_wait": 51.5051,
+          "idle_pick_share": 0.0245,
+          "chosen_distance": 15.7631,
+          "nearest_distance": 4.022,
+          "busy_share": 0.9706,
+          "distance_per_passenger": 14.776,
+          "riders_per_stop": 1.4979,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0064,
+          "inbound_count": 248.8,
+          "inbound_wait_mean": 33.9672,
+          "inbound_wait_p95": 70.5725,
+          "inbound_wait_max": 80.9,
+          "inbound_total_mean": 56.5589,
+          "outbound_count": 21.65,
+          "outbound_wait_mean": 38.2997,
+          "outbound_wait_p95": 68.3275,
+          "outbound_wait_max": 75.15,
+          "outbound_total_mean": 59.2848,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.0928,
+          "inter_floor_wait_p95": 70.2075,
+          "inter_floor_wait_max": 77.8,
+          "inter_floor_total_mean": 51.1046
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.8236,
+          "std": 1.109,
+          "baseline_mean": 55.9128,
+          "delta": -24.0892,
+          "delta_pct": -0.4308,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -24.6846,
+            -23.4916
+          ],
+          "gap_closed": 0.6515,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0624,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 25.2718,
+          "wait_mean": 9.1622,
+          "wait_p95": 24.465,
+          "wait_max": 37.0,
+          "excess_mean": 11.2094,
+          "jain_wait": 0.5715,
+          "detour_mean": 2.0472,
+          "away_share": 0.1597,
+          "away_wait": 16.0786,
+          "idle_pick_share": 0.1417,
+          "chosen_distance": 6.5613,
+          "nearest_distance": 3.648,
+          "busy_share": 0.903,
+          "distance_per_passenger": 9.4053,
+          "riders_per_stop": 1.5127,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0944,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 7.9107,
+          "inbound_wait_p95": 23.3125,
+          "inbound_wait_max": 31.3,
+          "inbound_total_mean": 24.7982,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 9.9374,
+          "outbound_wait_p95": 24.875,
+          "outbound_wait_max": 36.0,
+          "outbound_total_mean": 27.0442,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 10.2187,
+          "inter_floor_wait_p95": 24.515,
+          "inter_floor_wait_max": 31.05,
+          "inter_floor_total_mean": 21.8431
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 42.4053,
+          "wait_mean": 26.3333,
+          "wait_p95": 53.95,
+          "wait_max": 63.05,
+          "excess_mean": 28.3429,
+          "jain_wait": 0.719,
+          "detour_mean": 2.0096,
+          "away_share": 0.4759,
+          "away_wait": 37.9766,
+          "idle_pick_share": 0.0272,
+          "chosen_distance": 10.6318,
+          "nearest_distance": 3.9865,
+          "busy_share": 0.9672,
+          "distance_per_passenger": 10.536,
+          "riders_per_stop": 1.4967,
+          "full_passby_share": 0.0,
+          "load_cv": 0.005,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 25.3473,
+          "inbound_wait_p95": 53.7775,
+          "inbound_wait_max": 61.3,
+          "inbound_total_mean": 42.1231,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 26.7252,
+          "outbound_wait_p95": 53.205,
+          "outbound_wait_max": 61.0,
+          "outbound_total_mean": 43.8489,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.7406,
+          "inter_floor_wait_p95": 52.9675,
+          "inter_floor_wait_max": 59.1,
+          "inter_floor_total_mean": 39.3635
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 25.2718,
+          "std": 1.322,
+          "baseline_mean": 42.4053,
+          "delta": -17.1335,
+          "delta_pct": -0.404,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.6693,
+            -16.5533
+          ],
+          "gap_closed": 0.6045,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0624,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 25.1681,
+          "wait_mean": 9.0986,
+          "wait_p95": 24.0475,
+          "wait_max": 39.3,
+          "excess_mean": 11.1057,
+          "jain_wait": 0.5693,
+          "detour_mean": 2.0072,
+          "away_share": 0.1843,
+          "away_wait": 14.6849,
+          "idle_pick_share": 0.0954,
+          "chosen_distance": 6.412,
+          "nearest_distance": 3.6337,
+          "busy_share": 0.9533,
+          "distance_per_passenger": 9.9764,
+          "riders_per_stop": 1.503,
+          "full_passby_share": 0.0,
+          "load_cv": 0.091,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 7.5702,
+          "inbound_wait_p95": 22.51,
+          "inbound_wait_max": 31.8,
+          "inbound_total_mean": 24.3782,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 10.1328,
+          "outbound_wait_p95": 24.495,
+          "outbound_wait_max": 37.05,
+          "outbound_total_mean": 27.2222,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 10.1415,
+          "inter_floor_wait_p95": 23.6225,
+          "inter_floor_wait_max": 31.9,
+          "inter_floor_total_mean": 21.7605
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 42.2407,
+          "wait_mean": 26.1698,
+          "wait_p95": 53.8275,
+          "wait_max": 62.9,
+          "excess_mean": 28.1783,
+          "jain_wait": 0.7161,
+          "detour_mean": 2.0084,
+          "away_share": 0.4722,
+          "away_wait": 37.8249,
+          "idle_pick_share": 0.0247,
+          "chosen_distance": 10.6154,
+          "nearest_distance": 3.9383,
+          "busy_share": 0.9741,
+          "distance_per_passenger": 10.6328,
+          "riders_per_stop": 1.4962,
+          "full_passby_share": 0.0,
+          "load_cv": 0.005,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 25.1193,
+          "inbound_wait_p95": 53.525,
+          "inbound_wait_max": 60.85,
+          "inbound_total_mean": 41.8942,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 26.6553,
+          "outbound_wait_p95": 53.1125,
+          "outbound_wait_max": 60.7,
+          "outbound_total_mean": 43.7788,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.4797,
+          "inter_floor_wait_p95": 52.72,
+          "inter_floor_wait_max": 58.9,
+          "inter_floor_total_mean": 39.0993
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 25.1681,
+          "std": 1.1029,
+          "baseline_mean": 42.2407,
+          "delta": -17.0726,
+          "delta_pct": -0.4042,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.6409,
+            -16.5458
+          ],
+          "gap_closed": 0.6059,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0624,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 24.8165,
+          "wait_mean": 8.7315,
+          "wait_p95": 22.885,
+          "wait_max": 35.5,
+          "excess_mean": 10.7541,
+          "jain_wait": 0.5774,
+          "detour_mean": 2.0226,
+          "away_share": 0.1793,
+          "away_wait": 13.1948,
+          "idle_pick_share": 0.0721,
+          "chosen_distance": 6.2502,
+          "nearest_distance": 3.5654,
+          "busy_share": 0.9619,
+          "distance_per_passenger": 10.0909,
+          "riders_per_stop": 1.5128,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0956,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 7.6281,
+          "inbound_wait_p95": 21.0175,
+          "inbound_wait_max": 29.1,
+          "inbound_total_mean": 24.5156,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 9.557,
+          "outbound_wait_p95": 23.89,
+          "outbound_wait_max": 34.4,
+          "outbound_total_mean": 26.6212,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 9.3636,
+          "inter_floor_wait_p95": 23.1275,
+          "inter_floor_wait_max": 29.9,
+          "inter_floor_total_mean": 20.9356
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 42.3056,
+          "wait_mean": 26.2387,
+          "wait_p95": 54.1025,
+          "wait_max": 63.35,
+          "excess_mean": 28.2432,
+          "jain_wait": 0.7163,
+          "detour_mean": 2.0045,
+          "away_share": 0.4732,
+          "away_wait": 37.4095,
+          "idle_pick_share": 0.0127,
+          "chosen_distance": 10.6888,
+          "nearest_distance": 4.0474,
+          "busy_share": 0.9846,
+          "distance_per_passenger": 10.7125,
+          "riders_per_stop": 1.4946,
+          "full_passby_share": 0.0,
+          "load_cv": 0.005,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 25.1924,
+          "inbound_wait_p95": 53.2525,
+          "inbound_wait_max": 61.25,
+          "inbound_total_mean": 41.9601,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 26.7105,
+          "outbound_wait_p95": 53.745,
+          "outbound_wait_max": 62.15,
+          "outbound_total_mean": 43.828,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.6482,
+          "inter_floor_wait_p95": 53.4075,
+          "inter_floor_wait_max": 60.25,
+          "inter_floor_total_mean": 39.275
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 24.8165,
+          "std": 1.0891,
+          "baseline_mean": 42.3056,
+          "delta": -17.4891,
+          "delta_pct": -0.4134,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.9915,
+            -16.999
+          ],
+          "gap_closed": 0.6192,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "lunch · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.0624,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 25.2513,
+          "wait_mean": 9.1634,
+          "wait_p95": 24.4225,
+          "wait_max": 40.05,
+          "excess_mean": 11.1889,
+          "jain_wait": 0.5664,
+          "detour_mean": 2.0255,
+          "away_share": 0.1835,
+          "away_wait": 14.7677,
+          "idle_pick_share": 0.0917,
+          "chosen_distance": 6.3856,
+          "nearest_distance": 3.6077,
+          "busy_share": 0.9551,
+          "distance_per_passenger": 9.9999,
+          "riders_per_stop": 1.5045,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0731,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 7.5848,
+          "inbound_wait_p95": 22.04,
+          "inbound_wait_max": 30.3,
+          "inbound_total_mean": 24.4431,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 10.2062,
+          "outbound_wait_p95": 25.0275,
+          "outbound_wait_max": 37.5,
+          "outbound_total_mean": 27.2815,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 10.2661,
+          "inter_floor_wait_p95": 23.9675,
+          "inter_floor_wait_max": 34.1,
+          "inter_floor_total_mean": 21.9092
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 42.2579,
+          "wait_mean": 26.1867,
+          "wait_p95": 54.0775,
+          "wait_max": 62.95,
+          "excess_mean": 28.1955,
+          "jain_wait": 0.716,
+          "detour_mean": 2.0087,
+          "away_share": 0.4715,
+          "away_wait": 37.8553,
+          "idle_pick_share": 0.0249,
+          "chosen_distance": 10.5978,
+          "nearest_distance": 3.9552,
+          "busy_share": 0.9754,
+          "distance_per_passenger": 10.6347,
+          "riders_per_stop": 1.4953,
+          "full_passby_share": 0.0,
+          "load_cv": 0.005,
+          "inbound_count": 113.8,
+          "inbound_wait_mean": 25.1831,
+          "inbound_wait_p95": 53.9125,
+          "inbound_wait_max": 61.0,
+          "inbound_total_mean": 41.9599,
+          "outbound_count": 120.1,
+          "outbound_wait_mean": 26.5801,
+          "outbound_wait_p95": 53.09,
+          "outbound_wait_max": 60.85,
+          "outbound_total_mean": 43.7015,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 27.6434,
+          "inter_floor_wait_p95": 53.0225,
+          "inter_floor_wait_max": 59.15,
+          "inter_floor_total_mean": 39.2656
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 25.2513,
+          "std": 1.4246,
+          "baseline_mean": 42.2579,
+          "delta": -17.0065,
+          "delta_pct": -0.4024,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.6082,
+            -16.4005
+          ],
+          "gap_closed": 0.6032,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.7149,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.2079,
+          "wait_mean": 7.5331,
+          "wait_p95": 21.3775,
+          "wait_max": 37.75,
+          "excess_mean": 9.493,
+          "jain_wait": 0.5263,
+          "detour_mean": 1.9599,
+          "away_share": 0.0983,
+          "away_wait": 13.5873,
+          "idle_pick_share": 0.2315,
+          "chosen_distance": 6.0205,
+          "nearest_distance": 3.2658,
+          "busy_share": 0.8246,
+          "distance_per_passenger": 12.9763,
+          "riders_per_stop": 1.4471,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1281,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 6.613,
+          "inbound_wait_p95": 19.9325,
+          "inbound_wait_max": 29.4,
+          "inbound_total_mean": 28.6433,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 8.1046,
+          "outbound_wait_p95": 21.6,
+          "outbound_wait_max": 36.55,
+          "outbound_total_mean": 29.7097,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 8.5202,
+          "inter_floor_wait_p95": 22.98,
+          "inter_floor_wait_max": 31.5,
+          "inter_floor_total_mean": 23.4655
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 53.6463,
+          "wait_mean": 33.0612,
+          "wait_p95": 69.7475,
+          "wait_max": 81.6,
+          "excess_mean": 34.9314,
+          "jain_wait": 0.7061,
+          "detour_mean": 1.8702,
+          "away_share": 0.4602,
+          "away_wait": 48.5758,
+          "idle_pick_share": 0.043,
+          "chosen_distance": 14.3034,
+          "nearest_distance": 3.882,
+          "busy_share": 0.9503,
+          "distance_per_passenger": 15.9722,
+          "riders_per_stop": 1.4305,
+          "full_passby_share": 0.0,
+          "load_cv": 0.007,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 32.6281,
+          "inbound_wait_p95": 69.43,
+          "inbound_wait_max": 79.0,
+          "inbound_total_mean": 54.4987,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 33.3346,
+          "outbound_wait_p95": 69.345,
+          "outbound_wait_max": 78.8,
+          "outbound_total_mean": 54.913,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 33.3387,
+          "inter_floor_wait_p95": 68.28,
+          "inter_floor_wait_max": 76.65,
+          "inter_floor_total_mean": 48.2239
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.2079,
+          "std": 0.9669,
+          "baseline_mean": 53.6463,
+          "delta": -25.4384,
+          "delta_pct": -0.4742,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -26.0126,
+            -24.8403
+          ],
+          "gap_closed": 0.7282,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.7149,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.4786,
+          "wait_mean": 7.9271,
+          "wait_p95": 23.0975,
+          "wait_max": 40.3,
+          "excess_mean": 9.7638,
+          "jain_wait": 0.5097,
+          "detour_mean": 1.8367,
+          "away_share": 0.1529,
+          "away_wait": 12.8432,
+          "idle_pick_share": 0.131,
+          "chosen_distance": 6.1399,
+          "nearest_distance": 3.3553,
+          "busy_share": 0.9337,
+          "distance_per_passenger": 14.9028,
+          "riders_per_stop": 1.4253,
+          "full_passby_share": 0.0,
+          "load_cv": 0.129,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 6.0676,
+          "inbound_wait_p95": 20.38,
+          "inbound_wait_max": 29.95,
+          "inbound_total_mean": 27.9035,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 9.2716,
+          "outbound_wait_p95": 24.5925,
+          "outbound_wait_max": 38.05,
+          "outbound_total_mean": 30.8125,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 9.5305,
+          "inter_floor_wait_p95": 23.81,
+          "inter_floor_wait_max": 34.7,
+          "inter_floor_total_mean": 24.3872
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 53.737,
+          "wait_mean": 33.1562,
+          "wait_p95": 69.555,
+          "wait_max": 81.6,
+          "excess_mean": 35.0222,
+          "jain_wait": 0.7067,
+          "detour_mean": 1.866,
+          "away_share": 0.4596,
+          "away_wait": 48.607,
+          "idle_pick_share": 0.0349,
+          "chosen_distance": 14.3092,
+          "nearest_distance": 3.8819,
+          "busy_share": 0.9625,
+          "distance_per_passenger": 16.2038,
+          "riders_per_stop": 1.4306,
+          "full_passby_share": 0.0,
+          "load_cv": 0.007,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 32.5434,
+          "inbound_wait_p95": 69.195,
+          "inbound_wait_max": 78.9,
+          "inbound_total_mean": 54.4056,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 33.7067,
+          "outbound_wait_p95": 69.39,
+          "outbound_wait_max": 79.55,
+          "outbound_total_mean": 55.2802,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 33.1551,
+          "inter_floor_wait_p95": 67.5975,
+          "inter_floor_wait_max": 77.3,
+          "inter_floor_total_mean": 48.0481
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.4786,
+          "std": 1.0936,
+          "baseline_mean": 53.737,
+          "delta": -25.2584,
+          "delta_pct": -0.47,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -25.8423,
+            -24.7153
+          ],
+          "gap_closed": 0.7212,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.7149,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.2453,
+          "wait_mean": 7.6243,
+          "wait_p95": 21.2275,
+          "wait_max": 33.45,
+          "excess_mean": 9.5305,
+          "jain_wait": 0.5449,
+          "detour_mean": 1.9062,
+          "away_share": 0.1492,
+          "away_wait": 10.5878,
+          "idle_pick_share": 0.1116,
+          "chosen_distance": 6.181,
+          "nearest_distance": 3.4037,
+          "busy_share": 0.9369,
+          "distance_per_passenger": 14.9836,
+          "riders_per_stop": 1.4473,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1277,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 6.6629,
+          "inbound_wait_p95": 19.7075,
+          "inbound_wait_max": 27.85,
+          "inbound_total_mean": 28.6771,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 8.206,
+          "outbound_wait_p95": 21.8875,
+          "outbound_wait_max": 32.5,
+          "outbound_total_mean": 29.7182,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 8.6704,
+          "inter_floor_wait_p95": 22.1825,
+          "inter_floor_wait_max": 28.35,
+          "inter_floor_total_mean": 23.5491
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 54.0569,
+          "wait_mean": 33.4631,
+          "wait_p95": 69.8975,
+          "wait_max": 81.25,
+          "excess_mean": 35.342,
+          "jain_wait": 0.7077,
+          "detour_mean": 1.8789,
+          "away_share": 0.4883,
+          "away_wait": 47.7605,
+          "idle_pick_share": 0.0161,
+          "chosen_distance": 14.2249,
+          "nearest_distance": 3.9648,
+          "busy_share": 0.9769,
+          "distance_per_passenger": 16.4701,
+          "riders_per_stop": 1.43,
+          "full_passby_share": 0.0,
+          "load_cv": 0.007,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 33.1902,
+          "inbound_wait_p95": 70.09,
+          "inbound_wait_max": 78.65,
+          "inbound_total_mean": 55.0751,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 33.8288,
+          "outbound_wait_p95": 69.0725,
+          "outbound_wait_max": 79.5,
+          "outbound_total_mean": 55.4022,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 33.3539,
+          "inter_floor_wait_p95": 68.39,
+          "inter_floor_wait_max": 76.7,
+          "inter_floor_total_mean": 48.2689
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.2453,
+          "std": 1.0859,
+          "baseline_mean": 54.0569,
+          "delta": -25.8115,
+          "delta_pct": -0.4775,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -26.4581,
+            -25.1649
+          ],
+          "gap_closed": 0.7303,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "lunch",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.36,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "lunch · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.36 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.7149,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.0556,
+          "wait_mean": 7.4797,
+          "wait_p95": 22.0325,
+          "wait_max": 38.15,
+          "excess_mean": 9.3407,
+          "jain_wait": 0.5099,
+          "detour_mean": 1.861,
+          "away_share": 0.1485,
+          "away_wait": 11.6872,
+          "idle_pick_share": 0.1405,
+          "chosen_distance": 5.8812,
+          "nearest_distance": 3.2799,
+          "busy_share": 0.9193,
+          "distance_per_passenger": 14.6527,
+          "riders_per_stop": 1.4226,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1134,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 5.9973,
+          "inbound_wait_p95": 19.6225,
+          "inbound_wait_max": 28.05,
+          "inbound_total_mean": 27.8727,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 8.5498,
+          "outbound_wait_p95": 23.1025,
+          "outbound_wait_max": 36.3,
+          "outbound_total_mean": 30.0953,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 8.7661,
+          "inter_floor_wait_p95": 23.515,
+          "inter_floor_wait_max": 31.5,
+          "inter_floor_total_mean": 23.6642
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 53.8627,
+          "wait_mean": 33.2804,
+          "wait_p95": 69.58,
+          "wait_max": 81.55,
+          "excess_mean": 35.1478,
+          "jain_wait": 0.7088,
+          "detour_mean": 1.8674,
+          "away_share": 0.4652,
+          "away_wait": 48.4675,
+          "idle_pick_share": 0.0352,
+          "chosen_distance": 14.3193,
+          "nearest_distance": 3.884,
+          "busy_share": 0.9612,
+          "distance_per_passenger": 16.1674,
+          "riders_per_stop": 1.4299,
+          "full_passby_share": 0.0,
+          "load_cv": 0.007,
+          "inbound_count": 124.45,
+          "inbound_wait_mean": 32.6557,
+          "inbound_wait_p95": 69.29,
+          "inbound_wait_max": 78.6,
+          "inbound_total_mean": 54.5216,
+          "outbound_count": 116.4,
+          "outbound_wait_mean": 33.7534,
+          "outbound_wait_p95": 69.195,
+          "outbound_wait_max": 79.35,
+          "outbound_total_mean": 55.3304,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 33.5342,
+          "inter_floor_wait_p95": 68.31,
+          "inter_floor_wait_max": 76.45,
+          "inter_floor_total_mean": 48.4188
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.0556,
+          "std": 1.1114,
+          "baseline_mean": 53.8627,
+          "delta": -25.8071,
+          "delta_pct": -0.4791,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -26.4066,
+            -25.1488
+          ],
+          "gap_closed": 0.7342,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2557,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.5081,
+          "wait_mean": 11.8353,
+          "wait_p95": 31.1925,
+          "wait_max": 49.85,
+          "excess_mean": 14.2524,
+          "jain_wait": 0.5839,
+          "detour_mean": 2.4171,
+          "away_share": 0.2346,
+          "away_wait": 18.9572,
+          "idle_pick_share": 0.1265,
+          "chosen_distance": 7.2506,
+          "nearest_distance": 3.9154,
+          "busy_share": 0.9206,
+          "distance_per_passenger": 8.702,
+          "riders_per_stop": 1.5734,
+          "full_passby_share": 0.0015,
+          "load_cv": 0.0665,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 5.9827,
+          "inbound_wait_p95": 19.3675,
+          "inbound_wait_max": 26.35,
+          "inbound_total_mean": 21.8509,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 12.1215,
+          "outbound_wait_p95": 31.2325,
+          "outbound_wait_max": 48.55,
+          "outbound_total_mean": 29.8237,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 13.1559,
+          "inter_floor_wait_p95": 32.16,
+          "inter_floor_wait_max": 40.0,
+          "inter_floor_total_mean": 24.8918
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 44.6856,
+          "wait_mean": 27.7074,
+          "wait_p95": 55.7775,
+          "wait_max": 75.1,
+          "excess_mean": 30.4299,
+          "jain_wait": 0.726,
+          "detour_mean": 2.7225,
+          "away_share": 0.4769,
+          "away_wait": 38.2657,
+          "idle_pick_share": 0.0254,
+          "chosen_distance": 9.7514,
+          "nearest_distance": 3.9242,
+          "busy_share": 0.9681,
+          "distance_per_passenger": 9.4111,
+          "riders_per_stop": 1.5696,
+          "full_passby_share": 0.0016,
+          "load_cv": 0.004,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 25.1872,
+          "inbound_wait_p95": 51.05,
+          "inbound_wait_max": 56.45,
+          "inbound_total_mean": 41.0205,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 27.8025,
+          "outbound_wait_p95": 55.9125,
+          "outbound_wait_max": 74.85,
+          "outbound_total_mean": 45.902,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 28.6044,
+          "inter_floor_wait_p95": 54.79,
+          "inter_floor_wait_max": 60.8,
+          "inter_floor_total_mean": 40.3409
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.5081,
+          "std": 1.2692,
+          "baseline_mean": 44.6856,
+          "delta": -16.1775,
+          "delta_pct": -0.362,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -16.7502,
+            -15.5672
+          ],
+          "gap_closed": 0.5316,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2557,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.66,
+          "wait_mean": 11.994,
+          "wait_p95": 31.21,
+          "wait_max": 50.35,
+          "excess_mean": 14.4043,
+          "jain_wait": 0.5865,
+          "detour_mean": 2.4102,
+          "away_share": 0.2453,
+          "away_wait": 18.9302,
+          "idle_pick_share": 0.1177,
+          "chosen_distance": 7.3178,
+          "nearest_distance": 3.9847,
+          "busy_share": 0.924,
+          "distance_per_passenger": 8.7513,
+          "riders_per_stop": 1.5726,
+          "full_passby_share": 0.0014,
+          "load_cv": 0.0841,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 6.1165,
+          "inbound_wait_p95": 19.73,
+          "inbound_wait_max": 27.6,
+          "inbound_total_mean": 21.9235,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 12.272,
+          "outbound_wait_p95": 31.3625,
+          "outbound_wait_max": 49.45,
+          "outbound_total_mean": 29.967,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 13.3767,
+          "inter_floor_wait_p95": 31.8425,
+          "inter_floor_wait_max": 39.0,
+          "inter_floor_total_mean": 25.1359
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 44.7056,
+          "wait_mean": 27.723,
+          "wait_p95": 55.87,
+          "wait_max": 75.1,
+          "excess_mean": 30.4498,
+          "jain_wait": 0.7258,
+          "detour_mean": 2.7269,
+          "away_share": 0.48,
+          "away_wait": 38.1955,
+          "idle_pick_share": 0.0249,
+          "chosen_distance": 9.7387,
+          "nearest_distance": 3.9264,
+          "busy_share": 0.9691,
+          "distance_per_passenger": 9.4244,
+          "riders_per_stop": 1.569,
+          "full_passby_share": 0.0016,
+          "load_cv": 0.004,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 25.4735,
+          "inbound_wait_p95": 51.29,
+          "inbound_wait_max": 56.25,
+          "inbound_total_mean": 41.3141,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 27.775,
+          "outbound_wait_p95": 55.8075,
+          "outbound_wait_max": 74.85,
+          "outbound_total_mean": 45.8799,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 28.6825,
+          "inter_floor_wait_p95": 54.8975,
+          "inter_floor_wait_max": 61.15,
+          "inter_floor_total_mean": 40.4164
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.66,
+          "std": 1.1307,
+          "baseline_mean": 44.7056,
+          "delta": -16.0456,
+          "delta_pct": -0.3589,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -16.6305,
+            -15.4296
+          ],
+          "gap_closed": 0.527,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2557,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 27.8706,
+          "wait_mean": 11.2293,
+          "wait_p95": 29.915,
+          "wait_max": 49.45,
+          "excess_mean": 13.6149,
+          "jain_wait": 0.5751,
+          "detour_mean": 2.3856,
+          "away_share": 0.2528,
+          "away_wait": 17.1094,
+          "idle_pick_share": 0.0619,
+          "chosen_distance": 6.8587,
+          "nearest_distance": 3.7947,
+          "busy_share": 0.9598,
+          "distance_per_passenger": 9.1222,
+          "riders_per_stop": 1.5632,
+          "full_passby_share": 0.0008,
+          "load_cv": 0.0665,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 5.8944,
+          "inbound_wait_p95": 18.1225,
+          "inbound_wait_max": 23.7,
+          "inbound_total_mean": 21.725,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 11.4595,
+          "outbound_wait_p95": 29.7975,
+          "outbound_wait_max": 47.35,
+          "outbound_total_mean": 29.1235,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 12.5923,
+          "inter_floor_wait_p95": 31.225,
+          "inter_floor_wait_max": 42.9,
+          "inter_floor_total_mean": 24.3325
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 44.7541,
+          "wait_mean": 27.7947,
+          "wait_p95": 55.74,
+          "wait_max": 70.25,
+          "excess_mean": 30.4984,
+          "jain_wait": 0.7301,
+          "detour_mean": 2.7037,
+          "away_share": 0.4896,
+          "away_wait": 37.8751,
+          "idle_pick_share": 0.011,
+          "chosen_distance": 9.7603,
+          "nearest_distance": 3.8532,
+          "busy_share": 0.9835,
+          "distance_per_passenger": 9.5815,
+          "riders_per_stop": 1.566,
+          "full_passby_share": 0.0016,
+          "load_cv": 0.004,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 24.9162,
+          "inbound_wait_p95": 50.8425,
+          "inbound_wait_max": 55.95,
+          "inbound_total_mean": 40.7507,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 27.9548,
+          "outbound_wait_p95": 55.905,
+          "outbound_wait_max": 70.1,
+          "outbound_total_mean": 46.0321,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 28.329,
+          "inter_floor_wait_p95": 54.11,
+          "inter_floor_wait_max": 60.5,
+          "inter_floor_total_mean": 40.0548
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 27.8706,
+          "std": 1.1011,
+          "baseline_mean": 44.7541,
+          "delta": -16.8835,
+          "delta_pct": -0.3773,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.4138,
+            -16.2575
+          ],
+          "gap_closed": 0.5536,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 30,
+        "cars": 4,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "evening_rush · 30 floors x 4 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 14.2557,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 28.4223,
+          "wait_mean": 11.7835,
+          "wait_p95": 30.265,
+          "wait_max": 50.95,
+          "excess_mean": 14.1666,
+          "jain_wait": 0.5871,
+          "detour_mean": 2.3831,
+          "away_share": 0.2503,
+          "away_wait": 18.2666,
+          "idle_pick_share": 0.0772,
+          "chosen_distance": 7.1836,
+          "nearest_distance": 3.9936,
+          "busy_share": 0.9528,
+          "distance_per_passenger": 9.0131,
+          "riders_per_stop": 1.571,
+          "full_passby_share": 0.0017,
+          "load_cv": 0.0874,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 6.4748,
+          "inbound_wait_p95": 19.175,
+          "inbound_wait_max": 24.25,
+          "inbound_total_mean": 22.2775,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 12.0388,
+          "outbound_wait_p95": 30.59,
+          "outbound_wait_max": 50.35,
+          "outbound_total_mean": 29.7022,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 13.085,
+          "inter_floor_wait_p95": 31.2375,
+          "inter_floor_wait_max": 40.3,
+          "inter_floor_total_mean": 24.8433
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 44.7872,
+          "wait_mean": 27.8124,
+          "wait_p95": 55.845,
+          "wait_max": 74.75,
+          "excess_mean": 30.5314,
+          "jain_wait": 0.7281,
+          "detour_mean": 2.7191,
+          "away_share": 0.4815,
+          "away_wait": 38.1497,
+          "idle_pick_share": 0.0187,
+          "chosen_distance": 9.7784,
+          "nearest_distance": 3.9401,
+          "busy_share": 0.9784,
+          "distance_per_passenger": 9.5031,
+          "riders_per_stop": 1.5691,
+          "full_passby_share": 0.0016,
+          "load_cv": 0.004,
+          "inbound_count": 22.7,
+          "inbound_wait_mean": 25.4233,
+          "inbound_wait_p95": 51.8975,
+          "inbound_wait_max": 56.85,
+          "inbound_total_mean": 41.2584,
+          "outbound_count": 242.0,
+          "outbound_wait_mean": 27.8804,
+          "outbound_wait_p95": 55.765,
+          "outbound_wait_max": 74.7,
+          "outbound_total_mean": 45.9753,
+          "inter_floor_count": 46.4,
+          "inter_floor_wait_mean": 28.6979,
+          "inter_floor_wait_p95": 54.6375,
+          "inter_floor_wait_max": 60.8,
+          "inter_floor_total_mean": 40.4316
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 28.4223,
+          "std": 1.3188,
+          "baseline_mean": 44.7872,
+          "delta": -16.3649,
+          "delta_pct": -0.3654,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -17.0361,
+            -15.6218
+          ],
+          "gap_closed": 0.536,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "stay"
+      },
+      "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.8614,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 32.5128,
+          "wait_mean": 11.4373,
+          "wait_p95": 32.6225,
+          "wait_max": 50.7,
+          "excess_mean": 13.6514,
+          "jain_wait": 0.5418,
+          "detour_mean": 2.2142,
+          "away_share": 0.1459,
+          "away_wait": 16.6976,
+          "idle_pick_share": 0.2483,
+          "chosen_distance": 8.4545,
+          "nearest_distance": 3.9901,
+          "busy_share": 0.8326,
+          "distance_per_passenger": 12.3793,
+          "riders_per_stop": 1.4449,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1216,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 2.8391,
+          "inbound_wait_p95": 11.6125,
+          "inbound_wait_max": 18.5,
+          "inbound_total_mean": 24.3496,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 12.1565,
+          "outbound_wait_p95": 32.8725,
+          "outbound_wait_max": 50.4,
+          "outbound_total_mean": 34.4177,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 12.266,
+          "inter_floor_wait_p95": 32.1475,
+          "inter_floor_wait_max": 42.95,
+          "inter_floor_total_mean": 27.3176
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.2801,
+          "wait_mean": 34.0523,
+          "wait_p95": 70.5025,
+          "wait_max": 81.45,
+          "excess_mean": 36.4187,
+          "jain_wait": 0.7229,
+          "detour_mean": 2.3664,
+          "away_share": 0.4743,
+          "away_wait": 47.1746,
+          "idle_pick_share": 0.0442,
+          "chosen_distance": 13.1827,
+          "nearest_distance": 3.657,
+          "busy_share": 0.9534,
+          "distance_per_passenger": 14.8483,
+          "riders_per_stop": 1.4805,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0079,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 31.9379,
+          "inbound_wait_p95": 66.5375,
+          "inbound_wait_max": 72.4,
+          "inbound_total_mean": 53.6256,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 33.765,
+          "outbound_wait_p95": 70.48,
+          "outbound_wait_max": 81.25,
+          "outbound_total_mean": 56.2269,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.3779,
+          "inter_floor_wait_p95": 69.7125,
+          "inter_floor_wait_max": 77.45,
+          "inter_floor_total_mean": 51.327
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.5128,
+          "std": 0.826,
+          "baseline_mean": 55.2801,
+          "delta": -22.7673,
+          "delta_pct": -0.4119,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -23.5046,
+            -21.9948
+          ],
+          "gap_closed": 0.6252,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "lobby"
+      },
+      "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking lobby",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.8614,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 32.3987,
+          "wait_mean": 11.3186,
+          "wait_p95": 32.3375,
+          "wait_max": 51.25,
+          "excess_mean": 13.5373,
+          "jain_wait": 0.5428,
+          "detour_mean": 2.2187,
+          "away_share": 0.1444,
+          "away_wait": 15.4654,
+          "idle_pick_share": 0.2405,
+          "chosen_distance": 8.4157,
+          "nearest_distance": 4.0169,
+          "busy_share": 0.8373,
+          "distance_per_passenger": 12.4043,
+          "riders_per_stop": 1.4449,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1266,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 2.9711,
+          "inbound_wait_p95": 11.8025,
+          "inbound_wait_max": 17.5,
+          "inbound_total_mean": 24.4899,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 11.998,
+          "outbound_wait_p95": 32.71,
+          "outbound_wait_max": 49.95,
+          "outbound_total_mean": 34.2706,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 12.1972,
+          "inter_floor_wait_p95": 32.0225,
+          "inter_floor_wait_max": 41.0,
+          "inter_floor_total_mean": 27.2208
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.2984,
+          "wait_mean": 34.0703,
+          "wait_p95": 70.5675,
+          "wait_max": 81.65,
+          "excess_mean": 36.437,
+          "jain_wait": 0.7228,
+          "detour_mean": 2.3667,
+          "away_share": 0.4755,
+          "away_wait": 47.2105,
+          "idle_pick_share": 0.0428,
+          "chosen_distance": 13.1908,
+          "nearest_distance": 3.6785,
+          "busy_share": 0.9569,
+          "distance_per_passenger": 14.9162,
+          "riders_per_stop": 1.4796,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0079,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 32.2328,
+          "inbound_wait_p95": 66.655,
+          "inbound_wait_max": 72.8,
+          "inbound_total_mean": 53.9083,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 33.7321,
+          "outbound_wait_p95": 70.4675,
+          "outbound_wait_max": 81.5,
+          "outbound_total_mean": 56.1949,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.5577,
+          "inter_floor_wait_p95": 69.4625,
+          "inter_floor_wait_max": 77.5,
+          "inter_floor_total_mean": 51.5104
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 32.3987,
+          "std": 0.8433,
+          "baseline_mean": 55.2984,
+          "delta": -22.8997,
+          "delta_pct": -0.4141,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -23.6743,
+            -22.0817
+          ],
+          "gap_closed": 0.6285,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "spread"
+      },
+      "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking spread",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.8614,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 31.2468,
+          "wait_mean": 10.3111,
+          "wait_p95": 31.04,
+          "wait_max": 48.6,
+          "excess_mean": 12.3854,
+          "jain_wait": 0.5171,
+          "detour_mean": 2.0743,
+          "away_share": 0.1835,
+          "away_wait": 13.2264,
+          "idle_pick_share": 0.0982,
+          "chosen_distance": 7.608,
+          "nearest_distance": 3.7698,
+          "busy_share": 0.9388,
+          "distance_per_passenger": 14.0404,
+          "riders_per_stop": 1.4291,
+          "full_passby_share": 0.0,
+          "load_cv": 0.1022,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 3.6043,
+          "inbound_wait_p95": 11.555,
+          "inbound_wait_max": 18.65,
+          "inbound_total_mean": 25.1074,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 10.7887,
+          "outbound_wait_p95": 31.1425,
+          "outbound_wait_max": 48.4,
+          "outbound_total_mean": 32.8803,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 11.4446,
+          "inter_floor_wait_p95": 32.0625,
+          "inter_floor_wait_max": 41.5,
+          "inter_floor_total_mean": 26.4364
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 54.9367,
+          "wait_mean": 33.7239,
+          "wait_p95": 70.075,
+          "wait_max": 82.25,
+          "excess_mean": 36.0753,
+          "jain_wait": 0.7182,
+          "detour_mean": 2.3515,
+          "away_share": 0.4826,
+          "away_wait": 46.1435,
+          "idle_pick_share": 0.0157,
+          "chosen_distance": 13.16,
+          "nearest_distance": 3.6181,
+          "busy_share": 0.9798,
+          "distance_per_passenger": 15.2826,
+          "riders_per_stop": 1.4751,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0079,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 32.4305,
+          "inbound_wait_p95": 66.34,
+          "inbound_wait_max": 72.85,
+          "inbound_total_mean": 54.1266,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 33.6491,
+          "outbound_wait_p95": 69.89,
+          "outbound_wait_max": 82.1,
+          "outbound_total_mean": 56.0957,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 34.7589,
+          "inter_floor_wait_p95": 68.1625,
+          "inter_floor_wait_max": 74.4,
+          "inter_floor_total_mean": 49.6794
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.2468,
+          "std": 1.1243,
+          "baseline_mean": 54.9367,
+          "delta": -23.6899,
+          "delta_pct": -0.4312,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -24.1448,
+            -23.2643
+          ],
+          "gap_closed": 0.6567,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    },
+    {
+      "key": {
+        "scenario": "evening_rush",
+        "floors": 40,
+        "cars": 6,
+        "capacity": 8,
+        "door_time": 1,
+        "placement": "lobby",
+        "duration": 800,
+        "load": 1.0,
+        "rate": 0.39,
+        "skip_first": 0,
+        "parking": "demand"
+      },
+      "title": "evening_rush · 40 floors x 6 cars · capacity 8 · door_time 1 · lobby · load 1 (0.39 requests/tick) · 800 ticks · parking demand",
+      "seeds": 20,
+      "b0": {
+        "total_mean": 18.8614,
+        "wait_mean": 0.0,
+        "excess_mean": 0.0
+      },
+      "combos": [
+        {
+          "dispatch": "cost",
+          "motion": "look",
+          "total_mean": 31.5297,
+          "wait_mean": 10.5431,
+          "wait_p95": 31.0575,
+          "wait_max": 50.85,
+          "excess_mean": 12.6683,
+          "jain_wait": 0.5239,
+          "detour_mean": 2.1252,
+          "away_share": 0.1711,
+          "away_wait": 13.8035,
+          "idle_pick_share": 0.1579,
+          "chosen_distance": 7.7129,
+          "nearest_distance": 3.8151,
+          "busy_share": 0.8947,
+          "distance_per_passenger": 13.3426,
+          "riders_per_stop": 1.4262,
+          "full_passby_share": 0.0002,
+          "load_cv": 0.1085,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 2.8136,
+          "inbound_wait_p95": 11.0125,
+          "inbound_wait_max": 15.95,
+          "inbound_total_mean": 24.2647,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 11.1297,
+          "outbound_wait_p95": 31.6925,
+          "outbound_wait_max": 48.75,
+          "outbound_total_mean": 33.2862,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 11.6777,
+          "inter_floor_wait_p95": 31.285,
+          "inter_floor_wait_max": 41.7,
+          "inter_floor_total_mean": 26.7127
+        },
+        {
+          "dispatch": "round_robin",
+          "motion": "look",
+          "total_mean": 55.2015,
+          "wait_mean": 33.9847,
+          "wait_p95": 70.65,
+          "wait_max": 81.25,
+          "excess_mean": 36.3401,
+          "jain_wait": 0.7214,
+          "detour_mean": 2.3554,
+          "away_share": 0.4774,
+          "away_wait": 46.9782,
+          "idle_pick_share": 0.0339,
+          "chosen_distance": 13.1487,
+          "nearest_distance": 3.6751,
+          "busy_share": 0.9668,
+          "distance_per_passenger": 15.0486,
+          "riders_per_stop": 1.4796,
+          "full_passby_share": 0.0,
+          "load_cv": 0.0079,
+          "inbound_count": 24.8,
+          "inbound_wait_mean": 33.1214,
+          "inbound_wait_p95": 67.9075,
+          "inbound_wait_max": 72.85,
+          "inbound_total_mean": 54.8036,
+          "outbound_count": 236.45,
+          "outbound_wait_mean": 33.6444,
+          "outbound_wait_p95": 70.34,
+          "outbound_wait_max": 81.05,
+          "outbound_total_mean": 56.0951,
+          "inter_floor_count": 47.5,
+          "inter_floor_wait_mean": 36.0329,
+          "inter_floor_wait_p95": 69.31,
+          "inter_floor_wait_max": 76.9,
+          "inter_floor_total_mean": 50.9691
+        }
+      ],
+      "dispatch_axis": [
+        {
+          "policy": "cost",
+          "baseline": "round_robin",
+          "metric": "total_mean",
+          "n": 20,
+          "mean": 31.5297,
+          "std": 0.836,
+          "baseline_mean": 55.2015,
+          "delta": -23.6718,
+          "delta_pct": -0.4288,
+          "wins": "20/20",
+          "losses": "0/20",
+          "ci95": [
+            -24.3946,
+            -22.9025
+          ],
+          "gap_closed": 0.6514,
+          "verdict": "better"
+        }
+      ],
+      "motion_axis": [],
+      "fairness": []
+    }
+  ]
+}

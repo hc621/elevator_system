@@ -35,6 +35,7 @@ from elevator_sim.dispatch import DISPATCH_POLICIES, is_dispatch_policy, make_di
 from elevator_sim.feed import IteratorFeed
 from elevator_sim.model import BuildingConfig, Request
 from elevator_sim.motion import MOTION_POLICIES, make_motion
+from elevator_sim.parking import PARKING_POLICIES, make_parking
 from elevator_sim.report import (
     TRIP_KINDS,
     PassengerRecord,
@@ -65,6 +66,7 @@ class Experiment:
     duration: int  # arrival window in ticks
     seeds: tuple[int, ...]
     load: float = 1.0  # multiplies every stream's Poisson rate (scenarios.generate)
+    parking: str = "stay"  # where idle cars wait (parking.py)
     dispatch_policies: tuple[str, ...] = tuple(sorted(DISPATCH_POLICIES))
     motion_policies: tuple[str, ...] = ("look", "scan")
     placement: str = "lobby"  # label only; the start floors live in ``config``
@@ -83,6 +85,8 @@ class Experiment:
                 raise ValueError(f"unknown motion policy {name!r}")
         if not self.seeds:
             raise ValueError("an experiment needs at least one seed")
+        if self.parking not in PARKING_POLICIES:
+            raise ValueError(f"unknown parking policy {self.parking!r}")
 
     @property
     def key(self) -> dict[str, object]:
@@ -99,6 +103,7 @@ class Experiment:
             "load": self.load,
             "rate": round(SCENARIOS[self.scenario].scaled(self.load).total, 4),
             "skip_first": self.skip_first,
+            "parking": self.parking,
         }
 
     @property
@@ -115,6 +120,7 @@ def experiment_title(k: Mapping[str, Any]) -> str:
         f"{k['scenario']} · {k['floors']} floors x {k['cars']} cars · capacity {k['capacity']}"
         f" · door_time {k['door_time']} · {k['placement']}"
         f" · load {k['load']:.3g} ({k['rate']:.3g} requests/tick) · {k['duration']} ticks"
+        + (f" · parking {k['parking']}" if k.get("parking", "stay") != "stay" else "")
     )
 
 
@@ -177,7 +183,11 @@ def run_task(task: Task) -> Row:
     exp = task.experiment
     requests = exp.requests(task.seed)
     journal = simulate(
-        exp.config, IteratorFeed(requests), make_dispatch(task.dispatch), make_motion(task.motion)
+        exp.config,
+        IteratorFeed(requests),
+        make_dispatch(task.dispatch),
+        make_motion(task.motion),
+        parking=make_parking(exp.parking),
     )
     report = aggregate(journal)
     counted = [r for r in report.passengers if r.requested >= exp.skip_first]
@@ -450,6 +460,7 @@ def summarise(result: BenchResult, resamples: int = RESAMPLES) -> dict[str, Any]
         entry["fairness"] = fairness_frontier(rows, exp.dispatch_policies, resamples)
         experiments.append(entry)
     return {
+        "parking": parking_comparisons(result, resamples),
         "metric": PRIMARY,
         "claim_rule": (
             f"95% CI of the difference excludes 0 and >= {CLAIM_WIN_SHARE:.0%} of seeds "
@@ -497,6 +508,50 @@ def fairness_frontier(
     return frontier
 
 
+PARKING_METRICS = ("total_mean", "wait_mean", "wait_max", "distance_per_passenger")
+
+
+def parking_comparisons(result: BenchResult, resamples: int = RESAMPLES) -> list[dict[str, Any]]:
+    """Each parking policy against ``stay`` on the same seeds and passengers (LOOK motion).
+
+    Experiments that differ only in parking share their requests (the requests depend on the
+    scenario, building, load and seed, not on parking), so the comparison is paired by seed.
+    """
+    groups: dict[tuple, dict[str, Experiment]] = {}
+    for exp in result.experiments:
+        rest = tuple((k, v) for k, v in exp.key.items() if k != "parking")
+        groups.setdefault(rest, {})[exp.parking] = exp
+    out = []
+    for by_parking in groups.values():
+        if "stay" not in by_parking or len(by_parking) < 2:
+            continue
+        base = by_parking["stay"]
+        rows = [r for e in by_parking.values() for r in result.rows_for(e) if r["motion"] == "look"]
+        for dispatch in base.dispatch_policies:
+            sel = [r for r in rows if r["dispatch"] == dispatch]
+            if not sel:
+                continue
+            for parking in (p for p in PARKING_POLICIES if p in by_parking and p != "stay"):
+                entry: dict[str, Any] = {
+                    "key": {k: v for k, v in base.key.items() if k != "parking"},
+                    "dispatch": dispatch,
+                    "parking": parking,
+                }
+                for metric in PARKING_METRICS:
+                    c = compare(sel, "parking", parking, "stay", metric=metric, resamples=resamples)
+                    entry[metric] = {
+                        "stay": c.baseline_mean,
+                        "policy": c.mean,
+                        "delta": c.delta,
+                        "delta_pct": c.delta_pct,
+                        "ci95": list(c.ci95),
+                        "wins": f"{c.wins}/{c.n}",
+                        "verdict": c.verdict,
+                    }
+                out.append(entry)
+    return out
+
+
 # ---------------------------------------------------------------- suites
 
 
@@ -511,6 +566,7 @@ class SuiteOptions:
     motion: tuple[str, ...] | None = None
     skip_first: int = 0
     fairness: tuple[float, ...] = ()  # adds cost:<alpha> variants (0 = plain cost)
+    parking: tuple[str, ...] = ("stay",)  # one experiment per parking policy
 
 
 BUSINESS = ("quiet", "morning_rush", "lunch", "evening_rush")
@@ -570,7 +626,7 @@ def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Exper
             scale = (floors - 1) / (BASE_BUILDING[0] - 1) if suite.demand_per_floor else 1.0
             for door_time in options.door_times:
                 for placement in options.placements:
-                    for load in options.loads:
+                    for load, parking in [(x, p) for x in options.loads for p in options.parking]:
                         config = BuildingConfig.uniform(
                             floors, cars, capacity, placement, door_time
                         )
@@ -585,6 +641,7 @@ def build_suite(name: str, options: SuiteOptions = SuiteOptions()) -> list[Exper
                                 motion_policies=options.motion or suite.motion,
                                 placement=placement,
                                 skip_first=options.skip_first,
+                                parking=parking,
                             )
                         )
     return experiments
@@ -636,6 +693,7 @@ def format_markdown(summary: Mapping[str, object]) -> str:
             )
         lines.append("")
 
+    lines += _parking_tables(summary.get("parking", []))
     lines += _sensitivity_tables(experiments)
     lines += _building_tables(experiments)
 
@@ -742,7 +800,7 @@ def format_markdown(summary: Mapping[str, object]) -> str:
     return "\n".join(lines)
 
 
-SENSITIVITY_FIELDS = ("door_time", "placement", "load")
+SENSITIVITY_FIELDS = ("door_time", "placement", "load", "parking")
 _MARK = {"better": "✓", "worse": "✗", "inconclusive": "?"}
 
 
@@ -768,7 +826,7 @@ def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
         return tuple(e["key"][f] for f in varying)
 
     def label(values: tuple) -> str:
-        names = {"door_time": "door {}", "placement": "{}", "load": "load {:g}"}
+        names = {"door_time": "door {}", "placement": "{}", "load": "load {:g}", "parking": "{}"}
         return " · ".join(names[f].format(v) for f, v in zip(varying, values, strict=True))
 
     columns = sorted({setting(e) for e in experiments})
@@ -824,6 +882,29 @@ def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
         lines += table(f"LOOK vs SCAN with `{dispatch}`", motion_cell(dispatch))
     lines += table("Ranking by mean total time (LOOK, best first)", ranking)
     return lines
+
+
+def _parking_tables(comparisons: Sequence[Mapping[str, Any]]) -> list[str]:
+    if not comparisons:
+        return []
+    lines = [
+        "## Parking: each policy vs `stay`",
+        "",
+        "Paired by seed on the same passengers, LOOK motion. Cells: Δ mean total time (verdict); "
+        "Δ mean wait; change in floors travelled per passenger (the cost of parking moves).",
+        "",
+        "| scenario | building | dispatch | policy | total: stay → policy | Δ total | Δ wait "
+        "| Δ floors / passenger |",
+        "|---|---|---|---|---:|---:|---:|---:|",
+    ]
+    for c in comparisons:
+        k, t, w, d = c["key"], c["total_mean"], c["wait_mean"], c["distance_per_passenger"]
+        lines.append(
+            f"| {k['scenario']} | {k['floors']} x {k['cars']} | {c['dispatch']} | {c['parking']} "
+            f"| {t['stay']:.1f} → {t['policy']:.1f} | {t['delta_pct']:+.1%} {_MARK[t['verdict']]} "
+            f"| {w['delta']:+.1f} {_MARK[w['verdict']]} | {d['delta']:+.1f} |"
+        )
+    return [*lines, ""]
 
 
 BUILDING_FACTORS = ("floors", "cars", "capacity")

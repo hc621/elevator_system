@@ -237,6 +237,44 @@ def buildings() -> str:
     return "\n\n".join(out)
 
 
+def parking() -> str:
+    """Each parking policy vs stay under cost dispatch: Δ total (verdict) and extra travel."""
+    data = json.loads((RESULTS / "parking" / "summary.json").read_text())["parking"]
+    policies = ("lobby", "spread", "demand")
+    rows = [
+        "| scenario | building | `cost`, stay | "
+        + " | ".join(f"`{p}`: Δ total, extra floors" for p in policies)
+        + " |",
+        "|---|---|---:|" + "---:|" * len(policies),
+    ]
+    seen = []
+    for c in data:
+        k = c["key"]
+        if c["dispatch"] != "cost" or (k["scenario"], k["floors"]) in seen:
+            continue
+        seen.append((k["scenario"], k["floors"]))
+    seen.sort(key=lambda sf: (ORDER.index(sf[0]), sf[1]))
+    for scenario, floors in seen:
+        group = {
+            c["parking"]: c
+            for c in data
+            if c["dispatch"] == "cost"
+            and c["key"]["scenario"] == scenario
+            and c["key"]["floors"] == floors
+        }
+        any_c = next(iter(group.values()))
+        cells = []
+        for p in policies:
+            t, d = group[p]["total_mean"], group[p]["distance_per_passenger"]
+            cells.append(f"{t['delta_pct']:+.1%} {MARK[t['verdict']]}, {d['delta_pct']:+.0%}")
+        rows.append(
+            f"| {scenario} | {building(any_c['key'])} | {any_c['total_mean']['stay']:.1f} | "
+            + " | ".join(cells)
+            + " |"
+        )
+    return "\n".join(rows)
+
+
 TABLES = {
     "headline": headline,
     "policies": policies,
@@ -246,6 +284,7 @@ TABLES = {
     "fairness": fairness,
     "trips": trips,
     "buildings": buildings,
+    "parking": parking,
 }
 
 if __name__ == "__main__":
