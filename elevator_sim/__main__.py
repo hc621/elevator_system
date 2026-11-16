@@ -30,6 +30,7 @@ from elevator_sim.adapters import (
     read_requests,
     write_passengers,
     write_positions,
+    write_positions_csv,
     write_report,
     write_requests,
 )
@@ -54,7 +55,7 @@ from elevator_sim.scenarios import SCENARIOS, generate
 from elevator_sim.simulator import simulate
 
 COMMANDS = ("run", "summarize", "generate", "bench", "report")
-OUTPUTS = ("positions.jsonl", "passengers.json", "report.json")
+OUTPUTS = ("positions.jsonl", "passengers.json", "report.json", "positions.csv")
 
 
 def _placement(text: str) -> str | tuple[Floor, ...]:
@@ -191,6 +192,7 @@ def _write_outputs(journal: Journal, out: Path) -> str:
     write_positions(journal, out / OUTPUTS[0])
     write_passengers(report, out / OUTPUTS[1])
     write_report(report, out / OUTPUTS[2])
+    write_positions_csv(journal, out / OUTPUTS[3])
     return format_summary(report)
 
 

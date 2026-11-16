@@ -5,6 +5,7 @@ The core never touches files.
 Outputs of a run:
 - ``positions.jsonl``: one JSON object per tick from t = 0, ``{"t": 0, "floors": [1, 1, 1]}``,
   where ``floors[i]`` is car i's floor (the brief's "one row per timestamp").
+- ``positions.csv``: the same log as a table, ``t,car_0,car_1,...`` (opens in a spreadsheet).
 - ``passengers.json``: one object per delivered passenger with its timestamps and times.
 - ``report.json``: the run's metrics (see ``report_to_dict``).
 """
@@ -74,6 +75,19 @@ def write_positions(journal: Journal, path: str | Path) -> None:
         for tick in sorted(by_tick):
             row = {"t": tick, "floors": [by_tick[tick][c] for c in cars]}
             f.write(json.dumps(row, separators=(",", ":")) + "\n")
+
+
+def write_positions_csv(journal: Journal, path: str | Path) -> None:
+    """The same positions log as a table: ``t,car_0,car_1,...``, one row per tick from t = 0."""
+    by_tick: dict[int, dict[int, int]] = defaultdict(dict)
+    for e in journal.events(CarState):
+        by_tick[e.tick][e.car] = e.floor
+    cars = sorted({car for row in by_tick.values() for car in row})
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["t", *(f"car_{c}" for c in cars)])
+        for tick in sorted(by_tick):
+            writer.writerow([tick, *(by_tick[tick][c] for c in cars)])
 
 
 def read_positions(path: str | Path) -> list[list[int]]:
