@@ -215,6 +215,70 @@ per car, from `raw.jsonl`):
   49-64 vs 20-33 for `cost`): Jain rewards *equal* waits, not *short* ones, so the fairness study
   uses p95 and max wait instead.
 
+## Sensitivity: stop time and start position
+
+```bash
+uv run elevator-sim bench --suite standard --seeds 20 --door-times 0,1,2 --placements lobby,spread \
+    -o results/sensitivity                       # 48 experiments, 7,680 runs, ~3 min on 10 cores
+```
+
+The brief doesn't model doors, so `door_time` (extra ticks a stop holds the car) is our assumption,
+and so is starting every car at the lobby. This study checks whether either one drives the
+conclusions: the standard suite again at door_time 0, 1 and 2, with cars starting at the lobby or
+spread evenly up the building. Full pivot tables (every policy, every setting) are in
+`results/sensitivity/summary.md`; the summary across the 6 settings per row:
+
+| scenario | building | `cost` vs RR | `nearest` vs RR | `zone` vs RR | LOOK vs SCAN (`cost`) | ranking at door 0 / 1 / 2 (lobby) |
+|---|---|---|---|---|---|---|
+| uniform | 30 × 4 | -42% to -39% (6✓) | -17% to -8% (6✓) | -6% to +1% (2✓ / 4?) | -18% to -11% (6✓) | CNZR / CNZR / CNRZ |
+| uniform | 40 × 6 | -48% to -45% (6✓) | -20% to -6% (5✓ / 1?) | -9% to -0% (2✓ / 4?) | -14% to -10% (6✓) | CNZR / CNZR / CNZR |
+| mixed | 30 × 4 | -42% to -39% (6✓) | -15% to -11% (6✓) | -16% to -14% (6✓) | -11% to -7% (6✓) | CNZR / CZNR / CZNR |
+| mixed | 40 × 6 | -46% to -45% (6✓) | -19% to -15% (6✓) | -16% to -14% (6✓) | -11% to -5% (6✓) | CNZR / CNZR / CNZR |
+| morning_rush | 30 × 4 | -32% to -31% (6✓) | -3% to +10% (5? / 1✗) | -18% to -15% (6✓) | -2% to -1% (1✓ / 5?) | CZNR / CZRN / CZRN |
+| morning_rush | 40 × 6 | -31% to -30% (6✓) | -1% to +12% (5? / 1✗) | -18% to -17% (6✓) | -2% to +0% (1✓ / 5?) | CZRN / CZRN / CZRN |
+| evening_rush | 30 × 4 | -33% to -32% (6✓) | -4% to +5% (5? / 1✗) | -16% to -13% (6✓) | -24% to -20% (6✓) | CZNR / CZRN / CZRN |
+| evening_rush | 40 × 6 | -36% to -35% (6✓) | -2% to +12% (5? / 1✗) | -16% to -13% (6✓) | -31% to -27% (6✓) | CZRN / CZRN / CZRN |
+
+✓ better, ? inconclusive, ✗ worse (counts out of 6 settings). Ranking letters: C `cost`,
+N `nearest`, Z `zone`, R `round_robin`, best first.
+
+**Conclusions that hold in every setting**
+- `cost` is the best policy in all 48 experiments, 30-48% better than round-robin, and its
+  advantage moves by at most 3 points across stop times and start positions.
+- LOOK beats SCAN under round-robin everywhere, and under `cost` everywhere except the morning
+  rush, where the difference stays within 2% at every stop time.
+- `zone` is reliably 13-18% better than round-robin on mixed traffic and in both rushes.
+
+**Conclusions that depend on the stop time**
+- **`nearest` gets worse as stops get longer.** On uniform and mixed traffic it stays better
+  than round-robin (one exception at door_time 2), but in the rushes it slides from inconclusive
+  at door_time 0 to significantly worse in 4 of the 8 rush settings at door_time 2 (+5% to +12%),
+  and comes last in 14 of the 16 rush settings with door_time ≥ 1. Mechanism (diagnostics): it
+  piles passengers onto a few cars (load CV 0.29-0.40 in the 30-floor rushes) while the others
+  sit partly idle (busy 58-69%), and every extra stop now costs more, so the overloaded cars slow
+  further: from door_time 0 to 2 its morning-rush wait grows by 7.7 ticks (round-robin: 4.0), its
+  maximum wait from 72 to 121, and full-car pass-bys from 2.0% to 5.5%.
+- **`zone` helps on uniform traffic only when stops are free** (6-9% better at door_time 0,
+  inconclusive at 1 and 2).
+- **Longer stops hurt round-robin more than `cost`**: from door_time 0 to 2, round-robin's mean
+  total grows by 6-12 ticks, `cost`'s by 4-8. `cost` also spreads passengers more evenly as stops
+  get dearer (its load CV falls in all 8 pairs, e.g. 0.22 → 0.14 in the 30-floor morning rush),
+  consistent with its projection pricing every stop.
+- Headroom shrinks: at door_time 2 `cost`'s cars are busy up to 88% (uniform and evening rush,
+  30 × 4), close to where queueing takes off.
+
+**Start position barely matters.** Lobby vs spread changes `cost`'s and `zone`'s result by at
+most 2 points (`nearest`: up to 8). With 200 requests over 800 ticks the cars leave their starting
+floors within the first few dozen ticks, so the start only affects the earliest passengers. Where
+idle cars wait *during* a run is a different question (parking, not built).
+
+**Caveats**
+- "Gap closed" falls as door_time grows (e.g. 65% → 53%, uniform 30 × 4) partly because the B0
+  floor is the direct ride with no stops: with longer stops, more of the excess time is
+  unavoidable. Compare gap closed within one door_time, not across them.
+- Verdicts on `nearest` and `zone` depend on the stop time, so claims about them in this README
+  name the door_time (the standard suite uses 1).
+
 ## Assumptions and trade-offs
 
 The brief fixes 1 tick = 1 floor, no peeking ahead, and immediate assignment of each passenger to

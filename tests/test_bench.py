@@ -213,3 +213,23 @@ def test_bench_cli_rejects_bad_lists() -> None:
     for flag, value in [("--dispatch", "cost,psychic"), ("--door-times", "1,x"), ("--rates", ",")]:
         with pytest.raises(SystemExit):
             main(["bench", flag, value])
+
+
+def test_sensitivity_tables_appear_only_when_settings_vary(tmp_path: Path) -> None:
+    options = SuiteOptions(
+        seeds=2, door_times=(0, 1), scenarios=("uniform",), dispatch=("cost", "round_robin")
+    )
+    experiments = [
+        Experiment(**{**e.__dict__, "count": 20, "duration": 80})
+        for e in build_suite("quick", options)
+    ]
+    summary = write_outputs(Benchmark(workers=1).run(experiments), tmp_path, resamples=50)
+    md = (tmp_path / "summary.md").read_text()
+    assert "## Sensitivity: which conclusions survive" in md
+    assert "| scenario | building | door 0 | door 1 |" in md
+    assert "### `cost` vs `round_robin` (LOOK)" in md and "### LOOK vs SCAN with `cost`" in md
+    assert "cost > round_robin" in md or "round_robin > cost" in md  # the ranking table
+    assert len(summary["experiments"]) == 2
+
+    write_outputs(Benchmark(workers=1).run([small(2)]), tmp_path / "plain", resamples=50)
+    assert "Sensitivity" not in (tmp_path / "plain" / "summary.md").read_text()

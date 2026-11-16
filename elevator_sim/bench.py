@@ -528,6 +528,8 @@ def format_markdown(summary: Mapping[str, object]) -> str:
             )
         lines.append("")
 
+    lines += _sensitivity_tables(experiments)
+
     for e in experiments:
         lines += [f"## {e['title']}", "", f"{e['seeds']} seeds.", ""]
         if e["dispatch_axis"]:
@@ -594,6 +596,82 @@ def format_markdown(summary: Mapping[str, object]) -> str:
             )
         lines.append("")
     return "\n".join(lines)
+
+
+SENSITIVITY_FIELDS = ("door_time", "placement", "rate")
+_MARK = {"better": "✓", "worse": "✗", "inconclusive": "?"}
+
+
+def _sensitivity_tables(experiments: Sequence[Mapping[str, Any]]) -> list[str]:
+    """When experiments differ in door time, placement or load: one pivot per comparison.
+
+    Rows are (scenario, building); columns the settings that vary; cells Δ% vs the baseline with
+    ✓ better / ✗ worse / ? inconclusive. Shows at a glance which conclusions survive.
+    """
+    varying = [f for f in SENSITIVITY_FIELDS if len({e["key"][f] for e in experiments}) > 1]
+    if not varying:
+        return []
+
+    def setting(e: Mapping[str, Any]) -> tuple:
+        return tuple(e["key"][f] for f in varying)
+
+    def label(values: tuple) -> str:
+        names = {"door_time": "door {}", "placement": "{}", "rate": "{}/tick"}
+        return " · ".join(names[f].format(v) for f, v in zip(varying, values, strict=True))
+
+    columns = sorted({setting(e) for e in experiments})
+    rows: dict[tuple, dict[tuple, Mapping[str, Any]]] = {}
+    for e in experiments:
+        k = e["key"]
+        rows.setdefault((k["scenario"], k["floors"], k["cars"]), {})[setting(e)] = e
+
+    def table(title: str, cell: Any) -> list[str]:
+        out = [
+            f"### {title}",
+            "",
+            "| scenario | building | " + " | ".join(label(c) for c in columns) + " |",
+            "|---|---|" + "---:|" * len(columns),
+        ]
+        for (scenario, floors, cars), by_setting in rows.items():
+            cells = [cell(by_setting[c]) if c in by_setting else "" for c in columns]
+            out.append(f"| {scenario} | {floors} x {cars} | " + " | ".join(cells) + " |")
+        return [*out, ""]
+
+    def dispatch_cell(policy: str) -> Any:
+        def cell(e: Mapping[str, Any]) -> str:
+            c = next((c for c in e["dispatch_axis"] if c["policy"] == policy), None)
+            return f"{c['delta_pct']:+.0%} {_MARK[c['verdict']]}" if c else ""
+
+        return cell
+
+    def motion_cell(dispatch: str) -> Any:
+        def cell(e: Mapping[str, Any]) -> str:
+            c = next((c for c in e["motion_axis"] if c["dispatch"] == dispatch), None)
+            return f"{c['delta_pct']:+.0%} {_MARK[c['verdict']]}" if c else ""
+
+        return cell
+
+    def ranking(e: Mapping[str, Any]) -> str:
+        look = sorted(
+            (c for c in e["combos"] if c["motion"] == "look"), key=lambda c: c["total_mean"]
+        )
+        return " > ".join(c["dispatch"] for c in look)
+
+    lines = [
+        "## Sensitivity: which conclusions survive",
+        "",
+        f"Varying: {', '.join(varying)}. Cells: Δ mean total time vs the baseline; "
+        "✓ better, ✗ worse, ? inconclusive (claim rule above).",
+        "",
+    ]
+    policies = sorted({c["policy"] for e in experiments for c in e["dispatch_axis"]})
+    for policy in policies:
+        lines += table(f"`{policy}` vs `round_robin` (LOOK)", dispatch_cell(policy))
+    dispatches = sorted({c["dispatch"] for e in experiments for c in e["motion_axis"]})
+    for dispatch in dispatches:
+        lines += table(f"LOOK vs SCAN with `{dispatch}`", motion_cell(dispatch))
+    lines += table("Ranking by mean total time (LOOK, best first)", ranking)
+    return lines
 
 
 def _verdict(verdict: str) -> str:
