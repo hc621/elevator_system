@@ -69,6 +69,7 @@ Comparisons in `summary.json` / `summary.md`, per experiment:
 | Metric | Definition | Why |
 |---|---|---|
 | mean ± std | over seeds | Typical result and spread |
+| `runs`, `passengers_total`, `unserved_total`, `wait_max_worst` | per policy: runs, passengers and unserved summed over seeds; the longest single wait in any run | Evidence for the brief's first objective (everyone served, and how long the worst case waited), from the committed summaries alone |
 | Δ, Δ% | mean(policy − baseline), paired by seed | Size of the effect |
 | wins / losses | seeds where the policy is strictly better / worse | Consistency: an average can hide a policy that wins big once and loses often |
 | 95% CI of Δ | paired percentile bootstrap, 2,000 resamples | Uncertainty: is the effect distinguishable from 0? |

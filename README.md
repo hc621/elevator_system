@@ -29,7 +29,7 @@ traffic, explains *why* one policy beats another, and renders the results as an 
 | Destination dispatch: origin + destination given, car assigned immediately | every request is assigned on its tick, before cars move ([how it works](#how-it-works-who-decides-what)) |
 | A function that accepts a list of requests | `run_requests(...)` ([Quick start](#quick-start)); the CLI reads the brief's CSV |
 | Honour capacity and direction | the car refuses to board over capacity; only passengers heading the car's way board ([capacity](#assumptions-and-trade-offs)) |
-| Serve all requests eventually | 0 unserved in 15,360 runs (4.0 million passengers); a per-passenger bound is the first improvement ([serving everyone](#assumptions-and-trade-offs)) |
+| Serve all requests eventually | 0 unserved in 15,360 runs (4.0 million passengers); worst single-run wait under `cost` 73 ticks in the standard suite ([evidence](docs/results.md#serving-everyone-the-evidence)) |
 | Minimise total time per passenger | `cost` dispatch: 31-47% lower than round-robin ([results](docs/results.md)) |
 | Output 1: positions log | `positions.jsonl` and `positions.csv` |
 | Output 2: min / max / average wait and total time, plus observations | `report.json` and the printed summary |
@@ -338,25 +338,25 @@ one car. Everything else below is a choice made here.
   or goes idle, and an empty move to fetch someone counts.
 
 **Serving everyone (the brief's first objective).** Every passenger has been delivered in every
-run so far: **15,360 runs across the five studies, about 4.0 million passengers, 0 unserved**, and
-a property test checks that random buildings, traffic and policies always finish. In the standard
-suite the worst wait in any single run is 73 ticks under `cost` (round-robin 123, `zone` 254,
-`nearest` 841). What is *not* proved is a per-passenger bound: LOOK keeps sweeping back, but under
-sustained heavy load a full car could keep passing someone, and in an overloaded building (60
-floors on 4 cars at rush-hour demand) every policy's worst wait runs to over a thousand ticks,
-because demand exceeds what the cars can carry. Two guards are in place: the simulator stops with
-an error if nobody boards or alights for a long stretch while passengers wait (it never fired),
-and the fairness weight shortens the tail. A hard bound is the first improvement: re-assign a
-passenger whose wait passes a limit, or make their car serve them next.
+run: **4,011,243 passengers in 15,360 runs across the five studies, 0 unserved**, and a property
+test checks that random buildings, traffic and policies always finish. In the standard suite the
+worst wait in any single run is 73 ticks under `cost` (round-robin 123, `zone` 254, `nearest` 841);
+only overloaded buildings, where demand exceeds what the cars can carry, see waits past a thousand
+ticks, under every policy. There is no per-passenger guarantee and no max-wait guard, by choice:
+the guard's wait limit would have to be tuned on simulated scenarios with illustrative rates, which
+risks overfitting to that hypothetical input; it should be calibrated on collected traffic data with
+a sample large enough to be significant. Evidence tables and the full reasoning:
+[Results: serving everyone](docs/results.md#serving-everyone-the-evidence).
 
 ## What I'd improve with more time
 
 - **Re-assign waiting passengers.** Assignments are fixed, so when `cost`'s projection goes stale
   (later passengers fill a car before it reaches you) the passenger pays. Re-assigning while
   someone is still waiting would fix that and also bound the worst waits.
-- **A hard bound on waiting.** The fairness weight shortens the tail but guarantees nothing per
-  passenger; a maximum-wait rule (re-assign, or serve the oldest request first) would close the
-  starvation gap.
+- **A max-wait guard, calibrated on real data.** The fairness weight shortens the tail but
+  guarantees nothing per passenger; a guard (re-assign, or serve the oldest request first, past a
+  wait limit) would. Its limit should be set from collected request logs, not tuned on these
+  simulated scenarios.
 - **Sectoring when the up-peak saturates.** In an overloaded morning rush `zone` beats `cost`;
   switching to destination sectoring above a load threshold, or a cost that accounts for round-trip
   time, should get the best of both.

@@ -140,3 +140,62 @@ floor, heading their way, full):
 - **Round-robin has the best Jain fairness index (0.63-0.73 vs 0.44-0.65 for `cost`) yet worse
   tails** (p95 wait 36-71 vs 18-33): Jain rewards *equal* waits, not *short* ones, so the fairness
   study uses p95 and max wait instead.
+
+## Serving everyone: the evidence
+
+The brief's first objective is that no passenger waits indefinitely. Across every run of every
+study, every passenger was picked up and delivered:
+
+| study | runs | passengers | unserved | worst wait in any run (ticks): cost / round_robin / nearest / zone |
+|---|---:|---:|---:|---:|
+| standard | 1,280 | 319,784 | 0 | 73 / 123 / 841 / 254 |
+| sensitivity | 7,680 | 1,918,704 | 0 | 132 / 194 / 841 / 437 |
+| fairness | 1,600 | 499,035 | 0 | 119 / 609 / - / - |
+| parking | 1,280 | 319,784 | 0 | 78 / 123 / - / - |
+| buildings, within capacity | 2,560 | 591,760 | 0 | 234 / 790 / 1093 / 1142 |
+| buildings, overloaded (45-60 floors on 4 cars, or 2 cars) | 960 | 362,176 | 0 | 1658 / 1723 / 2471 / 2174 |
+
+"Worst wait in any run" is the longest single wait over all runs of that study (a dash: that policy
+isn't run there). In the standard suite, per scenario:
+
+| scenario | building | worst wait in any of 20 runs: cost / round_robin / nearest / zone | typical worst wait under `cost` (mean over seeds) |
+|---|---|---:|---:|
+| quiet | 30 × 4 | 31 / 60 / 66 / 65 | 26.4 |
+| quiet | 40 × 6 | 38 / 75 / 82 / 81 | 29.9 |
+| morning_rush | 30 × 4 | 56 / 67 / 207 / 165 | 38.0 |
+| morning_rush | 40 × 6 | 57 / 87 / 392 / 246 | 42.6 |
+| lunch | 30 × 4 | 54 / 68 / 115 / 71 | 37.0 |
+| lunch | 40 × 6 | 47 / 86 / 128 / 121 | 37.8 |
+| evening_rush | 30 × 4 | 66 / 123 / 841 / 254 | 49.9 |
+| evening_rush | 40 × 6 | 73 / 85 / 835 / 152 | 50.7 |
+
+- **Every passenger served**: 4,011,243 passengers in 15,360 runs, 0 unserved, including buildings
+  pushed past their capacity. The simulator's stall guard (it stops with an error if nobody boards
+  or alights for a long stretch while passengers wait) never fired, and a property test checks
+  that random buildings, traffic and policies always finish.
+- **Bounded in practice under `cost`**: the worst wait in any standard run is 73 ticks, against 123
+  for round-robin and 841 for `nearest`, which piles passengers onto one car.
+- **Overload is a capacity problem, not a dispatch problem**: when demand exceeds what the cars can
+  carry (45-60 floors on 4 cars, or 2 cars at rush hour), every policy's worst wait runs past a
+  thousand ticks. The fix there is more cars, not a cleverer rule (see the
+  [building sweep](buildings.md)).
+
+### Why there is no max-wait guard (yet)
+
+A guard would re-assign a passenger whose wait passes a limit W, or make their car serve them next.
+It is designed but deliberately not built:
+
+- **W is a parameter, and this is a simulation.** Choosing W, and judging whether the guard helps,
+  would mean tuning it on a handful of simulated scenarios whose rates are illustrative. A guard
+  tuned that way risks overfitting to our hypothetical input: it would be optimised for the rate
+  table we invented, not for a building.
+- **It should be calibrated on collected data.** Accumulate real request logs, estimate the arrival
+  model per time of day, then set W from the observed wait distribution with a sample large enough
+  for the choice to be statistically meaningful (the same discipline as the claim rule used for
+  every result here). The same reasoning is why demand forecasting was not added (README, scope
+  decisions).
+- **It has costs to weigh against real data**: every re-assignment means telling a waiting passenger
+  to go to another car, and moves a car off its plan.
+- **Until then, the evidence above stands in for a proof**: no passenger has gone unserved, the
+  worst waits under `cost` are short, and the long ones come from overload, which a guard would not
+  fix.

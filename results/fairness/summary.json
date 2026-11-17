@@ -60,7 +60,11 @@
           "inter_floor_wait_mean": 15.2653,
           "inter_floor_wait_p95": 36.2625,
           "inter_floor_wait_max": 44.9,
-          "inter_floor_total_mean": 26.3001
+          "inter_floor_total_mean": 26.3001,
+          "runs": 20,
+          "passengers_total": 1870,
+          "unserved_total": 0,
+          "wait_max_worst": 60.0
         },
         {
           "dispatch": "cost",
@@ -96,7 +100,11 @@
           "inter_floor_wait_mean": 6.4264,
           "inter_floor_wait_p95": 17.32,
           "inter_floor_wait_max": 23.55,
-          "inter_floor_total_mean": 17.5724
+          "inter_floor_total_mean": 17.5724,
+          "runs": 20,
+          "passengers_total": 1870,
+          "unserved_total": 0,
+          "wait_max_worst": 31.0
         },
         {
           "dispatch": "cost:0.05",
@@ -132,7 +140,11 @@
           "inter_floor_wait_mean": 6.2813,
           "inter_floor_wait_p95": 17.0325,
           "inter_floor_wait_max": 23.65,
-          "inter_floor_total_mean": 17.4552
+          "inter_floor_total_mean": 17.4552,
+          "runs": 20,
+          "passengers_total": 1870,
+          "unserved_total": 0,
+          "wait_max_worst": 36.0
         },
         {
           "dispatch": "cost:0.2",
@@ -168,7 +180,11 @@
           "inter_floor_wait_mean": 6.3392,
           "inter_floor_wait_p95": 16.8375,
           "inter_floor_wait_max": 22.85,
-          "inter_floor_total_mean": 17.5135
+          "inter_floor_total_mean": 17.5135,
+          "runs": 20,
+          "passengers_total": 1870,
+          "unserved_total": 0,
+          "wait_max_worst": 32.0
         },
         {
           "dispatch": "cost:1",
@@ -204,7 +220,11 @@
           "inter_floor_wait_mean": 6.3166,
           "inter_floor_wait_p95": 16.64,
           "inter_floor_wait_max": 22.85,
-          "inter_floor_total_mean": 17.4916
+          "inter_floor_total_mean": 17.4916,
+          "runs": 20,
+          "passengers_total": 1870,
+          "unserved_total": 0,
+          "wait_max_worst": 32.0
         }
       ],
       "dispatch_axis": [
@@ -458,7 +478,11 @@
           "inter_floor_wait_mean": 19.6904,
           "inter_floor_wait_p95": 43.865,
           "inter_floor_wait_max": 53.6,
-          "inter_floor_total_mean": 31.0485
+          "inter_floor_total_mean": 31.0485,
+          "runs": 20,
+          "passengers_total": 2778,
+          "unserved_total": 0,
+          "wait_max_worst": 63.0
         },
         {
           "dispatch": "cost",
@@ -494,7 +518,11 @@
           "inter_floor_wait_mean": 6.9279,
           "inter_floor_wait_p95": 18.0325,
           "inter_floor_wait_max": 24.8,
-          "inter_floor_total_mean": 18.4034
+          "inter_floor_total_mean": 18.4034,
+          "runs": 20,
+          "passengers_total": 2778,
+          "unserved_total": 0,
+          "wait_max_worst": 33.0
         },
         {
           "dispatch": "cost:0.05",
@@ -530,7 +558,11 @@
           "inter_floor_wait_mean": 6.8539,
           "inter_floor_wait_p95": 17.4825,
           "inter_floor_wait_max": 24.25,
-          "inter_floor_total_mean": 18.3621
+          "inter_floor_total_mean": 18.3621,
+          "runs": 20,
+          "passengers_total": 2778,
+          "unserved_total": 0,
+          "wait_max_worst": 35.0
         },
         {
           "dispatch": "cost:0.2",
@@ -566,7 +598,11 @@
           "inter_floor_wait_mean": 6.8177,
           "inter_floor_wait_p95": 17.8825,
           "inter_floor_wait_max": 23.65,
-          "inter_floor_total_mean": 18.3422
+          "inter_floor_total_mean": 18.3422,
+          "runs": 20,
+          "passengers_total": 2778,
+          "unserved_total": 0,
+          "wait_max_worst": 33.0
         },
         {
           "dispatch": "cost:1",
@@ -602,7 +638,11 @@
           "inter_floor_wait_mean": 6.8567,
           "inter_floor_wait_p95": 17.83,
           "inter_floor_wait_max": 23.95,
-          "inter_floor_total_mean": 18.3743
+          "inter_floor_total_mean": 18.3743,
+          "runs": 20,
+          "passengers_total": 2778,
+          "unserved_total": 0,
+          "wait_max_worst": 33.0
         }
       ],
       "dispatch_axis": [
@@ -856,7 +896,11 @@
           "inter_floor_wait_mean": 18.4475,
           "inter_floor_wait_p95": 40.775,
           "inter_floor_wait_max": 54.6,
-          "inter_floor_total_mean": 32.8289
+          "inter_floor_total_mean": 32.8289,
+          "runs": 20,
+          "passengers_total": 1879,
+          "unserved_total": 0,
+          "wait_max_worst": 75.0
         },
         {
           "dispatch": "cost",
@@ -892,7 +936,11 @@
           "inter_floor_wait_mean": 6.0306,
           "inter_floor_wait_p95": 17.1275,
           "inter_floor_wait_max": 27.4,
-          "inter_floor_total_mean": 20.5819
+          "inter_floor_total_mean": 20.5819,
+          "runs": 20,
+          "passengers_total": 1879,
+          "unserved_total": 0,
+          "wait_max_worst": 38.0
         },
         {
           "dispatch": "cost:0.05",
@@ -928,7 +976,11 @@
           "inter_floor_wait_mean": 5.966,
           "inter_floor_wait_p95": 17.2325,
           "inter_floor_wait_max": 27.85,
-          "inter_floor_total_mean": 20.5235
+          "inter_floor_total_mean": 20.5235,
+          "runs": 20,
+          "passengers_total": 1879,
+          "unserved_total": 0,
+          "wait_max_worst": 39.0
         },
         {
           "dispatch": "cost:0.2",
@@ -964,7 +1016,11 @@
           "inter_floor_wait_mean": 5.9483,
           "inter_floor_wait_p95": 17.14,
           "inter_floor_wait_max": 27.35,
-          "inter_floor_total_mean": 20.5259
+          "inter_floor_total_mean": 20.5259,
+          "runs": 20,
+          "passengers_total": 1879,
+          "unserved_total": 0,
+          "wait_max_worst": 39.0
         },
         {
           "dispatch": "cost:1",
@@ -1000,7 +1056,11 @@
           "inter_floor_wait_mean": 5.9337,
           "inter_floor_wait_p95": 17.2325,
           "inter_floor_wait_max": 27.35,
-          "inter_floor_total_mean": 20.5144
+          "inter_floor_total_mean": 20.5144,
+          "runs": 20,
+          "passengers_total": 1879,
+          "unserved_total": 0,
+          "wait_max_worst": 39.0
         }
       ],
       "dispatch_axis": [
@@ -1254,7 +1314,11 @@
           "inter_floor_wait_mean": 22.4986,
           "inter_floor_wait_p95": 52.6,
           "inter_floor_wait_max": 66.65,
-          "inter_floor_total_mean": 36.8912
+          "inter_floor_total_mean": 36.8912,
+          "runs": 20,
+          "passengers_total": 2824,
+          "unserved_total": 0,
+          "wait_max_worst": 78.0
         },
         {
           "dispatch": "cost",
@@ -1290,7 +1354,11 @@
           "inter_floor_wait_mean": 6.5912,
           "inter_floor_wait_p95": 18.4325,
           "inter_floor_wait_max": 30.2,
-          "inter_floor_total_mean": 21.1101
+          "inter_floor_total_mean": 21.1101,
+          "runs": 20,
+          "passengers_total": 2824,
+          "unserved_total": 0,
+          "wait_max_worst": 47.0
         },
         {
           "dispatch": "cost:0.05",
@@ -1326,7 +1394,11 @@
           "inter_floor_wait_mean": 6.5897,
           "inter_floor_wait_p95": 18.2075,
           "inter_floor_wait_max": 29.85,
-          "inter_floor_total_mean": 21.1237
+          "inter_floor_total_mean": 21.1237,
+          "runs": 20,
+          "passengers_total": 2824,
+          "unserved_total": 0,
+          "wait_max_worst": 47.0
         },
         {
           "dispatch": "cost:0.2",
@@ -1362,7 +1434,11 @@
           "inter_floor_wait_mean": 6.5189,
           "inter_floor_wait_p95": 18.1,
           "inter_floor_wait_max": 27.9,
-          "inter_floor_total_mean": 21.0892
+          "inter_floor_total_mean": 21.0892,
+          "runs": 20,
+          "passengers_total": 2824,
+          "unserved_total": 0,
+          "wait_max_worst": 39.0
         },
         {
           "dispatch": "cost:1",
@@ -1398,7 +1474,11 @@
           "inter_floor_wait_mean": 6.4734,
           "inter_floor_wait_p95": 17.995,
           "inter_floor_wait_max": 26.95,
-          "inter_floor_total_mean": 21.0441
+          "inter_floor_total_mean": 21.0441,
+          "runs": 20,
+          "passengers_total": 2824,
+          "unserved_total": 0,
+          "wait_max_worst": 39.0
         }
       ],
       "dispatch_axis": [
@@ -1652,7 +1732,11 @@
           "inter_floor_wait_mean": 28.0434,
           "inter_floor_wait_p95": 54.275,
           "inter_floor_wait_max": 59.8,
-          "inter_floor_total_mean": 39.7328
+          "inter_floor_total_mean": 39.7328,
+          "runs": 20,
+          "passengers_total": 6095,
+          "unserved_total": 0,
+          "wait_max_worst": 67.0
         },
         {
           "dispatch": "cost",
@@ -1688,7 +1772,11 @@
           "inter_floor_wait_mean": 9.514,
           "inter_floor_wait_p95": 25.3375,
           "inter_floor_wait_max": 35.4,
-          "inter_floor_total_mean": 21.1553
+          "inter_floor_total_mean": 21.1553,
+          "runs": 20,
+          "passengers_total": 6095,
+          "unserved_total": 0,
+          "wait_max_worst": 56.0
         },
         {
           "dispatch": "cost:0.05",
@@ -1724,7 +1812,11 @@
           "inter_floor_wait_mean": 9.143,
           "inter_floor_wait_p95": 22.7275,
           "inter_floor_wait_max": 30.45,
-          "inter_floor_total_mean": 20.8464
+          "inter_floor_total_mean": 20.8464,
+          "runs": 20,
+          "passengers_total": 6095,
+          "unserved_total": 0,
+          "wait_max_worst": 44.0
         },
         {
           "dispatch": "cost:0.2",
@@ -1760,7 +1852,11 @@
           "inter_floor_wait_mean": 8.9409,
           "inter_floor_wait_p95": 21.6075,
           "inter_floor_wait_max": 28.35,
-          "inter_floor_total_mean": 20.7327
+          "inter_floor_total_mean": 20.7327,
+          "runs": 20,
+          "passengers_total": 6095,
+          "unserved_total": 0,
+          "wait_max_worst": 44.0
         },
         {
           "dispatch": "cost:1",
@@ -1796,7 +1892,11 @@
           "inter_floor_wait_mean": 8.8971,
           "inter_floor_wait_p95": 21.2125,
           "inter_floor_wait_max": 27.2,
-          "inter_floor_total_mean": 20.7143
+          "inter_floor_total_mean": 20.7143,
+          "runs": 20,
+          "passengers_total": 6095,
+          "unserved_total": 0,
+          "wait_max_worst": 53.0
         }
       ],
       "dispatch_axis": [
@@ -2050,7 +2150,11 @@
           "inter_floor_wait_mean": 34.7979,
           "inter_floor_wait_p95": 67.505,
           "inter_floor_wait_max": 147.15,
-          "inter_floor_total_mean": 47.2148
+          "inter_floor_total_mean": 47.2148,
+          "runs": 20,
+          "passengers_total": 9084,
+          "unserved_total": 0,
+          "wait_max_worst": 303.0
         },
         {
           "dispatch": "cost",
@@ -2086,7 +2190,11 @@
           "inter_floor_wait_mean": 13.6224,
           "inter_floor_wait_p95": 36.5675,
           "inter_floor_wait_max": 58.45,
-          "inter_floor_total_mean": 25.9719
+          "inter_floor_total_mean": 25.9719,
+          "runs": 20,
+          "passengers_total": 9084,
+          "unserved_total": 0,
+          "wait_max_worst": 119.0
         },
         {
           "dispatch": "cost:0.05",
@@ -2122,7 +2230,11 @@
           "inter_floor_wait_mean": 13.2137,
           "inter_floor_wait_p95": 32.235,
           "inter_floor_wait_max": 47.15,
-          "inter_floor_total_mean": 25.6422
+          "inter_floor_total_mean": 25.6422,
+          "runs": 20,
+          "passengers_total": 9084,
+          "unserved_total": 0,
+          "wait_max_worst": 82.0
         },
         {
           "dispatch": "cost:0.2",
@@ -2158,7 +2270,11 @@
           "inter_floor_wait_mean": 12.7365,
           "inter_floor_wait_p95": 29.82,
           "inter_floor_wait_max": 45.4,
-          "inter_floor_total_mean": 25.2151
+          "inter_floor_total_mean": 25.2151,
+          "runs": 20,
+          "passengers_total": 9084,
+          "unserved_total": 0,
+          "wait_max_worst": 72.0
         },
         {
           "dispatch": "cost:1",
@@ -2194,7 +2310,11 @@
           "inter_floor_wait_mean": 12.7565,
           "inter_floor_wait_p95": 30.025,
           "inter_floor_wait_max": 46.2,
-          "inter_floor_total_mean": 25.2434
+          "inter_floor_total_mean": 25.2434,
+          "runs": 20,
+          "passengers_total": 9084,
+          "unserved_total": 0,
+          "wait_max_worst": 83.0
         }
       ],
       "dispatch_axis": [
@@ -2448,7 +2568,11 @@
           "inter_floor_wait_mean": 36.1372,
           "inter_floor_wait_p95": 70.74,
           "inter_floor_wait_max": 77.75,
-          "inter_floor_total_mean": 51.1504
+          "inter_floor_total_mean": 51.1504,
+          "runs": 20,
+          "passengers_total": 6359,
+          "unserved_total": 0,
+          "wait_max_worst": 87.0
         },
         {
           "dispatch": "cost",
@@ -2484,7 +2608,11 @@
           "inter_floor_wait_mean": 9.9491,
           "inter_floor_wait_p95": 27.4525,
           "inter_floor_wait_max": 38.9,
-          "inter_floor_total_mean": 25.0781
+          "inter_floor_total_mean": 25.0781,
+          "runs": 20,
+          "passengers_total": 6359,
+          "unserved_total": 0,
+          "wait_max_worst": 57.0
         },
         {
           "dispatch": "cost:0.05",
@@ -2520,7 +2648,11 @@
           "inter_floor_wait_mean": 9.7255,
           "inter_floor_wait_p95": 25.725,
           "inter_floor_wait_max": 36.15,
-          "inter_floor_total_mean": 24.993
+          "inter_floor_total_mean": 24.993,
+          "runs": 20,
+          "passengers_total": 6359,
+          "unserved_total": 0,
+          "wait_max_worst": 48.0
         },
         {
           "dispatch": "cost:0.2",
@@ -2556,7 +2688,11 @@
           "inter_floor_wait_mean": 9.4394,
           "inter_floor_wait_p95": 25.34,
           "inter_floor_wait_max": 34.25,
-          "inter_floor_total_mean": 24.7492
+          "inter_floor_total_mean": 24.7492,
+          "runs": 20,
+          "passengers_total": 6359,
+          "unserved_total": 0,
+          "wait_max_worst": 47.0
         },
         {
           "dispatch": "cost:1",
@@ -2592,7 +2728,11 @@
           "inter_floor_wait_mean": 9.3158,
           "inter_floor_wait_p95": 24.6925,
           "inter_floor_wait_max": 34.0,
-          "inter_floor_total_mean": 24.6707
+          "inter_floor_total_mean": 24.6707,
+          "runs": 20,
+          "passengers_total": 6359,
+          "unserved_total": 0,
+          "wait_max_worst": 47.0
         }
       ],
       "dispatch_axis": [
@@ -2846,7 +2986,11 @@
           "inter_floor_wait_mean": 39.3932,
           "inter_floor_wait_p95": 77.2025,
           "inter_floor_wait_max": 98.35,
-          "inter_floor_total_mean": 54.752
+          "inter_floor_total_mean": 54.752,
+          "runs": 20,
+          "passengers_total": 9410,
+          "unserved_total": 0,
+          "wait_max_worst": 165.0
         },
         {
           "dispatch": "cost",
@@ -2882,7 +3026,11 @@
           "inter_floor_wait_mean": 11.3577,
           "inter_floor_wait_p95": 33.4375,
           "inter_floor_wait_max": 50.5,
-          "inter_floor_total_mean": 26.7042
+          "inter_floor_total_mean": 26.7042,
+          "runs": 20,
+          "passengers_total": 9410,
+          "unserved_total": 0,
+          "wait_max_worst": 82.0
         },
         {
           "dispatch": "cost:0.05",
@@ -2918,7 +3066,11 @@
           "inter_floor_wait_mean": 10.2527,
           "inter_floor_wait_p95": 27.3725,
           "inter_floor_wait_max": 38.9,
-          "inter_floor_total_mean": 25.7234
+          "inter_floor_total_mean": 25.7234,
+          "runs": 20,
+          "passengers_total": 9410,
+          "unserved_total": 0,
+          "wait_max_worst": 53.0
         },
         {
           "dispatch": "cost:0.2",
@@ -2954,7 +3106,11 @@
           "inter_floor_wait_mean": 10.2133,
           "inter_floor_wait_p95": 27.595,
           "inter_floor_wait_max": 39.8,
-          "inter_floor_total_mean": 25.7472
+          "inter_floor_total_mean": 25.7472,
+          "runs": 20,
+          "passengers_total": 9410,
+          "unserved_total": 0,
+          "wait_max_worst": 54.0
         },
         {
           "dispatch": "cost:1",
@@ -2990,7 +3146,11 @@
           "inter_floor_wait_mean": 10.5414,
           "inter_floor_wait_p95": 27.5525,
           "inter_floor_wait_max": 40.2,
-          "inter_floor_total_mean": 26.0975
+          "inter_floor_total_mean": 26.0975,
+          "runs": 20,
+          "passengers_total": 9410,
+          "unserved_total": 0,
+          "wait_max_worst": 57.0
         }
       ],
       "dispatch_axis": [
@@ -3244,7 +3404,11 @@
           "inter_floor_wait_mean": 27.7406,
           "inter_floor_wait_p95": 52.9675,
           "inter_floor_wait_max": 59.1,
-          "inter_floor_total_mean": 39.3635
+          "inter_floor_total_mean": 39.3635,
+          "runs": 20,
+          "passengers_total": 5606,
+          "unserved_total": 0,
+          "wait_max_worst": 68.0
         },
         {
           "dispatch": "cost",
@@ -3280,7 +3444,11 @@
           "inter_floor_wait_mean": 10.2187,
           "inter_floor_wait_p95": 24.515,
           "inter_floor_wait_max": 31.05,
-          "inter_floor_total_mean": 21.8431
+          "inter_floor_total_mean": 21.8431,
+          "runs": 20,
+          "passengers_total": 5606,
+          "unserved_total": 0,
+          "wait_max_worst": 54.0
         },
         {
           "dispatch": "cost:0.05",
@@ -3316,7 +3484,11 @@
           "inter_floor_wait_mean": 9.8092,
           "inter_floor_wait_p95": 22.7975,
           "inter_floor_wait_max": 28.7,
-          "inter_floor_total_mean": 21.5473
+          "inter_floor_total_mean": 21.5473,
+          "runs": 20,
+          "passengers_total": 5606,
+          "unserved_total": 0,
+          "wait_max_worst": 46.0
         },
         {
           "dispatch": "cost:0.2",
@@ -3352,7 +3524,11 @@
           "inter_floor_wait_mean": 9.6174,
           "inter_floor_wait_p95": 21.8725,
           "inter_floor_wait_max": 26.7,
-          "inter_floor_total_mean": 21.4087
+          "inter_floor_total_mean": 21.4087,
+          "runs": 20,
+          "passengers_total": 5606,
+          "unserved_total": 0,
+          "wait_max_worst": 43.0
         },
         {
           "dispatch": "cost:1",
@@ -3388,7 +3564,11 @@
           "inter_floor_wait_mean": 9.4545,
           "inter_floor_wait_p95": 22.48,
           "inter_floor_wait_max": 27.25,
-          "inter_floor_total_mean": 21.2778
+          "inter_floor_total_mean": 21.2778,
+          "runs": 20,
+          "passengers_total": 5606,
+          "unserved_total": 0,
+          "wait_max_worst": 43.0
         }
       ],
       "dispatch_axis": [
@@ -3642,7 +3822,11 @@
           "inter_floor_wait_mean": 30.1383,
           "inter_floor_wait_p95": 59.705,
           "inter_floor_wait_max": 65.5,
-          "inter_floor_total_mean": 42.4658
+          "inter_floor_total_mean": 42.4658,
+          "runs": 20,
+          "passengers_total": 8482,
+          "unserved_total": 0,
+          "wait_max_worst": 71.0
         },
         {
           "dispatch": "cost",
@@ -3678,7 +3862,11 @@
           "inter_floor_wait_mean": 13.1132,
           "inter_floor_wait_p95": 32.0275,
           "inter_floor_wait_max": 43.3,
-          "inter_floor_total_mean": 25.3445
+          "inter_floor_total_mean": 25.3445,
+          "runs": 20,
+          "passengers_total": 8482,
+          "unserved_total": 0,
+          "wait_max_worst": 62.0
         },
         {
           "dispatch": "cost:0.05",
@@ -3714,7 +3902,11 @@
           "inter_floor_wait_mean": 12.4013,
           "inter_floor_wait_p95": 29.0075,
           "inter_floor_wait_max": 43.25,
-          "inter_floor_total_mean": 24.7706
+          "inter_floor_total_mean": 24.7706,
+          "runs": 20,
+          "passengers_total": 8482,
+          "unserved_total": 0,
+          "wait_max_worst": 58.0
         },
         {
           "dispatch": "cost:0.2",
@@ -3750,7 +3942,11 @@
           "inter_floor_wait_mean": 11.7235,
           "inter_floor_wait_p95": 28.475,
           "inter_floor_wait_max": 41.15,
-          "inter_floor_total_mean": 24.1715
+          "inter_floor_total_mean": 24.1715,
+          "runs": 20,
+          "passengers_total": 8482,
+          "unserved_total": 0,
+          "wait_max_worst": 60.0
         },
         {
           "dispatch": "cost:1",
@@ -3786,7 +3982,11 @@
           "inter_floor_wait_mean": 11.3704,
           "inter_floor_wait_p95": 26.8425,
           "inter_floor_wait_max": 36.5,
-          "inter_floor_total_mean": 23.8275
+          "inter_floor_total_mean": 23.8275,
+          "runs": 20,
+          "passengers_total": 8482,
+          "unserved_total": 0,
+          "wait_max_worst": 55.0
         }
       ],
       "dispatch_axis": [
@@ -4040,7 +4240,11 @@
           "inter_floor_wait_mean": 33.3387,
           "inter_floor_wait_p95": 68.28,
           "inter_floor_wait_max": 76.65,
-          "inter_floor_total_mean": 48.2239
+          "inter_floor_total_mean": 48.2239,
+          "runs": 20,
+          "passengers_total": 5767,
+          "unserved_total": 0,
+          "wait_max_worst": 86.0
         },
         {
           "dispatch": "cost",
@@ -4076,7 +4280,11 @@
           "inter_floor_wait_mean": 8.5202,
           "inter_floor_wait_p95": 22.98,
           "inter_floor_wait_max": 31.5,
-          "inter_floor_total_mean": 23.4655
+          "inter_floor_total_mean": 23.4655,
+          "runs": 20,
+          "passengers_total": 5767,
+          "unserved_total": 0,
+          "wait_max_worst": 47.0
         },
         {
           "dispatch": "cost:0.05",
@@ -4112,7 +4320,11 @@
           "inter_floor_wait_mean": 8.2341,
           "inter_floor_wait_p95": 21.1125,
           "inter_floor_wait_max": 31.0,
-          "inter_floor_total_mean": 23.2456
+          "inter_floor_total_mean": 23.2456,
+          "runs": 20,
+          "passengers_total": 5767,
+          "unserved_total": 0,
+          "wait_max_worst": 48.0
         },
         {
           "dispatch": "cost:0.2",
@@ -4148,7 +4360,11 @@
           "inter_floor_wait_mean": 8.3744,
           "inter_floor_wait_p95": 22.1275,
           "inter_floor_wait_max": 31.3,
-          "inter_floor_total_mean": 23.4135
+          "inter_floor_total_mean": 23.4135,
+          "runs": 20,
+          "passengers_total": 5767,
+          "unserved_total": 0,
+          "wait_max_worst": 43.0
         },
         {
           "dispatch": "cost:1",
@@ -4184,7 +4400,11 @@
           "inter_floor_wait_mean": 8.2149,
           "inter_floor_wait_p95": 21.6775,
           "inter_floor_wait_max": 30.55,
-          "inter_floor_total_mean": 23.2493
+          "inter_floor_total_mean": 23.2493,
+          "runs": 20,
+          "passengers_total": 5767,
+          "unserved_total": 0,
+          "wait_max_worst": 43.0
         }
       ],
       "dispatch_axis": [
@@ -4438,7 +4658,11 @@
           "inter_floor_wait_mean": 38.2307,
           "inter_floor_wait_p95": 74.5325,
           "inter_floor_wait_max": 82.65,
-          "inter_floor_total_mean": 53.468
+          "inter_floor_total_mean": 53.468,
+          "runs": 20,
+          "passengers_total": 8671,
+          "unserved_total": 0,
+          "wait_max_worst": 108.0
         },
         {
           "dispatch": "cost",
@@ -4474,7 +4698,11 @@
           "inter_floor_wait_mean": 10.5256,
           "inter_floor_wait_p95": 26.045,
           "inter_floor_wait_max": 35.85,
-          "inter_floor_total_mean": 25.7338
+          "inter_floor_total_mean": 25.7338,
+          "runs": 20,
+          "passengers_total": 8671,
+          "unserved_total": 0,
+          "wait_max_worst": 76.0
         },
         {
           "dispatch": "cost:0.05",
@@ -4510,7 +4738,11 @@
           "inter_floor_wait_mean": 9.934,
           "inter_floor_wait_p95": 24.945,
           "inter_floor_wait_max": 33.7,
-          "inter_floor_total_mean": 25.2925
+          "inter_floor_total_mean": 25.2925,
+          "runs": 20,
+          "passengers_total": 8671,
+          "unserved_total": 0,
+          "wait_max_worst": 50.0
         },
         {
           "dispatch": "cost:0.2",
@@ -4546,7 +4778,11 @@
           "inter_floor_wait_mean": 9.1455,
           "inter_floor_wait_p95": 22.9375,
           "inter_floor_wait_max": 32.05,
-          "inter_floor_total_mean": 24.6173
+          "inter_floor_total_mean": 24.6173,
+          "runs": 20,
+          "passengers_total": 8671,
+          "unserved_total": 0,
+          "wait_max_worst": 53.0
         },
         {
           "dispatch": "cost:1",
@@ -4582,7 +4818,11 @@
           "inter_floor_wait_mean": 8.9989,
           "inter_floor_wait_p95": 22.2925,
           "inter_floor_wait_max": 31.95,
-          "inter_floor_total_mean": 24.4923
+          "inter_floor_total_mean": 24.4923,
+          "runs": 20,
+          "passengers_total": 8671,
+          "unserved_total": 0,
+          "wait_max_worst": 44.0
         }
       ],
       "dispatch_axis": [
@@ -4836,7 +5076,11 @@
           "inter_floor_wait_mean": 28.6044,
           "inter_floor_wait_p95": 54.79,
           "inter_floor_wait_max": 60.8,
-          "inter_floor_total_mean": 40.3409
+          "inter_floor_total_mean": 40.3409,
+          "runs": 20,
+          "passengers_total": 6222,
+          "unserved_total": 0,
+          "wait_max_worst": 123.0
         },
         {
           "dispatch": "cost",
@@ -4872,7 +5116,11 @@
           "inter_floor_wait_mean": 13.1559,
           "inter_floor_wait_p95": 32.16,
           "inter_floor_wait_max": 40.0,
-          "inter_floor_total_mean": 24.8918
+          "inter_floor_total_mean": 24.8918,
+          "runs": 20,
+          "passengers_total": 6222,
+          "unserved_total": 0,
+          "wait_max_worst": 66.0
         },
         {
           "dispatch": "cost:0.05",
@@ -4908,7 +5156,11 @@
           "inter_floor_wait_mean": 12.7325,
           "inter_floor_wait_p95": 30.81,
           "inter_floor_wait_max": 41.4,
-          "inter_floor_total_mean": 24.5525
+          "inter_floor_total_mean": 24.5525,
+          "runs": 20,
+          "passengers_total": 6222,
+          "unserved_total": 0,
+          "wait_max_worst": 61.0
         },
         {
           "dispatch": "cost:0.2",
@@ -4944,7 +5196,11 @@
           "inter_floor_wait_mean": 12.9553,
           "inter_floor_wait_p95": 30.685,
           "inter_floor_wait_max": 38.35,
-          "inter_floor_total_mean": 24.7492
+          "inter_floor_total_mean": 24.7492,
+          "runs": 20,
+          "passengers_total": 6222,
+          "unserved_total": 0,
+          "wait_max_worst": 56.0
         },
         {
           "dispatch": "cost:1",
@@ -4980,7 +5236,11 @@
           "inter_floor_wait_mean": 12.5694,
           "inter_floor_wait_p95": 29.5475,
           "inter_floor_wait_max": 38.6,
-          "inter_floor_total_mean": 24.3859
+          "inter_floor_total_mean": 24.3859,
+          "runs": 20,
+          "passengers_total": 6222,
+          "unserved_total": 0,
+          "wait_max_worst": 64.0
         }
       ],
       "dispatch_axis": [
@@ -5234,7 +5494,11 @@
           "inter_floor_wait_mean": 31.6452,
           "inter_floor_wait_p95": 60.76,
           "inter_floor_wait_max": 95.15,
-          "inter_floor_total_mean": 44.0
+          "inter_floor_total_mean": 44.0,
+          "runs": 20,
+          "passengers_total": 9278,
+          "unserved_total": 0,
+          "wait_max_worst": 609.0
         },
         {
           "dispatch": "cost",
@@ -5270,7 +5534,11 @@
           "inter_floor_wait_mean": 15.1821,
           "inter_floor_wait_p95": 36.43,
           "inter_floor_wait_max": 51.35,
-          "inter_floor_total_mean": 27.4178
+          "inter_floor_total_mean": 27.4178,
+          "runs": 20,
+          "passengers_total": 9278,
+          "unserved_total": 0,
+          "wait_max_worst": 109.0
         },
         {
           "dispatch": "cost:0.05",
@@ -5306,7 +5574,11 @@
           "inter_floor_wait_mean": 15.1038,
           "inter_floor_wait_p95": 35.0025,
           "inter_floor_wait_max": 48.0,
-          "inter_floor_total_mean": 27.4996
+          "inter_floor_total_mean": 27.4996,
+          "runs": 20,
+          "passengers_total": 9278,
+          "unserved_total": 0,
+          "wait_max_worst": 68.0
         },
         {
           "dispatch": "cost:0.2",
@@ -5342,7 +5614,11 @@
           "inter_floor_wait_mean": 14.921,
           "inter_floor_wait_p95": 35.5025,
           "inter_floor_wait_max": 49.3,
-          "inter_floor_total_mean": 27.3521
+          "inter_floor_total_mean": 27.3521,
+          "runs": 20,
+          "passengers_total": 9278,
+          "unserved_total": 0,
+          "wait_max_worst": 75.0
         },
         {
           "dispatch": "cost:1",
@@ -5378,7 +5654,11 @@
           "inter_floor_wait_mean": 14.4766,
           "inter_floor_wait_p95": 33.6375,
           "inter_floor_wait_max": 47.75,
-          "inter_floor_total_mean": 26.9234
+          "inter_floor_total_mean": 26.9234,
+          "runs": 20,
+          "passengers_total": 9278,
+          "unserved_total": 0,
+          "wait_max_worst": 64.0
         }
       ],
       "dispatch_axis": [
@@ -5632,7 +5912,11 @@
           "inter_floor_wait_mean": 36.3779,
           "inter_floor_wait_p95": 69.7125,
           "inter_floor_wait_max": 77.45,
-          "inter_floor_total_mean": 51.327
+          "inter_floor_total_mean": 51.327,
+          "runs": 20,
+          "passengers_total": 6175,
+          "unserved_total": 0,
+          "wait_max_worst": 85.0
         },
         {
           "dispatch": "cost",
@@ -5668,7 +5952,11 @@
           "inter_floor_wait_mean": 12.266,
           "inter_floor_wait_p95": 32.1475,
           "inter_floor_wait_max": 42.95,
-          "inter_floor_total_mean": 27.3176
+          "inter_floor_total_mean": 27.3176,
+          "runs": 20,
+          "passengers_total": 6175,
+          "unserved_total": 0,
+          "wait_max_worst": 73.0
         },
         {
           "dispatch": "cost:0.05",
@@ -5704,7 +5992,11 @@
           "inter_floor_wait_mean": 12.5758,
           "inter_floor_wait_p95": 32.1275,
           "inter_floor_wait_max": 38.85,
-          "inter_floor_total_mean": 27.6853
+          "inter_floor_total_mean": 27.6853,
+          "runs": 20,
+          "passengers_total": 6175,
+          "unserved_total": 0,
+          "wait_max_worst": 54.0
         },
         {
           "dispatch": "cost:0.2",
@@ -5740,7 +6032,11 @@
           "inter_floor_wait_mean": 12.6479,
           "inter_floor_wait_p95": 31.73,
           "inter_floor_wait_max": 38.35,
-          "inter_floor_total_mean": 27.7842
+          "inter_floor_total_mean": 27.7842,
+          "runs": 20,
+          "passengers_total": 6175,
+          "unserved_total": 0,
+          "wait_max_worst": 69.0
         },
         {
           "dispatch": "cost:1",
@@ -5776,7 +6072,11 @@
           "inter_floor_wait_mean": 12.6612,
           "inter_floor_wait_p95": 32.05,
           "inter_floor_wait_max": 39.3,
-          "inter_floor_total_mean": 27.8034
+          "inter_floor_total_mean": 27.8034,
+          "runs": 20,
+          "passengers_total": 6175,
+          "unserved_total": 0,
+          "wait_max_worst": 72.0
         }
       ],
       "dispatch_axis": [
@@ -6030,7 +6330,11 @@
           "inter_floor_wait_mean": 38.7576,
           "inter_floor_wait_p95": 76.4525,
           "inter_floor_wait_max": 89.95,
-          "inter_floor_total_mean": 54.0279
+          "inter_floor_total_mean": 54.0279,
+          "runs": 20,
+          "passengers_total": 9307,
+          "unserved_total": 0,
+          "wait_max_worst": 305.0
         },
         {
           "dispatch": "cost",
@@ -6066,7 +6370,11 @@
           "inter_floor_wait_mean": 13.5735,
           "inter_floor_wait_p95": 33.6475,
           "inter_floor_wait_max": 48.7,
-          "inter_floor_total_mean": 28.8331
+          "inter_floor_total_mean": 28.8331,
+          "runs": 20,
+          "passengers_total": 9307,
+          "unserved_total": 0,
+          "wait_max_worst": 83.0
         },
         {
           "dispatch": "cost:0.05",
@@ -6102,7 +6410,11 @@
           "inter_floor_wait_mean": 13.7416,
           "inter_floor_wait_p95": 34.3225,
           "inter_floor_wait_max": 45.6,
-          "inter_floor_total_mean": 29.0905
+          "inter_floor_total_mean": 29.0905,
+          "runs": 20,
+          "passengers_total": 9307,
+          "unserved_total": 0,
+          "wait_max_worst": 70.0
         },
         {
           "dispatch": "cost:0.2",
@@ -6138,7 +6450,11 @@
           "inter_floor_wait_mean": 13.2972,
           "inter_floor_wait_p95": 32.405,
           "inter_floor_wait_max": 42.25,
-          "inter_floor_total_mean": 28.7151
+          "inter_floor_total_mean": 28.7151,
+          "runs": 20,
+          "passengers_total": 9307,
+          "unserved_total": 0,
+          "wait_max_worst": 69.0
         },
         {
           "dispatch": "cost:1",
@@ -6174,7 +6490,11 @@
           "inter_floor_wait_mean": 13.1033,
           "inter_floor_wait_p95": 32.03,
           "inter_floor_wait_max": 42.65,
-          "inter_floor_total_mean": 28.5262
+          "inter_floor_total_mean": 28.5262,
+          "runs": 20,
+          "passengers_total": 9307,
+          "unserved_total": 0,
+          "wait_max_worst": 73.0
         }
       ],
       "dispatch_axis": [

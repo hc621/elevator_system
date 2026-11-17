@@ -165,6 +165,9 @@ def test_outputs_and_markdown(tmp_path: Path) -> None:
     exp = summary["experiments"][0]
     assert [c["policy"] for c in exp["dispatch_axis"]] == ["cost", "nearest", "zone"]
     assert len(exp["motion_axis"]) == 4 and len(exp["combos"]) == 8
+    for c in exp["combos"]:  # serving-everyone evidence: totals and the worst case per policy
+        assert c["runs"] == 2 and c["unserved_total"] == 0 and c["passengers_total"] > 0
+        assert c["wait_max_worst"] >= c["wait_max"]
 
 
 def test_axes_are_skipped_when_their_baseline_is_not_run() -> None:

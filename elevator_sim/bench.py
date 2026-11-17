@@ -426,7 +426,13 @@ def summarise(result: BenchResult, resamples: int = RESAMPLES) -> dict[str, Any]
             for motion in exp.motion_policies:
                 sel = [r for r in rows if r["dispatch"] == dispatch and r["motion"] == motion]
                 means = {c: round(_mean([float(r[c]) for r in sel]), 4) for c in MEAN_COLUMNS}
-                combos.append({"dispatch": dispatch, "motion": motion, **means})
+                served = {  # serving everyone: totals and the worst case, not just means
+                    "runs": len(sel),
+                    "passengers_total": sum(int(r["passengers"]) for r in sel),
+                    "unserved_total": sum(int(r["unserved"]) for r in sel),
+                    "wait_max_worst": max((float(r["wait_max"]) for r in sel), default=0.0),
+                }
+                combos.append({"dispatch": dispatch, "motion": motion, **means, **served})
 
         entry: dict[str, Any] = {
             "key": exp.key,

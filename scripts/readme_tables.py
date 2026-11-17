@@ -275,6 +275,62 @@ def parking() -> str:
     return "\n".join(rows)
 
 
+POLICIES = ("cost", "round_robin", "nearest", "zone")
+OVERLOADED = "45-60 floors on 4 cars, or 2 cars"
+
+
+def _overloaded(k: dict) -> bool:
+    """Buildings-sweep cells where demand exceeds what the cars can carry at rush hour."""
+    return (k["floors"] >= 45 and k["cars"] == 4) or k["cars"] == 2
+
+
+def _serving_row(label: str, experiments: list[dict]) -> str:
+    runs = passengers = unserved = 0
+    worst: dict[str, float] = {}
+    for e in experiments:
+        for c in e["combos"]:
+            runs += c["runs"]
+            passengers += c["passengers_total"]
+            unserved += c["unserved_total"]
+            base = c["dispatch"].partition(":")[0]
+            if c["motion"] == "look":
+                worst[base] = max(worst.get(base, 0.0), c["wait_max_worst"])
+    cells = " / ".join(f"{worst[p]:.0f}" if p in worst else "-" for p in POLICIES)
+    return f"| {label} | {runs:,} | {passengers:,} | {unserved} | {cells} |"
+
+
+def serving() -> str:
+    """Everyone served? Totals per study and the worst wait in any single run, per policy."""
+    rows = [
+        "| study | runs | passengers | unserved | worst wait in any run (ticks): cost / "
+        "round_robin / nearest / zone |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    for study in ("standard", "sensitivity", "fairness", "parking"):
+        rows.append(_serving_row(study, load(study)))
+    buildings = load("buildings")
+    rows.append(_serving_row("buildings, within capacity",
+                             [e for e in buildings if not _overloaded(e["key"])]))  # fmt: skip
+    rows.append(_serving_row(f"buildings, overloaded ({OVERLOADED})",
+                             [e for e in buildings if _overloaded(e["key"])]))  # fmt: skip
+    return "\n".join(rows)
+
+
+def serving_standard() -> str:
+    """Standard suite: worst single-run wait per scenario and policy (LOOK)."""
+    rows = [
+        "| scenario | building | worst wait in any of 20 runs: cost / round_robin / nearest / zone "
+        "| typical worst wait under `cost` (mean over seeds) |",
+        "|---|---|---:|---:|",
+    ]
+    for e in load("standard"):
+        k = e["key"]
+        c = {x["dispatch"]: x for x in e["combos"] if x["motion"] == "look"}
+        worst = " / ".join(f"{c[p]['wait_max_worst']:.0f}" for p in POLICIES)
+        rows.append(f"| {k['scenario']} | {building(k)} | {worst} | {c['cost']['wait_max']:.1f} |")
+    return "\n".join(rows)
+
+
 TABLES = {
     "headline": headline,
     "policies": policies,
@@ -285,6 +341,8 @@ TABLES = {
     "trips": trips,
     "buildings": buildings,
     "parking": parking,
+    "serving": serving,
+    "serving_standard": serving_standard,
 }
 
 if __name__ == "__main__":
