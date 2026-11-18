@@ -52,6 +52,8 @@ uv run elevator-sim report results/standard -o out/bench.html   # benchmark repo
 uv run elevator-sim run --help                # all options
 ```
 
+A step-by-step [demo walkthrough](docs/demo.md), with expected outputs and setup for a machine without uv.
+
 `elevator-sim` is the console script declared in `pyproject.toml` (`python -m elevator_sim` is
 equivalent). Input is a CSV in the brief's format, `time,id,source,dest`.
 
@@ -188,6 +190,7 @@ these pages is generated from `results/` by `scripts/readme_tables.py`.
 | [Parking](docs/parking.md) | where idle cars should wait; the three decisions and what the data said |
 | [Fairness](docs/fairness.md) | the fairness weight on `cost` and its frontier |
 | [Performance](docs/performance.md) | how projections were made 5× faster with identical results |
+| [Demo walkthrough](docs/demo.md) | a five-minute tour on a fresh machine, with expected outputs |
 | [Presentation outline](docs/presentation.md) | the 10-minute talk and demo |
 
 ## Visual report
