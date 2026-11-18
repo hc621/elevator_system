@@ -26,6 +26,10 @@ then `pytest -q` (expect 253 passed).
 
 `open` below is macOS; on Windows use `start`, on Linux `xdg-open`, or open the file in a browser.
 
+**No Python on the machine?** The benchmark reports are committed as `results/<study>/report.html`.
+Download one from GitHub (open the file, then "Download raw file") and open it in a browser: each is
+a single self-contained page that works offline. Steps 4 and 5 below show the same reports.
+
 ## 1. The brief's example: the two required outputs
 
 ```bash

@@ -398,6 +398,13 @@ def delta_chart(
 _XHAIR_IDS = iter(range(1, 10**6))
 
 
+def _reset_chart_ids() -> None:
+    """Number crosshair payloads from 1 on every page, so rendering the same data twice gives the
+    same bytes (the committed results/*/report.html files are checked against their summaries)."""
+    global _XHAIR_IDS
+    _XHAIR_IDS = iter(range(1, 10**6))
+
+
 def line_chart(
     xs: Sequence[float],
     series: Sequence[tuple[str, str, Sequence[float], Sequence[str] | None]],
@@ -580,6 +587,7 @@ STATE_LABELS = {
 
 def render_run(journal: Journal, report: RunReport | None = None) -> str:
     """The report for one simulation run."""
+    _reset_chart_ids()
     report = report or aggregate(journal)
     cfg = report.config
     floors: dict[int, dict[int, int]] = defaultdict(dict)
@@ -799,6 +807,7 @@ def _short_title(key: Mapping[str, Any]) -> str:
 
 def render_bench(summary: Mapping[str, Any]) -> str:
     """The report for a benchmark summary (``summary.json``)."""
+    _reset_chart_ids()
     experiments: list[Mapping[str, Any]] = summary["experiments"]
     body: list[str] = []
 

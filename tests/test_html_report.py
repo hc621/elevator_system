@@ -78,6 +78,21 @@ def test_bench_report_has_a_selector_and_one_section_per_experiment() -> None:
         assert title in page
 
 
+def test_committed_reports_match_their_summaries() -> None:
+    """results/<study>/report.html must be exactly what its summary.json renders to (no drift)."""
+    for folder in ("standard", "sensitivity", "fairness", "buildings", "parking"):
+        summary = REPO / "results" / folder / "summary.json"
+        committed = REPO / "results" / folder / "report.html"
+        assert committed.exists(), f"missing {committed}"
+        page = render_bench(json.loads(summary.read_text()))
+        assert committed.read_text() == page, f"{committed} is stale: re-run `elevator-sim report`"
+
+
+def test_rendering_is_deterministic() -> None:
+    summary = json.loads((REPO / "results" / "standard" / "summary.json").read_text())
+    assert render_bench(summary) == render_bench(summary)
+
+
 def test_report_renders_the_committed_benchmark_summaries() -> None:
     for folder in ("standard", "sensitivity", "fairness"):
         path = REPO / "results" / folder / "summary.json"
