@@ -22,7 +22,7 @@ Then one of:
 The package has no runtime dependencies, so `pip install -e .` is enough to run everything below.
 With the environment activated, the command is `elevator-sim` (`python -m elevator_sim` is the same).
 To run the tests too: `uv sync` with uv, or `pip install pytest pytest-cov hypothesis` without it,
-then `pytest -q` (expect 253 passed).
+then `pytest -q` (expect 255 passed).
 
 `open` below is macOS; on Windows use `start`, on Linux `xdg-open`, or open the file in a browser.
 
